@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Core — Admin</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&family=Cormorant+Garamond:ital,wght@0,500;1,500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#07101E;--bg2:#0B1629;--card:#0F1E33;--card2:#142340;
+  --teal:#00C4A8;--teal2:#5BDBCA;--teal-d:rgba(0,196,168,.10);--teal-b:rgba(0,196,168,.18);
+  --teal-g:linear-gradient(135deg,#00C4A8,#007A6A);
+  --ivory:#EEE8DC;--ivory2:#C4BBAD;--muted:#6B84A4;
+  --border:rgba(0,196,168,.14);--border2:rgba(255,255,255,.07);
+  --green:#22D987;--red:#F05252;--amber:#F59E0B;--gold:#C89E3C;
+}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',system-ui,sans-serif;background:var(--bg);color:var(--ivory);min-height:100vh;-webkit-font-smoothing:antialiased}
+
+/* LOGIN */
+.login-wrap{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:20px;background:var(--bg)}
+.login-box{background:var(--card);border:1px solid var(--border);border-radius:20px;padding:36px 32px;width:100%;max-width:380px}
+.login-logo{display:flex;align-items:center;gap:11px;margin-bottom:30px}
+.ln{font-size:18px;font-weight:700;color:var(--ivory);letter-spacing:-.04em}
+.ln span{color:var(--teal)}
+.ls{font-size:9.5px;color:var(--muted);letter-spacing:.1em;display:block;margin-top:-1px}
+.login-title{font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:500;color:var(--ivory);margin-bottom:5px}
+.login-sub{font-size:13px;color:var(--muted);margin-bottom:22px;line-height:1.6}
+.field{margin-bottom:13px}
+.field label{display:block;font-size:11.5px;font-weight:500;color:var(--ivory2);margin-bottom:5px}
+.field input{width:100%;background:var(--bg2);border:1px solid var(--border2);border-radius:9px;padding:11px 14px;font-size:14px;color:var(--ivory);font-family:inherit;outline:none;transition:border-color .15s}
+.field input:focus{border-color:var(--teal)}
+.field input::placeholder{color:var(--muted)}
+.btn-login{width:100%;padding:12px;border-radius:9px;background:var(--teal-g);color:#030E1A;font-size:14px;font-weight:600;cursor:pointer;font-family:inherit;border:none;margin-top:6px;transition:filter .15s}
+.btn-login:hover{filter:brightness(1.08)}
+.login-err{margin-top:12px;font-size:12.5px;background:rgba(240,82,82,.1);color:#F87171;border:1px solid rgba(240,82,82,.2);border-radius:8px;padding:10px 13px;display:none}
+.login-err.show{display:block}
+.default-note{margin-top:18px;font-size:11.5px;color:var(--muted);text-align:center;line-height:1.7}
+.default-note code{background:var(--bg2);color:var(--teal2);padding:2px 7px;border-radius:5px;font-family:monospace}
+
+/* DASHBOARD */
+.dash{display:none;min-height:100vh}
+.dash.show{display:block}
+
+/* NAV */
+.dash-nav{display:flex;align-items:center;justify-content:space-between;padding:0 5vw;height:62px;background:rgba(7,16,30,.92);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100}
+.dash-logo{display:flex;align-items:center;gap:10px;text-decoration:none}
+.admin-badge{font-size:10px;font-weight:600;background:var(--teal-d);color:var(--teal2);border:1px solid var(--border);border-radius:20px;padding:3px 10px}
+.btn-ghost{background:none;border:1px solid var(--border2);color:var(--muted);font-size:12px;padding:6px 14px;border-radius:8px;cursor:pointer;font-family:inherit;transition:all .15s;text-decoration:none;display:inline-flex;align-items:center}
+.btn-ghost:hover{border-color:var(--border);color:var(--ivory)}
+.btn-danger{background:rgba(240,82,82,.1);border:1px solid rgba(240,82,82,.2);color:var(--red);font-size:12px;padding:6px 14px;border-radius:8px;cursor:pointer;font-family:inherit;transition:all .15s}
+.btn-danger:hover{background:rgba(240,82,82,.2)}
+
+/* BODY */
+.dash-body{padding:36px 5vw;max-width:960px;margin:0 auto}
+
+/* STATS */
+.stats-row{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:36px}
+.stat-card{background:var(--card);border:1px solid var(--border2);border-radius:12px;padding:18px 20px}
+.stat-n{font-family:'Cormorant Garamond',serif;font-size:36px;font-weight:600;color:var(--teal2);line-height:1;margin-bottom:4px}
+.stat-l{font-size:12px;color:var(--muted)}
+.stat-card.s-amber .stat-n{color:var(--amber)}
+.stat-card.s-green .stat-n{color:var(--green)}
+.stat-card.s-red .stat-n{color:var(--red)}
+
+/* SECTION HEADS */
+.sec-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:16px}
+.sec-title{font-size:15px;font-weight:600;color:var(--ivory)}
+.sec-sub{font-size:12px;color:var(--muted)}
+
+/* TABLE */
+.tbl-wrap{border:1px solid var(--border2);border-radius:12px;overflow:hidden;margin-bottom:32px}
+table{width:100%;border-collapse:collapse}
+th{background:var(--card2);color:var(--teal);padding:10px 14px;text-align:left;font-size:10px;font-weight:700;letter-spacing:.07em;border-bottom:1px solid var(--border2)}
+td{padding:12px 14px;border-bottom:1px solid rgba(255,255,255,.04);font-size:13px;color:var(--ivory2);vertical-align:middle}
+tr:last-child td{border-bottom:none}
+tr:hover td{background:rgba(255,255,255,.014)}
+.u-name{font-weight:600;color:var(--ivory);font-size:13.5px}
+.u-email{font-size:11.5px;color:var(--muted);margin-top:2px}
+.u-date{font-size:11.5px;color:var(--muted)}
+.status-badge{display:inline-flex;align-items:center;gap:4px;font-size:10px;font-weight:700;padding:3px 9px;border-radius:10px;letter-spacing:.03em}
+.sb-ok{background:rgba(34,217,135,.12);color:var(--green);border:1px solid rgba(34,217,135,.2)}
+.sb-wait{background:rgba(245,159,11,.12);color:var(--amber);border:1px solid rgba(245,159,11,.2)}
+.actions{display:flex;gap:6px;flex-wrap:wrap}
+.btn-approve{padding:5px 12px;border-radius:7px;font-size:11.5px;font-weight:700;cursor:pointer;font-family:inherit;background:rgba(34,217,135,.12);color:var(--green);border:1px solid rgba(34,217,135,.2);transition:all .15s}
+.btn-approve:hover{background:rgba(34,217,135,.22)}
+.btn-revoke{padding:5px 12px;border-radius:7px;font-size:11.5px;font-weight:600;cursor:pointer;font-family:inherit;background:rgba(240,82,82,.1);color:var(--red);border:1px solid rgba(240,82,82,.2);transition:all .15s}
+.btn-revoke:hover{background:rgba(240,82,82,.2)}
+
+/* EMPTY */
+.empty{padding:40px;text-align:center;color:var(--muted);font-size:14px}
+.empty span{display:block;font-size:36px;margin-bottom:10px}
+
+/* SETTINGS */
+.settings-grid{display:grid;grid-template-columns:1fr 1fr;gap:13px;margin-bottom:32px}
+.setting-card{background:var(--card);border:1px solid var(--border2);border-radius:12px;padding:20px 22px}
+.setting-title{font-size:13.5px;font-weight:600;color:var(--ivory);margin-bottom:4px}
+.setting-desc{font-size:12px;color:var(--muted);margin-bottom:13px;line-height:1.65}
+.setting-input{width:100%;background:var(--bg2);border:1px solid var(--border2);border-radius:9px;padding:10px 13px;font-size:13.5px;color:var(--ivory);font-family:inherit;outline:none;transition:border-color .15s}
+.setting-input:focus{border-color:var(--teal)}
+.setting-input::placeholder{color:var(--muted)}
+.btn-save{padding:8px 18px;border-radius:8px;font-size:12.5px;font-weight:600;cursor:pointer;font-family:inherit;background:var(--teal-g);color:#030E1A;border:none;margin-top:11px;transition:filter .15s}
+.btn-save:hover{filter:brightness(1.08)}
+.save-note{font-size:11px;color:var(--green);margin-top:7px;display:none}
+.save-note.show{display:block}
+
+/* FIREBASE */
+.firebase-card{background:var(--bg2);border:1px solid rgba(167,139,250,.2);border-radius:14px;padding:22px 24px;margin-bottom:32px}
+.fb-title{display:flex;align-items:center;gap:8px;font-size:14px;font-weight:600;color:#A78BFA;margin-bottom:10px}
+.fb-body{font-size:13px;color:var(--muted);line-height:1.75}
+.fb-body code{background:var(--card);color:#A78BFA;padding:2px 7px;border-radius:5px;font-family:monospace;font-size:11.5px}
+.fb-steps{list-style:none;padding:0;margin-top:10px}
+.fb-steps li{font-size:12.5px;color:var(--muted);padding:3px 0;display:flex;gap:8px;line-height:1.65}
+.fb-steps li::before{content:'→';color:#A78BFA;flex-shrink:0}
+
+/* TABS */
+.tab-row{display:flex;gap:0;border-bottom:1px solid var(--border2);margin-bottom:24px}
+.dtab{background:none;border:none;border-bottom:2px solid transparent;color:var(--muted);padding:10px 18px;font-size:13px;font-weight:500;cursor:pointer;font-family:inherit;transition:all .15s;margin-bottom:-1px}
+.dtab:hover{color:var(--ivory2)}
+.dtab.active{color:var(--teal);border-bottom-color:var(--teal)}
+.tab-panel{display:none} .tab-panel.active{display:block}
+
+/* TOAST */
+.toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%) translateY(80px);background:var(--teal);color:#030E1A;font-size:13px;font-weight:600;padding:10px 22px;border-radius:40px;z-index:999;transition:transform .25s;pointer-events:none}
+.toast.show{transform:translateX(-50%) translateY(0)}
+
+footer{border-top:1px solid var(--border2);padding:24px 5vw;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px}
+.fc{font-size:12.5px;color:var(--muted)} .fc b{color:var(--teal2)}
+
+@media(max-width:640px){
+  .stats-row{grid-template-columns:1fr 1fr}
+  .settings-grid{grid-template-columns:1fr}
+  .dash-body{padding:24px 4vw}
+  .dash-nav{padding:0 4vw}
+}
+</style>
+</head>
+<body>
+
+<div class="toast" id="toast">Saved ✓</div>
+
+<!-- LOGIN -->
+<div class="login-wrap" id="login-wrap">
+  <div class="login-box">
+    <div class="login-logo">
+      <svg width="36" height="36" viewBox="0 0 36 36" fill="none">
+        <circle cx="18" cy="18" r="16.5" stroke="#00C4A8" stroke-width="2"/>
+        <circle cx="18" cy="18" r="9" stroke="#00C4A8" stroke-width="1.5" opacity="0.45"/>
+        <circle cx="18" cy="18" r="3.8" fill="#00C4A8"/>
+      </svg>
+      <div>
+        <span class="ln">c<span>o</span>re</span>
+        <span class="ls">ADMIN PANEL</span>
+      </div>
+    </div>
+    <div class="login-title">Admin Sign In</div>
+    <div class="login-sub">Authorised administrators only.</div>
+    <div class="field">
+      <label>Admin Password</label>
+      <input type="password" id="admin-pass" placeholder="Enter admin password" onkeydown="if(event.key==='Enter')doAdminLogin()">
+    </div>
+    <button class="btn-login" onclick="doAdminLogin()">Sign In</button>
+    <div class="login-err" id="login-err">Incorrect password. Try again.</div>
+    <div class="default-note">
+      Default password: <code>core2026</code><br>
+      Change this immediately in Settings after first login.
+    </div>
+  </div>
+</div>
+
+<!-- DASHBOARD -->
+<div class="dash" id="dashboard">
+
+  <div class="dash-nav">
+    <div class="dash-logo">
+      <svg width="30" height="30" viewBox="0 0 30 30" fill="none">
+        <circle cx="15" cy="15" r="13.5" stroke="#00C4A8" stroke-width="1.7"/>
+        <circle cx="15" cy="15" r="7.5" stroke="#00C4A8" stroke-width="1.3" opacity="0.45"/>
+        <circle cx="15" cy="15" r="3.2" fill="#00C4A8"/>
+      </svg>
+      <div>
+        <span class="ln">c<span>o</span>re</span>
+        <span class="ls">ADMIN</span>
+      </div>
+    </div>
+    <div style="display:flex;align-items:center;gap:8px">
+      <span class="admin-badge">Admin</span>
+      <a href="index.html" class="btn-ghost">← Academy</a>
+      <button class="btn-danger" onclick="adminLogout()">Sign Out</button>
+    </div>
+  </div>
+
+  <div class="dash-body">
+
+    <!-- STATS -->
+    <div class="stats-row" id="stats-row">
+      <div class="stat-card"><div class="stat-n" id="st-total">0</div><div class="stat-l">Total accounts</div></div>
+      <div class="stat-card s-amber"><div class="stat-n" id="st-pending">0</div><div class="stat-l">Pending approval</div></div>
+      <div class="stat-card s-green"><div class="stat-n" id="st-approved">0</div><div class="stat-l">Approved (premium)</div></div>
+      <div class="stat-card"><div class="stat-n" id="st-today">0</div><div class="stat-l">Registered today</div></div>
+    </div>
+
+    <!-- TABS -->
+    <div class="tab-row">
+      <button class="dtab active" onclick="switchDTab('pending',this)">⏳ Pending Approval</button>
+      <button class="dtab" onclick="switchDTab('all',this)">👥 All Accounts</button>
+      <button class="dtab" onclick="switchDTab('settings',this)">⚙️ Settings</button>
+    </div>
+
+    <!-- PENDING TAB -->
+    <div class="tab-panel active" id="dtab-pending">
+      <div class="sec-head">
+        <div>
+          <div class="sec-title">Pending Approval</div>
+          <div class="sec-sub">Students who registered and are waiting for you to approve after payment</div>
+        </div>
+      </div>
+      <div class="tbl-wrap" id="pending-table">
+        <div class="empty"><span>✅</span>No pending accounts right now.</div>
+      </div>
+    </div>
+
+    <!-- ALL ACCOUNTS TAB -->
+    <div class="tab-panel" id="dtab-all">
+      <div class="sec-head">
+        <div>
+          <div class="sec-title">All Accounts</div>
+          <div class="sec-sub" id="all-sub">0 registered</div>
+        </div>
+      </div>
+      <div class="tbl-wrap" id="all-table">
+        <div class="empty"><span>📭</span>No accounts yet.</div>
+      </div>
+    </div>
+
+    <!-- SETTINGS TAB -->
+    <div class="tab-panel" id="dtab-settings">
+      <div class="settings-grid">
+
+        <div class="setting-card">
+          <div class="setting-title">CliQ / Payment Number</div>
+          <div class="setting-desc">This is shown to students when they try to access a premium guide. Enter your CliQ registered number.</div>
+          <input class="setting-input" id="set-cliq" placeholder="e.g. 0791234567" type="text">
+          <button class="btn-save" onclick="saveSetting('cliq','set-cliq')">Save</button>
+          <div class="save-note" id="note-cliq">Saved ✓ — remember to update CliQ in index.html too</div>
+        </div>
+
+        <div class="setting-card">
+          <div class="setting-title">WhatsApp / Contact</div>
+          <div class="setting-desc">Where students send their payment receipt. Use international format.</div>
+          <input class="setting-input" id="set-contact" placeholder="e.g. +962791234567" type="text">
+          <button class="btn-save" onclick="saveSetting('contact','set-contact')">Save</button>
+          <div class="save-note" id="note-contact">Saved ✓</div>
+        </div>
+
+        <div class="setting-card">
+          <div class="setting-title">Premium Guide Price</div>
+          <div class="setting-desc">This text is shown to students on the payment screen. Be specific.</div>
+          <input class="setting-input" id="set-price" placeholder="e.g. 5 JD / month or 15 JD / 6 months" type="text">
+          <button class="btn-save" onclick="saveSetting('price','set-price')">Save</button>
+          <div class="save-note" id="note-price">Saved ✓</div>
+        </div>
+
+        <div class="setting-card">
+          <div class="setting-title">Change Admin Password</div>
+          <div class="setting-desc">Change the default password to something secure. Minimum 6 characters.</div>
+          <input class="setting-input" id="set-newpass" placeholder="New password" type="password">
+          <button class="btn-save" onclick="changeAdminPass()">Update Password</button>
+          <div class="save-note" id="note-pass">Password updated ✓</div>
+        </div>
+
+      </div>
+
+      <!-- FIREBASE UPGRADE -->
+      <div class="firebase-card">
+        <div class="fb-title">🔥 Ready to upgrade to Firebase (Cloud Sync)?</div>
+        <div class="fb-body">
+          Currently all data is stored in the browser. This works great on one device for testing. To sync approvals across devices and make it permanent, connect Firebase (100% free for your scale).<br><br>
+          <strong style="color:var(--ivory2)">When ready, ask Claude to:</strong>
+          <ul class="fb-steps">
+            <li>Create your Firebase project at <code>console.firebase.google.com</code></li>
+            <li>Integrate Firebase Auth — students get real accounts with email verification</li>
+            <li>Sync the approved users list to Firebase Realtime Database</li>
+            <li>Add automatic email notifications when a student registers</li>
+            <li>Build a CliQ reference number field in the registration form</li>
+          </ul>
+          This upgrade takes ~30 minutes and nothing changes visually for your students.
+        </div>
+      </div>
+
+      <div style="background:var(--card);border:1px solid rgba(240,82,82,.2);border-radius:12px;padding:18px 22px">
+        <div style="font-size:13px;font-weight:600;color:var(--red);margin-bottom:6px">⚠️ Danger Zone</div>
+        <div style="font-size:12.5px;color:var(--muted);margin-bottom:13px;line-height:1.65">This will permanently delete all registered student accounts from this device. This cannot be undone.</div>
+        <button class="btn-revoke" onclick="clearAllUsers()">Delete All Accounts</button>
+      </div>
+    </div>
+
+  </div><!-- /dash-body -->
+
+  <footer>
+    <div class="fc">© 2026 <b>Core</b> — Admin Panel</div>
+    <div style="font-size:12px;color:var(--muted)">Logged in as Admin</div>
+  </footer>
+
+</div><!-- /dash -->
+
+<script>
+/* ── ADMIN AUTH ────────────────────── */
+function getAdminPass(){ return localStorage.getItem('core_admin_pass')||'core2026' }
+function doAdminLogin(){
+  const p = document.getElementById('admin-pass').value;
+  if(p === getAdminPass()){
+    localStorage.setItem('core_admin_session','1');
+    showDash();
+  } else {
+    document.getElementById('login-err').classList.add('show');
+  }
+}
+function adminLogout(){
+  localStorage.removeItem('core_admin_session');
+  document.getElementById('dashboard').classList.remove('show');
+  document.getElementById('login-wrap').style.display='flex';
+  document.getElementById('admin-pass').value='';
+  document.getElementById('login-err').classList.remove('show');
+}
+function showDash(){
+  document.getElementById('login-wrap').style.display='none';
+  document.getElementById('dashboard').classList.add('show');
+  loadSettings();
+  renderUsers();
+}
+
+/* ── USERS ──────────────────────────── */
+function getUsers(){ return JSON.parse(localStorage.getItem('core_users')||'{}') }
+function saveUsers(u){ localStorage.setItem('core_users', JSON.stringify(u)) }
+
+function approveUser(email){
+  const u = getUsers();
+  if(u[email]){ u[email].approved=true; u[email].approvedAt=new Date().toISOString(); }
+  saveUsers(u); renderUsers(); showToast('Approved ✓');
+}
+function revokeUser(email){
+  const u = getUsers();
+  if(u[email]){ u[email].approved=false; delete u[email].approvedAt; }
+  saveUsers(u); renderUsers(); showToast('Access revoked');
+}
+function deleteUser(email){
+  if(!confirm('Delete account for '+email+'? This cannot be undone.')) return;
+  const u = getUsers(); delete u[email]; saveUsers(u); renderUsers(); showToast('Account deleted');
+}
+function clearAllUsers(){
+  if(!confirm('Delete ALL student accounts? This is permanent.')) return;
+  localStorage.removeItem('core_users'); renderUsers(); showToast('All accounts cleared');
+}
+
+function renderUsers(){
+  const users = getUsers();
+  const list = Object.values(users);
+  const pending  = list.filter(u=>!u.approved);
+  const approved = list.filter(u=>u.approved);
+  const today = list.filter(u=>{
+    if(!u.registeredAt) return false;
+    const d = new Date(u.registeredAt);
+    const n = new Date();
+    return d.toDateString()===n.toDateString();
+  });
+
+  document.getElementById('st-total').textContent    = list.length;
+  document.getElementById('st-pending').textContent  = pending.length;
+  document.getElementById('st-approved').textContent = approved.length;
+  document.getElementById('st-today').textContent    = today.length;
+  document.getElementById('all-sub').textContent     = list.length+' registered';
+
+  // Pending table
+  const pt = document.getElementById('pending-table');
+  if(pending.length===0){
+    pt.innerHTML='<div class="empty"><span>✅</span>No pending accounts — all clear!</div>';
+  } else {
+    pt.innerHTML=`<table>
+      <tr><th>Student</th><th>Email</th><th>Registered</th><th>Actions</th></tr>
+      ${pending.map(u=>`<tr>
+        <td><div class="u-name">${esc(u.name||'—')}</div></td>
+        <td><div class="u-email">${esc(u.email)}</div></td>
+        <td><div class="u-date">${fmtDate(u.registeredAt)}</div></td>
+        <td><div class="actions">
+          <button class="btn-approve" onclick="approveUser('${esc(u.email)}')">✓ Approve</button>
+          <button class="btn-revoke"  onclick="deleteUser('${esc(u.email)}')">✕ Delete</button>
+        </div></td>
+      </tr>`).join('')}
+    </table>`;
+  }
+
+  // All table
+  const at = document.getElementById('all-table');
+  if(list.length===0){
+    at.innerHTML='<div class="empty"><span>📭</span>No accounts registered yet.</div>';
+  } else {
+    at.innerHTML=`<table>
+      <tr><th>Student</th><th>Email</th><th>Status</th><th>Registered</th><th>Approved</th><th>Actions</th></tr>
+      ${list.map(u=>`<tr>
+        <td><div class="u-name">${esc(u.name||'—')}</div></td>
+        <td><div class="u-email">${esc(u.email)}</div></td>
+        <td><span class="status-badge ${u.approved?'sb-ok':'sb-wait'}">${u.approved?'✓ Approved':'⏳ Pending'}</span></td>
+        <td><div class="u-date">${fmtDate(u.registeredAt)}</div></td>
+        <td><div class="u-date">${u.approvedAt?fmtDate(u.approvedAt):'—'}</div></td>
+        <td><div class="actions">
+          ${u.approved
+            ?`<button class="btn-revoke" onclick="revokeUser('${esc(u.email)}')">Revoke</button>`
+            :`<button class="btn-approve" onclick="approveUser('${esc(u.email)}')">✓ Approve</button>`}
+          <button class="btn-revoke" onclick="deleteUser('${esc(u.email)}')">Delete</button>
+        </div></td>
+      </tr>`).join('')}
+    </table>`;
+  }
+}
+
+/* ── SETTINGS ────────────────────────── */
+function loadSettings(){
+  const s = JSON.parse(localStorage.getItem('core_settings')||'{}');
+  if(s.cliq)    document.getElementById('set-cliq').value    = s.cliq;
+  if(s.contact) document.getElementById('set-contact').value = s.contact;
+  if(s.price)   document.getElementById('set-price').value   = s.price;
+}
+function saveSetting(key, inputId){
+  const s = JSON.parse(localStorage.getItem('core_settings')||'{}');
+  s[key] = document.getElementById(inputId).value.trim();
+  localStorage.setItem('core_settings', JSON.stringify(s));
+  const note = document.getElementById('note-'+key);
+  if(note){ note.classList.add('show'); setTimeout(()=>note.classList.remove('show'),2500); }
+  showToast('Saved ✓');
+}
+function changeAdminPass(){
+  const np = document.getElementById('set-newpass').value;
+  if(np.length<6){ alert('Password must be at least 6 characters.'); return; }
+  localStorage.setItem('core_admin_pass', np);
+  document.getElementById('set-newpass').value='';
+  document.getElementById('note-pass').classList.add('show');
+  setTimeout(()=>document.getElementById('note-pass').classList.remove('show'),2500);
+  showToast('Password updated ✓');
+}
+
+/* ── TABS ──────────────────────────── */
+function switchDTab(id, btn){
+  document.querySelectorAll('.dtab').forEach(t=>t.classList.remove('active'));
+  document.querySelectorAll('.tab-panel').forEach(p=>p.classList.remove('active'));
+  btn.classList.add('active');
+  document.getElementById('dtab-'+id).classList.add('active');
+}
+
+/* ── UTILS ──────────────────────────── */
+function fmtDate(iso){
+  if(!iso) return '—';
+  try{ return new Date(iso).toLocaleDateString('en-GB',{day:'numeric',month:'short',year:'numeric'}); }
+  catch(e){ return '—'; }
+}
+function esc(s){ return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])) }
+function showToast(msg){
+  const t=document.getElementById('toast');
+  t.textContent=msg;t.classList.add('show');
+  setTimeout(()=>t.classList.remove('show'),1800);
+}
+
+/* INIT */
+if(localStorage.getItem('core_admin_session')==='1') showDash();
+</script>
+</body>
+</html>

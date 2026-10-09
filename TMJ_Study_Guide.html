@@ -1,0 +1,2244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TMJ & Muscles of Mastication — Complete Study Guide</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --sidebar-bg: #1a2744;
+  --sidebar-text: #c8d6f0;
+  --sidebar-active: #4fc3f7;
+  --sidebar-hover: rgba(255,255,255,0.08);
+  --page-bg: #eef2f7;
+  --card-bg: #ffffff;
+  --text-primary: #1a2744;
+  --text-secondary: #4a5568;
+  --text-muted: #718096;
+  --border: #e2e8f0;
+  --red: #c0392b;
+  --red-light: #fdf2f2;
+  --red-mid: #fca5a5;
+  --blue: #1565c0;
+  --blue-light: #eff6ff;
+  --blue-mid: #93c5fd;
+  --gold: #b7791f;
+  --gold-light: #fefce8;
+  --gold-mid: #fde68a;
+  --teal: #0f766e;
+  --teal-light: #f0fdf9;
+  --green: #166534;
+  --green-light: #f0fdf4;
+  --green-mid: #86efac;
+  --purple: #553c9a;
+  --purple-light: #f5f3ff;
+  --orange: #c2410c;
+  --orange-light: #fff7ed;
+  --sidebar-width: 240px;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Inter', sans-serif; background: var(--page-bg); color: var(--text-primary); display: flex; min-height: 100vh; font-size: 15px; line-height: 1.6; }
+h1, h2, h3, h4 { font-family: 'Playfair Display', Georgia, serif; }
+
+/* SIDEBAR */
+.sidebar {
+  width: var(--sidebar-width);
+  background: var(--sidebar-bg);
+  position: fixed;
+  top: 0; left: 0; bottom: 0;
+  overflow-y: auto;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255,255,255,0.15) transparent;
+}
+.sidebar-header {
+  padding: 24px 20px 20px;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+.sidebar-header h2 {
+  color: #ffffff;
+  font-size: 17px;
+  line-height: 1.3;
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+}
+.sidebar-header p {
+  color: var(--sidebar-text);
+  font-size: 11px;
+  margin-top: 4px;
+  opacity: 0.7;
+  font-family: 'Inter', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+.nav-section-label {
+  padding: 16px 20px 6px;
+  font-size: 10px;
+  font-family: 'Inter', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: rgba(255,255,255,0.35);
+  font-weight: 600;
+}
+.nav-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 9px 20px;
+  cursor: pointer;
+  color: var(--sidebar-text);
+  font-size: 13px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  transition: background 0.15s, color 0.15s;
+  border-left: 3px solid transparent;
+  user-select: none;
+}
+.nav-item:hover { background: var(--sidebar-hover); color: #fff; }
+.nav-item.active { background: rgba(79,195,247,0.12); color: var(--sidebar-active); border-left-color: var(--sidebar-active); font-weight: 500; }
+.nav-icon { font-size: 15px; flex-shrink: 0; width: 18px; text-align: center; }
+
+/* MAIN CONTENT */
+.main { margin-left: var(--sidebar-width); flex: 1; min-height: 100vh; }
+.section { display: none; padding: 36px 40px; max-width: 960px; }
+.section.active { display: block; }
+
+/* SECTION HEADERS */
+.section-hero {
+  background: var(--sidebar-bg);
+  border-radius: 16px;
+  padding: 28px 32px;
+  margin-bottom: 28px;
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+.section-hero::after {
+  content: attr(data-emoji);
+  position: absolute;
+  right: 24px; top: 50%;
+  transform: translateY(-50%);
+  font-size: 56px;
+  opacity: 0.2;
+}
+.section-hero h1 { font-size: 26px; font-weight: 700; color: #fff; margin-bottom: 6px; }
+.section-hero p { color: rgba(255,255,255,0.72); font-size: 14px; max-width: 600px; font-family: 'Inter', sans-serif; }
+
+/* CARDS */
+.card {
+  background: var(--card-bg);
+  border-radius: 12px;
+  padding: 22px 26px;
+  margin-bottom: 20px;
+  border: 1px solid var(--border);
+}
+.card h3 { font-size: 17px; margin-bottom: 12px; color: var(--text-primary); }
+.card h4 { font-size: 14px; font-family: 'Inter', sans-serif; font-weight: 600; color: var(--text-secondary); margin: 14px 0 6px; text-transform: uppercase; letter-spacing: 0.05em; }
+.card p { color: var(--text-secondary); font-size: 14px; margin-bottom: 8px; line-height: 1.65; }
+.card ul, .card ol { color: var(--text-secondary); font-size: 14px; padding-left: 20px; line-height: 1.75; }
+.card li { margin-bottom: 3px; }
+
+/* TWO COLUMN GRID */
+.grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 20px; }
+.grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; margin-bottom: 20px; }
+.grid-auto { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; margin-bottom: 20px; }
+
+/* CALLOUT BOXES */
+.callout {
+  border-radius: 10px;
+  padding: 16px 20px;
+  margin-bottom: 16px;
+  font-size: 14px;
+  border-left: 4px solid;
+}
+.callout-red { background: var(--red-light); border-color: var(--red); color: #7f1d1d; }
+.callout-blue { background: var(--blue-light); border-color: var(--blue); color: #1e3a5f; }
+.callout-gold { background: var(--gold-light); border-color: var(--gold); color: #78350f; }
+.callout-teal { background: var(--teal-light); border-color: var(--teal); color: #134e4a; }
+.callout-green { background: var(--green-light); border-color: var(--green); color: #14532d; }
+.callout-purple { background: var(--purple-light); border-color: var(--purple); color: #3b2a6e; }
+.callout-orange { background: var(--orange-light); border-color: var(--orange); color: #7c2d12; }
+.callout strong { display: block; font-size: 13px; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 6px; font-family: 'Inter', sans-serif; font-weight: 700; }
+.callout ul { padding-left: 18px; margin-top: 6px; line-height: 1.7; }
+.callout li { margin-bottom: 2px; }
+
+/* MUSCLE CARDS */
+.muscle-card {
+  border-radius: 14px;
+  overflow: hidden;
+  margin-bottom: 24px;
+  border: 1px solid var(--border);
+  background: var(--card-bg);
+}
+.muscle-card-header {
+  padding: 18px 24px;
+  color: white;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.muscle-card-header h2 { font-size: 21px; font-weight: 700; color: white; }
+.muscle-card-header .muscle-name-sub { font-size: 13px; opacity: 0.75; font-family: 'Inter', sans-serif; font-weight: 400; margin-top: 2px; }
+.muscle-badge { background: rgba(255,255,255,0.2); border-radius: 8px; padding: 8px 12px; font-size: 24px; flex-shrink: 0; }
+.muscle-card-body { padding: 22px 24px; }
+.muscle-row { display: grid; grid-template-columns: 130px 1fr; gap: 8px; padding: 10px 0; border-bottom: 1px solid var(--border); }
+.muscle-row:last-child { border-bottom: none; }
+.muscle-label { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--text-muted); font-family: 'Inter', sans-serif; padding-top: 2px; }
+.muscle-value { font-size: 14px; color: var(--text-secondary); line-height: 1.6; }
+.muscle-masseter .muscle-card-header { background: linear-gradient(135deg, #c0392b, #e74c3c); }
+.muscle-temporalis .muscle-card-header { background: linear-gradient(135deg, #b7451c, #e07043); }
+.muscle-medial-pt .muscle-card-header { background: linear-gradient(135deg, #553c9a, #7c60c0); }
+.muscle-lateral-pt .muscle-card-header { background: linear-gradient(135deg, #1565c0, #2196f3); }
+
+/* TABLES */
+.study-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13.5px;
+  margin-bottom: 16px;
+  background: var(--card-bg);
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+}
+.study-table thead { background: var(--sidebar-bg); color: white; }
+.study-table thead th { padding: 12px 14px; text-align: left; font-family: 'Inter', sans-serif; font-size: 12px; text-transform: uppercase; letter-spacing: 0.06em; font-weight: 600; }
+.study-table tbody tr:nth-child(even) { background: #f8fafc; }
+.study-table tbody tr:hover { background: #eff6ff; }
+.study-table td { padding: 10px 14px; border-bottom: 1px solid var(--border); color: var(--text-secondary); vertical-align: top; line-height: 1.55; }
+.study-table td:first-child { font-weight: 600; color: var(--text-primary); font-size: 13px; }
+
+/* BADGES */
+.badge { display: inline-block; padding: 2px 9px; border-radius: 20px; font-size: 11px; font-weight: 600; font-family: 'Inter', sans-serif; letter-spacing: 0.03em; }
+.badge-red { background: var(--red-light); color: var(--red); }
+.badge-blue { background: var(--blue-light); color: var(--blue); }
+.badge-gold { background: var(--gold-light); color: var(--gold); }
+.badge-green { background: var(--green-light); color: var(--green); }
+.badge-teal { background: var(--teal-light); color: var(--teal); }
+.badge-purple { background: var(--purple-light); color: var(--purple); }
+.badge-gray { background: #f1f5f9; color: #475569; }
+
+/* MNEMONIC BOX */
+.mnemonic {
+  background: #faf5ff;
+  border: 2px dashed #8b5cf6;
+  border-radius: 12px;
+  padding: 18px 22px;
+  margin-bottom: 18px;
+}
+.mnemonic-title { font-size: 12px; font-weight: 700; color: #7c3aed; text-transform: uppercase; letter-spacing: 0.08em; font-family: 'Inter', sans-serif; margin-bottom: 8px; }
+.mnemonic-content { font-size: 14px; color: #4c1d95; line-height: 1.65; }
+.mnemonic-letters { font-size: 16px; font-weight: 700; color: #6d28d9; letter-spacing: 0.05em; font-family: 'Playfair Display', serif; }
+
+/* HIGHLIGHT BOX */
+.highlight-box {
+  background: var(--sidebar-bg);
+  color: white;
+  border-radius: 12px;
+  padding: 20px 24px;
+  margin-bottom: 20px;
+}
+.highlight-box h3 { color: var(--sidebar-active); font-size: 16px; margin-bottom: 10px; }
+.highlight-box p, .highlight-box li { color: rgba(255,255,255,0.82); font-size: 14px; line-height: 1.65; }
+.highlight-box ul { padding-left: 18px; }
+
+/* SECTION DIVIDER */
+.section-title {
+  font-size: 20px;
+  color: var(--text-primary);
+  margin: 30px 0 16px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid var(--border);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.section-title::before { content: attr(data-num); background: var(--sidebar-bg); color: white; width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 12px; font-family: 'Inter', sans-serif; font-weight: 700; flex-shrink: 0; }
+
+/* NERVE TREE */
+.nerve-branch { border-left: 3px solid var(--blue); padding-left: 16px; margin: 10px 0; }
+.nerve-branch.motor { border-color: var(--red); }
+.nerve-branch.sensory { border-color: var(--teal); }
+.nerve-label { font-size: 13px; font-weight: 600; color: var(--text-primary); font-family: 'Inter', sans-serif; }
+.nerve-detail { font-size: 12px; color: var(--text-muted); margin-top: 2px; }
+
+/* QUICK FACTS ROW */
+.quick-facts { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 20px; }
+.qf { background: var(--card-bg); border: 1px solid var(--border); border-radius: 10px; padding: 12px 16px; flex: 1; min-width: 140px; }
+.qf-label { font-size: 11px; color: var(--text-muted); font-family: 'Inter', sans-serif; text-transform: uppercase; letter-spacing: 0.06em; font-weight: 600; margin-bottom: 4px; }
+.qf-value { font-size: 18px; font-weight: 700; color: var(--text-primary); font-family: 'Playfair Display', serif; }
+.qf-unit { font-size: 12px; color: var(--text-muted); font-family: 'Inter', sans-serif; }
+
+/* TIMELINE */
+.timeline { position: relative; padding-left: 32px; }
+.timeline::before { content: ''; position: absolute; left: 8px; top: 0; bottom: 0; width: 2px; background: var(--border); }
+.tl-item { position: relative; margin-bottom: 18px; }
+.tl-dot { position: absolute; left: -28px; top: 3px; width: 14px; height: 14px; border-radius: 50%; background: var(--sidebar-bg); border: 2px solid var(--sidebar-active); }
+.tl-time { font-size: 12px; font-weight: 700; color: var(--blue); font-family: 'Inter', sans-serif; text-transform: uppercase; letter-spacing: 0.05em; }
+.tl-content { font-size: 14px; color: var(--text-secondary); margin-top: 2px; line-height: 1.6; }
+
+/* STEP BOX */
+.steps { counter-reset: step; }
+.step { display: flex; gap: 14px; margin-bottom: 14px; }
+.step-num { counter-increment: step; width: 28px; height: 28px; border-radius: 50%; background: var(--sidebar-bg); color: white; display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 700; font-family: 'Inter', sans-serif; flex-shrink: 0; }
+.step-content { flex: 1; padding-top: 3px; }
+.step-content strong { display: block; font-size: 14px; color: var(--text-primary); font-family: 'Inter', sans-serif; font-weight: 600; margin-bottom: 2px; }
+.step-content p { font-size: 13.5px; color: var(--text-secondary); line-height: 1.6; margin: 0; }
+
+/* RED FLAGS */
+.red-flag { display: flex; gap: 10px; padding: 10px 14px; background: #fff5f5; border-radius: 8px; margin-bottom: 8px; border: 1px solid #fca5a5; }
+.red-flag-icon { color: var(--red); font-size: 16px; flex-shrink: 0; font-weight: 700; font-family: 'Inter', sans-serif; }
+.red-flag-text { font-size: 13.5px; color: #7f1d1d; line-height: 1.5; }
+
+/* DRUG TABLE */
+.drug-card { background: var(--card-bg); border: 1px solid var(--border); border-radius: 10px; padding: 14px 18px; margin-bottom: 10px; display: flex; gap: 14px; align-items: flex-start; }
+.drug-icon { width: 36px; height: 36px; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 16px; flex-shrink: 0; }
+.drug-name { font-size: 14px; font-weight: 600; color: var(--text-primary); font-family: 'Inter', sans-serif; }
+.drug-detail { font-size: 13px; color: var(--text-secondary); margin-top: 2px; line-height: 1.5; }
+
+/* PRINT */
+@media print {
+  .sidebar { display: none; }
+  .main { margin-left: 0; }
+  .section { display: block !important; padding: 20px; }
+  .section-hero { background: #1a2744 !important; -webkit-print-color-adjust: exact; }
+}
+
+/* SCROLLBAR */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: rgba(26,39,68,0.2); border-radius: 3px; }
+</style>
+</head>
+<body>
+
+<!-- SIDEBAR -->
+<nav class="sidebar">
+  <div class="sidebar-header">
+    <h2>TMJ & Muscles of Mastication</h2>
+    <p>Complete Study Guide</p>
+  </div>
+
+  <div class="nav-section-label">Foundations</div>
+  <div class="nav-item active" onclick="showSection('overview')"><span class="nav-icon">🦷</span> Overview</div>
+  <div class="nav-item" onclick="showSection('bony')"><span class="nav-icon">🦴</span> Bony Anatomy</div>
+  <div class="nav-item" onclick="showSection('disc')"><span class="nav-icon">💿</span> Disc & Ligaments</div>
+
+  <div class="nav-section-label">Musculature</div>
+  <div class="nav-item" onclick="showSection('muscles')"><span class="nav-icon">💪</span> Muscles of Mastication</div>
+  <div class="nav-item" onclick="showSection('innervation')"><span class="nav-icon">⚡</span> Innervation</div>
+  <div class="nav-item" onclick="showSection('blood')"><span class="nav-icon">🩸</span> Blood Supply</div>
+  <div class="nav-item" onclick="showSection('biomech')"><span class="nav-icon">⚙️</span> Biomechanics</div>
+
+  <div class="nav-section-label">Clinical</div>
+  <div class="nav-item" onclick="showSection('exam')"><span class="nav-icon">🔍</span> Clinical Examination</div>
+  <div class="nav-item" onclick="showSection('disorders')"><span class="nav-icon">🏥</span> TMJ Disorders</div>
+  <div class="nav-item" onclick="showSection('imaging')"><span class="nav-icon">📷</span> Imaging</div>
+  <div class="nav-item" onclick="showSection('treatment')"><span class="nav-icon">💊</span> Treatment</div>
+  <div class="nav-item" onclick="showSection('complications')"><span class="nav-icon">⚠️</span> Complications</div>
+
+  <div class="nav-section-label">Advanced</div>
+  <div class="nav-item" onclick="showSection('embryology')"><span class="nav-icon">🧬</span> Embryology</div>
+  <div class="nav-item" onclick="showSection('pearls')"><span class="nav-icon">🧠</span> Pearls & Mnemonics</div>
+</nav>
+
+<!-- MAIN CONTENT -->
+<main class="main">
+
+<!-- ═══════════════════════════════════════════════════════════ OVERVIEW -->
+<div class="section active" id="overview">
+  <div class="section-hero" data-emoji="🦷">
+    <h1>Temporomandibular Joint</h1>
+    <p>The most complex and uniquely structured joint in the human body — a bilateral, synovial, diarthrodial joint connecting the mandibular condyle to the temporal bone.</p>
+  </div>
+
+  <div class="quick-facts">
+    <div class="qf"><div class="qf-label">Type</div><div class="qf-value" style="font-size:15px;font-family:'Inter',sans-serif;font-weight:700">Synovial Diarthrodial</div></div>
+    <div class="qf"><div class="qf-label">Normal Opening</div><div class="qf-value">40–55 <span class="qf-unit">mm</span></div></div>
+    <div class="qf"><div class="qf-label">Normal Protrusion</div><div class="qf-value">6–9 <span class="qf-unit">mm</span></div></div>
+    <div class="qf"><div class="qf-label">Lateral Excursion</div><div class="qf-value">8–12 <span class="qf-unit">mm</span></div></div>
+    <div class="qf"><div class="qf-label">Innervation</div><div class="qf-value" style="font-size:15px;font-family:'Inter',sans-serif;font-weight:700">CN V3</div></div>
+    <div class="qf"><div class="qf-label">Joint Spaces</div><div class="qf-value">2</div></div>
+  </div>
+
+  <div class="callout callout-red">
+    <strong>⚠️ What Makes TMJ Unique</strong>
+    The TMJ is unlike any other joint in the body for several critical reasons: (1) bilateral joints working in perfect synchrony, (2) articular surfaces covered by <em>fibrocartilage</em> — not hyaline cartilage, (3) interpositional articular disc divides the joint into two compartments, (4) both hinge AND gliding movements occur, (5) it is the only joint in the body where the two sides cannot move independently.
+  </div>
+
+  <h3 class="section-title" data-num="1">Components at a Glance</h3>
+  <div class="grid-2">
+    <div class="card">
+      <h3>🦴 Bony Components</h3>
+      <ul>
+        <li><strong>Mandibular condyle</strong> — convex head</li>
+        <li><strong>Mandibular fossa</strong> — concave glenoid fossa</li>
+        <li><strong>Articular eminence</strong> — the load-bearing surface</li>
+        <li><strong>Postglenoid process</strong> — limits posterior displacement</li>
+        <li><strong>Tympanic plate</strong> — posterior boundary</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>💿 Soft Tissue Components</h3>
+      <ul>
+        <li><strong>Articular disc (meniscus)</strong> — fibrocartilaginous, biconcave</li>
+        <li><strong>Fibrous capsule</strong> — surrounds joint completely</li>
+        <li><strong>Synovial membrane</strong> — lines capsule (not disc/articular surfaces)</li>
+        <li><strong>Ligaments</strong> — lateral, sphenomandibular, stylomandibular</li>
+        <li><strong>Bilaminar zone</strong> — posterior disc attachment</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>💪 Muscles of Mastication</h3>
+      <ul>
+        <li><strong>Masseter</strong> — primary closer, most superficial</li>
+        <li><strong>Temporalis</strong> — fan-shaped, closes + retrudes</li>
+        <li><strong>Medial pterygoid</strong> — closes + protrudes</li>
+        <li><strong>Lateral pterygoid</strong> — opens + protrudes (two heads)</li>
+      </ul>
+      <p style="margin-top:8px;font-size:13px;color:var(--text-muted)">All innervated by CN V3 (mandibular nerve)</p>
+    </div>
+    <div class="card">
+      <h3>⚡ Neural &amp; Vascular Supply</h3>
+      <ul>
+        <li><strong>Sensory</strong>: Auriculotemporal nerve (posterior), Masseteric nerve (anterior)</li>
+        <li><strong>Motor</strong>: Anterior division CN V3</li>
+        <li><strong>Primary artery</strong>: Maxillary artery (from external carotid)</li>
+        <li><strong>Secondary</strong>: Superficial temporal artery</li>
+      </ul>
+    </div>
+  </div>
+
+  <h3 class="section-title" data-num="2">Clinical Significance</h3>
+  <div class="callout callout-blue">
+    <strong>🔵 Why You Must Know This</strong>
+    Temporomandibular disorders (TMD) affect approximately 5–12% of the population and are the most common orofacial pain condition seen in clinical dentistry. TMD encompasses muscle disorders, disc displacements, and degenerative joint diseases. Mastery of TMJ anatomy is essential for diagnosis, examination, imaging interpretation, and treatment planning.
+  </div>
+
+  <div class="callout callout-gold">
+    <strong>📌 Fibrocartilage vs. Hyaline Cartilage — Why It Matters</strong>
+    The TMJ articular surfaces (and disc) are covered by fibrocartilage (type I collagen), not hyaline cartilage. Fibrocartilage is avascular and aneural — it can withstand compressive loading. It has greater capacity for repair than hyaline cartilage. This also explains why TMJ articular changes appear differently on MRI compared to other joints.
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════ BONY ANATOMY -->
+<div class="section" id="bony">
+  <div class="section-hero" data-emoji="🦴">
+    <h1>Bony Anatomy of the TMJ</h1>
+    <p>The osseous framework forming the articulation between the mandible and the temporal bone of the skull base.</p>
+  </div>
+
+  <h3 class="section-title" data-num="1">Mandibular Condyle</h3>
+  <div class="card">
+    <p>The mandibular condyle is the superior projection of the mandibular ramus, forming the movable part of the TMJ.</p>
+    <div class="grid-2">
+      <div>
+        <h4>Morphology</h4>
+        <ul>
+          <li>Convex, ellipsoid shape</li>
+          <li>Width (mediolateral): <strong>15–20 mm</strong></li>
+          <li>Depth (anteroposterior): <strong>8–10 mm</strong></li>
+          <li>Long axis oriented medially and posteriorly (~15–30° from the frontal plane)</li>
+          <li>If both condyle axes are extended, they meet approximately at the foramen magnum</li>
+          <li>Superior surface covered by fibrocartilage (~0.5 mm thick)</li>
+        </ul>
+      </div>
+      <div>
+        <h4>Poles</h4>
+        <ul>
+          <li><strong>Medial pole</strong>: larger, projects further medially; more prominent</li>
+          <li><strong>Lateral pole</strong>: smaller; directly palpable anterior to tragus</li>
+          <li>Condylar neck below the condylar head</li>
+          <li><strong>Pterygoid fovea</strong>: depression on anterior surface of condylar neck — insertion point of lateral pterygoid (inferior head)</li>
+        </ul>
+      </div>
+    </div>
+    <div class="callout callout-red" style="margin-top:12px;margin-bottom:0">
+      <strong>⚠️ Clinical Pearl</strong>
+      The lateral pole of the condyle is the most accessible palpation point. Place fingertips just anterior to the tragus and ask the patient to open — you will feel the condyle translate anteriorly. This is the primary landmark for TMJ palpation in clinical examination.
+    </div>
+  </div>
+
+  <h3 class="section-title" data-num="2">Temporal Bone Components</h3>
+  <div class="grid-2">
+    <div class="card">
+      <h3>Mandibular Fossa (Glenoid Fossa)</h3>
+      <ul>
+        <li>Concave depression in squamous part of temporal bone</li>
+        <li>Located anterior to tympanic plate and postglenoid process</li>
+        <li>Posterior wall: tympanic plate (thin bone, closely related to middle ear)</li>
+        <li>Covered by thin fibrocartilage (non-load-bearing in health)</li>
+        <li>The fossa itself is NOT the primary load-bearing surface</li>
+        <li>Important: the condyle is NOT designed to bear load within the fossa at rest</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Articular Eminence (Tubercle)</h3>
+      <ul>
+        <li>Convex bony ridge anterior to the mandibular fossa</li>
+        <li>Also called the <em>articular tubercle</em></li>
+        <li><strong>This IS the primary load-bearing surface</strong></li>
+        <li>The condyle translates down the posterior slope of the eminence during opening</li>
+        <li>Posterior slope of the eminence = articular surface (steep, covered by thick fibrocartilage)</li>
+        <li>Its height determines the path of condylar movement — steeper eminence → more angled path</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="grid-2">
+    <div class="card">
+      <h3>Postglenoid Process</h3>
+      <ul>
+        <li>Bony projection posterior to the mandibular fossa</li>
+        <li>Separates the fossa from the external auditory meatus</li>
+        <li>Functions as a mechanical stop to prevent excessive posterior condylar displacement</li>
+        <li>Fracture of the postglenoid process (e.g., in condylar fractures) can allow condyle to displace into the middle ear</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Tympanic Plate</h3>
+      <ul>
+        <li>Forms posterior and inferior walls of external auditory meatus</li>
+        <li>Forms posterior wall of the mandibular fossa</li>
+        <li>Very thin bone (may be perforated)</li>
+        <li>Close proximity to condyle: accounts for referred otalgia (ear pain) in TMD</li>
+        <li>In ankylosis: condyle can erode through tympanic plate</li>
+      </ul>
+    </div>
+  </div>
+
+  <h3 class="section-title" data-num="3">Condylar Head Position</h3>
+  <div class="callout callout-blue">
+    <strong>🔵 Normal vs. Abnormal Position</strong>
+    In health: the condyle is centered or slightly anteriorly positioned within the fossa with the disc interposed between the condyle and articular eminence. Posterior condylar positioning may indicate retrodiscal tissue compression. Assessment of condylar position is done on CT or CBCT. Note: condylar position varies widely in asymptomatic individuals — avoid over-interpreting position alone.
+  </div>
+
+  <table class="study-table">
+    <thead><tr><th>Structure</th><th>Location</th><th>Clinical Relevance</th></tr></thead>
+    <tbody>
+      <tr><td>Mandibular Condyle</td><td>Superior ramus of mandible</td><td>Palpated anterior to tragus; fracture site; condylar hyperplasia/resorption</td></tr>
+      <tr><td>Pterygoid Fovea</td><td>Anterior condylar neck</td><td>Lateral pterygoid insertion; key in disc displacement pathology</td></tr>
+      <tr><td>Mandibular Fossa</td><td>Squamous temporal bone</td><td>Shallow in childhood; deepens with eruption; NOT load-bearing</td></tr>
+      <tr><td>Articular Eminence</td><td>Anterior to fossa, squamous temporal</td><td>Primary load-bearing surface; steep eminence → disc displacement risk</td></tr>
+      <tr><td>Postglenoid Process</td><td>Posterior to fossa</td><td>Prevents posterior dislocation; fractures → middle ear involvement</td></tr>
+      <tr><td>Tympanic Plate</td><td>Posterior fossa wall</td><td>Explains otalgia in TMD; erosion in ankylosis</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════ DISC & LIGAMENTS -->
+<div class="section" id="disc">
+  <div class="section-hero" data-emoji="💿">
+    <h1>Articular Disc, Capsule &amp; Ligaments</h1>
+    <p>The soft tissue architecture dividing the TMJ into two separate compartments, each with distinct biomechanical functions.</p>
+  </div>
+
+  <h3 class="section-title" data-num="1">Articular Disc (Meniscus)</h3>
+  <div class="card">
+    <p>The TMJ disc is a fibrocartilaginous (type I and II collagen) structure that divides the joint into <strong>superior</strong> and <strong>inferior</strong> compartments.</p>
+    <div class="grid-2">
+      <div>
+        <h4>Morphology</h4>
+        <ul>
+          <li>Biconcave in sagittal cross-section</li>
+          <li><strong>Superior surface</strong>: concavo-convex (conforming to the temporal surface)</li>
+          <li><strong>Inferior surface</strong>: concave (conforming to the condyle)</li>
+          <li>Avascular and aneural at its central (load-bearing) portion</li>
+          <li>Peripherally vascularized (where attached to capsule)</li>
+        </ul>
+      </div>
+      <div>
+        <h4>Zones (Anterior to Posterior)</h4>
+        <ul>
+          <li><strong>Anterior band</strong>: thick (~2 mm); attaches to capsule and superior lateral pterygoid</li>
+          <li><strong>Intermediate zone</strong>: thinnest (~1 mm); the LOAD-BEARING portion (between condyle and eminence)</li>
+          <li><strong>Posterior band</strong>: thickest (~3 mm); superior to condyle at rest; attaches to bilaminar zone</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>Bilaminar Zone (Posterior Attachment / Retrodiscal Tissue)</h3>
+    <p>The most critical region for understanding disc displacement pathology.</p>
+    <div class="grid-2">
+      <div>
+        <h4>Upper Stratum (Superior Layer)</h4>
+        <ul>
+          <li>Composed of <strong>elastic fibers</strong></li>
+          <li>Attaches disc to tympanic plate</li>
+          <li>Pulls disc posteriorly during condylar translation (opening)</li>
+          <li>Becomes taut as condyle moves forward</li>
+        </ul>
+      </div>
+      <div>
+        <h4>Lower Stratum (Inferior Layer)</h4>
+        <ul>
+          <li>Composed of <strong>collagen fibers</strong> (non-elastic)</li>
+          <li>Attaches disc to posterior condylar neck</li>
+          <li>Limits anterior disc excursion</li>
+        </ul>
+      </div>
+    </div>
+    <div style="margin-top:12px;">
+      <h4>Retrodiscal Tissue (Between Strata)</h4>
+      <ul>
+        <li>Highly vascularized and <strong>well-innervated</strong></li>
+        <li>Contains loose connective tissue, fat, vessels (arteriovenous plexus)</li>
+        <li>Allows blood to enter/exit as condyle translates — acts as a hydraulic cushion</li>
+        <li><strong>Clinical importance</strong>: When disc displaces anteriorly, this tissue becomes compressed between condyle and eminence → pain source in disc displacement disorders</li>
+      </ul>
+    </div>
+    <div class="callout callout-red" style="margin-top:12px;margin-bottom:0">
+      <strong>🚨 Why Bilaminar Zone = Pain in Disc Displacement</strong>
+      In anterior disc displacement without reduction: the disc fails to recapture, and the richly innervated retrodiscal tissue takes the compressive load between the condyle and articular eminence. This is the primary source of pain. Chronic loading leads to metaplasia of retrodiscal tissue → pseudo-disc formation.
+    </div>
+  </div>
+
+  <h3 class="section-title" data-num="2">Joint Compartments</h3>
+  <div class="grid-2">
+    <div class="card" style="border-top:4px solid var(--red)">
+      <h3 style="color:var(--red)">Superior Joint Space</h3>
+      <p>Between the <strong>disc and temporal bone</strong> (articular eminence/fossa)</p>
+      <ul>
+        <li>Larger compartment</li>
+        <li>Function: <strong>Gliding / Translation</strong></li>
+        <li>Condyle + disc complex glide forward together</li>
+        <li>Occurs in the second phase of mouth opening</li>
+        <li>Clinical: Arthrocentesis typically performed in this space</li>
+      </ul>
+    </div>
+    <div class="card" style="border-top:4px solid var(--blue)">
+      <h3 style="color:var(--blue)">Inferior Joint Space</h3>
+      <p>Between the <strong>disc and mandibular condyle</strong></p>
+      <ul>
+        <li>Smaller compartment</li>
+        <li>Function: <strong>Hinge / Rotation</strong></li>
+        <li>Condyle rotates beneath the disc</li>
+        <li>Occurs in the first phase of mouth opening (~25 mm)</li>
+        <li>Clinical: Less commonly accessed surgically</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="callout callout-gold">
+    <strong>🔑 Memory Tip: Two Spaces, Two Movements</strong>
+    <ul>
+      <li><strong>I</strong>nferior = <strong>I</strong>nferior (hinge) = <strong>R</strong>otation — "IR" = InferioR</li>
+      <li><strong>S</strong>uperior = <strong>S</strong>liding = <strong>T</strong>ranslation — "SST" = Superior Slides &amp; Translates</li>
+      <li>First 25 mm of opening: rotation (inferior space) | After 25 mm: translation (superior space)</li>
+    </ul>
+  </div>
+
+  <h3 class="section-title" data-num="3">Joint Capsule</h3>
+  <div class="card">
+    <ul>
+      <li>Fibrous envelope completely surrounding the joint</li>
+      <li>Attaches above: margins of fossa and articular eminence</li>
+      <li>Attaches below: condylar neck</li>
+      <li>Reinforced laterally by the lateral ligament (temporomandibular ligament)</li>
+      <li>Inner surface lined by synovial membrane (except over articular surfaces and disc)</li>
+      <li>Synovial membrane produces synovial fluid (lubrication + nutrition)</li>
+      <li>Two layers of synovial membrane: intimal (lining) + subintimal (vascular)</li>
+    </ul>
+  </div>
+
+  <h3 class="section-title" data-num="4">Ligaments</h3>
+  <table class="study-table">
+    <thead><tr><th>Ligament</th><th>Type</th><th>Origin</th><th>Insertion</th><th>Function</th></tr></thead>
+    <tbody>
+      <tr>
+        <td>Lateral (Temporomandibular) Ligament</td>
+        <td><span class="badge badge-red">Intrinsic</span></td>
+        <td>Articular eminence (lateral surface); zygomatic process</td>
+        <td>Lateral condylar neck &amp; ramus (posteroinferiorly)</td>
+        <td>Strongest ligament; primary passive restraint; limits retrusion and excessive inferior translation; two bands</td>
+      </tr>
+      <tr>
+        <td>Sphenomandibular Ligament</td>
+        <td><span class="badge badge-blue">Extrinsic</span></td>
+        <td>Spine of sphenoid bone (sphenoid spine)</td>
+        <td>Lingula of mandibular foramen</td>
+        <td>Check ligament for extreme mouth opening; transmits IAN block landmark; remnant of Meckel's cartilage</td>
+      </tr>
+      <tr>
+        <td>Stylomandibular Ligament</td>
+        <td><span class="badge badge-blue">Extrinsic</span></td>
+        <td>Styloid process of temporal bone</td>
+        <td>Angle and posterior border of mandibular ramus</td>
+        <td>Limits excessive protrusion; thickened band of deep cervical fascia; separates parotid from submandibular gland</td>
+      </tr>
+      <tr>
+        <td>Discomalleolar Ligament</td>
+        <td><span class="badge badge-gray">Accessory</span></td>
+        <td>Anterior malleus (malleus of middle ear)</td>
+        <td>Anterior disc / capsule</td>
+        <td>Connects TMJ to middle ear; explains otalgia, tinnitus &amp; aural fullness in TMD; embryological remnant</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="mnemonic">
+    <div class="mnemonic-title">🔮 Mnemonic — TMJ Ligaments</div>
+    <div class="mnemonic-content">
+      <div class="mnemonic-letters">"L.S.S" — Lateral, Sphenomandibular, Stylomandibular</div>
+      <p style="margin-top:6px">Only the <strong>Lateral</strong> is intrinsic (part of capsule) — the others are accessory/extrinsic.</p>
+      <p>The <strong>sphenomandibular</strong> ligament is especially important in local anesthesia: it is the landmark between the ramus (superficial) and the medial pterygoid muscle (deep) in the pterygomandibular space where IANB is administered.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════ MUSCLES -->
+<div class="section" id="muscles">
+  <div class="section-hero" data-emoji="💪">
+    <h1>Muscles of Mastication</h1>
+    <p>Four muscles derived from the first pharyngeal arch, all innervated by the mandibular division of the trigeminal nerve (CN V3).</p>
+  </div>
+
+  <div class="callout callout-gold">
+    <strong>📌 Key Principle: All 4 Muscles → ONE Nerve</strong>
+    Every muscle of mastication is innervated by the mandibular nerve (CN V3). This is a fundamental anatomical principle and high-yield exam fact. All are first pharyngeal arch derivatives (Meckel's cartilage).
+  </div>
+
+  <!-- MASSETER -->
+  <div class="muscle-card muscle-masseter">
+    <div class="muscle-card-header">
+      <div class="muscle-badge">💪</div>
+      <div>
+        <h2>Masseter</h2>
+        <div class="muscle-name-sub">Most powerful masticatory muscle; primary jaw closer</div>
+      </div>
+    </div>
+    <div class="muscle-card-body">
+      <div class="muscle-row">
+        <div class="muscle-label">Origin</div>
+        <div class="muscle-value">
+          <strong>Superficial head (larger):</strong> Lower border of anterior ⅔ of zygomatic arch and zygomatic bone<br>
+          <strong>Deep head (smaller):</strong> Lower border AND medial surface of entire zygomatic arch (including posterior ⅓)
+        </div>
+      </div>
+      <div class="muscle-row">
+        <div class="muscle-label">Insertion</div>
+        <div class="muscle-value">
+          <strong>Superficial head:</strong> Lateral surface of angle and lower ramus<br>
+          <strong>Deep head:</strong> Upper ramus and lateral surface of coronoid process
+        </div>
+      </div>
+      <div class="muscle-row">
+        <div class="muscle-label">Action</div>
+        <div class="muscle-value">
+          <strong>Primary:</strong> Elevation of mandible (jaw closure) — most powerful closer<br>
+          <strong>Secondary:</strong> Superficial head assists protrusion; deep head assists retrusion
+        </div>
+      </div>
+      <div class="muscle-row">
+        <div class="muscle-label">Innervation</div>
+        <div class="muscle-value">
+          <strong>Masseteric nerve</strong> (branch of anterior division of CN V3)<br>
+          Enters deep surface of muscle through the mandibular (sigmoid) notch
+        </div>
+      </div>
+      <div class="muscle-row">
+        <div class="muscle-label">Blood Supply</div>
+        <div class="muscle-value">
+          <strong>Masseteric artery</strong> (branch of maxillary artery) — main supply<br>
+          Transverse facial artery (superficial temporal artery) — superficial supply
+        </div>
+      </div>
+      <div class="muscle-row">
+        <div class="muscle-label">Clinical</div>
+        <div class="muscle-value">
+          Most commonly hypertrophied in bruxism (jaw clenching); palpated directly over the cheek; primary Botox target for masseteric hypertrophy; trismus; "masseteric sling" formed with medial pterygoid
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TEMPORALIS -->
+  <div class="muscle-card muscle-temporalis">
+    <div class="muscle-card-header">
+      <div class="muscle-badge">🌀</div>
+      <div>
+        <h2>Temporalis</h2>
+        <div class="muscle-name-sub">Large fan-shaped muscle; unique ability to retrude the mandible</div>
+      </div>
+    </div>
+    <div class="muscle-card-body">
+      <div class="muscle-row">
+        <div class="muscle-label">Origin</div>
+        <div class="muscle-value">
+          Floor of the temporal fossa (temporal bone, parietal bone, greater wing of sphenoid, frontal bone) between the superior and inferior temporal lines; deep surface of temporal fascia
+        </div>
+      </div>
+      <div class="muscle-row">
+        <div class="muscle-label">Insertion</div>
+        <div class="muscle-value">
+          Coronoid process of mandible: tip, apex, anterior &amp; posterior borders, and medial surface; extends inferiorly to anterior border of ramus (retromolar triangle area)
+        </div>
+      </div>
+      <div class="muscle-row">
+        <div class="muscle-label">Action</div>
+        <div class="muscle-value">
+          <strong>All fibers:</strong> Elevation (jaw closure)<br>
+          <strong>Anterior vertical fibers:</strong> Elevation only<br>
+          <strong>Posterior horizontal fibers:</strong> <em>Retrusion</em> — the ONLY significant retruder<br>
+          <em>Note: unilateral contraction → lateral movement (ipsilateral)</em>
+        </div>
+      </div>
+      <div class="muscle-row">
+        <div class="muscle-label">Innervation</div>
+        <div class="muscle-value">
+          <strong>Deep temporal nerves</strong> (anterior &amp; posterior deep temporal nerves, sometimes middle)<br>
+          Branches of the anterior division of CN V3
+        </div>
+      </div>
+      <div class="muscle-row">
+        <div class="muscle-label">Blood Supply</div>
+        <div class="muscle-value">
+          <strong>Deep temporal arteries</strong> (anterior &amp; posterior; branches of maxillary artery)<br>
+          Middle temporal artery (from superficial temporal artery)
+        </div>
+      </div>
+      <div class="muscle-row">
+        <div class="muscle-label">Clinical</div>
+        <div class="muscle-value">
+          Temporal headaches; trismus assessed at temporalis; most common site of referred pain from TMD; palpated in temporal fossa; coronoidectomy may be needed in severe trismus/ankylosis; important anatomical corridor for temporal flap in reconstruction
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MEDIAL PTERYGOID -->
+  <div class="muscle-card muscle-medial-pt">
+    <div class="muscle-card-header">
+      <div class="muscle-badge">🔺</div>
+      <div>
+        <h2>Medial Pterygoid</h2>
+        <div class="muscle-name-sub">"Inside masseter" — forms the pterygoid sling with masseter</div>
+      </div>
+    </div>
+    <div class="muscle-card-body">
+      <div class="muscle-row">
+        <div class="muscle-label">Origin</div>
+        <div class="muscle-value">
+          <strong>Deep head (main):</strong> Medial surface of lateral pterygoid plate of sphenoid bone<br>
+          <strong>Superficial head (small):</strong> Pyramidal process of palatine bone AND maxillary tuberosity
+        </div>
+      </div>
+      <div class="muscle-row">
+        <div class="muscle-label">Insertion</div>
+        <div class="muscle-value">
+          Medial surface of mandibular ramus and angle of mandible (roughened medial pterygoid tuberosity — inferior to mandibular foramen)
+        </div>
+      </div>
+      <div class="muscle-row">
+        <div class="muscle-label">Action</div>
+        <div class="muscle-value">
+          <strong>Bilateral:</strong> Elevation (jaw closure) and protrusion<br>
+          <strong>Unilateral:</strong> Contralateral (lateral) excursion — moves mandible to OPPOSITE side<br>
+          Works synergistically with masseter as the "masseteric sling"
+        </div>
+      </div>
+      <div class="muscle-row">
+        <div class="muscle-label">Innervation</div>
+        <div class="muscle-value">
+          <strong>Medial pterygoid nerve</strong> (from main trunk of CN V3 — undivided portion, BEFORE it divides)<br>
+          Also supplies tensor tympani and tensor veli palatini via the otic ganglion
+        </div>
+      </div>
+      <div class="muscle-row">
+        <div class="muscle-label">Blood Supply</div>
+        <div class="muscle-value">
+          Pterygoid branches of maxillary artery
+        </div>
+      </div>
+      <div class="muscle-row">
+        <div class="muscle-label">Clinical</div>
+        <div class="muscle-value">
+          The pterygomandibular space lies between medial pterygoid and medial surface of ramus — key landmark for IANB anesthetic; spasm → trismus; intraoral abscess in this space; forms "sling" with masseter suspending the mandibular angle
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- LATERAL PTERYGOID -->
+  <div class="muscle-card muscle-lateral-pt">
+    <div class="muscle-card-header">
+      <div class="muscle-badge">↔️</div>
+      <div>
+        <h2>Lateral Pterygoid</h2>
+        <div class="muscle-name-sub">The ONLY opener &amp; protruder — most clinically important in TMD</div>
+      </div>
+    </div>
+    <div class="muscle-card-body">
+      <div class="muscle-row">
+        <div class="muscle-label">Origin</div>
+        <div class="muscle-value">
+          <strong>Superior head (smaller):</strong> Infratemporal surface (crest) of greater wing of sphenoid bone<br>
+          <strong>Inferior head (larger):</strong> Lateral surface of lateral pterygoid plate of sphenoid bone
+        </div>
+      </div>
+      <div class="muscle-row">
+        <div class="muscle-label">Insertion</div>
+        <div class="muscle-value">
+          <strong>Superior head:</strong> Anterior aspect of articular disc and fibrous capsule of TMJ<br>
+          <strong>Inferior head:</strong> Pterygoid fovea on anterior surface of condylar neck<br>
+          <em>Mnemonic: Superior head → Superior structure (disc); Inferior head → Inferior structure (condyle)</em>
+        </div>
+      </div>
+      <div class="muscle-row">
+        <div class="muscle-label">Action</div>
+        <div class="muscle-value">
+          <strong>Inferior head (active during OPENING):</strong> Pulls condyle forward → depression (opening) of mandible; bilateral action = depression + protrusion<br>
+          <strong>Superior head (active during CLOSING/clenching):</strong> Counter-intuitive! Active during closing — pulls disc forward and stabilizes it as condyle translates back; controls/brakes the disc<br>
+          <strong>Unilateral (both heads):</strong> Contralateral lateral excursion
+        </div>
+      </div>
+      <div class="muscle-row">
+        <div class="muscle-label">Innervation</div>
+        <div class="muscle-value">
+          <strong>Lateral pterygoid nerve</strong> (from anterior division of CN V3)<br>
+          Note: This branch comes from anterior division (not medial pterygoid nerve)
+        </div>
+      </div>
+      <div class="muscle-row">
+        <div class="muscle-label">Blood Supply</div>
+        <div class="muscle-value">
+          Pterygoid branches of maxillary artery
+        </div>
+      </div>
+      <div class="muscle-row">
+        <div class="muscle-label">Clinical</div>
+        <div class="muscle-value">
+          Superior head dysfunction → anterior disc displacement; difficult to palpate (requires intraoral approach, superior to maxillary tuberosity); key role in disc coordination; trismus; tender in TMD; the most significant muscle in internal derangement pathogenesis
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="callout callout-red">
+    <strong>🚨 HIGH YIELD: Superior Head of Lateral Pterygoid</strong>
+    The superior head is unique among ALL muscles of mastication: it is active during CLOSING (eccentric function), NOT during opening. This is the opposite of what one might expect. Its role is to pull the disc anteriorly to stabilize it on the condyle as the condyle translates posteriorly during closing. Dysfunction of this mechanism = disc displacement.
+  </div>
+
+  <h3 class="section-title" data-num="5">Muscle Comparison Table</h3>
+  <table class="study-table">
+    <thead><tr><th>Muscle</th><th>Closes</th><th>Opens</th><th>Protrudes</th><th>Retrudes</th><th>Lateral</th><th>Innervation</th></tr></thead>
+    <tbody>
+      <tr><td>Masseter</td><td>✅ Primary</td><td>—</td><td>✅ (superficial)</td><td>— (deep)</td><td>—</td><td>Masseteric n.</td></tr>
+      <tr><td>Temporalis</td><td>✅</td><td>—</td><td>—</td><td>✅ Posterior fibers</td><td>✅ Ipsilateral</td><td>Deep temporal nn.</td></tr>
+      <tr><td>Medial Pterygoid</td><td>✅</td><td>—</td><td>✅</td><td>—</td><td>✅ Contralateral</td><td>Medial pterygoid n.</td></tr>
+      <tr><td>Lateral Pterygoid (Inf.)</td><td>—</td><td>✅ Primary</td><td>✅</td><td>—</td><td>✅ Contralateral</td><td>Lateral pterygoid n.</td></tr>
+      <tr><td>Lateral Pterygoid (Sup.)</td><td>✅ (eccentric)</td><td>—</td><td>—</td><td>—</td><td>—</td><td>Lateral pterygoid n.</td></tr>
+    </tbody>
+  </table>
+
+  <div class="callout callout-gold">
+    <strong>Accessory Muscles of Depression (Jaw Openers)</strong>
+    <ul>
+      <li><strong>Digastric</strong> (anterior belly: CN V3; posterior belly: CN VII) — pulls mandible down via hyoid</li>
+      <li><strong>Mylohyoid</strong> (CN V3) — elevates hyoid, assists in opening</li>
+      <li><strong>Geniohyoid</strong> (C1 via CN XII) — pulls hyoid forward and mandible down</li>
+      <li><strong>Stylohyoid</strong> (CN VII) — elevates hyoid</li>
+    </ul>
+    These suprahyoid muscles can only depress the mandible when the hyoid is fixed inferiorly by the infrahyoid muscles.
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════ INNERVATION -->
+<div class="section" id="innervation">
+  <div class="section-hero" data-emoji="⚡">
+    <h1>Innervation</h1>
+    <p>The trigeminal nerve (CN V) — specifically its mandibular division (V3) — provides both sensory and motor innervation to the TMJ region.</p>
+  </div>
+
+  <h3 class="section-title" data-num="1">Trigeminal Nerve Overview</h3>
+  <div class="grid-3">
+    <div class="card" style="border-top:4px solid var(--blue)">
+      <h3 style="color:var(--blue)">V1 — Ophthalmic</h3>
+      <p>Sensory only<br>Foramen: Superior orbital fissure<br>Supplies: Orbit, forehead, nose</p>
+      <p style="margin-top:8px;font-size:13px;color:var(--text-muted)">Not directly involved in TMJ/mastication</p>
+    </div>
+    <div class="card" style="border-top:4px solid var(--teal)">
+      <h3 style="color:var(--teal)">V2 — Maxillary</h3>
+      <p>Sensory only<br>Foramen: Foramen rotundum<br>Supplies: Cheek, palate, upper teeth</p>
+      <p style="margin-top:8px;font-size:13px;color:var(--text-muted)">Pain from upper teeth can refer to TMJ area</p>
+    </div>
+    <div class="card" style="border-top:4px solid var(--red)">
+      <h3 style="color:var(--red)">V3 — Mandibular ★</h3>
+      <p><strong>Mixed (motor + sensory)</strong><br>Foramen: Foramen ovale<br>ALL muscles of mastication</p>
+      <p style="margin-top:8px;font-size:13px;font-weight:700;color:var(--red)">Primary nerve of TMJ!</p>
+    </div>
+  </div>
+
+  <h3 class="section-title" data-num="2">Mandibular Nerve (V3) — Detailed Branching</h3>
+
+  <div class="card">
+    <h4>Undivided Main Trunk (Before Division — exits foramen ovale)</h4>
+    <div class="nerve-branch">
+      <div class="nerve-label">Nervus Spinosus (Recurrent Meningeal Branch)</div>
+      <div class="nerve-detail">Re-enters skull via foramen spinosum → sensory to dura mater</div>
+    </div>
+    <div class="nerve-branch">
+      <div class="nerve-label">Nerve to Medial Pterygoid</div>
+      <div class="nerve-detail">Motor to medial pterygoid; also gives branches through otic ganglion → tensor tympani and tensor veli palatini</div>
+    </div>
+  </div>
+
+  <div class="grid-2">
+    <div class="card" style="border-top: 4px solid var(--red)">
+      <h3 style="color:var(--red)">Anterior Division — Mostly Motor</h3>
+      <div class="nerve-branch motor">
+        <div class="nerve-label">Masseteric Nerve</div>
+        <div class="nerve-detail">Motor to masseter; sensory to TMJ (anterior part); traverses sigmoid notch</div>
+      </div>
+      <div class="nerve-branch motor">
+        <div class="nerve-label">Deep Temporal Nerves (Anterior &amp; Posterior)</div>
+        <div class="nerve-detail">Motor to temporalis muscle; enter deep surface of temporalis</div>
+      </div>
+      <div class="nerve-branch motor">
+        <div class="nerve-label">Lateral Pterygoid Nerve</div>
+        <div class="nerve-detail">Motor to lateral pterygoid (both heads)</div>
+      </div>
+      <div class="nerve-branch sensory">
+        <div class="nerve-label">Long Buccal Nerve (Buccinator Nerve)</div>
+        <div class="nerve-detail">Only SENSORY branch of anterior division; sensory to buccal mucosa &amp; skin; NOT motor to buccinator (that's CN VII!)</div>
+      </div>
+    </div>
+    <div class="card" style="border-top: 4px solid var(--teal)">
+      <h3 style="color:var(--teal)">Posterior Division — Mostly Sensory</h3>
+      <div class="nerve-branch sensory">
+        <div class="nerve-label">Auriculotemporal Nerve</div>
+        <div class="nerve-detail">Sensory: TMJ posterior aspect (primary TMJ nerve), external ear, scalp, parotid; parasympathetic secretomotor to parotid (via otic ganglion fibers from CN IX); splits around middle meningeal artery</div>
+      </div>
+      <div class="nerve-branch sensory">
+        <div class="nerve-label">Lingual Nerve</div>
+        <div class="nerve-detail">Sensory to anterior ⅔ of tongue (general sensation); chorda tympani joins here (taste + secretomotor to submandibular &amp; sublingual glands)</div>
+      </div>
+      <div class="nerve-branch sensory">
+        <div class="nerve-label">Inferior Alveolar Nerve (IAN)</div>
+        <div class="nerve-detail">Enters mandibular foramen; motor branch: mylohyoid nerve (mylohyoid + anterior digastric); sensory: lower teeth; terminal: mental nerve (chin + lower lip)</div>
+      </div>
+    </div>
+  </div>
+
+  <h3 class="section-title" data-num="3">TMJ-Specific Innervation</h3>
+  <div class="grid-2">
+    <div class="card" style="border-left: 4px solid var(--teal)">
+      <h3>Auriculotemporal Nerve</h3>
+      <p><strong>Primary sensory nerve to the TMJ</strong> — provides the majority of joint innervation</p>
+      <ul>
+        <li>Innervates <strong>posterior &amp; lateral capsule</strong></li>
+        <li>Retrodiscal tissue</li>
+        <li>Lateral &amp; posterior surfaces of disc</li>
+        <li>Also: External auditory meatus, tragus, pre-auricular skin, temporal scalp</li>
+        <li>Explains why TMJ pain is often felt in the ear</li>
+      </ul>
+    </div>
+    <div class="card" style="border-left: 4px solid var(--red)">
+      <h3>Masseteric Nerve</h3>
+      <p>Provides innervation to <strong>anterior &amp; medial aspects of TMJ capsule</strong></p>
+      <ul>
+        <li>From anterior division of CN V3</li>
+        <li>Passes through sigmoid notch</li>
+        <li>Also motor to masseter</li>
+        <li>Anterior disc innervation</li>
+      </ul>
+      <p style="margin-top:8px;font-size:13px;color:var(--text-muted)">Deep temporal nerves and lateral pterygoid nerve also contribute minimally</p>
+    </div>
+  </div>
+
+  <div class="mnemonic">
+    <div class="mnemonic-title">🔮 Mnemonic — Anterior Division Branches</div>
+    <div class="mnemonic-content">
+      <div class="mnemonic-letters">"BLAND"</div>
+      <p style="margin-top:6px">
+        <strong>B</strong>uccal nerve (sensory only!)<br>
+        <strong>L</strong>ateral pterygoid nerve<br>
+        <strong>A</strong>nterior deep temporal nerve<br>
+        <strong>N</strong>erve to masseter (masseteric)<br>
+        <strong>D</strong>eep temporal nerve (posterior)
+      </p>
+    </div>
+  </div>
+
+  <div class="callout callout-red">
+    <strong>⚠️ Common Exam Trap — Buccinator Innervation</strong>
+    The buccinator muscle is NOT innervated by the buccal nerve (CN V3). The buccal nerve is purely SENSORY. Buccinator is innervated by the buccal branch of the FACIAL nerve (CN VII). This is one of the most commonly confused anatomy facts in dental exams.
+  </div>
+
+  <h3 class="section-title" data-num="4">Autonomic Innervation &amp; the Otic Ganglion</h3>
+  <div class="card">
+    <h4>Otic Ganglion</h4>
+    <ul>
+      <li>Parasympathetic ganglion located just below foramen ovale</li>
+      <li>Preganglionic: CN IX (glossopharyngeal) → tympanic plexus → lesser petrosal nerve → otic ganglion</li>
+      <li>Postganglionic fibers hitchhike on auriculotemporal nerve → parotid gland (secretomotor)</li>
+      <li>Also carries sympathetic and sensory fibers</li>
+    </ul>
+    <div class="callout callout-purple" style="margin-top:12px;margin-bottom:0">
+      <strong>Frey Syndrome (Auriculotemporal Syndrome)</strong>
+      After parotidectomy: aberrant regeneration of parasympathetic fibers (meant for parotid) into sweat gland innervation (sympathetic territory) → gustatory sweating (sweating of the cheek when eating). Treated with Botox or tympanic neurectomy.
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════ BLOOD SUPPLY -->
+<div class="section" id="blood">
+  <div class="section-hero" data-emoji="🩸">
+    <h1>Blood Supply</h1>
+    <p>The TMJ and muscles of mastication are supplied predominantly by branches of the external carotid artery, primarily via the maxillary artery.</p>
+  </div>
+
+  <h3 class="section-title" data-num="1">Overview of Arterial Supply</h3>
+  <div class="highlight-box">
+    <h3>External Carotid Artery → Main Source</h3>
+    <p>The external carotid artery gives 8 terminal/collateral branches. Two are relevant here:</p>
+    <ul>
+      <li><strong>Maxillary artery</strong> (terminal branch) — primary supply to deep masticatory muscles and TMJ</li>
+      <li><strong>Superficial temporal artery</strong> (terminal branch) — superficial supply to masseter and temporalis</li>
+    </ul>
+  </div>
+
+  <h3 class="section-title" data-num="2">Maxillary Artery</h3>
+  <div class="card">
+    <p>Arises behind the mandibular neck within the parotid gland. Passes through the infratemporal fossa. Three parts: mandibular, pterygoid, pterygopalatine.</p>
+    <table class="study-table" style="margin-top:12px">
+      <thead><tr><th>Branch</th><th>From Part</th><th>Supplies</th></tr></thead>
+      <tbody>
+        <tr><td>Masseteric artery</td><td>Pterygoid part</td><td>Masseter muscle (deep surface)</td></tr>
+        <tr><td>Anterior deep temporal a.</td><td>Pterygoid part</td><td>Temporalis (anterior portion)</td></tr>
+        <tr><td>Posterior deep temporal a.</td><td>Pterygoid part</td><td>Temporalis (posterior portion)</td></tr>
+        <tr><td>Pterygoid branches</td><td>Pterygoid part</td><td>Medial &amp; lateral pterygoid muscles</td></tr>
+        <tr><td>Inferior alveolar artery</td><td>Mandibular part</td><td>Lower teeth, mylohyoid</td></tr>
+        <tr><td>Middle meningeal artery</td><td>Mandibular part</td><td>Dura mater (via foramen spinosum)</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3 class="section-title" data-num="3">Superficial Temporal Artery</h3>
+  <div class="card">
+    <ul>
+      <li>The other terminal branch of external carotid artery (along with maxillary)</li>
+      <li>Ascends through parotid gland, crosses zygomatic arch</li>
+      <li>Divides into frontal and parietal branches</li>
+    </ul>
+    <div class="grid-2" style="margin-top:12px">
+      <div>
+        <h4>TMJ/Masticatory Branches</h4>
+        <ul>
+          <li><strong>Transverse facial artery</strong>: emerges from parotid, crosses masseter → superficial supply to masseter</li>
+          <li><strong>Middle temporal artery</strong>: pierces temporal fascia → temporalis muscle</li>
+          <li>Pre-auricular branches → lateral TMJ capsule</li>
+        </ul>
+      </div>
+      <div>
+        <h4>Clinical Relevance</h4>
+        <ul>
+          <li>Superficial temporal artery pulse palpable anterior to tragus of ear</li>
+          <li>Giant cell arteritis (temporal arteritis) can occlude this vessel → jaw claudication</li>
+          <li>Temporal flap uses superficial temporal artery as pedicle</li>
+          <li>Route of TMJ surgical approaches</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <h3 class="section-title" data-num="4">Venous Drainage</h3>
+  <div class="card">
+    <ul>
+      <li>Muscles drain via pterygoid venous plexus → maxillary vein → retromandibular vein</li>
+      <li>TMJ capsule → superficial temporal vein / pterygoid venous plexus</li>
+      <li>Retromandibular vein joins with posterior auricular vein → external jugular vein</li>
+      <li>Pterygoid venous plexus communicates with cavernous sinus (clinically important for spread of infection)</li>
+    </ul>
+  </div>
+
+  <table class="study-table">
+    <thead><tr><th>Structure</th><th>Primary Arterial Supply</th><th>Nerve That Accompanies</th></tr></thead>
+    <tbody>
+      <tr><td>Masseter</td><td>Masseteric a. + transverse facial a.</td><td>Masseteric nerve (sigmoid notch)</td></tr>
+      <tr><td>Temporalis</td><td>Deep temporal aa. + middle temporal a.</td><td>Deep temporal nerves</td></tr>
+      <tr><td>Medial Pterygoid</td><td>Pterygoid branches of maxillary a.</td><td>Medial pterygoid nerve</td></tr>
+      <tr><td>Lateral Pterygoid</td><td>Pterygoid branches of maxillary a.</td><td>Lateral pterygoid nerve</td></tr>
+      <tr><td>TMJ — anterior</td><td>Masseteric a.</td><td>Masseteric nerve</td></tr>
+      <tr><td>TMJ — posterior</td><td>Superficial temporal a. branches</td><td>Auriculotemporal nerve</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════ BIOMECHANICS -->
+<div class="section" id="biomech">
+  <div class="section-hero" data-emoji="⚙️">
+    <h1>Biomechanics of the TMJ</h1>
+    <p>The TMJ undergoes two distinct types of movement: rotation (hinge) and translation (glide), occurring in a coordinated sequence during jaw opening.</p>
+  </div>
+
+  <h3 class="section-title" data-num="1">Two-Phase Jaw Opening Mechanics</h3>
+  <div class="grid-2">
+    <div class="card" style="border-left:5px solid var(--blue)">
+      <h3 style="color:var(--blue)">Phase 1: Rotation (~0–25 mm)</h3>
+      <ul>
+        <li>Occurs in the <strong>inferior joint space</strong></li>
+        <li>Condyle rotates beneath the disc</li>
+        <li>Disc and condyle remain relatively stationary (disc does not translate)</li>
+        <li>Pure hinge movement</li>
+        <li>Muscles active: <strong>Lateral pterygoid inferior head + suprahyoids</strong></li>
+        <li>Produces approximately the first 25 mm of interincisal opening</li>
+      </ul>
+    </div>
+    <div class="card" style="border-left:5px solid var(--red)">
+      <h3 style="color:var(--red)">Phase 2: Translation (~25–50+ mm)</h3>
+      <ul>
+        <li>Occurs in the <strong>superior joint space</strong></li>
+        <li>Condyle + disc complex translate forward together</li>
+        <li>Condyle slides down the posterior slope of the articular eminence</li>
+        <li>Disc is pulled posteriorly by elastic upper stratum of bilaminar zone</li>
+        <li>Muscles: <strong>Lateral pterygoid inferior head + suprahyoids continue</strong></li>
+        <li>Full opening: condyle reaches anterior slope of articular eminence</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="callout callout-gold">
+    <strong>⚙️ Disc Coordination During Opening</strong>
+    As the condyle translates anteriorly, the disc is pulled POSTERIORLY by the elastic upper stratum (retraction). The lateral pterygoid (superior head, already tense from closing) gradually relaxes. The posterior band of the disc should remain on TOP of the condyle throughout. In disc displacement, the disc fails to remain coordinated and slips anteriorly off the condyle.
+  </div>
+
+  <h3 class="section-title" data-num="2">Jaw Movements &amp; Muscles Responsible</h3>
+  <table class="study-table">
+    <thead><tr><th>Movement</th><th>Primary Muscles</th><th>Accessory Muscles</th><th>Joint Space</th></tr></thead>
+    <tbody>
+      <tr>
+        <td>Depression (Opening)</td>
+        <td>Lateral pterygoid (inferior head) bilateral</td>
+        <td>Digastric, Mylohyoid, Geniohyoid (via hyoid fixation by infrahyoids)</td>
+        <td>Inferior (rotation) → Superior (translation)</td>
+      </tr>
+      <tr>
+        <td>Elevation (Closing)</td>
+        <td>Masseter, Temporalis (all fibers), Medial pterygoid</td>
+        <td>Lateral pterygoid superior head (disc control)</td>
+        <td>Both</td>
+      </tr>
+      <tr>
+        <td>Protrusion</td>
+        <td>Lateral pterygoid (both heads) bilateral, Medial pterygoid</td>
+        <td>Masseter (superficial head)</td>
+        <td>Superior (bilateral translation)</td>
+      </tr>
+      <tr>
+        <td>Retrusion</td>
+        <td>Temporalis (posterior fibers) bilateral</td>
+        <td>Digastric, Geniohyoid</td>
+        <td>Superior</td>
+      </tr>
+      <tr>
+        <td>Lateral Excursion (Right)</td>
+        <td>Right: Temporalis + Masseter (working side)<br>Left: Lateral pterygoid + Medial pterygoid (balancing side)</td>
+        <td>—</td>
+        <td>Working side = rotation; Balancing side = translation</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h3 class="section-title" data-num="3">Normal Range of Motion</h3>
+  <div class="quick-facts">
+    <div class="qf"><div class="qf-label">Max Mouth Opening</div><div class="qf-value">40–55 <span class="qf-unit">mm (interincisal)</span></div></div>
+    <div class="qf"><div class="qf-label">Slight Limitation</div><div class="qf-value">30–40 <span class="qf-unit">mm</span></div></div>
+    <div class="qf"><div class="qf-label">Moderate Limitation</div><div class="qf-value">20–30 <span class="qf-unit">mm</span></div></div>
+    <div class="qf"><div class="qf-label">Severe Limitation</div><div class="qf-value">&lt;20 <span class="qf-unit">mm</span></div></div>
+    <div class="qf"><div class="qf-label">Protrusion</div><div class="qf-value">6–9 <span class="qf-unit">mm</span></div></div>
+    <div class="qf"><div class="qf-label">Lateral Excursion</div><div class="qf-value">8–12 <span class="qf-unit">mm each side</span></div></div>
+  </div>
+
+  <h3 class="section-title" data-num="4">Mandibular Deviation Patterns</h3>
+  <div class="grid-2">
+    <div class="card">
+      <h3>Deviation</h3>
+      <p>Mandible deflects during opening but <strong>returns to midline</strong> at maximum opening.</p>
+      <ul>
+        <li>S-shaped or C-shaped path</li>
+        <li>Typically: disc displacement WITH reduction (reciprocal clicking)</li>
+        <li>Condyle "catches" the disc and opens normally after click</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Deflection</h3>
+      <p>Mandible deflects during opening and <strong>does NOT return to midline</strong> — stays toward affected side.</p>
+      <ul>
+        <li>Deflects toward the RESTRICTED side</li>
+        <li>Typically: disc displacement WITHOUT reduction (closed lock)</li>
+        <li>Or: unilateral ankylosis</li>
+        <li>Contralateral lateral excursion will also be limited</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="callout callout-blue">
+    <strong>🔵 Mandibular Movement in Lateral Excursion</strong>
+    During lateral excursion (e.g., chewing), two different movements occur simultaneously:
+    <ul>
+      <li><strong>Working side</strong> (toward which mandible moves): condyle rotates around a vertical axis (Bennett movement) — ipsilateral muscles contract</li>
+      <li><strong>Balancing side (non-working)</strong>: condyle translates forward and medially — contralateral lateral pterygoid is the key muscle</li>
+    </ul>
+    The Bennett angle describes the lateral shift of the mandible during lateral movement. Important for dental articulator settings.
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════ CLINICAL EXAM -->
+<div class="section" id="exam">
+  <div class="section-hero" data-emoji="🔍">
+    <h1>Clinical Examination of the TMJ</h1>
+    <p>A systematic approach covering history, inspection, palpation, range of motion, auscultation, and special tests.</p>
+  </div>
+
+  <h3 class="section-title" data-num="1">History Taking</h3>
+  <div class="card">
+    <div class="grid-2">
+      <div>
+        <h4>Chief Complaint &amp; Pain Assessment</h4>
+        <ul>
+          <li><strong>Location</strong>: preauricular, temple, cheek, ear, teeth (referred)</li>
+          <li><strong>Quality</strong>: aching, sharp, throbbing, dull</li>
+          <li><strong>Onset</strong>: sudden (trauma) vs. gradual</li>
+          <li><strong>Duration &amp; pattern</strong>: constant vs. episodic</li>
+          <li><strong>Modifying factors</strong>: chewing, talking, yawning, morning vs. evening</li>
+          <li><strong>VAS score</strong> (0–10)</li>
+        </ul>
+      </div>
+      <div>
+        <h4>Joint Symptoms</h4>
+        <ul>
+          <li><strong>Sounds</strong>: clicking, popping, crepitus, grating</li>
+          <li><strong>Function</strong>: limited opening, locking (open or closed), catching</li>
+          <li><strong>Locking pattern</strong>: morning stiffness, intermittent, progressive</li>
+          <li><strong>Referred symptoms</strong>: otalgia, tinnitus, aural fullness, headache</li>
+        </ul>
+      </div>
+    </div>
+    <div class="grid-2" style="margin-top:12px">
+      <div>
+        <h4>Parafunctional Habits (KEY)</h4>
+        <ul>
+          <li>Bruxism (grinding — usually nocturnal)</li>
+          <li>Clenching (diurnal or nocturnal)</li>
+          <li>Nail-biting, pen-chewing</li>
+          <li>Unilateral chewing preference</li>
+          <li>Postural habits (chin resting on hand)</li>
+        </ul>
+      </div>
+      <div>
+        <h4>Relevant History</h4>
+        <ul>
+          <li>Trauma: blow to chin, whiplash</li>
+          <li>Dental: recent extractions, new restorations, orthodontic treatment</li>
+          <li>Medical: RA, psoriasis, gout, Ehlers-Danlos, fibromyalgia</li>
+          <li>Psychological: anxiety, depression, stress</li>
+          <li>Previous TMD treatment</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <h3 class="section-title" data-num="2">Inspection</h3>
+  <div class="grid-2">
+    <div class="card">
+      <h3>Extraoral Inspection</h3>
+      <ul>
+        <li>Facial symmetry (asymmetry → muscle hypertrophy, condylar hyperplasia, ankylosis)</li>
+        <li>Swelling over TMJ (preauricular)</li>
+        <li>Masseter hypertrophy (bilateral fullness of cheeks)</li>
+        <li>Mandibular midline position</li>
+        <li>Deviation/deflection during opening (observe from front)</li>
+        <li>Profile: retrognathia, prognathia, deep bite, open bite</li>
+        <li>Muscle bulk: temporalis wasting (neurological)</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Intraoral Inspection</h3>
+      <ul>
+        <li><strong>Wear facets</strong>: attrition from bruxism (matching facets on opposing teeth)</li>
+        <li><strong>Abfraction</strong>: cervical non-carious lesions (tooth flexure from clenching)</li>
+        <li><strong>Scalloped tongue</strong>: tongue pressure (clenching habit)</li>
+        <li><strong>Linea alba</strong>: buccal mucosa ridge (cheek biting)</li>
+        <li>Tori (mandibular/palatal): associated with parafunctional habits</li>
+        <li>Occlusion: open bite, deep bite, cross-bite, Angle classification</li>
+        <li>Missing teeth, worn restorations, dentures</li>
+      </ul>
+    </div>
+  </div>
+
+  <h3 class="section-title" data-num="3">Palpation</h3>
+  <div class="card">
+    <h4>TMJ Palpation</h4>
+    <p>Place fingertips bilaterally, assess with mouth closed then during opening/closing. Grade tenderness 0–3.</p>
+    <div class="grid-2">
+      <div>
+        <p><strong>Lateral approach</strong>: fingertips 1 cm anterior to tragus, just below zygomatic arch → palpate lateral condylar pole</p>
+        <p><strong>Posterior approach (via EAC)</strong>: little finger gently inserted into external auditory canal → assess posterior condylar movement and tenderness of posterior attachment</p>
+      </div>
+      <div>
+        <p><strong>What to feel for</strong>:</p>
+        <ul>
+          <li>Tenderness (preauricular, posterior)</li>
+          <li>Condylar translation (smooth vs. jerky)</li>
+          <li>Clicking/popping felt through finger</li>
+          <li>Asymmetric movement</li>
+          <li>Reduced translation (&lt;10 mm forward movement = restriction)</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h4>Muscle Palpation</h4>
+    <table class="study-table">
+      <thead><tr><th>Muscle</th><th>Palpation Technique</th><th>Positive Finding</th></tr></thead>
+      <tbody>
+        <tr><td>Masseter</td><td>Index finger on cheek at zygomatic arch origin, thumb at angle. Ask patient to clench.</td><td>Tenderness, hardening on clench, ropey texture (myofascial)</td></tr>
+        <tr><td>Temporalis</td><td>Fingertips over temporal fossa (above zygomatic arch). Anterior, middle &amp; posterior fibers. Ask to clench.</td><td>Tenderness especially in temporal headache; ask to bite on posterior teeth vs anterior</td></tr>
+        <tr><td>Medial Pterygoid</td><td>Extraoral: medial to mandibular angle. Intraoral: finger along medial ramus at retromolar pad area</td><td>Deep tenderness medial to angle; trismus pattern</td></tr>
+        <tr><td>Lateral Pterygoid</td><td>Intraoral only: finger superiorly and posteriorly to maxillary tuberosity. Very limited access. Alternative: area above maxillary tuberosity, superiorly directed pressure</td><td>Deep pre-eminence tenderness; pain on protrusion; limited access makes true LP palpation unreliable</td></tr>
+        <tr><td>Digastric (anterior)</td><td>Below mandible at midline, finger pressure toward floor of mouth</td><td>Tenderness: myofascial, suprahyoid pain</td></tr>
+        <tr><td>Cervical muscles</td><td>SCM, trapezius, suboccipitals, splenius capitis</td><td>Often co-tender in TMD — cervical component</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3 class="section-title" data-num="4">Range of Motion Measurement</h3>
+  <div class="card">
+    <div class="steps">
+      <div class="step"><div class="step-num">1</div><div class="step-content"><strong>Mark midline</strong><p>Mark the mandibular midline with a felt tip pen on the incisor</p></div></div>
+      <div class="step"><div class="step-num">2</div><div class="step-content"><strong>Measure maximum comfortable opening (MCO)</strong><p>Patient opens as wide as comfortable without pain (active range)</p></div></div>
+      <div class="step"><div class="step-num">3</div><div class="step-content"><strong>Measure maximum mouth opening (MMO)</strong><p>Examiner applies gentle passive pressure to increase opening — note any pain</p></div></div>
+      <div class="step"><div class="step-num">4</div><div class="step-content"><strong>Measure interincisal distance</strong><p>From upper to lower central incisor tip. Add overbite. Use millimeter ruler or caliper. Record pain: none/same/worse</p></div></div>
+      <div class="step"><div class="step-num">5</div><div class="step-content"><strong>Measure protrusion</strong><p>Distance lower incisors move in front of upper incisors from centric occlusion</p></div></div>
+      <div class="step"><div class="step-num">6</div><div class="step-content"><strong>Measure lateral excursion</strong><p>From midline to maximal excursion on each side. Note deviation from midline during opening</p></div></div>
+    </div>
+  </div>
+
+  <h3 class="section-title" data-num="5">Auscultation</h3>
+  <div class="grid-3">
+    <div class="card" style="border-top:4px solid var(--blue)">
+      <h3>Click / Pop</h3>
+      <p>Single, distinct sound during opening or closing</p>
+      <ul>
+        <li><strong>Reciprocal clicking</strong>: opening click + closing click = disc displacement WITH reduction</li>
+        <li>Opening click: condyle recaptures anteriorly displaced disc</li>
+        <li>Closing click: disc slips off again</li>
+        <li>Reciprocal click disappears on protrusive opening</li>
+      </ul>
+    </div>
+    <div class="card" style="border-top:4px solid var(--red)">
+      <h3>Crepitus</h3>
+      <p>Continuous grating, grinding sound throughout movement</p>
+      <ul>
+        <li>Like gravel/sand sound</li>
+        <li>Indicates: degenerative joint disease (OA/DJD)</li>
+        <li>Rough articular surfaces rubbing</li>
+        <li>Heard AND felt during palpation</li>
+        <li>May also: perforation of disc</li>
+      </ul>
+    </div>
+    <div class="card" style="border-top:4px solid var(--gold)">
+      <h3>Subluxation Pop</h3>
+      <p>Loud single sound near end of opening range</p>
+      <ul>
+        <li>Condyle moving over articular eminence</li>
+        <li>Hypermobility</li>
+        <li>Not necessarily painful</li>
+        <li>Different from disc-related click (occurs at different point in range)</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="callout callout-blue">
+    <strong>🎯 Key Clinical Correlation: Sound → Diagnosis</strong>
+    <ul>
+      <li><strong>Reciprocal click (opening + closing)</strong> → Disc displacement with reduction (DDwR)</li>
+      <li><strong>Single late opening click only</strong> → Hypermobility</li>
+      <li><strong>Crepitus throughout range</strong> → Degenerative joint disease (DJD/OA)</li>
+      <li><strong>No sound + limited opening + deviation toward affected side</strong> → Disc displacement WITHOUT reduction (DDwoR) — "closed lock"</li>
+      <li><strong>No sound + normal opening</strong> → Myofascial pain or arthralgia (normal joint mechanics)</li>
+    </ul>
+  </div>
+
+  <h3 class="section-title" data-num="6">Red Flags — Refer / Investigate</h3>
+  <div class="red-flag"><div class="red-flag-icon">!</div><div class="red-flag-text"><strong>Progressive trismus without clear cause</strong> — rule out malignancy (pterygoid plate involvement, NPC, parotid malignancy)</div></div>
+  <div class="red-flag"><div class="red-flag-icon">!</div><div class="red-flag-text"><strong>Rapid progressive unilateral facial asymmetry</strong> — condylar hyperplasia (active growth), neoplasm</div></div>
+  <div class="red-flag"><div class="red-flag-icon">!</div><div class="red-flag-text"><strong>Numbness/paraesthesia of the lip or chin</strong> — IAN involvement; rule out malignancy (numb chin syndrome)</div></div>
+  <div class="red-flag"><div class="red-flag-icon">!</div><div class="red-flag-text"><strong>Jaw claudication</strong> — jaw pain on chewing that goes away with rest → giant cell arteritis (temporal arteritis); ESR urgently</div></div>
+  <div class="red-flag"><div class="red-flag-icon">!</div><div class="red-flag-text"><strong>Night sweats, weight loss, constitutional symptoms</strong> — systemic disease, malignancy</div></div>
+  <div class="red-flag"><div class="red-flag-icon">!</div><div class="red-flag-text"><strong>Pulsatile TMJ mass / vascular sounds</strong> — vascular anomaly (AVF, AVM)</div></div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════ DISORDERS -->
+<div class="section" id="disorders">
+  <div class="section-hero" data-emoji="🏥">
+    <h1>TMJ Disorders (TMD)</h1>
+    <p>A heterogeneous group of conditions affecting the masticatory muscles, TMJ, and associated structures. Classification using the DC/TMD (2014) system.</p>
+  </div>
+
+  <h3 class="section-title" data-num="1">DC/TMD Classification (Diagnostic Criteria)</h3>
+
+  <div class="callout callout-blue">
+    <strong>DC/TMD 2014 — Two Axes</strong>
+    Axis I: Physical diagnosis (what's wrong structurally/physiologically)<br>
+    Axis II: Psychosocial assessment (impact on daily function, psychological distress, chronic pain disability)
+  </div>
+
+  <div class="card" style="border-left:5px solid var(--red)">
+    <h3 style="color:var(--red)">GROUP I: Muscle Disorders</h3>
+    <table class="study-table">
+      <thead><tr><th>Diagnosis</th><th>Clinical Features</th><th>Key Criteria</th></tr></thead>
+      <tbody>
+        <tr><td>Myalgia</td><td>Diffuse muscle pain, worsened by jaw use</td><td>Pain in jaw muscle, modified by movement; &gt;1 site tender on palpation</td></tr>
+        <tr><td>Local Myalgia</td><td>Localized muscle tenderness</td><td>Pain felt in same location as pressure; ≤20 mm spread</td></tr>
+        <tr><td>Myofascial Pain</td><td>Regional pain, trigger points</td><td>Pain spreads &gt;20 mm but within 5 cm of site; palpation reproduces pain</td></tr>
+        <tr><td>Myofascial Pain with Referral</td><td>Pain remote from trigger point</td><td>Palpation reproduces remote pain (familiar pain pattern)</td></tr>
+        <tr><td>Myofibrotic Contracture</td><td>Limited opening, firm end feel, no pain</td><td>MMO &lt;40mm; firm capsular end feel; fibrosis on imaging</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="card" style="border-left:5px solid var(--blue)">
+    <h3 style="color:var(--blue)">GROUP II: Disc Displacements</h3>
+    <table class="study-table">
+      <thead><tr><th>Diagnosis</th><th>Clinical Features</th><th>MRI Findings</th></tr></thead>
+      <tbody>
+        <tr><td><strong>DD with Reduction (DDwR)</strong></td><td>Reciprocal clicking; click disappears on protrusive opening; no limited opening</td><td>Disc anterior to condyle in closed position; disc on condyle in open position (recaptures)</td></tr>
+        <tr><td><strong>DDwR with Intermittent Locking</strong></td><td>Clicking with episodic catching/locking that self-resolves; intermittent limited opening</td><td>Same as DDwR; occasional failure to recapture</td></tr>
+        <tr><td><strong>DD without Reduction, with Limited Opening</strong></td><td>No click; MMO &lt;40mm; deflects toward affected side; acute closed lock</td><td>Disc anterior on condyle in BOTH closed and open positions; no recapture</td></tr>
+        <tr><td><strong>DD without Reduction, without Limited Opening</strong></td><td>No click; MMO ≥40mm; chronic closed lock; disc has elongated</td><td>Disc anterior but condyle translates past disc; or disc perforated</td></tr>
+      </tbody>
+    </table>
+    <div class="callout callout-gold" style="margin-top:12px;margin-bottom:0">
+      <strong>Understanding Disc Displacement Progression</strong>
+      Normal → DDwR (clicking) → DDwR with intermittent locking → DDwoR with limited opening (acute closed lock) → DDwoR without limited opening (chronic) → DJD/OA. This is the conceptual cascade but not all patients follow this sequence.
+    </div>
+  </div>
+
+  <div class="card" style="border-left:5px solid var(--teal)">
+    <h3 style="color:var(--teal)">GROUP III: Joint Disorders</h3>
+    <table class="study-table">
+      <thead><tr><th>Diagnosis</th><th>Clinical Features</th><th>Imaging</th></tr></thead>
+      <tbody>
+        <tr><td>Arthralgia</td><td>Preauricular pain; familiar pain on palpation of joint; no DJD on imaging</td><td>Normal joint; possible effusion on MRI</td></tr>
+        <tr><td>Osteoarthritis (OA/DJD)</td><td>Crepitus; pain; morning stiffness; reduced ROM</td><td>Subchondral sclerosis, flattening, osteophytes, erosions on CT/CBCT</td></tr>
+        <tr><td>Osteoarthrosis</td><td>Same findings as OA but NO PAIN (adaptive remodeling)</td><td>Same radiographic changes; no pain</td></tr>
+        <tr><td>Systemic Arthritides</td><td>Bilateral involvement; systemic features; RA, psoriatic, gout</td><td>Erosion pattern; see systemic workup</td></tr>
+        <tr><td>Osteonecrosis</td><td>Rare; bisphosphonate-related; post-trauma</td><td>Avascular necrosis pattern on MRI; dead bone signal</td></tr>
+        <tr><td>Neoplasm</td><td>Progressive symptoms; may be painless; mass</td><td>Bone destruction; soft tissue mass</td></tr>
+        <tr><td>Fracture</td><td>History of trauma; acute onset</td><td>Radiograph/CT: fracture line</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3 class="section-title" data-num="2">TMJ Dislocation</h3>
+  <div class="grid-2">
+    <div class="card">
+      <h3>Acute Dislocation</h3>
+      <p>Condyle moves <strong>anterior to the articular eminence</strong> and cannot self-reduce. Patient presents with mouth open and unable to close.</p>
+      <ul>
+        <li>Causes: wide yawning, dental extraction, seizure, trauma, endoscopy</li>
+        <li>Bilateral more common than unilateral</li>
+        <li>Patient: chin protrudes, cannot close mouth, masticatory muscles in spasm</li>
+      </ul>
+      <h4>Management (Hippocratic Technique)</h4>
+      <ul>
+        <li>Patient seated, clinician stands in front</li>
+        <li>Thumbs on mandibular molar region (protected with gauze)</li>
+        <li>Fingers under chin</li>
+        <li>Apply: <strong>downward pressure</strong> (depress condyle), then <strong>posterior pressure</strong> (push back into fossa)</li>
+        <li>LA (auriculotemporal block) and/or diazepam may be needed</li>
+        <li>Post-reduction: soft diet, avoid wide opening, chin bandage if recurrent</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Chronic Recurrent Dislocation / Hypermobility</h3>
+      <p>Repeated episodes of condyle passing anterior to eminence</p>
+      <ul>
+        <li>Risk factors: ligamentous laxity (Ehlers-Danlos), psychiatric patients on phenothiazines, shallow eminence</li>
+        <li>May become habitual (subluxation = partial dislocation, self-reducing)</li>
+      </ul>
+      <h4>Surgical Options</h4>
+      <ul>
+        <li><strong>Eminoplasty</strong>: augment height of articular eminence (bone graft or alloplast)</li>
+        <li><strong>Eminectomy</strong>: remove articular eminence → no mechanical block</li>
+        <li><strong>Lateral pterygoid myotomy</strong>: reduce protrusive force</li>
+        <li><strong>Capsulorrhaphy</strong>: tighten capsule</li>
+        <li><strong>Botox</strong> to lateral pterygoid: reduce translation (newer approach)</li>
+      </ul>
+    </div>
+  </div>
+
+  <h3 class="section-title" data-num="3">Ankylosis</h3>
+  <div class="card">
+    <p>Bony or fibrous union between condyle and temporal bone, resulting in restricted or absent jaw movement.</p>
+    <div class="grid-2">
+      <div>
+        <h4>Classification</h4>
+        <ul>
+          <li><strong>True ankylosis</strong>: intra-articular fusion (bony or fibrous)</li>
+          <li><strong>False (extra-articular) ankylosis</strong>: bony/fibrous union outside the joint (coronoid/zygomatic arch fusion; masseter fibrosis; depressed zygomatic fracture)</li>
+          <li><strong>Fibrous</strong>: early; some residual movement; no bony union on CT</li>
+          <li><strong>Bony</strong>: complete immobility; CT shows bone bridging fossa and condyle</li>
+        </ul>
+      </div>
+      <div>
+        <h4>Causes</h4>
+        <ul>
+          <li>Trauma (most common in adults): subcondylar fractures in children</li>
+          <li>Infection: septic arthritis, otitis media spread</li>
+          <li>Systemic: RA, ankylosing spondylitis, psoriatic arthritis</li>
+          <li>Post-surgical / post-radiation</li>
+        </ul>
+        <h4>Management</h4>
+        <ul>
+          <li>Coronoidectomy (always) + gap arthroplasty or condylar reconstruction</li>
+          <li>Total joint replacement for severe cases</li>
+          <li>Aggressive post-operative physiotherapy (key!)</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════ IMAGING -->
+<div class="section" id="imaging">
+  <div class="section-hero" data-emoji="📷">
+    <h1>Imaging of the TMJ</h1>
+    <p>From plain radiographs to MRI — selecting the right modality based on the clinical question.</p>
+  </div>
+
+  <div class="callout callout-gold">
+    <strong>🎯 Rule of Thumb: Match Modality to Question</strong>
+    <ul>
+      <li><strong>MRI</strong> = gold standard for DISC position, soft tissue, effusion</li>
+      <li><strong>CT / CBCT</strong> = gold standard for BONE pathology (erosions, fractures, osteophytes, ankylosis)</li>
+      <li><strong>OPG</strong> = first-line screening; overview; condyle morphology</li>
+      <li><strong>Bone scan + SPECT-CT</strong> = condylar hyperplasia (active growth assessment)</li>
+    </ul>
+  </div>
+
+  <table class="study-table">
+    <thead><tr><th>Modality</th><th>What It Shows</th><th>Advantages</th><th>Limitations</th><th>Clinical Use</th></tr></thead>
+    <tbody>
+      <tr>
+        <td>OPG (Orthopantomogram)</td>
+        <td>Condyle shape, height, position; gross bony changes</td>
+        <td>Low dose; wide view; readily available; shows both joints simultaneously</td>
+        <td>2D only; distortion/magnification (~25%); overlapping structures; disc invisible; superimposition</td>
+        <td>Initial screening; fractures; DJD overview; condylar morphology</td>
+      </tr>
+      <tr>
+        <td>CBCT (Cone Beam CT)</td>
+        <td>3D bone detail; cortical changes; osteophytes; erosions</td>
+        <td>Lower radiation than medical CT; high bone resolution; 3D views; dental-based</td>
+        <td>Soft tissue inferior to medical CT; no disc; metal artifacts</td>
+        <td>DJD; condylar fractures; ankylosis; asymmetry; surgical planning</td>
+      </tr>
+      <tr>
+        <td>CT Scan (Medical)</td>
+        <td>Bone and soft tissue (with contrast); 3D reconstruction</td>
+        <td>Excellent bone detail; soft tissue with contrast; reconstructions</td>
+        <td>Higher radiation; cost; metal artifacts</td>
+        <td>Complex fractures; ankylosis; neoplasms; abscess; pre-surgical planning</td>
+      </tr>
+      <tr>
+        <td>MRI</td>
+        <td>Disc position &amp; morphology; bilaminar zone; effusion; bone marrow</td>
+        <td>No radiation; superior soft tissue; dynamic imaging possible; disc assessment</td>
+        <td>Cost; availability; claustrophobia; metal implants; bone detail inferior</td>
+        <td>Disc displacement; retrodiscal inflammation; avascular necrosis; neoplasm; effusion</td>
+      </tr>
+      <tr>
+        <td>Arthrography</td>
+        <td>Joint space contour; disc position via contrast</td>
+        <td>Dynamic; can assess both spaces</td>
+        <td>Invasive; radiation; operator-dependent; largely replaced by MRI</td>
+        <td>Largely historical now; where MRI unavailable</td>
+      </tr>
+      <tr>
+        <td>Bone Scintigraphy (Tc-99m + SPECT-CT)</td>
+        <td>Metabolic bone activity; growth centers</td>
+        <td>Functional information; shows active vs. inactive growth</td>
+        <td>Radiation; poor spatial resolution alone; needs SPECT-CT for localization</td>
+        <td>Condylar hyperplasia (active growth?); inflammatory arthritis; bone metastases</td>
+      </tr>
+      <tr>
+        <td>Transcranial Radiograph</td>
+        <td>Lateral view of condyle in fossa</td>
+        <td>Low tech</td>
+        <td>Very limited; high distortion; largely obsolete</td>
+        <td>Historical; replaced by CBCT</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h3 class="section-title" data-num="2">MRI of the TMJ — Key Concepts</h3>
+  <div class="grid-2">
+    <div class="card">
+      <h3>Normal MRI Findings</h3>
+      <ul>
+        <li>Disc: low signal (dark) on both T1 and T2 — fibrocartilage</li>
+        <li><strong>Normal disc position (closed mouth)</strong>: posterior band of disc at 12 o'clock position on condyle (superior); intermediate zone between condyle and eminence</li>
+        <li>Superior joint space: thin fluid rim (normal)</li>
+        <li>Retrodiscal tissue: intermediate to high signal (vascular)</li>
+        <li>Condylar marrow: normal fatty marrow signal</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Abnormal MRI Findings</h3>
+      <ul>
+        <li><strong>Disc displacement</strong>: posterior band anterior to 12 o'clock (DDwR = recaptures on opening; DDwoR = does not)</li>
+        <li><strong>Disc morphology</strong>: biconvex disc (not biconcave) = deformed/elongated</li>
+        <li><strong>Effusion</strong>: high T2 signal in joint space</li>
+        <li><strong>Bone marrow edema</strong>: high T2 signal in condyle — indicates active inflammation/OA</li>
+        <li><strong>Osteonecrosis</strong>: geographic low T1/T2 signal in condyle</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="callout callout-red">
+    <strong>⚠️ Interpreting Disc Position</strong>
+    The disc is classified as displaced when the posterior band is anterior to the 12 o'clock position in closed mouth MRI. Mild displacement: 11–12 o'clock. Moderate: 9–11 o'clock. Severe: less than 9 o'clock. However — correlate with clinical findings. Many asymptomatic individuals have MRI disc displacement. Do not treat the MRI alone.
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════ TREATMENT -->
+<div class="section" id="treatment">
+  <div class="section-hero" data-emoji="💊">
+    <h1>Treatment of TMJ Disorders</h1>
+    <p>A stepwise approach from least to most invasive — the majority of TMD is self-limiting and responds to conservative management.</p>
+  </div>
+
+  <div class="callout callout-green">
+    <strong>✅ Core Principle: Conservative First</strong>
+    70–90% of TMD cases improve with reversible, conservative treatment alone. Surgery should be reserved for patients who fail adequate conservative management. Never perform irreversible treatment (irreversible occlusal adjustment, joint surgery) without a thorough trial of reversible conservative treatment.
+  </div>
+
+  <h3 class="section-title" data-num="1">Conservative (Non-Surgical)</h3>
+  <div class="grid-2">
+    <div class="card">
+      <h3>Patient Education &amp; Reassurance</h3>
+      <ul>
+        <li>Explain the benign nature of most TMD</li>
+        <li>Self-management: jaw rest, soft diet, avoid wide opening</li>
+        <li>Heat therapy: moist heat 20 min for muscle pain</li>
+        <li>Cold therapy (ice packs): acute joint inflammation</li>
+        <li>Parafunctional habit elimination counseling</li>
+        <li>Postural advice (forward head posture → cervical → TMD)</li>
+        <li>Sleep hygiene (impacts bruxism)</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Physiotherapy</h3>
+      <ul>
+        <li>Jaw exercises: controlled opening/closing exercises</li>
+        <li>Myofascial release and trigger point therapy</li>
+        <li>TENS (Transcutaneous electrical nerve stimulation)</li>
+        <li>Ultrasound therapy (promotes healing)</li>
+        <li>Low-level laser therapy (LLLT)</li>
+        <li>Manual therapy: cervical manipulation if cervicogenic component</li>
+        <li>Cognitive-behavioral therapy (CBT) for chronic pain</li>
+        <li>Biofeedback for bruxism management</li>
+      </ul>
+    </div>
+  </div>
+
+  <h3 class="section-title" data-num="2">Occlusal Appliance Therapy (Splints)</h3>
+  <table class="study-table">
+    <thead><tr><th>Splint Type</th><th>Design</th><th>Indication</th><th>Mechanism</th></tr></thead>
+    <tbody>
+      <tr>
+        <td>Stabilization Splint (Michigan / Flat Plane)</td>
+        <td>Full-arch coverage (upper); flat occlusal surface; cuspid rise; 1–2 mm posterior tooth separation</td>
+        <td>Bruxism; myofascial pain; general TMD; first-line appliance</td>
+        <td>Equalizes occlusal forces; decompresses joint; allows muscles to relax; protects teeth from wear</td>
+      </tr>
+      <tr>
+        <td>Anterior Repositioning Splint</td>
+        <td>Full arch; anterior ramp positions mandible forward</td>
+        <td>Disc displacement with reduction (DDwR) — recaptures disc</td>
+        <td>Holds condyle forward under disc; reduces clicking; used short-term only (risk of posterior open bite)</td>
+      </tr>
+      <tr>
+        <td>NTI (Nociceptive Trigeminal Inhibition)</td>
+        <td>Small anterior-only device; covers anterior teeth only</td>
+        <td>Migraine; bruxism; tension headaches</td>
+        <td>Inhibits elevator muscle activity by proprioceptive mechanism; controversial in posterior cases</td>
+      </tr>
+      <tr>
+        <td>Soft Night Guard</td>
+        <td>Soft vacuum-formed; less precise</td>
+        <td>Mild bruxism; tooth protection</td>
+        <td>Cushioning; however can INCREASE muscle activity in some patients</td>
+      </tr>
+      <tr>
+        <td>Pivot Appliance</td>
+        <td>Single posterior contact points</td>
+        <td>DJD; distract joint to reduce compression</td>
+        <td>Lever action reduces intracondylar pressure</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h3 class="section-title" data-num="3">Pharmacological Treatment</h3>
+  <div class="drug-card"><div class="drug-icon" style="background:#fef2f2">💊</div><div><div class="drug-name">NSAIDs (Ibuprofen 400–800mg TID, Naproxen 500mg BD)</div><div class="drug-detail">Anti-inflammatory, analgesic. First-line for acute arthralgia and myalgia. Short-term 1–2 weeks. GI protection if prolonged. COX-2 inhibitors (celecoxib) if GI risk.</div></div></div>
+  <div class="drug-card"><div class="drug-icon" style="background:#f0fdf4">💊</div><div><div class="drug-name">Muscle Relaxants (Cyclobenzaprine 5–10mg at night, Methocarbamol)</div><div class="drug-detail">Reduces muscle spasm and bruxism. Usually prescribed at night only. Short-term use. Caution: sedation, avoid in elderly, not for long-term use. Cyclobenzaprine is chemically related to TCAs.</div></div></div>
+  <div class="drug-card"><div class="drug-icon" style="background:#eff6ff">💊</div><div><div class="drug-name">Tricyclic Antidepressants (Amitriptyline 10–25mg nocte)</div><div class="drug-detail">Low-dose for chronic pain and sleep quality. Reduces central sensitization. Takes 4–6 weeks for full effect. SE: anticholinergic effects, sedation, weight gain.</div></div></div>
+  <div class="drug-card"><div class="drug-icon" style="background:#faf5ff">💊</div><div><div class="drug-name">Benzodiazepines (Clonazepam 0.5mg at night)</div><div class="drug-detail">For short-term bruxism, sleep disturbance, anxious patients. Very short term only (2–4 weeks) — risk of dependence. GABAergic mechanism reduces REM sleep bruxism.</div></div></div>
+  <div class="drug-card"><div class="drug-icon" style="background:#fff7ed">💉</div><div><div class="drug-name">Corticosteroid Injection (Methylprednisolone, Triamcinolone intra-articular)</div><div class="drug-detail">Direct anti-inflammatory into superior joint space. Used for acute synovitis, effusion, severe arthralgia. Limit to 3 injections/year — risk of articular cartilage damage. Guided by image if possible.</div></div></div>
+  <div class="drug-card"><div class="drug-icon" style="background:#f0fdf9">💉</div><div><div class="drug-name">Sodium Hyaluronate (Hyaluronic Acid) Injection</div><div class="drug-detail">Viscosupplementation into superior joint space. Improves lubrication; anti-inflammatory; promotes disc repair. Often given as 3–5 weekly injections. Evidence: moderate benefit for DJD and internal derangements.</div></div></div>
+  <div class="drug-card"><div class="drug-icon" style="background:#fdf2f2">💉</div><div><div class="drug-name">Botulinum Toxin A (Botox) — Masseteric / Lateral Pterygoid</div><div class="drug-detail">Masseter: 25–50 units per side for hypertrophy/bruxism; reduces muscle bulk (aesthetic and functional). Lateral pterygoid: reduces protrusive force in disc displacement. Duration 3–6 months; repeat as needed. Growing evidence base.</div></div></div>
+
+  <h3 class="section-title" data-num="4">Surgical Treatment</h3>
+  <div class="card" style="border-left:5px solid var(--teal)">
+    <h3 style="color:var(--teal)">Level 1: Arthrocentesis</h3>
+    <p>Minimally invasive needle lavage of the superior joint space.</p>
+    <div class="grid-2">
+      <div>
+        <h4>Technique</h4>
+        <div class="steps" style="margin-top:8px">
+          <div class="step"><div class="step-num">1</div><div class="step-content"><strong>Mark landmarks</strong><p>Tragus and lateral canthus — draw canthal-tragal line (CT line)</p></div></div>
+          <div class="step"><div class="step-num">2</div><div class="step-content"><strong>Entry point</strong><p>10 mm anterior to tragus along CT line = posterior needle (glenoid fossa); 20 mm anterior = anterior needle (eminence)</p></div></div>
+          <div class="step"><div class="step-num">3</div><div class="step-content"><strong>Lavage</strong><p>Inject 200–400 mL Ringer's lactate or saline through superior space; outflow through anterior needle</p></div></div>
+          <div class="step"><div class="step-num">4</div><div class="step-content"><strong>Hydraulic distension</strong><p>Lyses adhesions; removes inflammatory mediators (cytokines, prostaglandins)</p></div></div>
+        </div>
+      </div>
+      <div>
+        <h4>Indications &amp; Outcomes</h4>
+        <ul>
+          <li>DDwoR (closed lock) — first-line surgical for acute closed lock</li>
+          <li>DJD/OA with inadequate conservative response</li>
+          <li>Inflammatory arthritis</li>
+          <li>Adhesions</li>
+        </ul>
+        <h4>Success Rate</h4>
+        <ul>
+          <li>~70–80% success for closed lock</li>
+          <li>Advantages: minimal morbidity, day case, local anesthetic</li>
+          <li>May combine with corticosteroid or hyaluronate injection at end of procedure</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="card" style="border-left:5px solid var(--blue)">
+    <h3 style="color:var(--blue)">Level 2: Arthroscopy</h3>
+    <ul>
+      <li>Endoscopic visualization and treatment of superior joint space</li>
+      <li><strong>Diagnostic</strong>: assess disc, synovium, adhesions, articular surfaces</li>
+      <li><strong>Therapeutic</strong>: lysis of adhesions, disc repositioning, discoplasty, synovectomy, lavage</li>
+      <li>Success rate 80–85%</li>
+      <li>Less morbidity than open surgery; GA required</li>
+      <li>Complications: facial nerve injury (rare), vascular injury, middle ear penetration</li>
+    </ul>
+  </div>
+
+  <div class="card" style="border-left:5px solid var(--red)">
+    <h3 style="color:var(--red)">Level 3: Open Joint Surgery</h3>
+    <table class="study-table" style="margin-top:8px">
+      <thead><tr><th>Procedure</th><th>Indication</th><th>Notes</th></tr></thead>
+      <tbody>
+        <tr><td>Disc Repositioning (Discoplasty)</td><td>DDwoR failed conservative/arthroscopy</td><td>Disc sutured to posterior bilaminar zone; eminence may be reduced</td></tr>
+        <tr><td>Discectomy (without replacement)</td><td>Perforated/destroyed disc; DJD</td><td>Fibrous pseudoarthrosis forms; temporalis/auricular cartilage grafts sometimes used</td></tr>
+        <tr><td>High Condylectomy</td><td>Condylar hyperplasia (active)</td><td>Remove excess condylar growth; combined with orthodontics/orthognathic surgery</td></tr>
+        <tr><td>Gap Arthroplasty</td><td>Ankylosis</td><td>Remove ankylosed bone; create gap of 10–15 mm; must do coronoidectomy; interpositional material</td></tr>
+        <tr><td>Total Joint Replacement (TJR)</td><td>End-stage DJD; ankylosis; failed prior surgery; condylar resorption</td><td>Custom (patient-specific) or stock prostheses; titanium fossa + mandibular component; excellent outcomes</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════ COMPLICATIONS -->
+<div class="section" id="complications">
+  <div class="section-hero" data-emoji="⚠️">
+    <h1>Complications</h1>
+    <p>Recognizing and managing the sequelae of TMJ disorders and treatment interventions.</p>
+  </div>
+
+  <div class="grid-2">
+    <div class="card" style="border-top:4px solid var(--red)">
+      <h3 style="color:var(--red)">Ankylosis</h3>
+      <ul>
+        <li><strong>Definition</strong>: Bony or fibrous fusion of condyle to temporal bone</li>
+        <li>Causes: subcondylar fracture (especially in children), infection, RA, post-surgical</li>
+        <li>Features: trismus, facial asymmetry, mandibular hypoplasia if in childhood</li>
+        <li>Classification: fibrous → bony; true (intra-articular) vs. false (extra-articular)</li>
+        <li>Management: gap arthroplasty + coronoidectomy + aggressive physio + TJR if severe</li>
+        <li>Key: physio post-op is as important as surgery — relapse rate without it is high</li>
+      </ul>
+    </div>
+    <div class="card" style="border-top:4px solid var(--orange)">
+      <h3 style="color:var(--orange)">Growth Disturbance</h3>
+      <ul>
+        <li>In children: condyle = growth center; damage → mandibular hypoplasia</li>
+        <li>Causes: subcondylar fracture in child, juvenile RA (JIA), trauma, irradiation</li>
+        <li>Results: facial asymmetry, retrognathia, cross-bite, compensatory dental changes</li>
+        <li>Management: treat underlying cause + functional appliances (growth modification) + corrective orthognathic surgery at end of growth</li>
+        <li>Condylar hyperplasia (opposite): excess growth → facial asymmetry to OPPOSITE side</li>
+        <li>Assessment: bone scan + SPECT-CT to assess if growth is active</li>
+      </ul>
+    </div>
+    <div class="card" style="border-top:4px solid var(--purple)">
+      <h3 style="color:var(--purple)">Progressive Condylar Resorption (PCR)</h3>
+      <ul>
+        <li>Also: Idiopathic condylar resorption (ICR)</li>
+        <li>Predominantly young females (teenage/young adult)</li>
+        <li>Progressive loss of condylar bone → class II skeletal pattern, anterior open bite</li>
+        <li>Often follows orthognathic surgery (post-surgical condylar resorption)</li>
+        <li>Risk factors: female, hormonal (estrogen receptor on condyle), anterior repositioning splints, posterior condylar loading</li>
+        <li>Treatment: observation, hormonal assessment, splint therapy; orthognathic + TJR when stabilized</li>
+      </ul>
+    </div>
+    <div class="card" style="border-top:4px solid var(--blue)">
+      <h3 style="color:var(--blue)">Referred Pain Patterns</h3>
+      <ul>
+        <li><strong>Otalgia</strong>: TMD pain referred to ear (via auriculotemporal nerve); may mimic otitis media</li>
+        <li><strong>Tinnitus</strong>: via discomalleolar ligament (malleus connection)</li>
+        <li><strong>Aural fullness</strong>: same mechanism</li>
+        <li><strong>Temporal headache</strong>: temporalis muscle referred pain</li>
+        <li><strong>Dental pain</strong>: myofascial trigger points can refer to teeth → unnecessary dental treatment risk</li>
+        <li><strong>Cervical pain</strong>: convergence of C1-C3 and trigeminal at subnucleus caudalis</li>
+      </ul>
+    </div>
+    <div class="card" style="border-top:4px solid var(--gold)">
+      <h3 style="color:var(--gold)">Iatrogenic Complications</h3>
+      <h4>Post-Arthrocentesis</h4>
+      <ul>
+        <li>Hematoma, infection, nerve injury (transient)</li>
+        <li>Middle ear penetration (if wrong angulation)</li>
+      </ul>
+      <h4>Post-Arthroscopy</h4>
+      <ul>
+        <li>Facial nerve injury (buccal branch most at risk)</li>
+        <li>Vascular injury (maxillary artery)</li>
+        <li>Broken instrument</li>
+      </ul>
+      <h4>Post-Open Surgery</h4>
+      <ul>
+        <li>Facial nerve palsy (preauricular approach: superficial temporal/frontal branches)</li>
+        <li>Heterotopic ossification (re-ankylosis)</li>
+        <li>Prosthesis failure/infection (TJR)</li>
+        <li>Frey syndrome (gustatory sweating)</li>
+      </ul>
+    </div>
+    <div class="card" style="border-top:4px solid var(--teal)">
+      <h3 style="color:var(--teal)">Chronic Pain &amp; Central Sensitization</h3>
+      <ul>
+        <li>Some patients develop chronic orofacial pain despite treatment</li>
+        <li>Central sensitization: amplified pain processing in CNS</li>
+        <li>Features: widespread pain, allodynia, hyperalgesia, poor sleep, psychological distress</li>
+        <li>Part of pain continuum with fibromyalgia, chronic widespread pain</li>
+        <li>Management: multidisciplinary pain clinic; CBT; low-dose TCA; pregabalin; pain psychology</li>
+        <li>Avoid repeated surgical interventions in centrally sensitized patients</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════ EMBRYOLOGY -->
+<div class="section" id="embryology">
+  <div class="section-hero" data-emoji="🧬">
+    <h1>Embryology of the TMJ</h1>
+    <p>The TMJ is the last joint to develop in the human body and is unique in its embryological origin — it forms entirely from secondary cartilage, independent of Meckel's cartilage.</p>
+  </div>
+
+  <div class="callout callout-purple">
+    <strong>🔑 Key Concept: Secondary Cartilage Joint</strong>
+    The TMJ is a SECONDARY cartilaginous joint — it develops entirely in membrane bone (intramembranous ossification). Unlike most other joints that develop from primary (Meckel's) cartilage, the TMJ forms from two independent condylar and temporal blastemas. The condylar cartilage is a SECONDARY cartilage (appears post-Meckel's, thinner, more fibrocellular).
+  </div>
+
+  <h3 class="section-title" data-num="1">Development Timeline</h3>
+  <div class="timeline">
+    <div class="tl-item">
+      <div class="tl-dot"></div>
+      <div class="tl-time">Weeks 6–7</div>
+      <div class="tl-content">First pharyngeal arch derivatives form. Meckel's cartilage develops — template for mandible. Mandible begins intramembranous ossification lateral to Meckel's cartilage.</div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-dot"></div>
+      <div class="tl-time">Weeks 8–10</div>
+      <div class="tl-content">Condylar blastema (mesenchymal condensation) appears at superior ramus. Temporal blastema appears on temporal bone. These are INDEPENDENT from Meckel's cartilage.</div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-dot"></div>
+      <div class="tl-time">Weeks 10–11</div>
+      <div class="tl-content">Secondary condylar cartilage appears within condylar blastema. Mandibular fossa begins forming in temporal bone. The secondary cartilage grows rapidly — responsible for most of condylar growth postnatally.</div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-dot"></div>
+      <div class="tl-time">Weeks 12–13</div>
+      <div class="tl-content"><strong>Inferior joint space forms</strong> — cavitation within blastema between disc (forming) and condyle. Articular eminence begins to develop. Articular disc forms from vascularized mesenchyme between the two developing surfaces.</div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-dot"></div>
+      <div class="tl-time">Weeks 14–15</div>
+      <div class="tl-content">Articular disc becomes distinct; lateral pterygoid fibers connect to anterior disc. Superior lateral pterygoid begins inserting into disc.</div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-dot"></div>
+      <div class="tl-time">Weeks 16–17</div>
+      <div class="tl-content"><strong>Superior joint space forms</strong> — cavitation above the disc. Joint now has two distinct compartments. Capsule and ligaments differentiate. Bilaminar zone develops posteriorly.</div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-dot"></div>
+      <div class="tl-time">Week 20</div>
+      <div class="tl-content">TMJ is structurally complete and functional. The joint begins loading as fetal jaw movements occur. Condylar growth continues postnatally as the primary adaptive growth site of the mandible.</div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-dot"></div>
+      <div class="tl-time">Birth → ~20 years</div>
+      <div class="tl-content">Condylar growth continues — main mechanism of mandibular growth. Mandibular fossa is shallow at birth, deepens with tooth eruption and functional loading. Growth ceases with skeletal maturity (~18–20 years; slightly earlier in females).</div>
+    </div>
+  </div>
+
+  <h3 class="section-title" data-num="2">Meckel's Cartilage — Fate and Significance</h3>
+  <div class="card">
+    <p>Meckel's cartilage is the primary cartilage of the first pharyngeal arch. Despite its importance, the TMJ does NOT develop FROM Meckel's cartilage — however, its perichondrium and remnants are clinically relevant.</p>
+    <div class="grid-2">
+      <div>
+        <h4>Fate of Meckel's Cartilage</h4>
+        <ul>
+          <li>Middle third → regresses/disappears</li>
+          <li>Posterior portion → malleus and incus (ossicular chain, middle ear)</li>
+          <li>Perichondrium → sphenomandibular ligament and anterior malleolar ligament</li>
+          <li>A small portion contributes to anterior part of sphenoid</li>
+        </ul>
+      </div>
+      <div>
+        <h4>Clinical Relevance</h4>
+        <ul>
+          <li><strong>Sphenomandibular ligament</strong> = remnant of Meckel's cartilage perichondrium</li>
+          <li><strong>Discomalleolar ligament</strong> = connects disc to malleus → explains why ear symptoms occur in TMD</li>
+          <li>Pierre Robin sequence, Treacher Collins — first arch anomalies affecting TMJ development</li>
+          <li>Hemifacial microsomia — condylar/TMJ hypoplasia from first arch abnormality</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <h3 class="section-title" data-num="3">Postnatal Condylar Growth</h3>
+  <div class="card">
+    <p>The condyle continues to grow postnatally as the primary site of mandibular growth. This is clinically critical for understanding when TMJ intervention can affect development.</p>
+    <ul>
+      <li>Growth direction: posterosuperiorly (condyle grows up and back → mandible grows down and forward)</li>
+      <li>Periosteal resorption at anterior condylar neck + deposition at posterior condylar neck = bone drift forward</li>
+      <li>Condylar cartilage is an <em>adaptive</em> (pressure-responsive) growth site — unlike primary endochondral cartilage</li>
+      <li>Functional matrix theory (Moss): condyle responds to functional demands of the surrounding soft tissue matrix</li>
+      <li>Growth cessation: ~16–18 years in females; ~18–20 years in males (variable)</li>
+    </ul>
+    <div class="callout callout-orange" style="margin-top:12px;margin-bottom:0">
+      <strong>⚠️ Growth Center Considerations</strong>
+      Damage to the condylar growth center (subcondylar fracture, JIA, radiation) in a child → mandibular hypoplasia and facial asymmetry. Orthognathic surgical correction should generally wait until growth is complete (verified by serial cephalometry and bone scan if uncertain). Condylar hyperplasia (excess growth) is different and may require early high condylectomy if asymmetry is progressing.
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════ PEARLS & MNEMONICS -->
+<div class="section" id="pearls">
+  <div class="section-hero" data-emoji="🧠">
+    <h1>Clinical Pearls &amp; Mnemonics</h1>
+    <p>High-yield facts, memory aids, and exam tips for mastering TMJ and muscles of mastication.</p>
+  </div>
+
+  <h3 class="section-title" data-num="1">Mnemonics</h3>
+
+  <div class="mnemonic">
+    <div class="mnemonic-title">🔮 Muscles that CLOSE the jaw (Elevators)</div>
+    <div class="mnemonic-content">
+      <div class="mnemonic-letters">"My Mommy Tends To..."</div>
+      <p style="margin-top:6px">
+        <strong>M</strong>asseter — <strong>M</strong>edial pterygoid — <strong>T</strong>emporalis<br>
+        These 3 muscles close the jaw. The LATERAL pterygoid is the odd one out — it OPENS.<br>
+        Alternative: <strong>"MMT"</strong> — Masseter, Medial pterygoid, Temporalis
+      </p>
+    </div>
+  </div>
+
+  <div class="mnemonic">
+    <div class="mnemonic-title">🔮 Muscles that OPEN the jaw (Depressors)</div>
+    <div class="mnemonic-content">
+      <div class="mnemonic-letters">"LDGM — Lateral Does Great Movements"</div>
+      <p style="margin-top:6px">
+        <strong>L</strong>ateral pterygoid (inferior head) — <strong>D</strong>igastric — <strong>G</strong>eniohyoid — <strong>M</strong>ylohyoid<br>
+        Remember: the lateral pterygoid is the PRIMARY opener — all others are accessory via hyoid fixation.
+      </p>
+    </div>
+  </div>
+
+  <div class="mnemonic">
+    <div class="mnemonic-title">🔮 Lateral Pterygoid Heads — Insertion</div>
+    <div class="mnemonic-content">
+      <div class="mnemonic-letters">"Superior → Soft tissue (disc/capsule) | Inferior → Inferior condyle (fovea)"</div>
+      <p style="margin-top:8px">Or: <strong>"S-S, I-I"</strong> = Superior head → Superior structure (disc); Inferior head → Inferior attachment (condyle/pterygoid fovea)</p>
+      <p style="margin-top:6px">Function memory: <strong>"Superior Stops, Inferior Initiates"</strong> = Superior head is active during STOPPING (closing/braking); Inferior head INITIATES opening</p>
+    </div>
+  </div>
+
+  <div class="mnemonic">
+    <div class="mnemonic-title">🔮 Lateral Excursion — Which Side's Which?</div>
+    <div class="mnemonic-content">
+      <div class="mnemonic-letters">"The Working side Works with its own muscles; the Balancing side needs its Lateral pterygoid"</div>
+      <p style="margin-top:6px">
+        Right excursion: <strong>Right TMJ = working side</strong> (rotation); RIGHT temporalis and masseter contract<br>
+        Left TMJ = balancing side (translation); LEFT lateral pterygoid contracts to push condyle forward<br>
+        Rule: OPPOSITE lateral pterygoid drives excursion
+      </p>
+    </div>
+  </div>
+
+  <div class="mnemonic">
+    <div class="mnemonic-title">🔮 Joint Spaces and Movements</div>
+    <div class="mnemonic-content">
+      <div class="mnemonic-letters">"I Rotate on the Inferior; Super Slides Superiorly"</div>
+      <p style="margin-top:6px">
+        <strong>I</strong>nferior space → <strong>R</strong>otation (hinge)<br>
+        <strong>S</strong>uperior space → <strong>S</strong>liding (translation/glide)<br>
+        Think of it as a two-story joint: bottom floor rotates, top floor slides.
+      </p>
+    </div>
+  </div>
+
+  <div class="mnemonic">
+    <div class="mnemonic-title">🔮 CN V3 Anterior Division — "BLAND"</div>
+    <div class="mnemonic-content">
+      <div class="mnemonic-letters">B-L-A-N-D</div>
+      <p style="margin-top:6px">
+        <strong>B</strong>uccal nerve (sensory ONLY — NOT motor to buccinator!)<br>
+        <strong>L</strong>ateral pterygoid nerve<br>
+        <strong>A</strong>nterior deep temporal nerve<br>
+        <strong>N</strong>erve to masseter (masseteric nerve)<br>
+        <strong>D</strong>eep temporal nerve (posterior)
+      </p>
+    </div>
+  </div>
+
+  <div class="mnemonic">
+    <div class="mnemonic-title">🔮 TMJ Ligaments — "LSS" or "Don't Spill Lattes"</div>
+    <div class="mnemonic-content">
+      <div class="mnemonic-letters">Lateral — Sphenomandibular — Stylomandibular</div>
+      <p style="margin-top:6px">
+        Only <strong>Lateral</strong> is intrinsic (within capsule). The other two are extrinsic.<br>
+        Sphenomandibular = remnant of Meckel's cartilage; spine of sphenoid → lingula<br>
+        Stylomandibular = thickened deep cervical fascia; separates parotid from submandibular gland
+      </p>
+    </div>
+  </div>
+
+  <h3 class="section-title" data-num="2">High-Yield Clinical Pearls</h3>
+
+  <div class="callout callout-red">
+    <strong>🚨 Pearl 1: TMJ Surface is FIBROCARTILAGE, not Hyaline</strong>
+    This makes the TMJ different from almost all other synovial joints. Fibrocartilage (type I collagen) covers the condyle, articular eminence, and the disc. It is avascular, aneural, and more resistant to compressive forces. This also means it responds differently to treatment — fibrocartilage has greater repair capacity than hyaline.
+  </div>
+
+  <div class="callout callout-blue">
+    <strong>🔵 Pearl 2: Articular Eminence ≠ Fossa is Load-Bearing</strong>
+    The ARTICULAR EMINENCE (posterior slope) is the primary load-bearing surface of the TMJ — NOT the mandibular fossa. The fossa is thin and uncalcified. This explains why DJD changes (erosions, osteophytes, subchondral sclerosis) occur primarily on the condylar head and articular eminence, not within the fossa.
+  </div>
+
+  <div class="callout callout-gold">
+    <strong>🌟 Pearl 3: Superior Head LP is Active During Closing</strong>
+    Counter-intuitive: the superior head of the lateral pterygoid contracts during jaw CLOSING (and maximum intercuspation/clenching). It functions eccentrically to control disc position as the condyle translates back. This is WHY clenching/bruxism → superior head strain → disc displacement. Always remember this when asked about disc displacement pathogenesis.
+  </div>
+
+  <div class="callout callout-teal">
+    <strong>⚡ Pearl 4: Sound-Diagnosis Correlation</strong>
+    Clicking (reciprocal) = DDwR | Crepitus = DJD/OA | Silence + Limited opening = DDwoR (closed lock) | Silence + Normal opening = Myofascial or arthralgia. Reciprocal click goes away with protrusive opening = confirms DDwR.
+  </div>
+
+  <div class="callout callout-green">
+    <strong>✅ Pearl 5: Conservative First — Always</strong>
+    80–90% of TMD is self-limiting. Before any irreversible treatment: try soft diet, splint, NSAIDs, physio for at least 3–6 months. Never perform occlusal equilibration, orthognathic surgery, or TJR without adequate conservative trial. Do not treat the MRI alone.
+  </div>
+
+  <div class="callout callout-purple">
+    <strong>🧬 Pearl 6: TMJ = Last Joint to Develop</strong>
+    The TMJ is the last joint to complete development (Week 20 of embryology) and is the last to ossify postnatally. Condylar growth centers persist into the late teens/early twenties. Trauma to condyle in childhood → growth disruption → asymmetry. Plan orthognathic surgery only after growth cessation is confirmed.
+  </div>
+
+  <div class="callout callout-orange">
+    <strong>⚠️ Pearl 7: Buccinator is CN VII, NOT CN V3</strong>
+    The buccal nerve (V3) is SENSORY only — it supplies sensation to the buccal mucosa and skin. The buccinator MUSCLE is supplied by the BUCCAL BRANCH of the FACIAL NERVE (CN VII). This is one of the most commonly incorrect answers in dental anatomy exams.
+  </div>
+
+  <div class="callout callout-red">
+    <strong>🚨 Pearl 8: Jaw Claudication → Rule Out Giant Cell Arteritis</strong>
+    Jaw pain on chewing that goes away with rest = jaw claudication. This is the jaw equivalent of intermittent claudication. In elderly patients (especially female, &gt;50 years), this suggests Giant Cell Arteritis (temporal arteritis). Check ESR urgently — this is a medical emergency because GCA can cause vision loss if untreated. Refer to rheumatology immediately.
+  </div>
+
+  <h3 class="section-title" data-num="3">Quick Reference Summary Table</h3>
+  <table class="study-table">
+    <thead><tr><th>Muscle</th><th>Innervation (V3 branch)</th><th>Closes</th><th>Opens</th><th>Protrudes</th><th>Retrudes</th></tr></thead>
+    <tbody>
+      <tr><td>Masseter</td><td>Masseteric nerve</td><td>✅</td><td>—</td><td>✅</td><td>—</td></tr>
+      <tr><td>Temporalis</td><td>Deep temporal nerves</td><td>✅</td><td>—</td><td>—</td><td>✅ (post.)</td></tr>
+      <tr><td>Medial pterygoid</td><td>Medial pterygoid nerve</td><td>✅</td><td>—</td><td>✅</td><td>—</td></tr>
+      <tr><td>Lat. pterygoid (sup.)</td><td>Lateral pterygoid nerve</td><td>✅ (eccentric)</td><td>—</td><td>—</td><td>—</td></tr>
+      <tr><td>Lat. pterygoid (inf.)</td><td>Lateral pterygoid nerve</td><td>—</td><td>✅</td><td>✅</td><td>—</td></tr>
+      <tr><td>Digastric (ant.)</td><td>Mylohyoid nerve (V3)</td><td>—</td><td>✅ (accessory)</td><td>—</td><td>—</td></tr>
+    </tbody>
+  </table>
+
+  <table class="study-table">
+    <thead><tr><th>Structure</th><th>Material</th><th>Unique Feature</th></tr></thead>
+    <tbody>
+      <tr><td>Articular surface</td><td>Fibrocartilage</td><td>NOT hyaline; avascular; aneural</td></tr>
+      <tr><td>Articular disc</td><td>Fibrocartilage (type I & II)</td><td>Biconcave; anterior band + intermediate zone + posterior band</td></tr>
+      <tr><td>Superior joint space</td><td>Synovial fluid</td><td>Translation/gliding</td></tr>
+      <tr><td>Inferior joint space</td><td>Synovial fluid</td><td>Rotation/hinge</td></tr>
+      <tr><td>Bilaminar zone</td><td>Elastic (upper) + Collagen (lower)</td><td>Highly innervated; retrodiscal tissue; pain source in DDwoR</td></tr>
+      <tr><td>Lateral ligament</td><td>Dense fibrous tissue</td><td>ONLY intrinsic ligament; strongest; limits retrusion</td></tr>
+      <tr><td>Sphenomandibular lig.</td><td>Remnant Meckel's perichondrium</td><td>Extrinsic; IANB landmark; IAN block space</td></tr>
+    </tbody>
+  </table>
+
+  <div class="highlight-box" style="margin-top:24px">
+    <h3>🎯 High-Yield Exam Summary</h3>
+    <ul>
+      <li>All 4 muscles of mastication → CN V3 (mandibular nerve)</li>
+      <li>Only joint where articular surfaces = fibrocartilage (not hyaline)</li>
+      <li>Inferior space = rotation | Superior space = translation</li>
+      <li>Superior LP head active during CLOSING (braking disc); Inferior head during OPENING</li>
+      <li>Reciprocal click = DDwR | Crepitus = DJD | No click + limited = DDwoR</li>
+      <li>MRI for disc; CT/CBCT for bone; OPG for screening; Bone scan for active growth</li>
+      <li>Arthrocentesis = first surgical option for closed lock (acute DDwoR)</li>
+      <li>TMJ is the LAST joint to develop (complete ~20 weeks gestation)</li>
+      <li>Sphenomandibular ligament = remnant of Meckel's cartilage perichondrium</li>
+      <li>Jaw claudication in elderly = rule out Giant Cell Arteritis (ESR urgently)</li>
+      <li>Conservative treatment first — 80–90% TMD improves without surgery</li>
+    </ul>
+  </div>
+</div>
+
+</main>
+
+<script>
+function showSection(id) {
+  document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+  document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
+  var el = document.getElementById(id);
+  if (el) {
+    el.classList.add('active');
+    el.scrollIntoView ? window.scrollTo(0,0) : null;
+  }
+  var items = document.querySelectorAll('.nav-item');
+  items.forEach(function(item) {
+    if (item.getAttribute('onclick') && item.getAttribute('onclick').includes("'" + id + "'")) {
+      item.classList.add('active');
+    }
+  });
+}
+window.onload = function() {
+  document.getElementById('overview').classList.add('active');
+};
+</script>
+</body>
+</html>

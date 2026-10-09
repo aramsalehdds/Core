@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Core — Dental Education</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#07101E;--bg2:#0B1629;--card:#0F1E33;--card2:#142340;
+  --teal:#00C4A8;--teal2:#5BDBCA;--teal-d:rgba(0,196,168,.10);--teal-b:rgba(0,196,168,.18);
+  --gold:#C89E3C;--gold2:#E2BA60;--gold-d:rgba(200,158,60,.10);
+  --ivory:#EEE8DC;--ivory2:#C4BBAD;--muted:#6B84A4;
+  --border:rgba(0,196,168,.14);--border2:rgba(255,255,255,.07);
+  --green:#22D987;--red:#F05252;--amber:#F59E0B;
+  --r:14px;
+  --teal-g:linear-gradient(135deg,#00C4A8,#007A6A);
+}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',system-ui,sans-serif;background:var(--bg);color:var(--ivory);min-height:100vh;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:300;display:flex;align-items:center;justify-content:space-between;padding:0 5vw;height:62px;background:rgba(7,16,30,.92);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid var(--border)}
+.logo{display:flex;align-items:center;gap:11px;text-decoration:none;cursor:pointer}
+.logo-wordmark{font-size:20px;font-weight:700;color:var(--ivory);letter-spacing:-.04em;line-height:1}
+.logo-wordmark span{color:var(--teal)}
+.logo-sub{font-size:9.5px;font-weight:500;color:var(--muted);letter-spacing:.1em;display:block;margin-top:-1px}
+.nav-right{display:flex;align-items:center;gap:10px}
+.back-btn{display:none;align-items:center;gap:6px;background:var(--card);border:1px solid var(--border2);color:var(--ivory2);font-size:12.5px;font-weight:500;padding:6px 14px;border-radius:8px;cursor:pointer;font-family:inherit;transition:all .15s}
+.back-btn:hover{border-color:var(--border);color:var(--ivory)}
+.nav-user-btn{display:flex;align-items:center;gap:7px;background:var(--teal-d);border:1px solid var(--border);color:var(--teal2);font-size:12.5px;font-weight:500;padding:6px 14px;border-radius:8px;cursor:pointer;font-family:inherit;transition:all .15s}
+.nav-user-btn:hover{background:var(--teal-b)}
+.nav-dot{width:7px;height:7px;border-radius:50%;background:var(--green);flex-shrink:0}
+
+/* VIEWS */
+.view{display:none;min-height:100vh;padding-top:62px}
+.view.active{display:block}
+
+/* HOME HERO */
+.home-hero{position:relative;overflow:hidden;padding:80px 5vw 68px;border-bottom:1px solid var(--border2)}
+.home-hero::before{content:'';position:absolute;inset:0;
+  background:radial-gradient(ellipse 60% 80% at 80% 40%,rgba(0,196,168,.07) 0%,transparent 65%),
+  radial-gradient(ellipse 30% 50% at 10% 90%,rgba(0,196,168,.04) 0%,transparent 60%)}
+.home-hero::after{content:'';position:absolute;top:-100px;right:-80px;width:380px;height:380px;border:1px solid rgba(0,196,168,.06);border-radius:50%}
+.home-hero-inner{position:relative;z-index:1;max-width:600px}
+.hero-eyebrow{display:inline-flex;align-items:center;gap:7px;font-size:11.5px;font-weight:500;color:var(--teal);background:var(--teal-d);border:1px solid var(--border);border-radius:20px;padding:4px 14px;margin-bottom:26px}
+.pulse{width:6px;height:6px;border-radius:50%;background:var(--teal);animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.3}}
+.home-hero h1{font-family:'Cormorant Garamond',Georgia,serif;font-size:clamp(40px,6vw,70px);font-weight:500;line-height:1.04;color:var(--ivory);margin-bottom:20px;letter-spacing:-.02em}
+.home-hero h1 em{font-style:italic;color:var(--teal)}
+.home-hero p{font-size:15.5px;font-weight:300;color:var(--muted);line-height:1.78;max-width:480px}
+.hero-stats{display:flex;gap:0;margin-top:44px;border:1px solid var(--border2);border-radius:var(--r);overflow:hidden;max-width:420px}
+.hstat{flex:1;padding:14px 18px;border-right:1px solid var(--border2);text-align:center}
+.hstat:last-child{border-right:none}
+.hstat-n{font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:600;color:var(--teal2);line-height:1}
+.hstat-l{font-size:10.5px;color:var(--muted);margin-top:3px}
+.legend{display:flex;align-items:center;gap:18px;margin-top:24px;flex-wrap:wrap}
+.leg-item{display:flex;align-items:center;gap:6px;font-size:12px;color:var(--muted)}
+.leg-dot{width:7px;height:7px;border-radius:50%}
+.ld-free{background:var(--green)}.ld-prem{background:var(--gold)}.ld-soon{background:var(--muted);opacity:.4}
+
+/* SUBJECTS */
+.subjects-section{padding:52px 5vw 80px}
+.sec-heading{font-size:11px;font-weight:600;color:var(--teal);letter-spacing:.1em;margin-bottom:26px}
+.subjects-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(278px,1fr));gap:13px}
+.subj-card{background:var(--card);border:1px solid var(--border2);border-radius:var(--r);padding:22px 20px;cursor:pointer;transition:all .18s;display:flex;flex-direction:column;gap:14px;text-align:left}
+.subj-card:hover{border-color:var(--border);transform:translateY(-2px);box-shadow:0 10px 40px rgba(0,0,0,.3)}
+.subj-card.has-live{border-color:rgba(0,196,168,.2)}
+.sc-top{display:flex;align-items:flex-start;justify-content:space-between;gap:8px}
+.sc-icon{width:44px;height:44px;border-radius:10px;background:var(--card2);display:flex;align-items:center;justify-content:center;font-size:21px;flex-shrink:0}
+.sc-counts{display:flex;flex-direction:column;align-items:flex-end;gap:4px}
+.count-pill{font-size:9px;font-weight:700;padding:2px 8px;border-radius:10px;letter-spacing:.03em}
+.cp-free{background:rgba(34,217,135,.12);color:var(--green);border:1px solid rgba(34,217,135,.2)}
+.cp-prem{background:var(--gold-d);color:var(--gold2);border:1px solid rgba(200,158,60,.2)}
+.cp-soon{background:rgba(107,132,164,.1);color:var(--muted);border:1px solid rgba(107,132,164,.15)}
+.sc-name{font-size:15.5px;font-weight:600;color:var(--ivory);margin-bottom:4px}
+.sc-desc{font-size:12.5px;color:var(--muted);font-weight:300;line-height:1.62}
+.sc-footer{display:flex;align-items:center;justify-content:space-between;border-top:1px solid var(--border2);padding-top:12px;margin-top:auto}
+.sc-total{font-size:11.5px;color:var(--muted)} .sc-total b{color:var(--ivory2);font-weight:500}
+.sc-arr{font-size:16px;color:var(--muted);transition:all .18s}
+.subj-card:hover .sc-arr{color:var(--teal);transform:translateX(4px)}
+
+/* SUBJECT VIEW */
+.subj-view-hero{padding:52px 5vw 44px;border-bottom:1px solid var(--border2);background:var(--bg2);position:relative;overflow:hidden}
+.subj-view-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 50% 100% at 85% 50%,rgba(0,196,168,.06),transparent)}
+.svh-inner{position:relative;z-index:1}
+.svh-top{display:flex;align-items:center;gap:12px;margin-bottom:18px}
+.svh-icon{width:50px;height:50px;border-radius:12px;background:var(--teal-g);display:flex;align-items:center;justify-content:center;font-size:24px}
+.svh-label{font-size:10.5px;font-weight:600;color:var(--teal);letter-spacing:.1em}
+.subj-view-hero h2{font-family:'Cormorant Garamond',serif;font-size:clamp(28px,5vw,48px);font-weight:500;color:var(--ivory);line-height:1.08;margin-bottom:10px}
+.subj-view-hero p{font-size:14px;color:var(--muted);font-weight:300;line-height:1.75;max-width:560px}
+.svh-legend{display:flex;gap:16px;margin-top:18px;flex-wrap:wrap}
+.svh-legend .leg-item{font-size:11px}
+
+/* GUIDES GRID */
+.guides-section{padding:44px 5vw 80px}
+.guides-heading{font-size:11px;font-weight:600;color:var(--teal);letter-spacing:.1em;margin-bottom:22px}
+.guides-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:13px}
+.guide-card{background:var(--card);border:1px solid var(--border2);border-radius:var(--r);padding:20px 18px;display:flex;flex-direction:column;gap:13px;transition:all .18s}
+.guide-card.g-free,.guide-card.g-premium{cursor:pointer}
+.guide-card.g-soon{opacity:.68}
+.guide-card.g-free:hover,.guide-card.g-premium:hover{border-color:var(--border);transform:translateY(-2px);box-shadow:0 10px 32px rgba(0,0,0,.25)}
+.guide-card.g-free:hover .gc-arr,.guide-card.g-premium:hover .gc-arr{color:var(--teal);transform:translateX(4px)}
+.gc-top{display:flex;align-items:flex-start;justify-content:space-between;gap:8px}
+.gc-num{width:32px;height:32px;border-radius:8px;background:var(--card2);border:1px solid var(--border2);display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-size:15px;font-weight:600;color:var(--teal2);flex-shrink:0}
+.gc-badge{font-size:9.5px;font-weight:700;padding:3px 9px;border-radius:10px;display:flex;align-items:center;gap:4px;letter-spacing:.02em}
+.gb-free{background:rgba(34,217,135,.12);color:var(--green);border:1px solid rgba(34,217,135,.2)}
+.gb-prem{background:var(--gold-d);color:var(--gold2);border:1px solid rgba(200,158,60,.2)}
+.gb-soon{background:rgba(107,132,164,.1);color:var(--muted);border:1px solid rgba(107,132,164,.15)}
+.gc-title{font-size:14.5px;font-weight:600;color:var(--ivory);line-height:1.3;margin-bottom:5px}
+.gc-desc{font-size:12.5px;color:var(--muted);font-weight:300;line-height:1.65}
+.gc-tags{display:flex;flex-wrap:wrap;gap:5px}
+.gc-tag{font-size:10px;background:var(--card2);border:1px solid var(--border2);color:var(--ivory2);border-radius:20px;padding:2px 9px}
+.gc-footer{display:flex;align-items:center;justify-content:space-between;border-top:1px solid var(--border2);padding-top:12px;margin-top:auto}
+.gc-meta{font-size:11px;color:var(--muted)} .gc-meta b{color:var(--ivory2);font-weight:500}
+.gc-arr{font-size:15px;color:var(--muted);transition:all .18s}
+
+/* FOOTER */
+footer{border-top:1px solid var(--border2);padding:26px 5vw;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px}
+.fc{font-size:12.5px;color:var(--muted)} .fc b{color:var(--teal2)}
+.fl{display:flex;gap:20px}
+.fl a{font-size:12px;color:var(--muted);text-decoration:none;transition:color .12s}
+.fl a:hover{color:var(--ivory)}
+
+/* MODALS */
+.modal-overlay{display:none;position:fixed;inset:0;z-index:400;background:rgba(3,8,18,.82);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);align-items:center;justify-content:center;padding:20px}
+.modal-overlay.open{display:flex}
+.modal{background:var(--card);border:1px solid var(--border);border-radius:20px;width:100%;max-width:420px;overflow:hidden;position:relative}
+.modal-close{position:absolute;top:16px;right:16px;background:none;border:none;color:var(--muted);cursor:pointer;font-size:20px;padding:4px;transition:color .12s;z-index:1}
+.modal-close:hover{color:var(--ivory)}
+.auth-tabs{display:flex;border-bottom:1px solid var(--border2)}
+.auth-tab{flex:1;padding:16px;font-size:13px;font-weight:500;color:var(--muted);border:none;background:none;cursor:pointer;font-family:inherit;border-bottom:2px solid transparent;margin-bottom:-1px;transition:all .15s}
+.auth-tab.active{color:var(--teal);border-bottom-color:var(--teal)}
+.auth-body{padding:28px}
+.auth-panel{display:none} .auth-panel.active{display:block}
+.auth-title{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:500;color:var(--ivory);margin-bottom:5px}
+.auth-sub{font-size:13px;color:var(--muted);margin-bottom:22px;line-height:1.6}
+.field{margin-bottom:13px}
+.field label{display:block;font-size:11.5px;font-weight:500;color:var(--ivory2);margin-bottom:5px}
+.field input{width:100%;background:var(--bg2);border:1px solid var(--border2);border-radius:9px;padding:11px 14px;font-size:14px;color:var(--ivory);font-family:inherit;outline:none;transition:border-color .15s}
+.field input:focus{border-color:var(--teal)}
+.field input::placeholder{color:var(--muted)}
+.btn-auth{width:100%;padding:12px;border-radius:9px;font-size:14px;font-weight:600;cursor:pointer;font-family:inherit;transition:all .15s;margin-top:6px;border:none;background:var(--teal-g);color:#030E1A}
+.btn-auth:hover{filter:brightness(1.08)}
+.auth-msg{margin-top:12px;font-size:12.5px;border-radius:8px;padding:10px 13px;display:none}
+.auth-msg.err{background:rgba(240,82,82,.1);color:#F87171;border:1px solid rgba(240,82,82,.2);display:block}
+.auth-msg.ok{background:rgba(34,217,135,.1);color:var(--green);border:1px solid rgba(34,217,135,.2);display:block}
+
+/* PREMIUM GATE */
+.prem-modal,.pend-modal{padding:28px;text-align:center}
+.pm-icon{font-size:42px;margin-bottom:14px}
+.pm-title{font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:500;color:var(--ivory);margin-bottom:8px}
+.pm-sub{font-size:13.5px;color:var(--muted);line-height:1.7;margin-bottom:18px}
+.pm-guide-box{background:var(--bg2);border:1px solid var(--border2);border-radius:10px;padding:11px 15px;margin-bottom:18px;text-align:left}
+.pgb-l{font-size:10px;color:var(--muted);margin-bottom:3px}
+.pgb-t{font-size:14px;font-weight:600;color:var(--ivory)}
+.cliq-box{background:var(--teal-d);border:1px solid var(--border);border-radius:10px;padding:14px 16px;margin-bottom:18px;text-align:left}
+.cliq-label{font-size:10px;font-weight:700;color:var(--teal);letter-spacing:.07em;margin-bottom:7px}
+.cliq-steps{list-style:none;padding:0}
+.cliq-steps li{font-size:12.5px;color:var(--ivory2);padding:2px 0;display:flex;gap:7px;line-height:1.6}
+.cliq-steps li::before{content:'→';color:var(--teal);flex-shrink:0}
+.btn-pm{width:100%;padding:11px;border-radius:9px;font-size:14px;font-weight:600;cursor:pointer;font-family:inherit;border:none;margin-bottom:8px;transition:all .15s}
+.btn-pm-p{background:var(--teal-g);color:#030E1A} .btn-pm-p:hover{filter:brightness(1.08)}
+.btn-pm-g{background:none;border:1px solid var(--border2);color:var(--muted)} .btn-pm-g:hover{border-color:var(--border);color:var(--ivory2)}
+
+/* USER DROPDOWN */
+.user-dropdown{position:absolute;top:70px;right:5vw;background:var(--card);border:1px solid var(--border);border-radius:12px;min-width:210px;z-index:400;overflow:hidden;display:none}
+.user-dropdown.open{display:block}
+.ud-header{padding:14px 16px;border-bottom:1px solid var(--border2)}
+.ud-email{font-size:12px;color:var(--muted)}.ud-name{font-size:14px;font-weight:600;color:var(--ivory)}
+.ud-status{margin-top:6px;display:inline-flex;align-items:center;gap:5px;font-size:11px;border-radius:20px;padding:2px 9px}
+.ud-ok{background:rgba(34,217,135,.12);color:var(--green);border:1px solid rgba(34,217,135,.2)}
+.ud-wait{background:var(--gold-d);color:var(--gold2);border:1px solid rgba(200,158,60,.2)}
+.ud-item{display:flex;align-items:center;gap:9px;padding:11px 16px;font-size:13px;color:var(--ivory2);cursor:pointer;transition:all .12s;border:none;background:none;width:100%;font-family:inherit;text-align:left}
+.ud-item:hover{background:var(--card2);color:var(--ivory)}
+.ud-sep{height:1px;background:var(--border2)}
+
+@media(max-width:640px){.home-hero,.subjects-section,.guides-section{padding-left:4vw;padding-right:4vw}.subj-view-hero{padding:40px 4vw 32px}footer{padding:22px 4vw}.hero-stats{max-width:100%}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="logo" onclick="goHome()">
+    <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+      <circle cx="16" cy="16" r="14.5" stroke="#00C4A8" stroke-width="1.8"/>
+      <circle cx="16" cy="16" r="8" stroke="#00C4A8" stroke-width="1.4" opacity="0.45"/>
+      <circle cx="16" cy="16" r="3.5" fill="#00C4A8"/>
+    </svg>
+    <div>
+      <span class="logo-wordmark">c<span>o</span>re</span>
+      <span class="logo-sub">DENTAL EDUCATION</span>
+    </div>
+  </div>
+  <div class="nav-right">
+    <button class="back-btn" id="back-btn" onclick="goHome()">← All Subjects</button>
+    <button class="nav-user-btn" id="nav-user-btn" onclick="toggleUserMenu()">
+      <span class="nav-dot" id="nav-dot" style="display:none"></span>
+      <span id="nav-user-label">Sign In</span>
+    </button>
+  </div>
+</nav>
+
+<div class="user-dropdown" id="user-dropdown">
+  <div class="ud-header">
+    <div class="ud-name" id="ud-name"></div>
+    <div class="ud-email" id="ud-email"></div>
+    <span class="ud-status" id="ud-status"></span>
+  </div>
+  <button class="ud-item" onclick="openAuthModal('login')">🔑 Change Account</button>
+  <div class="ud-sep"></div>
+  <button class="ud-item" onclick="logout()" style="color:var(--red)">↩ Sign Out</button>
+</div>
+
+<!-- HOME VIEW -->
+<div class="view active" id="view-home">
+  <div class="home-hero">
+    <div class="home-hero-inner">
+      <div class="hero-eyebrow"><div class="pulse"></div>Dental education, redefined</div>
+      <h1>Master the<br><em>fundamentals.</em></h1>
+      <p>Deep, clinical study guides for dental students. Every discipline. Every concept. Built for real understanding — not just passing exams.</p>
+      <div class="hero-stats">
+        <div class="hstat"><div class="hstat-n" id="stat-subjects">8</div><div class="hstat-l">Subjects</div></div>
+        <div class="hstat"><div class="hstat-n" id="stat-live">1</div><div class="hstat-l">Guides live</div></div>
+        <div class="hstat"><div class="hstat-n">∞</div><div class="hstat-l">Growing</div></div>
+      </div>
+      <div class="legend">
+        <div class="leg-item"><div class="leg-dot ld-free"></div>Free</div>
+        <div class="leg-item"><div class="leg-dot ld-prem"></div>Premium</div>
+        <div class="leg-item"><div class="leg-dot ld-soon"></div>Coming soon</div>
+      </div>
+    </div>
+  </div>
+  <div class="subjects-section">
+    <div class="sec-heading">CHOOSE A SUBJECT</div>
+    <div class="subjects-grid" id="subjects-grid"></div>
+  </div>
+  <footer>
+    <div class="fc">© 2026 <b>Core</b>. Dental Education Platform.</div>
+    <div class="fl"><a href="admin.html" target="_blank">Admin</a></div>
+  </footer>
+</div>
+
+<!-- SUBJECT VIEW -->
+<div class="view" id="view-subject">
+  <div class="subj-view-hero">
+    <div class="svh-inner">
+      <div class="svh-top">
+        <div class="svh-icon" id="svh-icon"></div>
+        <div><div class="svh-label">SUBJECT</div></div>
+      </div>
+      <h2 id="svh-name"></h2>
+      <p id="svh-desc"></p>
+      <div class="svh-legend">
+        <div class="leg-item"><div class="leg-dot ld-free"></div>Free</div>
+        <div class="leg-item"><div class="leg-dot ld-prem"></div>Premium</div>
+        <div class="leg-item"><div class="leg-dot ld-soon"></div>Coming soon</div>
+      </div>
+    </div>
+  </div>
+  <div class="guides-section">
+    <div class="guides-heading" id="guides-heading"></div>
+    <div class="guides-grid" id="guides-grid"></div>
+  </div>
+  <footer>
+    <div class="fc">© 2026 <b>Core</b>.</div>
+    <div class="fl"><a href="#" onclick="goHome();return false">← All Subjects</a></div>
+  </footer>
+</div>
+
+<!-- AUTH MODAL -->
+<div class="modal-overlay" id="auth-modal">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal('auth-modal')">✕</button>
+    <div class="auth-tabs">
+      <button class="auth-tab active" id="tab-login" onclick="switchTab('login')">Sign In</button>
+      <button class="auth-tab" id="tab-register" onclick="switchTab('register')">Create Account</button>
+    </div>
+    <div class="auth-body">
+      <div class="auth-panel active" id="panel-login">
+        <div class="auth-title">Welcome back</div>
+        <div class="auth-sub">Sign in to access your premium guides.</div>
+        <div class="field"><label>Email</label><input type="email" id="login-email" placeholder="you@example.com"></div>
+        <div class="field"><label>Password</label><input type="password" id="login-pass" placeholder="••••••••"></div>
+        <button class="btn-auth" onclick="doLogin()">Sign In</button>
+        <div class="auth-msg" id="login-msg"></div>
+      </div>
+      <div class="auth-panel" id="panel-register">
+        <div class="auth-title">Join Core</div>
+        <div class="auth-sub">Free account — premium guides unlock after payment approval.</div>
+        <div class="field"><label>Full Name</label><input type="text" id="reg-name" placeholder="Dr. Ahmed Khalid"></div>
+        <div class="field"><label>Email</label><input type="email" id="reg-email" placeholder="you@example.com"></div>
+        <div class="field"><label>Password</label><input type="password" id="reg-pass" placeholder="At least 6 characters"></div>
+        <button class="btn-auth" onclick="doRegister()">Create Account</button>
+        <div class="auth-msg" id="reg-msg"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- PREMIUM GATE -->
+<div class="modal-overlay" id="prem-modal">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal('prem-modal')">✕</button>
+    <div class="prem-modal">
+      <div class="pm-icon">🔐</div>
+      <div class="pm-title">Premium Guide</div>
+      <div class="pm-sub">Create a free account, then unlock access after a simple payment.</div>
+      <div class="pm-guide-box"><div class="pgb-l">GUIDE</div><div class="pgb-t" id="prem-guide-title">—</div></div>
+      <div class="cliq-box">
+        <div class="cliq-label">HOW TO GET ACCESS</div>
+        <ul class="cliq-steps">
+          <li>Create your free account below</li>
+          <li>Pay via CliQ or wallet to: <b style="color:var(--teal)">[ YOUR CLIQ ]</b></li>
+          <li>Send receipt + email to: <b style="color:var(--teal)">[ YOUR CONTACT ]</b></li>
+          <li>Admin approves within 24 hours</li>
+          <li>Sign in — your guides unlock automatically</li>
+        </ul>
+      </div>
+      <button class="btn-pm btn-pm-p" onclick="closeModal('prem-modal');openAuthModal('register')">Create Free Account</button>
+      <button class="btn-pm btn-pm-g" onclick="closeModal('prem-modal');openAuthModal('login')">Already have an account? Sign In</button>
+    </div>
+  </div>
+</div>
+
+<!-- PENDING APPROVAL -->
+<div class="modal-overlay" id="pend-modal">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal('pend-modal')">✕</button>
+    <div class="pend-modal">
+      <div class="pm-icon">⏳</div>
+      <div class="pm-title">Awaiting Approval</div>
+      <div class="pm-sub">Your account is registered. Once the admin verifies your payment, all premium guides unlock automatically.</div>
+      <div class="pm-guide-box" style="margin-bottom:18px">
+        <div class="psb-r" style="display:flex;justify-content:space-between;font-size:13px;align-items:center">
+          <span style="color:var(--muted)">Account</span><span style="font-weight:600;color:var(--ivory2);font-size:12px" id="pend-email"></span>
+        </div>
+        <div style="margin:8px 0;height:1px;background:var(--border2)"></div>
+        <div style="display:flex;justify-content:space-between;font-size:13px;align-items:center">
+          <span style="color:var(--muted)">Status</span><span style="font-weight:600;color:var(--amber)">⏳ Pending</span>
+        </div>
+      </div>
+      <div class="cliq-box">
+        <div class="cliq-label">HAVEN'T PAID YET?</div>
+        <ul class="cliq-steps">
+          <li>Pay via CliQ: <b style="color:var(--teal)">[ YOUR CLIQ ]</b></li>
+          <li>Send receipt to: <b style="color:var(--teal)">[ YOUR CONTACT ]</b></li>
+          <li>Approved within 24 hours</li>
+        </ul>
+      </div>
+      <button class="btn-pm btn-pm-g" onclick="closeModal('pend-modal')">Close</button>
+    </div>
+  </div>
+</div>
+
+<script>
+/* ── ACADEMY DATA ───────────────────── */
+const ACADEMY=[{id:'oral-medicine',name:'Oral Medicine',icon:'🦷',description:'Mucosal diseases, oral cancers, ulcers, salivary gland disorders, and systemic disease manifestations.',guides:[{title:'Oral Cancer',file:'oral_cancer_study_guide.html',status:'live',access:'free',desc:'Complete guide: SCC subtypes, PMDs, TNM staging, management, prognosis, and mnemonics.',tags:['SCC','PMDs','Staging','Mnemonics'],sections:13},{title:'Oral Ulcers & Vesiculobullous Diseases',file:null,status:'soon',access:'premium',desc:'Aphthous ulcers, pemphigus, pemphigoid, erythema multiforme, and differential diagnosis.',tags:['Aphthous','Pemphigus','DDx'],sections:null},{title:'Salivary Gland Disorders',file:null,status:'soon',access:'premium',desc:'Sialadenitis, sialolithiasis, xerostomia, Sjögren syndrome, salivary gland tumours.',tags:['Sjögren','Xerostomia','Tumours'],sections:null},{title:'TMJ Disorders',file:null,status:'soon',access:'premium',desc:'TMD classification, disc displacement, myofascial pain, bruxism, and management.',tags:['TMD','Bruxism','Disc'],sections:null}]},{id:'oral-surgery',name:'Oral Surgery',icon:'🩺',description:'Exodontia, impacted teeth, dentoalveolar surgery, jaw fractures, and perioperative care.',guides:[{title:'Impacted Third Molars',file:null,status:'soon',access:'free',desc:'Pell & Gregory, Winter\'s lines, surgical technique, indications and complications.',tags:['Classification','Technique','Complications'],sections:null},{title:'Principles of Exodontia',file:null,status:'soon',access:'free',desc:'Forceps vs elevators, extraction techniques, complications, dry socket, and postoperative care.',tags:['Forceps','Elevators','Dry Socket'],sections:null},{title:'Dentoalveolar Trauma',file:null,status:'soon',access:'premium',desc:'Andreasen classification, avulsion, replantation protocol, splinting, and follow-up.',tags:['Avulsion','Andreasen','Replantation'],sections:null},{title:'Jaw Fractures',file:null,status:'soon',access:'premium',desc:'Mandibular and midface fractures: Le Fort classification, ORIF, and management.',tags:['Le Fort','Mandible','ORIF'],sections:null},{title:'Local Anaesthesia Techniques',file:null,status:'soon',access:'free',desc:'IANB, infiltration, mental, long buccal blocks. Failed blocks and complications.',tags:['IANB','Infiltration','Blocks'],sections:null}]},{id:'periodontology',name:'Periodontology',icon:'🌿',description:'Periodontal diseases, 2018 classification, non-surgical and surgical treatment, and implantology.',guides:[{title:'Periodontal Classification 2018',file:null,status:'soon',access:'free',desc:'Complete 2018 AAP/EFP classification: staging (I–IV), grading (A–C), gingivitis, peri-implant diseases.',tags:['2018 Classification','Staging','Grading'],sections:null},{title:'Non-Surgical Periodontal Therapy',file:null,status:'soon',access:'free',desc:'SRP, chemotherapeutics, patient education, re-evaluation, and maintenance.',tags:['SRP','Maintenance','Chlorhexidine'],sections:null},{title:'Periodontal Surgical Techniques',file:null,status:'soon',access:'premium',desc:'Flap designs, osseous surgery, regenerative procedures (GTR, bone grafts).',tags:['Flap','GTR','Bone Grafts'],sections:null},{title:'Implantology Fundamentals',file:null,status:'soon',access:'premium',desc:'Osseointegration, implant components, treatment planning, peri-implantitis.',tags:['Osseointegration','Peri-implantitis'],sections:null}]},{id:'prosthodontics',name:'Prosthodontics',icon:'🏛️',description:'Fixed and removable prosthetics, complete dentures, implant-supported restorations, and occlusion.',guides:[{title:'Complete Dentures',file:null,status:'soon',access:'free',desc:'Impression techniques, jaw relations, tooth selection, try-in, insertion, troubleshooting.',tags:['Impressions','Jaw Relations','Occlusion'],sections:null},{title:'Removable Partial Dentures',file:null,status:'soon',access:'free',desc:'Kennedy classification, surveying, components, design principles, and insertion.',tags:['Kennedy','RPD Design','Clasps'],sections:null},{title:'Fixed Prosthodontics',file:null,status:'soon',access:'premium',desc:'Crown preparations, provisionalization, impressions, cementation, bridge design.',tags:['Crown Prep','Bridge','Cementation'],sections:null},{title:'Occlusion Principles',file:null,status:'soon',access:'premium',desc:'Centric relation, ICP, guidance (canine vs group function), and occlusal adjustment.',tags:['CR-CO','Centric Relation','Guidance'],sections:null}]},{id:'orthodontics',name:'Orthodontics',icon:'📐',description:'Growth and development, malocclusion diagnosis, cephalometric analysis, appliances, and retention.',guides:[{title:'Malocclusion Classification & Diagnosis',file:null,status:'soon',access:'free',desc:'Angle\'s & British Standards, skeletal patterns, and occlusal indices.',tags:['Angle\'s','Skeletal','Indices'],sections:null},{title:'Cephalometric Analysis',file:null,status:'soon',access:'premium',desc:'Landmarks, planes, key angles (ANB, SNA, SNB), Steiner and Eastman analysis.',tags:['Cephalometrics','ANB','SNA'],sections:null},{title:'Fixed Appliances',file:null,status:'soon',access:'premium',desc:'Brackets, archwires, mechanics, tooth movement types, and treatment sequencing.',tags:['Brackets','Archwires','Mechanics'],sections:null},{title:'Retention & Relapse',file:null,status:'soon',access:'premium',desc:'Causes of relapse, retainer types (Hawley, Essix, fixed), long-term retention.',tags:['Retainers','Relapse','Hawley'],sections:null}]},{id:'conservative',name:'Conservative Dentistry',icon:'🔧',description:'Cavity preparation, restorative materials, adhesive dentistry, indirect restorations, and aesthetics.',guides:[{title:'Crown & Bridges — Complete Guide',file:'crown_bridges.html',status:'live',access:'free',desc:'14 chapters: preparation principles, margins, full crown prep, partial coverage, bridges, pontics, impressions, provisionals, shade, lab, try-in, cementation, digital workflow, and failure management.',tags:['Crown Prep','Bridges','PFM','Ceramics','Cementation','Shillingburg'],sections:14},{title:'Cavity Classification & Preparation',file:null,status:'soon',access:'free',desc:'Black\'s 6 classes, minimal intervention design, mechanical vs adhesive retention.',tags:['Black\'s','Cavity Design','MID'],sections:null},{title:'Composites & Glass Ionomer Cements',file:null,status:'soon',access:'free',desc:'Composition, properties, polymerisation shrinkage, clinical handling, and selection.',tags:['Composite','GIC','Adhesive'],sections:null},{title:'Aesthetic Dentistry',file:null,status:'soon',access:'premium',desc:'Veneers (direct/indirect), bleaching protocols, smile design principles.',tags:['Veneers','Bleaching','Smile Design'],sections:null},{title:'Inlays, Onlays & Crowns',file:null,status:'soon',access:'premium',desc:'Indication, preparation design, laboratory steps, cementation, complications.',tags:['Inlay','Onlay','Ceramic'],sections:null}]},{id:'pediatric',name:'Paediatric Dentistry',icon:'👶',description:'Primary dentition, caries management, pulp therapy, space maintenance, and behaviour management.',guides:[{title:'Caries Management in Children',file:null,status:'soon',access:'free',desc:'Caries risk assessment, prevention, ART, Hall technique, and fissure sealants.',tags:['Hall Crown','ART','Risk'],sections:null},{title:'Pulp Therapy in Primary Teeth',file:null,status:'soon',access:'free',desc:'Indirect/direct pulp cap, pulpotomy (Cvek, formocresol, MTA), and pulpectomy.',tags:['Pulpotomy','MTA','Formocresol'],sections:null},{title:'Space Maintenance',file:null,status:'soon',access:'premium',desc:'Premature primary loss, types of space maintainers, and case selection.',tags:['Space Maintainer','Band-Loop'],sections:null},{title:'Behaviour Management',file:null,status:'soon',access:'free',desc:'Frankl scale, tell-show-do, voice control, conscious sedation.',tags:['Frankl','Sedation','TSD'],sections:null}]},{id:'preventive',name:'Preventive Dentistry',icon:'🛡️',description:'Fluoride therapy, caries risk assessment, fissure sealants, oral health promotion.',guides:[{title:'Fluoride in Dentistry',file:null,status:'soon',access:'free',desc:'Mechanisms, systemic vs topical fluoride, toxicity, fluorosis, recommendations.',tags:['Fluorosis','Topical','F Varnish'],sections:null},{title:'Caries Risk Assessment & Prevention',file:null,status:'soon',access:'free',desc:'CAMBRA, CAT tools, diet analysis, oral hygiene instruction.',tags:['CAMBRA','Risk Assessment','Diet'],sections:null},{title:'Fissure Sealants',file:null,status:'soon',access:'free',desc:'Indications, technique, materials (resin vs GIC), monitoring, and evidence.',tags:['Fissure Sealants','Resin','GIC'],sections:null},{title:'Oral Health Promotion',file:null,status:'soon',access:'free',desc:'Health education models, community fluoridation, school programmes.',tags:['Health Promotion','Fluoridation'],sections:null}]}];
+
+/* ── AUTH ───────────────────────────── */
+let currentUser=null,pendingGuideTitle='',pendingGuideFile='';
+function getUsers(){return JSON.parse(localStorage.getItem('core_users')||'{}')}
+function saveUsers(u){localStorage.setItem('core_users',JSON.stringify(u))}
+function restoreSession(){const e=localStorage.getItem('core_session');if(!e)return;const u=getUsers();currentUser=u[e]||null;updateNavUser()}
+function doLogin(){
+  const e=document.getElementById('login-email').value.trim(),p=document.getElementById('login-pass').value;
+  const u=getUsers();if(!u[e]||u[e].password!==p){showMsg('login-msg','Invalid email or password.','err');return}
+  currentUser=u[e];localStorage.setItem('core_session',e);updateNavUser();closeModal('auth-modal');showMsg('login-msg','','');
+  if(pendingGuideFile)tryOpenPremium(pendingGuideTitle,pendingGuideFile);
+}
+function doRegister(){
+  const n=document.getElementById('reg-name').value.trim(),e=document.getElementById('reg-email').value.trim(),p=document.getElementById('reg-pass').value;
+  if(!n||!e||!p){showMsg('reg-msg','Please fill all fields.','err');return}
+  if(p.length<6){showMsg('reg-msg','Password must be at least 6 characters.','err');return}
+  const u=getUsers();if(u[e]){showMsg('reg-msg','Email already registered.','err');return}
+  u[e]={name:n,email:e,password:p,approved:false,registeredAt:new Date().toISOString()};
+  saveUsers(u);currentUser=u[e];localStorage.setItem('core_session',e);updateNavUser();closeModal('auth-modal');showMsg('reg-msg','','');
+  if(pendingGuideFile)tryOpenPremium(pendingGuideTitle,pendingGuideFile);
+}
+function logout(){currentUser=null;localStorage.removeItem('core_session');updateNavUser();document.getElementById('user-dropdown').classList.remove('open')}
+function updateNavUser(){
+  const btn=document.getElementById('nav-user-btn'),dot=document.getElementById('nav-dot'),lbl=document.getElementById('nav-user-label');
+  if(currentUser){dot.style.display='block';lbl.textContent=currentUser.name?currentUser.name.split(' ')[0]:currentUser.email.split('@')[0];document.getElementById('ud-name').textContent=currentUser.name||'User';document.getElementById('ud-email').textContent=currentUser.email;const st=document.getElementById('ud-status');if(currentUser.approved){st.textContent='✓ Premium access';st.className='ud-status ud-ok'}else{st.textContent='⏳ Pending approval';st.className='ud-status ud-wait'}}
+  else{dot.style.display='none';lbl.textContent='Sign In'}
+}
+function toggleUserMenu(){if(!currentUser){openAuthModal('login');return}document.getElementById('user-dropdown').classList.toggle('open')}
+document.addEventListener('click',e=>{if(!e.target.closest('#user-dropdown')&&!e.target.closest('#nav-user-btn'))document.getElementById('user-dropdown').classList.remove('open')});
+function handleGuideClick(guide){
+  if(guide.status==='soon')return;
+  if(guide.access==='free'){window.location.href=guide.file;return}
+  pendingGuideTitle=guide.title;pendingGuideFile=guide.file;tryOpenPremium(guide.title,guide.file);
+}
+function tryOpenPremium(title,file){
+  if(!currentUser){document.getElementById('prem-guide-title').textContent=title;openModal('prem-modal');return}
+  if(!currentUser.approved){document.getElementById('pend-email').textContent=currentUser.email;openModal('pend-modal');return}
+  if(file)window.location.href=file;
+}
+
+/* ── RENDER ─────────────────────────── */
+function renderHome(){
+  const grid=document.getElementById('subjects-grid');let tl=0;
+  grid.innerHTML=ACADEMY.map(s=>{
+    const live=s.guides.filter(g=>g.status==='live').length;
+    const prem=s.guides.filter(g=>g.access==='premium').length;
+    const free=s.guides.filter(g=>g.access==='free'&&g.status==='live').length;
+    tl+=live;
+    const pills=[free>0?`<span class="count-pill cp-free">${free} free</span>`:'',prem>0?`<span class="count-pill cp-prem">${prem} premium</span>`:''].filter(Boolean).join('')||`<span class="count-pill cp-soon">${s.guides.length} planned</span>`;
+    return`<div class="subj-card ${live>0?'has-live':''}" onclick="openSubject('${s.id}')"><div class="sc-top"><div class="sc-icon">${s.icon}</div><div class="sc-counts">${pills}</div></div><div><div class="sc-name">${s.name}</div><div class="sc-desc">${s.description}</div></div><div class="sc-footer"><span class="sc-total"><b>${s.guides.length}</b> topics planned</span><span class="sc-arr">→</span></div></div>`;
+  }).join('');
+  document.getElementById('stat-live').textContent=tl;
+}
+function openSubject(id){
+  const s=ACADEMY.find(x=>x.id===id);if(!s)return;
+  document.getElementById('svh-icon').textContent=s.icon;document.getElementById('svh-name').textContent=s.name;document.getElementById('svh-desc').textContent=s.description;
+  const live=s.guides.filter(g=>g.status==='live').length;
+  document.getElementById('guides-heading').textContent=`${s.guides.length} TOPICS · ${live} AVAILABLE NOW`;
+  document.getElementById('guides-grid').innerHTML=s.guides.map((g,i)=>{
+    const isLive=g.status==='live',isPrem=g.access==='premium';
+    const bc=!isLive?'gb-soon':isPrem?'gb-prem':'gb-free';
+    const bt=!isLive?'🔜 Soon':isPrem?'🔐 Premium':'🟢 Free';
+    const cl=!isLive?'g-soon':isPrem?'g-premium':'g-free';
+    const arr=isLive?`<span class="gc-arr">→</span>`:`<span style="color:var(--muted);font-size:12px">–</span>`;
+    const meta=isLive?`<span class="gc-meta"><b>${g.sections}</b> sections</span>`:`<span class="gc-meta">In preparation</span>`;
+    const tags=g.tags.map(t=>`<span class="gc-tag">${t}</span>`).join('');
+    const ca=isLive?`onclick='handleGuideClick(${JSON.stringify(g)})'`:'';
+    return`<div class="guide-card ${cl}" ${ca}><div class="gc-top"><div class="gc-num">${String(i+1).padStart(2,'0')}</div><span class="gc-badge ${bc}">${bt}</span></div><div><div class="gc-title">${g.title}</div><div class="gc-desc">${g.desc}</div></div><div class="gc-tags">${tags}</div><div class="gc-footer">${meta}${arr}</div></div>`;
+  }).join('');
+  showView('subject');window.scrollTo({top:0,behavior:'smooth'});location.hash=id;
+}
+
+/* ── MODALS ─────────────────────────── */
+function openModal(id){document.getElementById(id).classList.add('open')}
+function closeModal(id){document.getElementById(id).classList.remove('open')}
+function openAuthModal(tab){openModal('auth-modal');switchTab(tab)}
+function switchTab(tab){
+  document.querySelectorAll('.auth-tab').forEach(t=>t.classList.remove('active'));
+  document.querySelectorAll('.auth-panel').forEach(p=>p.classList.remove('active'));
+  document.getElementById('tab-'+tab).classList.add('active');document.getElementById('panel-'+tab).classList.add('active');
+}
+function showMsg(id,text,type){const el=document.getElementById(id);el.textContent=text;el.className='auth-msg'+(type?' '+type:'')}
+document.querySelectorAll('.modal-overlay').forEach(o=>{o.addEventListener('click',e=>{if(e.target===o)o.classList.remove('open')})});
+
+/* ── NAV ─────────────────────────────── */
+function showView(v){document.getElementById('view-home').classList.toggle('active',v==='home');document.getElementById('view-subject').classList.toggle('active',v==='subject');document.getElementById('back-btn').style.display=v==='subject'?'flex':'none'}
+function goHome(){showView('home');window.scrollTo({top:0,behavior:'smooth'});history.pushState('',document.title,window.location.pathname)}
+window.addEventListener('hashchange',()=>{const id=location.hash.slice(1);if(id)openSubject(id);else goHome()});
+restoreSession();renderHome();if(location.hash)openSubject(location.hash.slice(1));
+</script>
+</body>
+</html>

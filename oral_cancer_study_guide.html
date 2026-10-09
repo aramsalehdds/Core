@@ -1,0 +1,1601 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Oral Cancer: Complete Study Guide</title>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#07101F;--card:#0D1A2E;--card2:#132038;--border:#1A2E4A;
+  --text:#E2E8F0;--muted:#7C95B8;
+  --teal:#00D9B8;--teal-d:rgba(0,217,184,.12);
+  --red:#FF4545;--red-d:rgba(255,69,69,.12);
+  --amber:#F5A623;--amber-d:rgba(245,166,35,.12);
+  --green:#22D987;--green-d:rgba(34,217,135,.12);
+  --purple:#A78BFA;--purple-d:rgba(167,139,250,.12);
+  --blue:#60A5FA;
+}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;line-height:1.6}
+
+/* NAV */
+.nav{background:rgba(7,16,31,.97);backdrop-filter:blur(10px);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100;padding:0 20px}
+.hero-bar{display:flex;align-items:center;gap:12px;padding:12px 0 8px}
+.hi{width:36px;height:36px;background:linear-gradient(135deg,var(--teal),#007A68);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0}
+.ht h1{font-size:16px;font-weight:800;color:var(--text)}.ht h1 span{color:var(--teal)}.ht p{font-size:11px;color:var(--muted)}
+.tabs{display:flex;overflow-x:auto;scrollbar-width:none;-ms-overflow-style:none;margin-bottom:-1px}
+.tabs::-webkit-scrollbar{display:none}
+.tab{background:none;border:none;border-bottom:2px solid transparent;color:var(--muted);padding:9px 13px;cursor:pointer;font-size:12px;font-weight:600;white-space:nowrap;transition:all .15s;font-family:inherit}
+.tab:hover{color:var(--text);background:rgba(255,255,255,.03)}.tab.active{color:var(--teal);border-bottom-color:var(--teal)}
+
+/* LAYOUT */
+.content{max-width:940px;margin:0 auto;padding:28px 20px 60px}
+.panel{display:none}.panel.active{display:block}
+
+/* TYPOGRAPHY */
+.sec-title{font-size:22px;font-weight:900;color:var(--text);margin-bottom:4px}
+.sec-sub{font-size:13px;color:var(--muted);margin-bottom:24px}
+h3.sh{font-size:15px;font-weight:700;color:var(--text);margin:26px 0 12px;border-left:3px solid var(--teal);padding-left:10px}
+h4.sh2{font-size:13px;font-weight:700;color:var(--teal);margin:14px 0 8px;text-transform:uppercase;letter-spacing:.5px}
+p.bd{font-size:13.5px;color:var(--muted);line-height:1.7;margin-bottom:10px}
+.tc{color:var(--teal)}.rc{color:var(--red)}.ac{color:var(--amber)}.gc{color:var(--green)}.mc{color:var(--muted)}.fw{font-weight:700}
+
+/* STAT ROW */
+.stats{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:24px}
+.stat{background:var(--card2);border:1px solid var(--border);border-radius:10px;padding:14px 18px;flex:1;min-width:120px}
+.stat-n{font-size:28px;font-weight:900;color:var(--teal);line-height:1}.stat-l{font-size:11.5px;color:var(--muted);margin-top:3px}
+
+/* CARDS */
+.card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:16px 18px;margin-bottom:12px}
+.card-t{font-size:13.5px;font-weight:700;color:var(--teal);margin-bottom:8px}
+.card p,.card li{font-size:13px;color:var(--muted);line-height:1.7}
+.card ul,.card ol{padding-left:16px;margin-top:6px}
+.card li{margin-bottom:3px}.card strong{color:var(--text)}
+
+/* GRIDS */
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.g3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px}
+.g4{display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:10px}
+@media(max-width:640px){.g2,.g3,.g4{grid-template-columns:1fr}}
+
+/* ALERTS */
+.alert{border-radius:10px;padding:14px 18px;margin-bottom:14px;border-left:4px solid}
+.at{background:var(--teal-d);border-color:var(--teal)}.ar{background:var(--red-d);border-color:var(--red)}
+.ag{background:var(--green-d);border-color:var(--green)}.aa{background:var(--amber-d);border-color:var(--amber)}
+.ap{background:var(--purple-d);border-color:var(--purple)}
+.alert-t{font-size:12.5px;font-weight:700;margin-bottom:7px}
+.at .alert-t{color:var(--teal)}.ar .alert-t{color:var(--red)}.ag .alert-t{color:var(--green)}.aa .alert-t{color:var(--amber)}.ap .alert-t{color:var(--purple)}
+.alert p,.alert li{font-size:13px;color:var(--text);line-height:1.65}
+.alert ul{padding-left:16px;margin-top:5px}.alert li{margin-bottom:3px}
+
+/* BADGES */
+.b{display:inline-block;padding:2px 8px;border-radius:20px;font-size:10px;font-weight:700;letter-spacing:.4px}
+.br{background:rgba(255,69,69,.2);color:var(--red)}.bg{background:rgba(34,217,135,.2);color:var(--green)}
+.ba{background:rgba(245,166,35,.2);color:var(--amber)}.bt{background:rgba(0,217,184,.2);color:var(--teal)}
+.bp{background:rgba(167,139,250,.2);color:var(--purple)}.bb{background:rgba(96,165,250,.2);color:var(--blue)}
+.bx{background:rgba(124,149,184,.15);color:var(--muted)}
+
+/* TABLES */
+.tw{border:1px solid var(--border);border-radius:10px;overflow:hidden;margin-bottom:18px}
+table{width:100%;border-collapse:collapse;font-size:12.5px}
+th{background:var(--card2);color:var(--teal);padding:8px 12px;text-align:left;font-size:10.5px;text-transform:uppercase;letter-spacing:.6px;font-weight:700;border-bottom:1px solid var(--border)}
+td{padding:8px 12px;border-bottom:1px solid rgba(26,46,74,.7);color:var(--text);vertical-align:top;line-height:1.5}
+tr:last-child td{border-bottom:none}tr:hover td{background:rgba(255,255,255,.015)}
+.sI{color:#22D987;font-weight:700}.sII{color:#86EFAC;font-weight:700}.sIII{color:var(--amber);font-weight:700}
+.sIVA{color:#F97316;font-weight:700}.sIVB{color:var(--red);font-weight:700}.sIVC{color:#DC2626;font-weight:700}
+.sh_{color:var(--green);font-weight:700}.sm_{color:var(--amber);font-weight:700}.sl_{color:var(--red);font-weight:700}
+
+/* TYPE CARD */
+.tc-wrap{background:var(--card);border:1px solid var(--border);border-radius:12px;overflow:hidden;margin-bottom:14px}
+.tc-head{display:flex;justify-content:space-between;align-items:center;padding:14px 18px;background:var(--card2);border-bottom:1px solid var(--border)}
+.tc-name{font-size:15px;font-weight:800;color:var(--text)}.tc-pct{font-size:22px;font-weight:900;color:var(--teal)}
+.tc-body{padding:14px 18px}
+.tc-body p,.tc-body li{font-size:13px;color:var(--muted);line-height:1.7}
+.tc-body ul{padding-left:16px;margin-top:6px}.tc-body li{margin-bottom:3px}.tc-body strong{color:var(--text)}
+.mr{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:10px}
+
+/* RISK ITEMS */
+.ri{display:flex;align-items:center;gap:10px;padding:8px 12px;border-radius:8px;background:var(--card2);margin-bottom:6px}
+.rn{font-size:13px;color:var(--text);flex:1}
+.rb-w{width:90px;height:5px;background:var(--border);border-radius:3px;overflow:hidden;flex-shrink:0}
+.rf{height:100%;border-radius:3px}
+.rfh{background:linear-gradient(to right,#F59E0B,#EF4444)}.rfm{background:linear-gradient(to right,#22D987,#F59E0B)}.rfl{background:#22D987}
+.rl{font-size:10px;font-weight:700;padding:2px 7px;border-radius:10px;white-space:nowrap}
+.rlh{background:rgba(239,68,68,.2);color:#EF4444}.rlm{background:rgba(245,158,11,.2);color:#F5A623}.rll{background:rgba(34,197,94,.2);color:#22C55E}
+
+/* PMD CARD */
+.pmd{background:var(--card);border:1px solid var(--border);border-radius:12px;overflow:hidden;margin-bottom:12px}
+.pmd-h{padding:11px 16px;border-bottom:1px solid var(--border);display:flex;justify-content:space-between;align-items:center}
+.pmd-n{font-size:14px;font-weight:700;color:var(--text)}
+.pmd-b{padding:12px 16px}
+.pmd-b li{font-size:13px;color:var(--muted);line-height:1.65;margin-bottom:4px}
+.pmd-b ul{padding-left:16px}.pmd-b strong{color:var(--text)}
+
+/* FLAG ITEMS */
+.flag{display:flex;gap:8px;padding:9px 12px;border-radius:8px;margin-bottom:5px;font-size:13px;line-height:1.5}
+.fr{background:rgba(255,69,69,.09);border-left:3px solid var(--red)}
+.fg{background:rgba(34,217,135,.09);border-left:3px solid var(--green)}
+.fd{font-size:15px;line-height:1;flex-shrink:0;margin-top:2px}
+
+/* MGMT STEPS */
+.ms{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:12px 16px;margin-bottom:9px;display:flex;gap:12px;align-items:flex-start}
+.mn{background:var(--teal);color:#000;width:24px;height:24px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:900;flex-shrink:0;margin-top:2px}
+.mc_ h4{font-size:13.5px;font-weight:700;color:var(--text);margin-bottom:3px}.mc_ p{font-size:12.5px;color:var(--muted);line-height:1.6}
+
+/* PEARLS */
+.pearl{background:var(--amber-d);border:1px solid rgba(245,166,35,.25);border-radius:10px;padding:11px 15px;margin-bottom:8px;display:flex;gap:9px;align-items:flex-start}
+.pi{font-size:15px;flex-shrink:0;margin-top:1px}.pearl p{font-size:13px;color:var(--text);line-height:1.6}
+.pearl strong{color:var(--amber)}
+
+/* MNEMONIC */
+.mnem{background:var(--card2);border:1px solid var(--teal);border-radius:12px;padding:18px;margin-bottom:14px}
+.mw{font-size:28px;font-weight:900;color:var(--teal);letter-spacing:5px;margin-bottom:14px}
+.mrow{display:flex;gap:10px;align-items:flex-start;margin-bottom:8px}
+.ml{font-size:20px;font-weight:900;color:var(--teal);width:24px;flex-shrink:0;line-height:1}
+.mc2{font-size:13px;color:var(--text);line-height:1.5}.mc2 strong{color:var(--amber)}
+
+/* SURVIVAL BARS */
+.sb-row{margin-bottom:9px}
+.sb-top{display:flex;justify-content:space-between;font-size:12.5px;margin-bottom:4px}
+.sb-bar{height:7px;background:var(--border);border-radius:4px;overflow:hidden}
+.sb-fill{height:100%;border-radius:4px}
+
+/* NUM LIST */
+.nl{list-style:none;padding:0;counter-reset:nl}
+.nl li{display:flex;gap:9px;align-items:flex-start;margin-bottom:8px;font-size:13px;color:var(--text);line-height:1.55;counter-increment:nl}
+.nl li::before{content:counter(nl);background:var(--teal);color:#000;min-width:19px;height:19px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:900;flex-shrink:0}
+
+hr{border:none;border-top:1px solid var(--border);margin:20px 0}
+.tag{font-size:11px;background:var(--card2);border:1px solid var(--border);border-radius:5px;padding:2px 7px;color:var(--muted);display:inline-block;margin:2px}
+
+/* SITE CARD */
+.sc{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:15px;margin-bottom:11px}
+.sc-h{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px}
+.sc-n{font-size:14px;font-weight:700;color:var(--text)}
+.sc p{font-size:13px;color:var(--muted);line-height:1.65}.sc strong{color:var(--text)}
+</style>
+</head>
+<body>
+
+<div class="nav">
+  <div class="hero-bar">
+    <div class="hi">🦷</div>
+    <div class="ht">
+      <h1>Oral Cancer: <span>Complete Study Guide</span></h1>
+      <p>Scratch to Mastery — All Topics Covered</p>
+    </div>
+  </div>
+  <div class="tabs">
+    <button class="tab active" onclick="show('overview',this)">📚 Overview</button>
+    <button class="tab" onclick="show('types',this)">🦠 Cancer Types</button>
+    <button class="tab" onclick="show('sites',this)">📍 Anatomical Sites</button>
+    <button class="tab" onclick="show('risks',this)">⚠️ Risk Factors & PMDs</button>
+    <button class="tab" onclick="show('clinical',this)">🩺 Clinical Features</button>
+    <button class="tab" onclick="show('flags',this)">🚩 Red & Green Flags</button>
+    <button class="tab" onclick="show('dx',this)">🔬 Diagnosis</button>
+    <button class="tab" onclick="show('staging',this)">📊 TNM Staging</button>
+    <button class="tab" onclick="show('ddx',this)">🔄 Differential Dx</button>
+    <button class="tab" onclick="show('screen',this)">🔭 Screening</button>
+    <button class="tab" onclick="show('mgmt',this)">💊 Management</button>
+    <button class="tab" onclick="show('prog',this)">📈 Prognosis</button>
+    <button class="tab" onclick="show('pearls',this)">💡 Pearls & Mnemonics</button>
+  </div>
+</div>
+
+<div class="content">
+
+<!-- ============================
+     OVERVIEW
+============================= -->
+<div class="panel active" id="overview">
+  <div class="sec-title">📚 Overview</div>
+  <div class="sec-sub">Core concepts, anatomy, and epidemiology of oral cancers</div>
+
+  <div class="stats">
+    <div class="stat"><div class="stat-n">90%</div><div class="stat-l">SCC — most common type</div></div>
+    <div class="stat"><div class="stat-n tc">54K</div><div class="stat-l">New US cases/year</div></div>
+    <div class="stat"><div class="stat-n">2:1</div><div class="stat-l">Male : Female ratio</div></div>
+    <div class="stat"><div class="stat-n ac">66%</div><div class="stat-l">Overall 5-year survival</div></div>
+    <div class="stat"><div class="stat-n rc">11th</div><div class="stat-l">Most common cancer globally</div></div>
+  </div>
+
+  <h3 class="sh">Definition & Anatomy</h3>
+  <div class="card">
+    <div class="card-t">🔍 What is Oral Cancer?</div>
+    <p>Malignancies arising from the <strong>oral cavity mucosa</strong>. Distinct from oropharyngeal cancer (soft palate, posterior 1/3 tongue/base of tongue, tonsils, posterior pharyngeal wall). Squamous cell carcinoma (SCC) accounts for ~90% of oral cancers. The two must be distinguished as they have different risk factors, staging systems, prognosis, and management.</p>
+  </div>
+  <div class="alert at">
+    <div class="alert-t">🦷 Oral Cavity Boundaries</div>
+    <p><strong>Anteriorly:</strong> Vermilion border of lips → mucosal surface of lips (inner surface) | <strong>Posteriorly:</strong> Junction of hard/soft palate (superior) + circumvallate papillae of tongue (inferior) | <strong>Laterally:</strong> Buccal mucosa | <strong>Superiorly:</strong> Hard palate and upper alveolus | <strong>Inferiorly:</strong> Floor of mouth</p>
+  </div>
+
+  <h4 class="sh2">Oral Cavity Sub-sites (7 Key Areas)</h4>
+  <div class="g2">
+    <div class="card"><p>👄 <strong>Lips</strong> — vermilion border inward (upper + lower)</p></div>
+    <div class="card"><p>👅 <strong>Anterior 2/3 tongue</strong> (oral tongue) — anterior to circumvallate papillae</p></div>
+    <div class="card"><p>🦷 <strong>Floor of mouth</strong> — U-shaped area inferior to tongue</p></div>
+    <div class="card"><p>😮 <strong>Buccal mucosa</strong> — inner lining of cheeks and lips</p></div>
+    <div class="card"><p>🏛️ <strong>Hard palate</strong> — anterior bony roof of mouth</p></div>
+    <div class="card"><p>🦷 <strong>Gingiva / Alveolar ridges</strong> — upper and lower</p></div>
+  </div>
+  <div class="card"><p>📐 <strong>Retromolar trigone</strong> — small triangular mucosa posterior to last molar, overlying anterior ramus of mandible</p></div>
+
+  <h3 class="sh">Epidemiology</h3>
+  <div class="g2">
+    <div class="card">
+      <div class="card-t">🌍 Global Statistics</div>
+      <ul>
+        <li>~377,000 new cases annually worldwide</li>
+        <li>~177,000 deaths annually</li>
+        <li>Highest incidence: <strong>South &amp; Southeast Asia</strong> (India, Pakistan, Bangladesh — betel nut use)</li>
+        <li>Also high: Eastern Europe, South America</li>
+        <li>Rising incidence in younger adults globally (HPV)</li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="card-t">🇺🇸 United States</div>
+      <ul>
+        <li>~54,000 new oral/pharyngeal cases/year</li>
+        <li>~10,800 deaths/year</li>
+        <li>Male:Female ~2:1 (gap narrowing due to HPV)</li>
+        <li>Peak incidence: <strong>6th–7th decade</strong></li>
+        <li>Rare before age 40 (unless HPV-related)</li>
+        <li>African Americans: worse stage at presentation, worse survival</li>
+      </ul>
+    </div>
+  </div>
+
+  <h3 class="sh">Pathogenesis</h3>
+  <div class="card">
+    <div class="card-t">⚗️ Stepwise Progression</div>
+    <p><strong>Normal epithelium → Epithelial Dysplasia (mild→moderate→severe) → Carcinoma in Situ (CIS) → Invasive SCC → Metastasis</strong></p>
+    <br>
+    <p><strong>Two main carcinogenic pathways:</strong></p>
+    <ul>
+      <li><strong>Tobacco/Alcohol pathway:</strong> PAH &amp; nitrosamines form DNA adducts → TP53 mutations → loss of cell cycle checkpoint control → uncontrolled proliferation</li>
+      <li><strong>HPV pathway:</strong> E6 oncoprotein degrades p53 protein; E7 oncoprotein inactivates Rb (retinoblastoma protein) → cell cycle dysregulation → malignant transformation</li>
+    </ul>
+  </div>
+  <div class="g2">
+    <div class="card">
+      <div class="card-t">🧬 Key Molecular Alterations</div>
+      <ul>
+        <li><strong>TP53</strong> mutations (most common — 50–80% of cases)</li>
+        <li><strong>EGFR</strong> overexpression (&gt;90% of HNSCCs)</li>
+        <li><strong>CDKN2A (p16)</strong> inactivation</li>
+        <li>Cyclin D1 amplification (11q13)</li>
+        <li>Loss of heterozygosity: 3p, 9p, 17p (early events)</li>
+        <li>VEGF overexpression (angiogenesis)</li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="card-t">🔴 Field Cancerization (Slaughter, 1953)</div>
+      <p>Entire upper aerodigestive tract exposed to same carcinogens → "condemned mucosa" → multiple independent potentially malignant areas → synchronous or metachronous primary tumors</p>
+      <br>
+      <p><strong>Risk of 2nd primary:</strong> 3–7% per year — lifelong surveillance essential!</p>
+      <p><strong>Common 2nd primaries:</strong> Larynx, esophagus, lung (especially in smokers)</p>
+    </div>
+  </div>
+
+  <h3 class="sh">Routes of Spread</h3>
+  <div class="g3">
+    <div class="card">
+      <div class="card-t">➡️ Local Extension</div>
+      <p>Direct invasion of adjacent mucosa, muscles, bone, cartilage, and nerves (perineural spread)</p>
+    </div>
+    <div class="card">
+      <div class="card-t">🔗 Lymphatic Spread</div>
+      <p>Most common route. Regional cervical LN (Levels I–V). Skip metastasis possible (tongue → Level IV, bypassing III)</p>
+    </div>
+    <div class="card">
+      <div class="card-t">🩸 Haematogenous (Late/Rare)</div>
+      <p>Lung (most common) → Liver → Bone → Skin/soft tissue. Usually indicates Stage IVC.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ============================
+     CANCER TYPES
+============================= -->
+<div class="panel" id="types">
+  <div class="sec-title">🦠 Types of Oral Cancer</div>
+  <div class="sec-sub">Classification, key features, and distinguishing characteristics</div>
+
+  <div class="tc-wrap">
+    <div class="tc-head">
+      <div>
+        <div class="tc-name">Squamous Cell Carcinoma (SCC)</div>
+        <div style="font-size:11.5px;color:var(--muted);margin-top:2px">Arises from mucosal stratified squamous epithelium</div>
+      </div>
+      <div class="tc-pct">~90%</div>
+    </div>
+    <div class="tc-body">
+      <div class="mr"><span class="b br">MOST COMMON</span><span class="b bt">All oral cavity sites</span><span class="b ba">Variable prognosis by stage</span></div>
+      <p><strong>Histologic Grades:</strong></p>
+      <ul>
+        <li><strong>G1 — Well differentiated:</strong> Abundant keratin pearls, resembles normal squamous epithelium, lower mitotic rate. Relatively better prognosis.</li>
+        <li><strong>G2 — Moderately differentiated:</strong> Some keratin production, nuclear pleomorphism, moderate mitoses.</li>
+        <li><strong>G3 — Poorly differentiated:</strong> Little or no keratin, marked pleomorphism, high mitotic rate, high nuclear:cytoplasmic ratio. Aggressive.</li>
+        <li><strong>G4 — Undifferentiated:</strong> Cannot identify squamous features. Worst prognosis.</li>
+      </ul>
+      <br>
+      <p><strong>Macroscopic patterns:</strong></p>
+      <ul>
+        <li><strong>Exophytic (fungating):</strong> Outward growing cauliflower-like mass — lower grade, better prognosis</li>
+        <li><strong>Ulcerative:</strong> Crater with raised, rolled, everted indurated margins — classic presentation</li>
+        <li><strong>Infiltrative/Endophytic:</strong> Submucosal spread, deeper invasion, worse prognosis</li>
+      </ul>
+      <br>
+      <div class="alert aa"><div class="alert-t">⚠️ Classic Clinical Description</div><p>Oral SCC presents as an <strong>indurated, non-healing ulcer with raised, rolled, everted, hard margins</strong>. The induration (woody firmness on palpation) reflects desmoplastic stromal reaction and tumor infiltration — a cardinal sign of malignancy.</p></div>
+      <p><strong>SCC Subtypes of note:</strong></p>
+      <ul>
+        <li><strong>Verrucous SCC</strong> — see separate card below (low-grade variant)</li>
+        <li><strong>Basaloid SCC</strong> — aggressive, oropharynx more common, HPV+</li>
+        <li><strong>Papillary SCC</strong> — exophytic, better prognosis</li>
+        <li><strong>Spindle cell carcinoma (sarcomatoid)</strong> — biphasic, aggressive, post-RT setting</li>
+        <li><strong>Adenosquamous carcinoma</strong> — rare, aggressive mixed type</li>
+        <li><strong>Acantholytic SCC</strong> — pseudoglandular appearance, aggressive</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="tc-wrap">
+    <div class="tc-head">
+      <div>
+        <div class="tc-name">Verrucous Carcinoma</div>
+        <div style="font-size:11.5px;color:var(--muted);margin-top:2px">Ackerman's Tumor — Low-grade variant of SCC</div>
+      </div>
+      <div class="tc-pct" style="color:var(--green)">3–5%</div>
+    </div>
+    <div class="tc-body">
+      <div class="mr"><span class="b bg">LOW METASTATIC RISK</span><span class="b bt">Buccal mucosa (most common)</span><span class="b bg">Good prognosis</span></div>
+      <ul>
+        <li><strong>Appearance:</strong> Exophytic, warty, cauliflower-like white/gray growth — can be enormous</li>
+        <li><strong>Locally destructive</strong> but <strong>very rarely metastasizes</strong> (&lt;5%)</li>
+        <li><strong>Slow growing</strong> — patients often present late despite long duration</li>
+        <li><strong>Association:</strong> Tobacco chewing, betel nut, smokeless tobacco, snuff</li>
+        <li><strong>Sites:</strong> Buccal mucosa (most common), lower gingiva, tongue, hard palate</li>
+        <li><strong>Histology:</strong> Bulbous pushing (NOT infiltrating) margins, bland squamous cells, broad rete ridges, hyperkeratosis, koilocytes may be present</li>
+        <li><strong>HPV association:</strong> HPV-6 and 11 (low-risk types)</li>
+      </ul>
+      <div class="alert ar" style="margin-top:10px"><div class="alert-t">⛔ Critical Treatment Caveat</div><p>Do <strong>NOT</strong> treat verrucous carcinoma with radiation therapy alone — risk of <strong>anaplastic transformation</strong> to high-grade SCC. <strong>Surgery is the treatment of choice.</strong></p></div>
+    </div>
+  </div>
+
+  <div class="tc-wrap">
+    <div class="tc-head">
+      <div>
+        <div class="tc-name">Minor Salivary Gland Tumors</div>
+        <div style="font-size:11.5px;color:var(--muted);margin-top:2px">Multiple subtypes — Hard palate is the hotspot</div>
+      </div>
+      <div class="tc-pct" style="color:var(--purple)">~5%</div>
+    </div>
+    <div class="tc-body">
+      <div class="mr"><span class="b bp">PALATE most common site</span><span class="b ba">Variable prognosis by subtype</span></div>
+
+      <h4 class="sh2">1. Adenoid Cystic Carcinoma (ACC)</h4>
+      <div class="mr"><span class="b br">MOST COMMON malignant minor SG tumor</span><span class="b br">Perineural invasion — pathognomonic</span></div>
+      <div class="tw" style="margin-top:8px">
+        <table>
+          <tr><th>Feature</th><th>Detail</th></tr>
+          <tr><td>Most common site</td><td>Hard palate, then other minor SG sites</td></tr>
+          <tr><td>Hallmark feature</td><td><strong>Perineural invasion</strong> — skip lesions along nerve sheaths</td></tr>
+          <tr><td>Histologic pattern</td><td>Cribriform ("Swiss cheese"), tubular, solid (most aggressive)</td></tr>
+          <tr><td>Growth behavior</td><td>Slow growing, highly recurrent, late distant mets (lung, bone, liver)</td></tr>
+          <tr><td>Key prognosis quirk</td><td>10-year survival WORSE than 5-year — late recurrences are common</td></tr>
+          <tr><td>Treatment</td><td>Wide surgery + RT (complete resection difficult due to perineural spread)</td></tr>
+        </table>
+      </div>
+
+      <h4 class="sh2">2. Mucoepidermoid Carcinoma (MEC)</h4>
+      <div class="mr"><span class="b bb">MOST COMMON salivary gland malignancy overall</span></div>
+      <ul>
+        <li><strong>Minor SG site:</strong> Palate most common (parotid overall)</li>
+        <li><strong>Grades:</strong> Low (cystic, mucous cells dominant → good prognosis) | Intermediate | High (solid, epidermoid dominant → poor prognosis)</li>
+        <li><strong>Histology:</strong> Three cell types — mucous, epidermoid (squamoid), intermediate cells</li>
+        <li><strong>Molecular:</strong> t(11;19)(q21;p13) → MAML2-CRTC1 fusion gene (most cases)</li>
+        <li><strong>Low-grade:</strong> Often cystic, may be mistaken for mucocele</li>
+      </ul>
+
+      <h4 class="sh2">3. Polymorphous Low-Grade Adenocarcinoma (PLGA)</h4>
+      <ul>
+        <li><strong>Exclusively</strong> minor salivary glands — never occurs in major glands</li>
+        <li>Posterior hard palate most common oral site</li>
+        <li>Histologically <em>diverse</em> growth patterns (hence "polymorphous") — tubular, papillary, cribriform, solid</li>
+        <li>Despite diverse pattern, cytology is bland and monotonous (unlike ACC)</li>
+        <li>Low-grade, rarely metastasizes, good prognosis with surgery</li>
+        <li>May show perineural invasion but less aggressive than ACC</li>
+      </ul>
+    </div>
+  </div>
+
+  <h3 class="sh">Other / Less Common Oral Malignancies</h3>
+  <div class="g2">
+    <div class="card">
+      <div class="card-t">🖤 Primary Oral Melanoma <span class="b br">&lt;1%</span></div>
+      <ul>
+        <li><strong>Primary mucosal melanoma</strong> — NO UV etiology (unlike cutaneous)</li>
+        <li><strong>Sites:</strong> Hard palate + maxillary gingiva (most common oral sites)</li>
+        <li>Presents as pigmented patch → nodule → ulceration + satellite lesions</li>
+        <li><strong>Prognosis:</strong> Very poor — 5-year survival 15–20%</li>
+        <li>Often deeply invasive at diagnosis (depth of invasion = key prognostic factor)</li>
+        <li>No Clark's levels (mucosal melanoma staging system different)</li>
+        <li><strong>Treatment:</strong> Wide excision ± immunotherapy (ipilimumab + nivolumab) for metastatic</li>
+        <li>BRAF mutation testing (present in some cases)</li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="card-t">🔵 NHL Lymphoma <span class="b bb">NHL</span></div>
+      <ul>
+        <li>Diffuse Large B-Cell Lymphoma (DLBCL) most common type in H&amp;N</li>
+        <li>Waldeyer's ring (tonsils) = most common H&amp;N extranodal site overall</li>
+        <li>Oral cavity proper: gingiva, palate, tongue, floor of mouth</li>
+        <li>Non-healing soft tissue mass without SCC features; may be purple-red</li>
+        <li>Diagnosis: Excisional biopsy + immunohistochemistry</li>
+        <li><strong>Treatment:</strong> R-CHOP chemotherapy ± RT</li>
+        <li>Prognosis depends on histologic type and stage</li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="card-t">💜 Kaposi Sarcoma <span class="b bp">HHV-8 / HIV</span></div>
+      <ul>
+        <li>Vascular neoplasm driven by HHV-8 (Human Herpesvirus 8)</li>
+        <li><strong>Hard palate</strong> most common oral site — classic location</li>
+        <li>Purple-red, violaceous, painless flat/nodular lesion</li>
+        <li>Non-tender; may ulcerate with progression</li>
+        <li>Part of AIDS-defining illnesses</li>
+        <li><strong>Treatment:</strong> ART (antiretroviral therapy) — often lesions regress; local RT, intralesional chemo, systemic chemo for advanced cases</li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="card-t">🦴 Metastatic Tumors to Jaws</div>
+      <ul>
+        <li>Jaw mets more common than metastasis to oral soft tissue</li>
+        <li>Most common primaries: <strong>Breast, Lung, Kidney, Colon, Thyroid</strong></li>
+        <li>Mandible &gt;&gt; Maxilla (posterior body/angle most common)</li>
+        <li>May present as: jaw pain, paresthesia, loose teeth, pathological fracture</li>
+        <li><strong>Numb chin syndrome</strong> = numbness of chin/lower lip due to mandibular mets compressing inferior alveolar nerve — BAD prognostic sign</li>
+        <li>Treatment: Palliative (primary tumour management)</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- ============================
+     ANATOMICAL SITES
+============================= -->
+<div class="panel" id="sites">
+  <div class="sec-title">📍 Anatomical Sites</div>
+  <div class="sec-sub">Site-specific features, lymph drainage, and prognostic considerations</div>
+
+  <div class="tw">
+    <table>
+      <tr><th>Site</th><th>Relative Frequency</th><th>Common Cancer</th><th>5-yr Survival</th><th>Key Distinguishing Feature</th></tr>
+      <tr><td><strong>Tongue (anterior 2/3)</strong></td><td><span class="b br">Most common (developed world)</span></td><td>SCC</td><td class="sm_">60–70%</td><td>Rich lymphatics → early LN mets; lateral border</td></tr>
+      <tr><td><strong>Floor of Mouth</strong></td><td><span class="b ba">2nd most common</span></td><td>SCC</td><td class="sm_">55–65%</td><td>Early bone invasion; bimanual palpation essential</td></tr>
+      <tr><td><strong>Lower Lip</strong></td><td><span class="b bt">Common</span></td><td>SCC</td><td class="sh_">~90%</td><td>UV exposure; best prognosis; easily visible</td></tr>
+      <tr><td><strong>Buccal Mucosa</strong></td><td><span class="b br">Most common (South Asia)</span></td><td>SCC / Verrucous</td><td class="sm_">50–55%</td><td>Betel nut; verrucous CA common; late presentation</td></tr>
+      <tr><td><strong>Hard Palate</strong></td><td><span class="b bb">Less common</span></td><td>Minor SG tumors / SCC</td><td class="sm_">40–55%</td><td>Minor SG hotspot; melanoma here; nasal floor erosion</td></tr>
+      <tr><td><strong>Gingiva/Alveolus</strong></td><td><span class="b bb">Moderate</span></td><td>SCC</td><td class="sm_">50–60%</td><td>Mimics periodontal disease → diagnostic delay</td></tr>
+      <tr><td><strong>Retromolar Trigone</strong></td><td><span class="b bx">Less common</span></td><td>SCC</td><td class="sl_">30–40%</td><td>Worst prognosis; early bone/muscle invasion; trismus</td></tr>
+    </table>
+  </div>
+
+  <h3 class="sh">Detailed Site-by-Site Analysis</h3>
+
+  <div class="sc">
+    <div class="sc-h"><div class="sc-n">👅 Tongue (Anterior 2/3)</div><span class="b br">MOST COMMON SITE (Developed World)</span></div>
+    <div class="g2">
+      <div>
+        <p><strong>Subsites at risk:</strong> Lateral border (most common) &gt; ventral surface &gt; dorsum (rare)</p>
+        <p style="margin-top:6px"><strong>Why early LN spread?</strong> Tongue has the richest lymphatic network of any oral cavity site — tumors as small as T1 can have occult nodal metastases in 20–30% of cases</p>
+        <p style="margin-top:6px"><strong>Bilateral spread:</strong> Midline or tip lesions can drain bilaterally → treat BOTH sides of neck</p>
+        <p style="margin-top:6px"><strong>Tongue immobility:</strong> Fixed tongue = extrinsic muscle invasion = at least T4a</p>
+        <p style="margin-top:6px"><strong>Referred otalgia:</strong> Lingual nerve → Jacobson's nerve (CN IX) → tympanic plexus → ear pain</p>
+      </div>
+      <div>
+        <p><strong>Lymph node drainage levels:</strong></p>
+        <ul class="nl">
+          <li>Tip → Submental (Level IA)</li>
+          <li>Lateral border → Submandibular (IB) → Upper jugular (IIA)</li>
+          <li>Skip metastasis to Level IV occurs (bypass III)</li>
+          <li>Bilateral drainage in midline/tip lesions</li>
+        </ul>
+        <div class="alert aa" style="margin-top:10px"><div class="alert-t">⚠️ Key Clinical Point</div><p>Always perform elective neck dissection for tongue cancers T2 and above (or T1 with DOI &gt;4mm) — occult node mets are common even in clinically N0 necks.</p></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="sc">
+    <div class="sc-h"><div class="sc-n">🕳️ Floor of Mouth</div><span class="b ba">2nd Most Common Site</span></div>
+    <p>U-shaped region inferior to the tongue, bounded by lower alveolar ridge. Contains sublingual glands, submandibular (Wharton's) ducts, lingual nerves, and CN XII. Proximity to mandibular symphysis means <strong>early bone invasion</strong> is common. FOM tumors often cross the midline and can involve the contralateral side → bilateral neck management often required.</p>
+    <p style="margin-top:6px"><strong>Clinical signs:</strong> Mass under tongue, tongue displacement upward, Wharton's duct obstruction (sialadenitis), inability to protrude tongue (CN XII invasion), bimanual palpation reveals submucosal induration before visible lesion.</p>
+  </div>
+
+  <div class="sc">
+    <div class="sc-h"><div class="sc-n">💋 Lip</div><span class="b bg">BEST PROGNOSIS (~90% 5-year)</span></div>
+    <div class="g2">
+      <div>
+        <p><strong>Lower lip (90% of lip cancers):</strong> SCC. UV radiation is the primary carcinogen — fair-skinned patients, outdoor occupations, pipe/cigar smoking. Actinic cheilitis is the precursor lesion. Lower lip is sun-exposed (angled toward sun).</p>
+        <p style="margin-top:6px"><strong>Upper lip (10%):</strong> Less sun-exposed. SCC still occurs. BCC can develop at the cutaneous-vermilion junction. Tends to present at earlier stage with better prognosis.</p>
+      </div>
+      <div>
+        <p><strong>Why the excellent prognosis?</strong></p>
+        <ul class="nl">
+          <li>Highly visible location → patients notice early</li>
+          <li>Slow-growing lesions</li>
+          <li>Lower rate of cervical LN mets vs other sites</li>
+          <li>Late presentation is less common</li>
+          <li>Easier to examine by clinician</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="sc">
+    <div class="sc-h"><div class="sc-n">😮 Buccal Mucosa</div><span class="b br">Most Common Site in South / SE Asia</span></div>
+    <p>Inner lining of cheeks and lips (excluding skin). SCC and verrucous carcinoma are both common here, strongly associated with <strong>tobacco chewing and betel nut use</strong>. Tumors here can be deceptively large due to the expansile nature of the buccal space. Adjacent structures at risk include the pterygomandibular raphe, buccinator muscle, and pterygoid muscles (→ trismus). Drains to buccal and submandibular nodes.</p>
+  </div>
+
+  <div class="sc">
+    <div class="sc-h"><div class="sc-n">🏛️ Hard Palate</div><span class="b bp">Minor Salivary Gland Tumour Hotspot</span></div>
+    <p>Hard palate has the <strong>highest density of minor salivary glands</strong> in the oral cavity (~400–800 per cm²), explaining the predominance of salivary gland tumors here. When SCC occurs, it tends to present late due to the bony hard palate resisting invasion initially (then erodes into nasal floor or maxillary sinus). Melanoma has a predilection for hard palate and maxillary gingiva. Lymphatic drainage goes to retropharyngeal, upper jugular, and submandibular nodes.</p>
+  </div>
+
+  <div class="sc">
+    <div class="sc-h"><div class="sc-n">🦷 Gingiva / Alveolar Ridges</div><span class="b ba">Frequently Misdiagnosed</span></div>
+    <p>Common in <strong>edentulous patients</strong>. The classic pitfall: clinicians and patients attribute gingival lesions to <strong>denture irritation or periodontal disease</strong> → delayed diagnosis is a known problem. Bone invasion occurs early due to the intimate relationship between gingival mucosa and underlying alveolar bone. Loose teeth and non-healing extraction sockets are classic presentations. Lower alveolar ridge more commonly affected than upper.</p>
+  </div>
+
+  <div class="sc">
+    <div class="sc-h"><div class="sc-n">📐 Retromolar Trigone (RMT)</div><span class="b br">WORST PROGNOSIS — 30–40% 5-year</span></div>
+    <p>Despite being a small anatomical area, the RMT is surrounded by critical structures: <strong>ramus of mandible</strong> (posteriorly), <strong>medial and lateral pterygoid muscles</strong> (superiorly), <strong>buccinator muscle</strong> (anteriorly), <strong>pterygomandibular raphe</strong>. This explains why even small RMT tumors present with trismus (pterygoid involvement) and achieve T4a classification quickly. Bone invasion is early. Surgical resection often requires mandibular resection and extensive reconstruction.</p>
+    <div class="alert ar" style="margin-top:10px"><div class="alert-t">🔴 Classic Sign of RMT Cancer</div><p><strong>Trismus</strong> (limited mouth opening &lt;35mm interincisally) = pterygoid/masticator space involvement. Once trismus develops, the disease is at least T4a and surgical access is challenging.</p></div>
+  </div>
+</div>
+
+<!-- ============================
+     RISK FACTORS & PMDs
+============================= -->
+<div class="panel" id="risks">
+  <div class="sec-title">⚠️ Risk Factors & Potentially Malignant Disorders</div>
+  <div class="sec-sub">Carcinogenic factors and precancerous states requiring vigilance</div>
+
+  <h3 class="sh">Risk Factors</h3>
+  <div class="ri"><div class="rn">🚬 Tobacco — Smoking (all forms)</div><div class="rb-w"><div class="rf rfh" style="width:90%"></div></div><span class="rl rlh">High — 6–10× risk</span></div>
+  <div class="ri"><div class="rn">🚬 Tobacco — Chewing / Smokeless / Snuff</div><div class="rb-w"><div class="rf rfh" style="width:82%"></div></div><span class="rl rlh">High — 3–5× risk</span></div>
+  <div class="ri"><div class="rn">🍺 Alcohol — Heavy use (&gt;14 units/week)</div><div class="rb-w"><div class="rf rfh" style="width:78%"></div></div><span class="rl rlh">High — 2–9× risk</span></div>
+  <div class="ri"><div class="rn">🚬🍺 Tobacco + Alcohol (Combined)</div><div class="rb-w"><div class="rf rfh" style="width:100%"></div></div><span class="rl rlh">SYNERGISTIC — 15–30× risk!</span></div>
+  <div class="ri"><div class="rn">🌿 Betel Quid / Areca Nut</div><div class="rb-w"><div class="rf rfh" style="width:86%"></div></div><span class="rl rlh">High (South/SE Asia)</span></div>
+  <div class="ri"><div class="rn">🦠 HPV (type 16 mainly)</div><div class="rb-w"><div class="rf rfm" style="width:68%"></div></div><span class="rl rlm">Mod–High (Oropharynx &gt;&gt; oral cavity)</span></div>
+  <div class="ri"><div class="rn">☀️ UV Radiation (lower lip)</div><div class="rb-w"><div class="rf rfm" style="width:60%"></div></div><span class="rl rlm">Moderate (site-specific)</span></div>
+  <div class="ri"><div class="rn">🛡️ Immunosuppression (HIV, organ transplant)</div><div class="rb-w"><div class="rf rfm" style="width:52%"></div></div><span class="rl rlm">Moderate</span></div>
+  <div class="ri"><div class="rn">🦷 Poor oral hygiene / chronic mucosal trauma</div><div class="rb-w"><div class="rf rfm" style="width:35%"></div></div><span class="rl rlm">Low–Moderate</span></div>
+  <div class="ri"><div class="rn">🍎 Diet low in fruits and vegetables</div><div class="rb-w"><div class="rf rfl" style="width:30%"></div></div><span class="rl rll">Low–Moderate</span></div>
+  <div class="ri"><div class="rn">💉 Plummer-Vinson Syndrome (iron deficiency)</div><div class="rb-w"><div class="rf rfl" style="width:28%"></div></div><span class="rl rll">Low (post-cricoid/tongue SCC)</span></div>
+  <div class="ri"><div class="rn">🧬 Genetic syndromes (Fanconi anemia, Li-Fraumeni)</div><div class="rb-w"><div class="rf rfl" style="width:20%"></div></div><span class="rl rll">Low (specific populations)</span></div>
+
+  <div class="alert at" style="margin-top:14px">
+    <div class="alert-t">💡 Tobacco + Alcohol Synergy — Critical Concept</div>
+    <p>The combination is not additive but <strong>synergistic</strong>. Together they increase oral cancer risk by 15–30 times. Mechanism: alcohol acts as a solvent increasing carcinogen penetration; acetaldehyde (alcohol metabolite) is itself carcinogenic; combined effects overwhelm DNA repair mechanisms.</p>
+  </div>
+
+  <h3 class="sh">Potentially Malignant Disorders (PMDs)</h3>
+  <p class="bd">WHO (2005) definition: "Morphological alterations in which cancer is more likely to occur than in apparently normal mucosa." These are NOT cancers but carry variable transformation risk.</p>
+
+  <div class="tw">
+    <table>
+      <tr><th>PMD</th><th>Malignant Transformation Rate</th><th>Risk</th></tr>
+      <tr><td>Erythroplakia</td><td class="sl_">40–50%</td><td><span class="b br">HIGHEST — Urgent biopsy</span></td></tr>
+      <tr><td>Erythroleukoplakia (Speckled Leukoplakia)</td><td class="sl_">20–40%</td><td><span class="b br">Very High</span></td></tr>
+      <tr><td>Proliferative Verrucous Leukoplakia (PVL)</td><td class="sl_">60–70%+</td><td><span class="b br">Highest overall (subtype)</span></td></tr>
+      <tr><td>Non-Homogeneous Leukoplakia</td><td class="sm_">10–20%</td><td><span class="b ba">High</span></td></tr>
+      <tr><td>Oral Submucous Fibrosis (OSMF)</td><td class="sm_">7–13%</td><td><span class="b ba">High</span></td></tr>
+      <tr><td>Actinic Cheilitis</td><td class="sm_">~10%</td><td><span class="b ba">Moderate</span></td></tr>
+      <tr><td>Oral Lichen Planus (erosive/atrophic)</td><td class="sm_">0.5–2%</td><td><span class="b bt">Low–Moderate</span></td></tr>
+      <tr><td>Homogeneous Leukoplakia</td><td class="sh_">1–5%</td><td><span class="b bg">Low</span></td></tr>
+    </table>
+  </div>
+
+  <div class="pmd">
+    <div class="pmd-h"><div class="pmd-n">1️⃣ Leukoplakia</div><span class="b ba">1–17% malignant transformation (~5% average)</span></div>
+    <div class="pmd-b">
+      <ul>
+        <li><strong>Definition:</strong> White patch/plaque on oral mucosa that CANNOT be characterised clinically or pathologically as any other definable lesion (diagnosis of exclusion — rule out all other causes first)</li>
+        <li><strong>Types:</strong> <em>Homogeneous</em> (flat, uniformly white, smooth surface — lower risk) | <em>Non-homogeneous</em> (speckled, nodular, verrucous, exophytic — higher risk) | <em>Proliferative Verrucous Leukoplakia (PVL)</em> (multifocal, progressive, highest transformation — 60–70%+)</li>
+        <li><strong>High-risk features for transformation:</strong> Floor of mouth or ventral tongue location, size &gt;2cm, non-homogeneous type, histologic dysplasia (especially severe), female sex, non-smoker (paradox — non-smoker leukoplakia transforms more often)</li>
+        <li><strong>Histology:</strong> WHO grading — mild dysplasia (changes confined to lower 1/3), moderate (lower 2/3), severe/CIS (full thickness). Or Ljubljana binary: low-risk vs high-risk</li>
+        <li><strong>Management:</strong> Remove causative factor → incisional biopsy → if mild dysplasia, monitor every 3–6 months → moderate/severe dysplasia or CIS → surgical excision → lifelong follow-up</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="pmd">
+    <div class="pmd-h"><div class="pmd-n">2️⃣ Erythroplakia</div><span class="b br">40–50% malignant transformation — HIGHEST RISK PMD</span></div>
+    <div class="pmd-b">
+      <ul>
+        <li><strong>Definition:</strong> Bright red, velvety patch on oral mucosa that CANNOT be attributed to any other definable cause</li>
+        <li>Often <strong>already severely dysplastic, CIS, or frankly invasive SCC</strong> at time of first biopsy (~80% have severe histologic changes)</li>
+        <li>Rare condition but extremely dangerous — do NOT ignore or dismiss a red oral patch</li>
+        <li><strong>Common sites:</strong> Floor of mouth, soft palate, ventral tongue</li>
+        <li>Appears bright red/fiery red, velvety texture, well-demarcated but irregular borders</li>
+        <li><strong>Management:</strong> URGENT incisional biopsy — treat as cancer until proven otherwise. Excision if malignant/CIS.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="pmd">
+    <div class="pmd-h"><div class="pmd-n">3️⃣ Oral Submucous Fibrosis (OSMF)</div><span class="b ba">7–13% malignant transformation</span></div>
+    <div class="pmd-b">
+      <ul>
+        <li><strong>Etiology:</strong> Areca nut (betel nut) chewing — arecoline → ↑ collagen synthesis + ↓ collagenase activity → fibrosis; Pan masala (with tobacco) dramatically increases risk</li>
+        <li><strong>Classic triad:</strong> (1) Burning sensation in mouth, (2) Blanching of oral mucosa, (3) Progressive trismus</li>
+        <li><strong>Progressive features:</strong> Buccal mucosa becomes stiff and pale → fibrotic bands palpable → restricted mouth opening → difficulty swallowing</li>
+        <li><strong>IRREVERSIBLE:</strong> Once fibrosis is established, it CANNOT be reversed — only symptomatic management possible</li>
+        <li><strong>Staging (Pindborg &amp; Sirsat):</strong> Stage 1 (burning, no fibrosis) → Stage 2 (mild fibrosis) → Stage 3 (moderate fibrosis with trismus) → Stage 4 (severe trismus &lt;15mm, extensive fibrosis)</li>
+        <li><strong>Management:</strong> Absolute cessation of areca nut use, intralesional corticosteroid injections (triamcinolone), pentoxifylline (vasodilator), lycopene, colchicine, physiotherapy (mouth-opening exercises), surgical release of fibrotic bands + splinting for severe trismus</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="pmd">
+    <div class="pmd-h"><div class="pmd-n">4️⃣ Oral Lichen Planus (OLP)</div><span class="b bt">0.5–2% malignant transformation</span></div>
+    <div class="pmd-b">
+      <ul>
+        <li><strong>6 clinical types:</strong> Reticular (most common — Wickham's striae on bilateral buccal mucosa) | Papular | Plaque-like | Erosive (painful, irregular red ulcers) | Atrophic | Bullous</li>
+        <li><strong>Wickham's striae:</strong> Interlacing white lines/network pattern = pathognomonic of reticular OLP</li>
+        <li><strong>PMD status:</strong> WHO 2005 included OLP — erosive &amp; atrophic forms have highest transformation risk (0.5–2%). Reticular form has very low risk.</li>
+        <li><strong>Bilateral buccal mucosa</strong> most common site; also tongue, gingiva (desquamative gingivitis)</li>
+        <li><strong>Histology:</strong> Band-like lymphocytic infiltrate at epithelial-connective tissue junction, "saw tooth" rete ridges, civatte bodies (apoptotic cells)</li>
+        <li><strong>Management:</strong> Topical corticosteroids (first line: triamcinolone acetonide), topical tacrolimus, systemic steroids for severe flares. <strong>Lifelong monitoring — every 6 months</strong></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="pmd">
+    <div class="pmd-h"><div class="pmd-n">5️⃣ Actinic Cheilitis</div><span class="b ba">~10% malignant transformation</span></div>
+    <div class="pmd-b">
+      <ul>
+        <li>Chronic UV-induced (actinic) damage to the <strong>lower lip vermilion</strong> (lip = most sun-exposed oral region)</li>
+        <li><strong>Pathognomonic feature:</strong> Blurring/loss of definition of the vermilion border (where lip meets skin)</li>
+        <li>Features: Dry, scaly, rough lip with areas of erythema and white patches; may show focal ulceration</li>
+        <li><strong>Risk factors:</strong> Fair skin (Fitzpatrick I–II), outdoor occupation (farmers, fishermen), high UV exposure, history of sunburn, male sex</li>
+        <li>Histology: Solar elastosis, epithelial atrophy or hyperkeratosis, basal layer atypia</li>
+        <li><strong>Management:</strong> Sunscreen, lip balm, avoid sun exposure, <strong>vermilionectomy</strong> (lip shave — definitive treatment, histopathological examination of entire lip), topical 5-FU (5-fluorouracil), CO2 laser ablation, photodynamic therapy (PDT)</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- ============================
+     CLINICAL FEATURES
+============================= -->
+<div class="panel" id="clinical">
+  <div class="sec-title">🩺 Clinical Features</div>
+  <div class="sec-sub">Presentation, signs, symptoms, and clinical examination findings</div>
+
+  <div class="g2">
+    <div class="card">
+      <div class="card-t">🌱 Early Presentation (Asymptomatic / Subtle)</div>
+      <ul>
+        <li>Asymptomatic white or red patch discovered incidentally</li>
+        <li>Non-healing mucosal ulcer (often <strong>painless</strong> early)</li>
+        <li>Subtle mucosal thickening or textural change</li>
+        <li>Rough patch that doesn't resolve</li>
+        <li>Small lump under mucosa</li>
+        <li><strong>Key point:</strong> Early cancers are often PAINLESS — pain is NOT a reliable early warning</li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="card-t">🔴 Late Presentation</div>
+      <ul>
+        <li><strong>Pain</strong> — dull, aching, often referred</li>
+        <li><strong>Referred otalgia</strong> — ear pain via cranial nerve pathways</li>
+        <li><strong>Dysphagia</strong> — difficulty swallowing (mass effect / nerve invasion)</li>
+        <li><strong>Odynophagia</strong> — painful swallowing</li>
+        <li><strong>Trismus</strong> — &lt;35mm mouth opening</li>
+        <li><strong>Loose teeth</strong> — bone destruction</li>
+        <li><strong>Ill-fitting dentures</strong> — alveolar changes</li>
+        <li><strong>Paresthesia/numbness</strong> — nerve invasion</li>
+        <li><strong>Neck mass</strong> — cervical lymphadenopathy</li>
+        <li><strong>Speech changes</strong> — tongue involvement</li>
+        <li><strong>Bleeding</strong> — ulceration</li>
+        <li><strong>Weight loss</strong> — malnutrition + cachexia</li>
+        <li><strong>Halitosis</strong> — tumor necrosis</li>
+      </ul>
+    </div>
+  </div>
+
+  <h3 class="sh">Classical Malignant vs Benign Ulcer Features</h3>
+  <div class="tw">
+    <table>
+      <tr><th>Feature</th><th>Malignant (SCC)</th><th>Benign (Aphthous/Traumatic)</th></tr>
+      <tr><td>Border/margin</td><td>Raised, rolled, everted, indurated</td><td>Regular, flat, sloped, soft</td></tr>
+      <tr><td>Base</td><td>Indurated (hard), necrotic floor</td><td>Clean, yellow/gray, soft</td></tr>
+      <tr><td>Pain</td><td>Variable — often painless early</td><td>Usually painful (especially aphthous)</td></tr>
+      <tr><td>Duration</td><td>&gt;3 weeks, NOT healing</td><td>Heals within 7–14 days</td></tr>
+      <tr><td>Consistency</td><td>Fixed, hard (induration)</td><td>Soft, mobile</td></tr>
+      <tr><td>Regional LN</td><td>Hard, non-tender, may be fixed</td><td>Soft, tender, reactive — or absent</td></tr>
+      <tr><td>Bleeding</td><td>Easy bleeding on touch</td><td>Minimal</td></tr>
+      <tr><td>History</td><td>Unexplained, progressive</td><td>Clear cause (trauma, recurrent episodes)</td></tr>
+    </table>
+  </div>
+
+  <h3 class="sh">Important Clinical Signs</h3>
+  <div class="g2">
+    <div class="card"><div class="card-t">🪨 Induration</div><p>Woody firmness on palpation caused by tumor infiltration + desmoplastic stromal reaction. <strong>The hallmark of oral malignancy.</strong> Always palpate — some tumors are more palpable than visible.</p></div>
+    <div class="card"><div class="card-t">👂 Referred Otalgia</div><p>Ear pain from oral cancer without ear pathology. Tongue/FOM: lingual nerve → auriculotemporal nerve (V3) or tympanic branch CN IX. <strong>Rule: Always examine the oral cavity when a patient complains of unilateral ear pain with a normal ear exam.</strong></p></div>
+    <div class="card"><div class="card-t">🦷 Trismus</div><p>Limited mouth opening &lt;35mm. Caused by pterygoid/masticator space invasion. <strong>Indicates advanced disease (T4a or T4b)</strong>. Measure with ruler at incisors interincisally. Normal: 35–45mm. Also caused by RT fibrosis (late complication).</p></div>
+    <div class="card"><div class="card-t">😶 Vincent's Symptom</div><p>Numbness or paresthesia of the lower lip and chin. Caused by inferior alveolar nerve or mental nerve involvement. <strong>Strongly suggests mandibular bone invasion or perineural spread.</strong> Also occurs with metastatic disease to mandible ("numb chin syndrome").</p></div>
+    <div class="card"><div class="card-t">😮 Tongue Fixation</div><p>Inability to protrude or lateralise the tongue. Caused by invasion of extrinsic tongue muscles (genioglossus, hyoglossus, etc.) or CN XII. <strong>Classifies as T4a or greater.</strong></p></div>
+    <div class="card"><div class="card-t">🔵 Fixation to Bone</div><p>Tumor adherent to mandible or maxilla — clinically felt as immobility of mass on manipulation. Suggests cortical bone invasion (marginal mandibulectomy minimum) or medullary invasion (segmental resection needed).</p></div>
+  </div>
+
+  <h3 class="sh">Cervical Lymph Node Assessment</h3>
+  <div class="tw">
+    <table>
+      <tr><th>Level</th><th>Location</th><th>Primary Drainage from Oral Cavity</th></tr>
+      <tr><td><strong>IA</strong></td><td>Submental triangle</td><td>Tip of tongue, central floor of mouth, lower lip center</td></tr>
+      <tr><td><strong>IB</strong></td><td>Submandibular triangle</td><td>Most oral cavity sites, lateral lip</td></tr>
+      <tr><td><strong>IIA / IIB</strong></td><td>Upper jugular</td><td>Common secondary drainage from all oral sites</td></tr>
+      <tr><td><strong>III</strong></td><td>Middle jugular</td><td>Secondary drainage, tongue</td></tr>
+      <tr><td><strong>IV</strong></td><td>Lower jugular</td><td>Skip metastasis (tongue → Level IV, bypassing III)</td></tr>
+      <tr><td><strong>V</strong></td><td>Posterior triangle</td><td>Uncommon for anterior oral cavity primaries</td></tr>
+    </table>
+  </div>
+
+  <div class="g2">
+    <div class="alert ar">
+      <div class="alert-t">🔴 Malignant LN Features</div>
+      <ul>
+        <li>Hard or rubbery consistency</li>
+        <li>Non-tender (absence of tenderness is suspicious)</li>
+        <li>Fixed to adjacent structures or skin</li>
+        <li>&gt;1–2cm, progressive enlargement</li>
+        <li>Loss of fatty hilum on ultrasound</li>
+        <li>Central necrosis on CT/US (rim enhancement CT)</li>
+      </ul>
+    </div>
+    <div class="alert ag">
+      <div class="alert-t">🟢 Reactive (Benign) LN Features</div>
+      <ul>
+        <li>Soft or firm, elastic</li>
+        <li>Tender to palpation</li>
+        <li>Mobile (freely moveable)</li>
+        <li>Associated with ipsilateral infection</li>
+        <li>Resolves with antibiotic treatment</li>
+        <li>Preserved fatty hilum on ultrasound</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- ============================
+     RED & GREEN FLAGS
+============================= -->
+<div class="panel" id="flags">
+  <div class="sec-title">🚩 Red & Green Flags</div>
+  <div class="sec-sub">Clinical indicators for urgent referral vs reassurance</div>
+
+  <div class="alert ar"><div class="alert-t">🔴 RED FLAGS — Urgent 2-Week Referral Required</div><p>Any of the following features in a patient mandate urgent referral to an oral &amp; maxillofacial surgeon or head and neck oncology team. Do NOT delay with "watch and wait."</p></div>
+
+  <div class="flag fr"><span class="fd">🔴</span><div><strong>Non-healing ulcer &gt;3 weeks</strong> — most important red flag; oral cancer must be actively excluded</div></div>
+  <div class="flag fr"><span class="fd">🔴</span><div><strong>Red patch (Erythroplakia)</strong> — highest malignant potential of any PMD (40–50%); treat as cancer until proven otherwise</div></div>
+  <div class="flag fr"><span class="fd">🔴</span><div><strong>Mixed red and white patches (Erythroleukoplakia)</strong> — high malignant potential; biopsy urgently</div></div>
+  <div class="flag fr"><span class="fd">🔴</span><div><strong>Unexplained tooth mobility</strong> — suggests bone destruction by invading tumor (always radiograph first)</div></div>
+  <div class="flag fr"><span class="fd">🔴</span><div><strong>Unexplained cervical lymphadenopathy</strong> — especially hard, non-tender, progressive, fixed; metastatic disease until proven otherwise</div></div>
+  <div class="flag fr"><span class="fd">🔴</span><div><strong>Trismus (limited mouth opening &lt;35mm)</strong> — pterygoid/masticator space invasion = advanced disease; not from dental cause</div></div>
+  <div class="flag fr"><span class="fd">🔴</span><div><strong>Unexplained dysphagia or odynophagia</strong> — tumor mass effect or neuromuscular involvement</div></div>
+  <div class="flag fr"><span class="fd">🔴</span><div><strong>Unexplained oral bleeding</strong> — ulcerating tumor eroding blood vessel</div></div>
+  <div class="flag fr"><span class="fd">🔴</span><div><strong>Paresthesia or numbness of lip, chin, or tongue</strong> — perineural invasion or bone invasion compressing inferior alveolar nerve</div></div>
+  <div class="flag fr"><span class="fd">🔴</span><div><strong>Non-healing extraction socket (&gt;4 weeks)</strong> — tumor infiltrating the socket; often mistaken for dry socket initially</div></div>
+  <div class="flag fr"><span class="fd">🔴</span><div><strong>Referred otalgia with normal ear examination</strong> — tongue/FOM cancer classic presentation via CN V3 or CN IX/X pathways</div></div>
+  <div class="flag fr"><span class="fd">🔴</span><div><strong>Visible or palpable unexplained oral mass</strong> — new, progressive, firm or fixed mass in any oral subsite</div></div>
+  <div class="flag fr"><span class="fd">🔴</span><div><strong>White patch that cannot be rubbed off</strong> — distinguishes leukoplakia from pseudomembranous candidiasis (which CAN be wiped off)</div></div>
+  <div class="flag fr"><span class="fd">🔴</span><div><strong>Hoarseness &gt;3 weeks</strong> — laryngeal involvement or synchronous second primary</div></div>
+  <div class="flag fr"><span class="fd">🔴</span><div><strong>Unexplained weight loss (&gt;10% over 6 months)</strong> — systemic malignant process, cachectic state</div></div>
+
+  <hr>
+
+  <div class="alert ag"><div class="alert-t">🟢 GREEN FLAGS — Lower Urgency (Monitor, Review at 2 Weeks)</div><p>These features suggest a benign cause, but always reassess if symptoms persist or worsen. If a "benign" lesion has not fully resolved in 2–3 weeks, refer urgently.</p></div>
+
+  <div class="flag fg"><span class="fd">🟢</span><div><strong>Ulcer &lt;2 weeks with clearly identifiable cause</strong> — recent trauma (sharp tooth, food, biting cheek), resolving well</div></div>
+  <div class="flag fg"><span class="fd">🟢</span><div><strong>Classic aphthous ulcer pattern</strong> — round/oval, yellow-gray pseudomembrane, red halo, painful, &lt;1cm, recurrent history, heals in 7–14 days</div></div>
+  <div class="flag fg"><span class="fd">🟢</span><div><strong>Lesion resolving with removal of identified cause</strong> — traumatic ulcer fully healing after denture adjustment or tooth smoothing</div></div>
+  <div class="flag fg"><span class="fd">🟢</span><div><strong>Bilateral, symmetric lesions</strong> — more likely benign (OLP, leukoedema, white sponge nevus, linea alba) — cancer is almost always unilateral</div></div>
+  <div class="flag fg"><span class="fd">🟢</span><div><strong>Linea alba</strong> — thin white line running along occlusal plane bilaterally; normal anatomical variant</div></div>
+  <div class="flag fg"><span class="fd">🟢</span><div><strong>Leukoedema</strong> — diffuse grayish-white opalescence that disappears on stretching the mucosa (diagnostic maneuver)</div></div>
+  <div class="flag fg"><span class="fd">🟢</span><div><strong>Young patient (&lt;30 years) without risk factors</strong> — lower prior probability; but HPV-related cancers in young adults do exist — do not entirely dismiss</div></div>
+  <div class="flag fg"><span class="fd">🟢</span><div><strong>Pseudomembranous candidiasis</strong> — white patches that CAN be wiped off leaving an erythematous base; painful, burning</div></div>
+  <div class="flag fg"><span class="fd">🟢</span><div><strong>Fordyce spots</strong> — yellowish sebaceous glands visible on buccal mucosa/lips; bilateral, asymptomatic, normal variant</div></div>
+  <div class="flag fg"><span class="fd">🟢</span><div><strong>Burning mouth with normal mucosa</strong> — possible burning mouth syndrome (rule out organic causes: candida, nutritional deficiency, xerostomia, menopause first)</div></div>
+
+  <div class="alert aa" style="margin-top:14px">
+    <div class="alert-t">⚠️ Golden Rule: When in Doubt — Refer and Biopsy</div>
+    <p>NICE guidance: Any person with unexplained oral ulceration, white patch, or oral lesion lasting <strong>more than 3 weeks</strong> should be referred on a <strong>2-week urgent cancer pathway</strong>. The cost of delayed diagnosis in oral cancer is significant — 5-year survival drops from 80% (Stage I) to &lt;20% (Stage IV).</p>
+  </div>
+</div>
+
+<!-- ============================
+     DIAGNOSIS
+============================= -->
+<div class="panel" id="dx">
+  <div class="sec-title">🔬 Diagnosis</div>
+  <div class="sec-sub">History, examination, biopsy, imaging, and workup pathway</div>
+
+  <h3 class="sh">History Taking</h3>
+  <div class="g2">
+    <div class="card"><div class="card-t">📋 Presenting Complaint</div><ul><li>Duration of lesion or symptom</li><li>Rate of change (size, colour, pain)</li><li>Pain — character, radiation to ear?</li><li>Bleeding from lesion</li><li>Paresthesia/numbness</li><li>Dysphagia or odynophagia</li><li>Trismus — degree of restriction</li><li>Voice/speech changes</li><li>Weight loss, fatigue</li></ul></div>
+    <div class="card"><div class="card-t">⚠️ Risk Factor History</div><ul><li>Tobacco: type (cigarettes, pipe, chewing, snuff), amount (pack-years), duration, cessation attempts</li><li>Alcohol: units/week, type, duration</li><li>Betel nut / Areca / Pan masala use</li><li>Sexual history and HPV vaccination status</li><li>Sun/UV exposure history (for lip lesions)</li></ul></div>
+    <div class="card"><div class="card-t">🏥 Past Medical History</div><ul><li>Previous oral lesions or biopsies</li><li>Previous head and neck cancer</li><li>Immunosuppression (HIV, organ transplant)</li><li>Prior radiation to H&amp;N region</li><li>Genetic syndromes</li><li>Medications (immunosuppressants, nicorandil)</li></ul></div>
+    <div class="card"><div class="card-t">🦷 Dental History</div><ul><li>Last dental visit</li><li>Denture wear — new or changed fit</li><li>Recent extractions (non-healing?)</li><li>Oral hygiene practices</li><li>Previous unexplained lesions seen by dentist</li></ul></div>
+  </div>
+
+  <h3 class="sh">Clinical Examination</h3>
+  <div class="alert at"><div class="alert-t">🔍 Key Principle</div><p>A complete, systematic examination of ALL mucosal surfaces in good light is mandatory. Remove dentures first. Use gauze to grasp and retract the tongue. Examine the patient in a systematic sequence every time — don't "jump" to the obvious lesion without examining everything else.</p></div>
+  <div class="g2">
+    <div class="card">
+      <div class="card-t">👤 Extra-oral Examination</div>
+      <ul>
+        <li><strong>Face:</strong> Asymmetry, swelling, skin changes, fistula</li>
+        <li><strong>Lips:</strong> Inspect vermilion borders, commissures</li>
+        <li><strong>TMJ:</strong> Measure mouth opening interincisally (normal: 35–45mm); note deviation</li>
+        <li><strong>Neck:</strong> Systematic Level I–VI + posterior triangle + supraclavicular examination</li>
+        <li><strong>LN assessment:</strong> Size, consistency (soft/firm/hard/rubbery), mobility (fixed/mobile), tenderness, skin involvement, ENE</li>
+        <li><strong>Cranial nerves:</strong> CN V (sensation), CN VII (facial movement), CN IX, X, XI, XII</li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="card-t">👄 Intra-oral Examination</div>
+      <ul>
+        <li>Lips — inner mucosal surface</li>
+        <li>Buccal mucosa — both sides bilaterally</li>
+        <li>Upper and lower gingivae and alveolar ridges</li>
+        <li>Hard palate — tilt head back, use mirror</li>
+        <li>Tongue — <strong>grasp with gauze and flip</strong> to inspect lateral borders and ventral surface</li>
+        <li>Floor of mouth — <strong>bimanual palpation mandatory</strong> (one finger intraoral, hand extraoral)</li>
+        <li>Retromolar area — use mirror/retractor</li>
+        <li>Oropharynx — soft palate, tonsils, posterior tongue base</li>
+        <li>Document: size (mm/cm), site, color, surface texture, border characteristics, consistency, fixation</li>
+      </ul>
+    </div>
+  </div>
+
+  <h3 class="sh">Biopsy — Gold Standard for Diagnosis</h3>
+  <div class="alert aa"><div class="alert-t">⚠️ Most Important Diagnostic Step</div><p>Histopathological examination of a tissue biopsy is the <strong>GOLD STANDARD</strong>. Clinical diagnosis alone is insufficient. All suspicious oral lesions MUST be biopsied before treatment decisions are made.</p></div>
+  <div class="g2">
+    <div class="card">
+      <div class="card-t">✂️ Types of Biopsy</div>
+      <ul>
+        <li><strong>Incisional biopsy:</strong> Lesions &gt;1cm — representative sample from most suspicious area (erythematous, indurated, ulcerated margin)</li>
+        <li><strong>Excisional biopsy:</strong> Lesions &lt;1cm — entire lesion removed with 2–3mm margin</li>
+        <li><strong>Scalpel preferred</strong> over punch or laser (laser thermally damages architecture)</li>
+        <li>Fix in <strong>10% neutral buffered formalin</strong></li>
+        <li>Send with completed request form including clinical details</li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="card-t">📍 Biopsy Site Selection</div>
+      <ul>
+        <li>Sample from <strong>RED</strong> or <strong>erythematous</strong> areas within white patch (erythroplakic component)</li>
+        <li>Sample from <strong>indurated border</strong> of ulcer (NOT the ulcer base)</li>
+        <li><strong>AVOID:</strong> Necrotic center (low diagnostic yield, risk of false negative)</li>
+        <li><strong>AVOID:</strong> Areas immediately adjacent to major vessels or nerves</li>
+        <li>Toluidine blue staining can identify optimal biopsy site</li>
+        <li>Include normal-to-abnormal transition zone if possible</li>
+      </ul>
+    </div>
+  </div>
+  <div class="alert ar"><div class="alert-t">⛔ NEVER Perform FNA on the Primary Oral Lesion</div><p>FNA (Fine Needle Aspiration) is ONLY for <strong>cervical lymph nodes</strong>. Performing FNA on a primary oral tumour risks tumour seeding along the needle track. Tissue biopsy (incisional/excisional) is required for primary lesion diagnosis.</p></div>
+
+  <h4 class="sh2">Key Histopathology Report Parameters</h4>
+  <div class="tw">
+    <table>
+      <tr><th>Parameter</th><th>Clinical Significance</th></tr>
+      <tr><td><strong>Tumour type and grade</strong></td><td>SCC, MEC, ACC etc.; G1–G4 grade impacts prognosis</td></tr>
+      <tr><td><strong>Grade of dysplasia</strong></td><td>Mild → moderate → severe → CIS: guides management urgency</td></tr>
+      <tr><td><strong>Depth of Invasion (DOI)</strong></td><td>Directly impacts AJCC 8th T staging; DOI &gt;4mm → elective ND; DOI &gt;10mm → T3</td></tr>
+      <tr><td><strong>Margin status</strong></td><td>Clear (&gt;5mm), Close (1–5mm), Positive (&lt;1mm / tumour at margin)</td></tr>
+      <tr><td><strong>Perineural invasion (PNI)</strong></td><td>High-risk feature → adjuvant RT indication; classic in ACC</td></tr>
+      <tr><td><strong>Lymphovascular invasion (LVI)</strong></td><td>Predicts higher risk of LN metastasis</td></tr>
+      <tr><td><strong>Bone involvement</strong></td><td>Cortical erosion vs medullary invasion → impacts resection extent</td></tr>
+      <tr><td><strong>p16 / HPV status</strong></td><td>Prognostic marker — especially important for oropharyngeal SCC</td></tr>
+    </table>
+  </div>
+
+  <h3 class="sh">Imaging Modalities</h3>
+  <div class="g2">
+    <div class="card"><div class="card-t">🖥️ CT with IV Contrast</div><ul><li><strong>Best for:</strong> Bone invasion, cortical erosion, LN assessment, soft tissue extension</li><li>Necrotic LN = central hypodensity + rim enhancement = metastatic node</li><li><strong>First-choice</strong> for nodal staging and bone involvement</li><li>Also: Chest CT for pulmonary mets and synchronous lung primaries</li></ul></div>
+    <div class="card"><div class="card-t">🧲 MRI (with Gadolinium)</div><ul><li><strong>Best for:</strong> Soft tissue detail, perineural spread, tongue/FOM/masticator space</li><li>T1+fat saturation+gadolinium = gold standard for perineural invasion</li><li>Superior to CT for posterior tongue, medullary bone invasion, skull base</li><li>Complementary to CT — often both are used</li></ul></div>
+    <div class="card"><div class="card-t">☢️ PET-CT (FDG)</div><ul><li>F-18 FDG PET-CT for metabolic activity</li><li><strong>Indications:</strong> N3 disease / suspected distant mets / unknown primary with nodal mets / post-treatment response assessment / detecting second primaries</li><li>Not routine for T1–T2, cN0 disease</li></ul></div>
+    <div class="card"><div class="card-t">🦴 OPG (Panoramic Radiograph)</div><ul><li>Quick, low-dose screening for mandibular/maxillary bone involvement</li><li>Shows cortical breach, tooth root resorption</li><li>NOT sufficient for detailed bone invasion assessment — CT is superior</li><li>Useful for pre-treatment dental planning</li></ul></div>
+    <div class="card"><div class="card-t">🔍 Ultrasound + FNA (Neck)</div><ul><li>LN assessment — morphology, vascularity (Doppler), size</li><li>US-guided FNA: sensitivity ~90%, specificity ~97% for nodal metastasis</li><li>Identify abnormal nodes not felt clinically</li><li><strong>Only for LN — never for primary lesion FNA</strong></li></ul></div>
+    <div class="card"><div class="card-t">🔭 Panendoscopy</div><ul><li>Direct laryngoscopy + esophagoscopy + bronchoscopy</li><li>Detects synchronous second primaries in upper aerodigestive tract (3–10% incidence)</li><li>Especially important in heavy smokers/drinkers</li><li>Can be done under same GA as primary surgical resection</li></ul></div>
+  </div>
+
+  <h3 class="sh">Additional Workup</h3>
+  <div class="g2">
+    <div class="card"><div class="card-t">🧬 HPV Testing</div><ul><li><strong>p16 IHC:</strong> Surrogate marker for HPV; ≥70% cells, strong/diffuse staining = HPV+ (positive predictive value &gt;90% for oropharynx)</li><li><strong>PCR:</strong> Definitive HPV type identification (HPV-16 most common)</li><li>Most clinically important for oropharyngeal SCC (tonsil, base of tongue)</li><li>HPV+ status = better prognosis, may qualify for de-intensified treatment protocols</li></ul></div>
+    <div class="card"><div class="card-t">🩺 Pre-treatment Baselines</div><ul><li>FBC (full blood count)</li><li>Liver function tests (LFTs)</li><li>U&amp;E, creatinine (cisplatin nephrotoxicity risk)</li><li>Audiometry (platinum-based chemotherapy ototoxicity)</li><li>Thyroid function (if neck to be irradiated)</li><li>Nutritional assessment (albumin, BMI, swallowing)</li><li>Dental clearance + OPG</li><li>Sperm banking if applicable (gonadotoxic treatment)</li></ul></div>
+  </div>
+</div>
+
+<!-- ============================
+     TNM STAGING
+============================= -->
+<div class="panel" id="staging">
+  <div class="sec-title">📊 TNM Staging — AJCC 8th Edition (2018)</div>
+  <div class="sec-sub">Oral Cavity SCC — T, N, M classification and overall stage groupings</div>
+
+  <div class="alert ap">
+    <div class="alert-t">🆕 Key Changes from AJCC 7th to 8th Edition</div>
+    <ul>
+      <li><strong>1. Depth of Invasion (DOI)</strong> now incorporated into T staging (replaces simply using tumour size as sole T descriptor)</li>
+      <li><strong>2. Extranodal Extension (ENE)</strong> now incorporated into N staging as N3b — any node with clinical ENE = N3b regardless of size</li>
+      <li><strong>DOI ≠ Tumour thickness:</strong> DOI is measured from the basement membrane of the adjacent <em>normal</em> mucosa down to the deepest point of invasion — exophytic tumours have less DOI than their thickness; ulcerative tumours may have greater DOI</li>
+    </ul>
+  </div>
+
+  <h3 class="sh">T Staging (Primary Tumour)</h3>
+  <div class="tw">
+    <table>
+      <tr><th>T Category</th><th>Definition</th></tr>
+      <tr><td><strong>Tis</strong></td><td>Carcinoma in situ (full-thickness dysplasia, no invasion below basement membrane)</td></tr>
+      <tr><td><strong>T1</strong></td><td>Tumour ≤2cm in greatest dimension <strong>AND</strong> DOI ≤5mm</td></tr>
+      <tr><td><strong>T2</strong></td><td>Tumour ≤2cm with DOI &gt;5mm and ≤10mm, <strong>OR</strong> Tumour &gt;2cm but ≤4cm with DOI ≤10mm</td></tr>
+      <tr><td><strong>T3</strong></td><td>Tumour &gt;4cm in greatest dimension, <strong>OR</strong> Any tumour with DOI &gt;10mm</td></tr>
+      <tr><td><strong>T4a</strong></td><td><em>Moderately advanced local disease</em> — invasion of: cortical bone of mandible or maxilla (not just superficial tooth socket erosion), extrinsic tongue muscles (genioglossus, hyoglossus, palatoglossus, styloglossus), maxillary sinus, skin of face</td></tr>
+      <tr><td><strong>T4b</strong></td><td><em>Very advanced (unresectable)</em> — invasion of: masticator space, pterygoid plates, skull base, <strong>OR</strong> encasement of internal carotid artery</td></tr>
+    </table>
+  </div>
+
+  <div class="alert aa">
+    <div class="alert-t">💡 Understanding DOI — Clinical Impact</div>
+    <p><strong>Why DOI matters:</strong> DOI is a better independent predictor of cervical LN metastasis and survival than tumour thickness. <strong>Key thresholds:</strong></p>
+    <ul>
+      <li>DOI &gt;4mm → consider elective neck dissection even in cN0 neck (occult mets risk ~20%+)</li>
+      <li>DOI &gt;5mm → T2 (even if tumour ≤2cm)</li>
+      <li>DOI &gt;10mm → T3 (even if tumour ≤4cm)</li>
+    </ul>
+    <p style="margin-top:6px"><strong>Remember:</strong> DOI is measured by the pathologist — it cannot be clinically estimated reliably. The DOI in the biopsy report directs staging and treatment planning.</p>
+  </div>
+
+  <h3 class="sh">N Staging (Regional Lymph Nodes — Clinical)</h3>
+  <div class="tw">
+    <table>
+      <tr><th>N Category</th><th>Definition</th></tr>
+      <tr><td><strong>N0</strong></td><td>No regional lymph node metastasis</td></tr>
+      <tr><td><strong>N1</strong></td><td>Single ipsilateral LN ≤3cm, no extranodal extension (ENE)</td></tr>
+      <tr><td><strong>N2a</strong></td><td>Single ipsilateral LN &gt;3cm but ≤6cm, no ENE</td></tr>
+      <tr><td><strong>N2b</strong></td><td>Multiple ipsilateral LN, all ≤6cm, no ENE</td></tr>
+      <tr><td><strong>N2c</strong></td><td>Bilateral or contralateral LN, all ≤6cm, no ENE</td></tr>
+      <tr><td><strong>N3a</strong></td><td>Any LN &gt;6cm in greatest dimension, no ENE</td></tr>
+      <tr><td><strong>N3b</strong></td><td><strong>Any LN with CLINICAL extranodal extension (ENE+)</strong> — regardless of size or number</td></tr>
+    </table>
+  </div>
+
+  <div class="alert ar">
+    <div class="alert-t">🔴 Extranodal Extension (ENE) — Must-Know Concept</div>
+    <p>ENE = Tumour cells extending beyond the capsule of the lymph node into surrounding soft tissues.</p>
+    <p style="margin-top:6px"><strong>Clinical signs of ENE:</strong> Skin tethering or fixation, cranial nerve involvement, dense fixed neck mass, invasion of adjacent structures (IJV, carotid, strap muscles)</p>
+    <p style="margin-top:6px"><strong>Pathological ENE (pENE):</strong> Found on histology of neck dissection specimen — classified as major ENE (&gt;2mm extension) or minor ENE (≤2mm)</p>
+    <p style="margin-top:6px"><strong>Impact:</strong> N3b classification, dramatically worsens prognosis, mandates adjuvant <em>concurrent chemoradiation</em> (not RT alone) — per RTOG 9501 and EORTC 22931 trials</p>
+  </div>
+
+  <h3 class="sh">M Staging</h3>
+  <div class="g2">
+    <div class="card"><div class="card-t">M0</div><p>No distant metastasis</p></div>
+    <div class="card"><div class="card-t" style="color:var(--red)">M1</div><p>Distant metastasis present. Most common sites: Lung &gt; Liver &gt; Bone. Stage IVC = any T, any N, M1.</p></div>
+  </div>
+
+  <h3 class="sh">Overall Stage Groupings (Oral Cavity)</h3>
+  <div class="tw">
+    <table>
+      <tr><th>Stage</th><th>T</th><th>N</th><th>M</th><th>5-yr Survival (approx)</th></tr>
+      <tr><td class="sI">I</td><td>T1</td><td>N0</td><td>M0</td><td class="sh_">80–85%</td></tr>
+      <tr><td class="sII">II</td><td>T2</td><td>N0</td><td>M0</td><td class="sh_">65–70%</td></tr>
+      <tr><td class="sIII">III</td><td>T3 or T1–3</td><td>N0 or N1</td><td>M0</td><td class="sm_">45–55%</td></tr>
+      <tr><td class="sIVA">IVA</td><td>T4a or T1–3</td><td>N0–2 or N2</td><td>M0</td><td class="sm_">30–40%</td></tr>
+      <tr><td class="sIVB">IVB</td><td>T4b or Any T</td><td>Any N or N3</td><td>M0</td><td class="sl_">15–25%</td></tr>
+      <tr><td class="sIVC">IVC</td><td>Any T</td><td>Any N</td><td>M1</td><td class="sl_">&lt;10%</td></tr>
+    </table>
+  </div>
+</div>
+
+<!-- ============================
+     DDX
+============================= -->
+<div class="panel" id="ddx">
+  <div class="sec-title">🔄 Differential Diagnosis</div>
+  <div class="sec-sub">Conditions that may mimic oral cancer — organised by presentation type</div>
+
+  <h3 class="sh">Ulcerative Lesions</h3>
+  <div class="tw">
+    <table>
+      <tr><th>Condition</th><th>Key Features</th><th>Distinguishing Factor</th></tr>
+      <tr><td><strong>SCC</strong></td><td>Indurated, non-healing &gt;3 weeks, rolled margins</td><td>BIOPSY — gold standard</td></tr>
+      <tr><td><strong>Aphthous Ulcer (RAS)</strong></td><td>Painful, round, yellow/gray base, red halo, &lt;1cm</td><td>Self-limiting &lt;2 weeks, recurrent history, NO induration</td></tr>
+      <tr><td><strong>Traumatic Ulcer</strong></td><td>Adjacent to sharp tooth/denture flange</td><td>Heals within 2 weeks of removing cause; soft margins</td></tr>
+      <tr><td><strong>HSV Ulcers</strong></td><td>Multiple small clustered vesicles → ulcers, perioral</td><td>Prodromal tingling, recurrent (cold sores), viral serology</td></tr>
+      <tr><td><strong>Syphilitic Chancre</strong></td><td>PAINLESS indurated ulcer — can mimic SCC closely</td><td>STI history, VDRL/TPHA positive, single painless ulcer</td></tr>
+      <tr><td><strong>Tuberculous Ulcer</strong></td><td>Irregular undermined margins, granular floor, painful</td><td>History of/current TB, Ziehl-Neelsen stain, Mantoux</td></tr>
+      <tr><td><strong>Necrotising Sialometaplasia</strong></td><td>Deep crater on hard palate, resembles SCC</td><td><strong>KEY MIMIC</strong> — self-limiting, heals spontaneously in 6–10 weeks; history of trauma/ischaemia; biopsy shows pseudoepitheliomatous hyperplasia</td></tr>
+      <tr><td><strong>Major Aphthous (Sutton's)</strong></td><td>&gt;1cm, heals with scarring, very painful</td><td>Very painful (SCC often painless early), heals without treatment</td></tr>
+      <tr><td><strong>Pemphigus Vulgaris</strong></td><td>Flaccid intraepithelial blisters, Nikolsky sign +</td><td>Anti-desmoglein 3 antibodies, skin lesions, DIF shows IgG</td></tr>
+      <tr><td><strong>MMP (Cicatricial Pemphigoid)</strong></td><td>Desquamative gingivitis, subepithelial blisters</td><td>DIF positive (linear IgG/C3 at basement membrane), conjunctival involvement</td></tr>
+      <tr><td><strong>Drug-induced ulcers</strong></td><td>Temporal relation to drug commencement</td><td>NSAIDs, nicorandil, captopril, methotrexate — heals on withdrawal</td></tr>
+    </table>
+  </div>
+
+  <h3 class="sh">White Lesions</h3>
+  <div class="tw">
+    <table>
+      <tr><th>Condition</th><th>Key Features</th><th>Wiped Off?</th><th>Risk</th></tr>
+      <tr><td><strong>Leukoplakia</strong></td><td>White patch, no other diagnosis applicable</td><td>No</td><td><span class="b ba">Variable</span></td></tr>
+      <tr><td><strong>Pseudomembranous Candidiasis</strong></td><td>Curdled milk/cottage cheese, painful/burning</td><td><span class="b bg">YES</span> — leaves raw erythematous base</td><td><span class="b bg">Benign</span></td></tr>
+      <tr><td><strong>Linea Alba</strong></td><td>Thin white line at occlusal plane, bilateral</td><td>No</td><td><span class="b bg">None</span></td></tr>
+      <tr><td><strong>Leukoedema</strong></td><td>Diffuse grayish-white opalescence</td><td>No, but disappears on stretching mucosa</td><td><span class="b bg">None</span></td></tr>
+      <tr><td><strong>Fordyce Spots</strong></td><td>Yellowish papules — ectopic sebaceous glands</td><td>No</td><td><span class="b bg">None</span></td></tr>
+      <tr><td><strong>White Sponge Nevus</strong></td><td>Bilateral, hereditary, extensive white mucosa</td><td>No</td><td><span class="b bg">None</span></td></tr>
+      <tr><td><strong>Oral Lichen Planus (Reticular)</strong></td><td>Lacy white striae (Wickham's), bilateral buccal</td><td>No</td><td><span class="b bt">Low–moderate</span></td></tr>
+      <tr><td><strong>Chemical/Thermal Burn</strong></td><td>White slough, painful, history of aspirin placement/hot food</td><td>Slough can be wiped off (leaves raw base)</td><td><span class="b bg">Minimal</span></td></tr>
+      <tr><td><strong>Verrucous Carcinoma</strong></td><td>Warty exophytic white growth, tobaccosmoker</td><td>No</td><td><span class="b ba">HIGH</span></td></tr>
+    </table>
+  </div>
+
+  <h3 class="sh">Red Lesions</h3>
+  <div class="tw">
+    <table>
+      <tr><th>Condition</th><th>Key Features</th><th>Distinguishing</th></tr>
+      <tr><td><strong>Erythroplakia</strong></td><td>Red velvety patch, no identifiable cause</td><td>HIGHEST malignant potential — always biopsy urgently</td></tr>
+      <tr><td><strong>Geographic Tongue</strong></td><td>Migratory red areas on tongue dorsum, white borders</td><td>Migratory (changes over days), loss of filiform papillae, usually asymptomatic</td></tr>
+      <tr><td><strong>Hemangioma</strong></td><td>Soft, compressible, red/purple</td><td>Blanches with pressure (diascopy) — blood is displaced</td></tr>
+      <tr><td><strong>Denture Stomatitis</strong></td><td>Erythema under fitting surface of upper denture</td><td>Under denture only, Candida-related, asymptomatic</td></tr>
+      <tr><td><strong>Median Rhomboid Glossitis</strong></td><td>Red rhomboid area, central dorsal tongue anterior to circumvallate</td><td>Symmetric, Candida-associated, clinically characteristic location</td></tr>
+      <tr><td><strong>Kaposi Sarcoma</strong></td><td>Purple-red violaceous patch/nodule on palate</td><td>HIV/AIDS history, HHV-8, palate predilection</td></tr>
+    </table>
+  </div>
+
+  <h3 class="sh">Swellings / Masses</h3>
+  <div class="tw">
+    <table>
+      <tr><th>Condition</th><th>Site</th><th>Key Features</th></tr>
+      <tr><td><strong>Pleomorphic Adenoma</strong></td><td>Palate (minor SG), parotid</td><td>Painless, slow-growing, firm, well-circumscribed — BENIGN but must excise with margin (capsule rupture → recurrence)</td></tr>
+      <tr><td><strong>Mucocele</strong></td><td>Lower lip, buccal mucosa</td><td>Fluctuant, bluish, 5–15mm, minor SG obstruction/rupture</td></tr>
+      <tr><td><strong>Ranula</strong></td><td>Floor of mouth</td><td>Large translucent blue cyst; plunging ranula extends into neck</td></tr>
+      <tr><td><strong>Fibroma</strong></td><td>Buccal mucosa, gingiva</td><td>Firm, smooth, same colour as mucosa, often pedunculated, trauma-related</td></tr>
+      <tr><td><strong>Torus Palatinus</strong></td><td>Hard palate midline</td><td>Bony hard, bilateral lobulated protuberance, normal variant</td></tr>
+      <tr><td><strong>Peripheral Giant Cell Granuloma</strong></td><td>Gingiva (anterior to first molar)</td><td>Purple-red vascular lesion, associated with trauma/irritation, reactive</td></tr>
+      <tr><td><strong>Ameloblastoma</strong></td><td>Mandible posterior body/ramus</td><td>Jaw expansion, soap-bubble multilocular radiolucency, locally aggressive</td></tr>
+    </table>
+  </div>
+
+  <div class="alert aa">
+    <div class="alert-t">⚠️ Critical Mimic: Necrotising Sialometaplasia</div>
+    <p>Presents as a deep, painful crater-like ulcer on the hard palate, often bilateral. Closely mimics SCC and minor salivary gland malignancy both clinically and histologically (pseudoepitheliomatous hyperplasia). Key: it is <strong>benign and self-limiting</strong>, healing spontaneously in 6–10 weeks. Etiology: ischaemic necrosis of minor salivary glands (trauma, smoking, cocaine, dental block injection). <strong>Always biopsy</strong> to exclude malignancy — do not assume it is NSM without histology.</p>
+  </div>
+</div>
+
+<!-- ============================
+     SCREENING
+============================= -->
+<div class="panel" id="screen">
+  <div class="sec-title">🔭 Screening</div>
+  <div class="sec-sub">Methods, indications, and evidence for oral cancer screening programmes</div>
+
+  <div class="alert at">
+    <div class="alert-t">✅ Wilson-Jungner Criteria — Oral Cancer Meets Most</div>
+    <ul>
+      <li>Important health problem with significant morbidity/mortality ✓</li>
+      <li>Recognisable early/latent/preclinical stage ✓</li>
+      <li>Effective treatment available with better outcomes if caught early ✓</li>
+      <li>Acceptable, safe screening test available ✓</li>
+      <li>Natural history well understood ✓</li>
+      <li>Cost-effective in high-risk populations ✓</li>
+      <li>Adequate facilities for diagnosis and treatment ✓</li>
+    </ul>
+    <p style="margin-top:6px"><em>No national population-level oral cancer screening programme currently exists in the UK or US — primarily due to insufficient RCT evidence for mortality reduction. Opportunistic screening remains the standard.</em></p>
+  </div>
+
+  <h3 class="sh">Who to Screen (High-Risk Populations)</h3>
+  <div class="g2">
+    <div class="card">
+      <div class="card-t">🎯 High-Risk Individuals</div>
+      <ul>
+        <li>Age ≥40 years</li>
+        <li>Current or former tobacco users (any form)</li>
+        <li>Heavy alcohol use (&gt;14 units/week)</li>
+        <li>Combined tobacco + alcohol users</li>
+        <li>Betel nut / areca nut users</li>
+        <li>Known HPV infection</li>
+        <li>Previous head and neck cancer (field cancerization)</li>
+        <li>Immunosuppressed patients (HIV, organ transplant)</li>
+        <li>Known oral potentially malignant disorders</li>
+        <li>Patients with Li-Fraumeni syndrome or Fanconi anemia</li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="card-t">📅 Recommended Intervals</div>
+      <ul>
+        <li>High-risk individuals: Annual comprehensive oral examination</li>
+        <li>Known PMD (leukoplakia, OSMF): Every 3–6 months</li>
+        <li>OLP: Every 6 months</li>
+        <li>Post-treatment surveillance: Every 1–3 months (Year 1) → 2–4 months (Year 2) → 4–6 months (Years 3–5) → 6–12 months (Year 5+)</li>
+        <li>General population: Opportunistic screening at routine dental visits</li>
+      </ul>
+    </div>
+  </div>
+
+  <h3 class="sh">Screening Methods</h3>
+
+  <div class="ms">
+    <div class="mn">1</div>
+    <div class="mc_">
+      <h4>Conventional Oral Examination (COE) — Gold Standard of Screening</h4>
+      <p>Visual inspection with adequate lighting + bimanual palpation by a trained dental or medical professional. Sensitivity: ~84%, Specificity: ~97%. Most cost-effective method. Recommended annually for high-risk groups. Requires systematic approach, good lighting, and removal of dentures. Adjunct mirror/retractor for retromolar area. This is the cornerstone — all other methods are adjuncts to COE.</p>
+    </div>
+  </div>
+
+  <div class="ms">
+    <div class="mn">2</div>
+    <div class="mc_">
+      <h4>Toluidine Blue (Tolonium Chloride) Vital Staining</h4>
+      <p>1% aqueous solution applied topically to the entire oral mucosa. Malignant/dysplastic cells stain dark blue (affinity for increased nuclear DNA/RNA in rapidly proliferating cells). Followed by rinse with 1% acetic acid to remove non-specific staining. Positive: retained blue stain after acetic acid rinse. <strong>Sensitivity ~80%, Specificity ~70%.</strong> False positives: inflammation, trauma, active ulcers. <strong>Clinical use:</strong> Biopsy site selection within large/multifocal lesions, post-treatment surveillance. Not a replacement for biopsy.</p>
+    </div>
+  </div>
+
+  <div class="ms">
+    <div class="mn">3</div>
+    <div class="mc_">
+      <h4>VELscope (Visually Enhanced Lesion Scope) — Autofluorescence</h4>
+      <p>Blue-green excitation light (400–460nm) causes tissue to autofluoresce. Normal mucosa: bright apple-green fluorescence (from flavins and collagen cross-links). Abnormal/dysplastic/malignant mucosa: <strong>loss of fluorescence</strong> — appears dark or brown ("VEL-negative"). Sensitivity: high (~97%), Specificity: lower (~52%) → significant false positive rate (inflammation, melanin deposits, healing areas all cause false positives). Controversy: limited RCT evidence of benefit above COE alone. <strong>Role:</strong> Adjunct to COE, not standalone screening tool.</p>
+    </div>
+  </div>
+
+  <div class="ms">
+    <div class="mn">4</div>
+    <div class="mc_">
+      <h4>OralCDx Brush Biopsy (Transepithelial Biopsy)</h4>
+      <p>Specially designed circular brush rotated firmly over the lesion to collect cells from the full thickness of the epithelium (not just surface cells like a regular smear). Computer-Assisted Analysis (AI-driven cytological analysis). Result: Negative (no atypical cells), Positive/Atypical (proceed to scalpel biopsy). <strong>Use:</strong> Triage tool for clinically equivocal lesions where conventional biopsy is deferred. Not a replacement for tissue biopsy. Not recommended for obviously malignant lesions (just proceed to incisional biopsy).</p>
+    </div>
+  </div>
+
+  <div class="ms">
+    <div class="mn">5</div>
+    <div class="mc_">
+      <h4>ViziLite Plus (Chemiluminescent Light)</h4>
+      <p>Patient rinses with 1% acetic acid (removes glycoprotein layer), then examined with chemiluminescent light stick. Normal epithelium: absorbs light (appears dark). Abnormal epithelium: reflects light (appears white/bright = acetowhite). Similar controversy to VELscope — high false positive rate, limited evidence above COE.</p>
+    </div>
+  </div>
+
+  <div class="ms">
+    <div class="mn">6</div>
+    <div class="mc_">
+      <h4>Salivary Biomarkers (Research Stage — Future)</h4>
+      <p>Saliva is a "liquid biopsy" for oral cancers. Biomarkers under investigation: Cytokines (IL-6, IL-8, TNF-α), miRNA profiles (miR-200a, miR-31), DNA methylation markers, proteomics (S100A8, S100A9), cell-free DNA analysis. Advantages: non-invasive, potentially high-throughput. Challenges: validation, standardisation, point-of-care implementation. Not yet validated for routine clinical use.</p>
+    </div>
+  </div>
+
+  <div class="alert aa" style="margin-top:8px">
+    <div class="alert-t">⚠️ Critical Principle</div>
+    <p>All adjunct screening tools are supplements — they do <strong>NOT</strong> replace tissue biopsy for definitive diagnosis. A positive screening test must always be followed by histopathological examination. A negative screening test does NOT exclude malignancy if there is clinical suspicion.</p>
+  </div>
+</div>
+
+<!-- ============================
+     MANAGEMENT
+============================= -->
+<div class="panel" id="mgmt">
+  <div class="sec-title">💊 Management</div>
+  <div class="sec-sub">Surgery, radiation, systemic therapy, and management by stage</div>
+
+  <div class="alert at">
+    <div class="alert-t">👥 Multidisciplinary Team (MDT) — Mandatory</div>
+    <p>All oral cancer patients must be discussed in a <strong>head and neck cancer MDT</strong> before any treatment. Core members: Head &amp; neck surgeon / OMFS surgeon, Radiation oncologist, Medical oncologist, Pathologist, Radiologist, Dentist/prosthodontist, Speech and language therapist (SLT), Dietitian, Psycho-oncologist, Clinical nurse specialist, Physiotherapist</p>
+  </div>
+
+  <div class="card" style="margin-bottom:16px">
+    <div class="card-t">🦷 Pre-treatment Dental Assessment (Mandatory Before RT)</div>
+    <p>Panoramic radiograph → extract non-restorable/periodontally compromised teeth <strong>at least 3 weeks before RT starts</strong> (allows socket healing and reduces ORN risk) → custom fluoride trays fabrication → intensive oral hygiene instruction → dental review at each RT appointment</p>
+  </div>
+
+  <h3 class="sh">A. Surgery</h3>
+  <h4 class="sh2">Primary Tumour Resection — Key Principles</h4>
+  <div class="tw">
+    <table>
+      <tr><th>Procedure</th><th>Indication</th><th>Key Consideration</th></tr>
+      <tr><td><strong>Wide Local Excision</strong></td><td>Small–medium lesions</td><td>Aim for ≥5mm clear margins (minimum 1cm where feasible)</td></tr>
+      <tr><td><strong>Partial Glossectomy</strong></td><td>Anterior/lateral tongue</td><td>Preserve as much functional tongue as possible; speech/swallow impact</td></tr>
+      <tr><td><strong>Total Glossectomy</strong></td><td>Extensive tongue involvement</td><td>Severe swallowing/speech morbidity; laryngectomy may be needed</td></tr>
+      <tr><td><strong>Marginal Mandibulectomy</strong></td><td>Periosteal/cortical bone invasion (medullary not involved)</td><td>Preserves mandible continuity; needs ≥1cm bone clearance</td></tr>
+      <tr><td><strong>Segmental Mandibulectomy</strong></td><td>Full-thickness mandibular involvement</td><td>Breaks mandible continuity; requires reconstruction (fibula free flap)</td></tr>
+      <tr><td><strong>Infrastructure Maxillectomy</strong></td><td>Hard palate, upper alveolus</td><td>May need obturator prosthesis or flap reconstruction</td></tr>
+      <tr><td><strong>Total Maxillectomy</strong></td><td>Extensive maxillary disease (T4a+)</td><td>Major functional and aesthetic impact; complex reconstruction</td></tr>
+    </table>
+  </div>
+
+  <div class="alert aa"><div class="alert-t">⚠️ Surgical Margin Philosophy</div><p><strong>Clear margins ≥5mm:</strong> Ideal — no further treatment if no other high-risk features. <strong>Close margins 1–5mm:</strong> Consider re-excision OR adjuvant RT. <strong>Positive margins (R1) ≤1mm/tumour at ink:</strong> Mandates re-excision if possible + adjuvant concurrent chemoradiation. <strong>R2 = gross residual tumour</strong> — requires definitive chemoradiation or further surgery.</p></div>
+
+  <h4 class="sh2">Neck Management</h4>
+  <div class="tw">
+    <table>
+      <tr><th>Type of Neck Dissection</th><th>Levels Cleared</th><th>Indication</th></tr>
+      <tr><td><strong>Selective ND (SND) — Supraomohyoid</strong></td><td>I, II, III</td><td>Elective (cN0) for anterior oral cavity (FOM, tongue, lip)</td></tr>
+      <tr><td><strong>Selective ND — Extended</strong></td><td>I, II, III, IV</td><td>Elective for tongue, lateral FOM (Level IV skip met risk)</td></tr>
+      <tr><td><strong>Modified Radical ND (MRND)</strong></td><td>I–V (preserves SCM, IJV, CN XI)</td><td>Therapeutic for cN+ neck</td></tr>
+      <tr><td><strong>Radical ND</strong></td><td>I–V (includes SCM, IJV, CN XI)</td><td>Rarely performed; only if structures directly invaded by tumour</td></tr>
+      <tr><td><strong>Sentinel LN Biopsy (SLNB)</strong></td><td>Sentinel node only</td><td>T1–T2 cN0 — emerging evidence, some centres now adopting</td></tr>
+    </table>
+  </div>
+
+  <div class="alert at"><div class="alert-t">💡 When to Do Elective Neck Dissection?</div><p>Rule of thumb: Occult nodal metastasis risk &gt;20% → elective ND. This includes: T2+ primary, DOI &gt;4mm (even T1), tongue cancers (rich lymphatics), posterior floor of mouth. T1 with DOI ≤4mm in selected cases may be observed.</p></div>
+
+  <h4 class="sh2">Reconstruction Options</h4>
+  <div class="tw">
+    <table>
+      <tr><th>Defect Category</th><th>Reconstruction Options</th></tr>
+      <tr><td>Small (&lt;2cm)</td><td>Primary closure or secondary intention (hard palate)</td></tr>
+      <tr><td>Medium</td><td>Split-thickness skin graft (STSG), full-thickness graft, local flaps: buccal fat pad (palatal/posterior mouth defects), nasolabial flap, palatal rotational flap</td></tr>
+      <tr><td>Large — Regional</td><td><strong>Pectoralis major myocutaneous flap (PMMF)</strong> — workhorse regional flap; reliable, but bulky; limited in some applications</td></tr>
+      <tr><td>Large — Free Flaps (Gold Standard)</td><td><strong>Radial Forearm Free Flap (RFFF):</strong> Thin, pliable — ideal for tongue, FOM, oral lining<br><strong>Anterolateral Thigh (ALT) flap:</strong> Versatile, large defects, bulkier<br><strong>Fibula Free Flap (FFF):</strong> Mandible reconstruction (bone + soft tissue paddle)<br><strong>Deep Circumflex Iliac Artery (DCIA) flap:</strong> Large mandible reconstruction<br><strong>Rectus abdominis:</strong> Very large soft tissue defects</td></tr>
+    </table>
+  </div>
+
+  <h3 class="sh">B. Radiation Therapy</h3>
+  <div class="g2">
+    <div class="card">
+      <div class="card-t">📡 IMRT — Standard of Care</div>
+      <ul>
+        <li>Intensity-Modulated Radiation Therapy (IMRT)</li>
+        <li>Spares parotid glands → reduces xerostomia vs 3D-CRT</li>
+        <li>Allows dose sculpting around critical structures (spinal cord, brain stem)</li>
+        <li><strong>Dose — Primary RT:</strong> 66–70 Gy in 33–35 fractions (over 6–7 weeks)</li>
+        <li><strong>Dose — Adjuvant RT:</strong> 60–66 Gy in 30–33 fractions</li>
+        <li>Starts 4–6 weeks post-surgery (wound healing)</li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="card-t">⚠️ Indications for Adjuvant RT</div>
+      <ul>
+        <li>Close surgical margins (1–5mm)</li>
+        <li>Pathological T3 or T4 disease</li>
+        <li>Multiple positive lymph nodes (≥2)</li>
+        <li>Perineural invasion (PNI)</li>
+        <li>Lymphovascular invasion (LVI)</li>
+        <li>Level IV or V lymph node involvement</li>
+        <li>Note: Positive margins + ENE → adjuvant <em>chemoradiation</em> (not RT alone)</li>
+      </ul>
+    </div>
+  </div>
+  <div class="alert ar">
+    <div class="alert-t">🔴 When to Add Concurrent Chemotherapy to Adjuvant RT?</div>
+    <p>Only TWO features mandate adjuvant concurrent chemoradiation (per RTOG 9501 and EORTC 22931 trials):</p>
+    <ul>
+      <li><strong>1. Positive surgical margins (R1)</strong></li>
+      <li><strong>2. Pathological extranodal extension (pENE)</strong></li>
+    </ul>
+    <p style="margin-top:5px">Drug of choice: <strong>Cisplatin 100mg/m²</strong> every 3 weeks during RT (3 cycles). These features confer the greatest benefit from adding chemotherapy.</p>
+  </div>
+
+  <h4 class="sh2">RT Complications</h4>
+  <div class="g2">
+    <div class="card"><div class="card-t">⚡ Acute (During/Immediately After RT)</div><ul><li><strong>Mucositis</strong> (most troublesome) — grade 1–4; manage with mouthwash, analgesics, nutrition support</li><li><strong>Xerostomia</strong> — dry mouth from parotid gland irradiation</li><li><strong>Dysgeusia</strong> — altered/lost taste sensation</li><li><strong>Dysphagia</strong> — swallowing difficulty</li><li><strong>Radiation dermatitis</strong> — erythema to moist desquamation of skin</li><li>Fatigue, anorexia, weight loss</li></ul></div>
+    <div class="card"><div class="card-t">⏳ Late (Months to Years After RT)</div><ul><li><strong>Xerostomia</strong> — most common late effect (often permanent if parotid irradiated)</li><li><strong>Trismus</strong> — masticatory muscle fibrosis (begin physio during/after RT!)</li><li><strong>Osteoradionecrosis (ORN)</strong> — exposed necrotic bone (&gt;3 months)</li><li><strong>Radiation caries</strong> — cervical decay from xerostomia</li><li><strong>Hypothyroidism</strong> — thyroid in RT field (monitor TFTs)</li><li>Fibrosis, lymphoedema, dysphagia</li><li>Rare: carotid artery disease, second malignancy</li></ul></div>
+  </div>
+
+  <div class="pmd">
+    <div class="pmd-h"><div class="pmd-n">☢️ Osteoradionecrosis (ORN) — Key Complication</div><span class="b br">2–5% incidence after RT</span></div>
+    <div class="pmd-b">
+      <ul>
+        <li><strong>Definition:</strong> Exposed, necrotic bone within the radiation field, persisting &gt;3 months, WITHOUT tumour recurrence (distinguish from recurrence!)</li>
+        <li><strong>Site:</strong> Mandible &gt;&gt;&gt; Maxilla (mandible has end-arterial supply, more vulnerable)</li>
+        <li><strong>Pathogenesis (Marx hypothesis):</strong> Hypovascular, hypoxic, hypocellular tissue → impaired wound healing → chronic necrosis</li>
+        <li><strong>Risk factors:</strong> RT dose &gt;60 Gy (mandible in field), dental extractions in irradiated field, poor oral hygiene, dental infection, trauma, alcohol, smoking</li>
+        <li><strong>Stages (Marx classification):</strong> Stage I → responds to conservative Rx + HBO | Stage II → doesn't respond to HBO, surgery needed | Stage III → full-thickness necrosis, pathological fracture, orocutaneous fistula → resection + free flap</li>
+        <li><strong>Treatment:</strong> Conservative (antibiotics, debridement, irrigation), Hyperbaric Oxygen Therapy (HBO) — 30 sessions pre-op, 10 post-op (100% O2 at 2.4 atm), Surgical sequestrectomy or resection, Pentoxifylline + Tocopherol (vitamin E) = PENTOCLO protocol (anti-fibrotic effect)</li>
+        <li><strong>Prevention:</strong> Pre-RT dental clearance ≥3 weeks before RT, fluoride trays, meticulous OH, avoid post-RT extractions (if unavoidable, use antibiotics + HBO cover)</li>
+      </ul>
+    </div>
+  </div>
+
+  <h3 class="sh">C. Systemic Therapy</h3>
+  <div class="g2">
+    <div class="card"><div class="card-t">💉 Concurrent Chemotherapy</div><ul><li><strong>Cisplatin 100mg/m²</strong> every 3 weeks (×3 during RT) — STANDARD</li><li>Mechanism: DNA intrastrand crosslinks → radiosensitisation</li><li><strong>Toxicities:</strong> Nephrotoxicity (adequate hydration!), ototoxicity, neurotoxicity, myelosuppression, nausea/vomiting</li><li><strong>Alternatives:</strong> Carboplatin AUC5–6 (renally impaired), Cetuximab (cisplatin intolerant)</li><li><strong>Induction TPF:</strong> Docetaxel + Cisplatin + 5-FU (before definitive Rx — controversial)</li></ul></div>
+    <div class="card"><div class="card-t">🎯 Cetuximab (Anti-EGFR Antibody)</div><ul><li>Monoclonal antibody targeting EGFR (overexpressed in &gt;90% of HNSCCs)</li><li><strong>With RT:</strong> Alternative to cisplatin (Bonner trial — improved locoregional control)</li><li><strong>With chemotherapy:</strong> For recurrent/metastatic HNSCC (EXTREME regimen)</li><li><strong>Signature side effect:</strong> Acneiform papulopustular rash (severity correlates with treatment response — a good prognostic sign!)</li><li>Also: Hypomagnesaemia, infusion reactions (pre-medicate)</li></ul></div>
+    <div class="card"><div class="card-t">🛡️ Immunotherapy (Anti-PD-1 Checkpoint Inhibitors)</div><ul><li><strong>Pembrolizumab (Keytruda — anti-PD-1):</strong> First-line R/M HNSCC if PD-L1 CPS ≥1; KEYNOTE-048 trial</li><li><strong>Nivolumab (Opdivo — anti-PD-1):</strong> Platinum-refractory R/M HNSCC; Checkmate 141 trial</li><li><strong>PD-L1 testing:</strong> CPS (Combined Positive Score) — proportion of PD-L1 staining tumour cells + immune cells</li><li>CPS ≥1: Pembrolizumab monotherapy or + chemo | CPS &lt;1: Pembrolizumab + chemo only</li><li><strong>Response predictors:</strong> High CPS (≥20), high TMB (tumour mutational burden), HPV+, high TIL density</li></ul></div>
+    <div class="card"><div class="card-t">💊 Palliative Systemic Therapy</div><ul><li><strong>First-line R/M:</strong> Pembrolizumab ± Cisplatin + 5-FU (CPS ≥1 → mono if PS good)</li><li><strong>EXTREME regimen:</strong> Cetuximab + Platinum + 5-FU (PD-L1 negative or pembrolizumab contraindicated)</li><li><strong>Second-line:</strong> Docetaxel, Paclitaxel, Methotrexate (low dose)</li><li>Goal: Symptom control, quality of life, modest survival benefit</li></ul></div>
+  </div>
+
+  <h3 class="sh">Management by Stage Summary</h3>
+  <div class="tw">
+    <table>
+      <tr><th>Stage</th><th>Preferred Treatment Strategy</th></tr>
+      <tr><td class="sI">Stage I/II (T1–2, N0, M0)</td><td>Single modality preferred: <strong>Surgery</strong> (with or without elective ND) OR primary RT alone. Surgery preferred to preserve RT for potential future second primary. Aim for R0 resection.</td></tr>
+      <tr><td class="sIII">Stage III (T3 or N1)</td><td>Surgery (primary resection + selective ND) + adjuvant RT ± concurrent chemotherapy (based on pathological risk features). Or definitive concurrent CRT if surgery not appropriate.</td></tr>
+      <tr><td class="sIVA">Stage IVA (resectable)</td><td>Surgery (primary + modified radical ND) + adjuvant CRT (if high-risk features). OR definitive concurrent CRT as an alternative (patient preference/fitness).</td></tr>
+      <tr><td class="sIVB">Stage IVB (unresectable T4b or N3)</td><td>Definitive concurrent chemoradiation. Or induction chemotherapy → assess response → CRT. Pembrolizumab in selected cases.</td></tr>
+      <tr><td class="sIVC">Stage IVC (M1)</td><td>Palliative systemic therapy (Pembrolizumab ± platinum-based chemo). Best supportive care. PD-L1 testing guides pembrolizumab use.</td></tr>
+    </table>
+  </div>
+
+  <h3 class="sh">Post-treatment Follow-up</h3>
+  <div class="g4">
+    <div class="card"><div class="card-t tc">Year 1</div><p>Every 1–3 months + CT neck at 3 months post-treatment</p></div>
+    <div class="card"><div class="card-t tc">Year 2</div><p>Every 2–4 months</p></div>
+    <div class="card"><div class="card-t tc">Year 3–5</div><p>Every 4–6 months</p></div>
+    <div class="card"><div class="card-t tc">Year 5+</div><p>Every 6–12 months (lifelong)</p></div>
+  </div>
+  <div class="card" style="margin-top:4px"><p>Annual: Chest imaging (CT or CXR), thyroid function (if neck irradiated), dental review. Ongoing: Speech and swallowing assessment, nutritional monitoring, psychosocial support.</p></div>
+</div>
+
+<!-- ============================
+     PROGNOSIS
+============================= -->
+<div class="panel" id="prog">
+  <div class="sec-title">📈 Prognosis & Complications</div>
+  <div class="sec-sub">Survival data, prognostic factors, treatment complications, and second primaries</div>
+
+  <h3 class="sh">5-Year Survival by Stage</h3>
+  <div class="sb-row"><div class="sb-top"><span class="sI">Stage I</span><span class="sh_">80–85%</span></div><div class="sb-bar"><div class="sb-fill" style="width:83%;background:var(--green)"></div></div></div>
+  <div class="sb-row"><div class="sb-top"><span class="sII">Stage II</span><span class="sh_">65–70%</span></div><div class="sb-bar"><div class="sb-fill" style="width:67%;background:#86EFAC"></div></div></div>
+  <div class="sb-row"><div class="sb-top"><span class="sIII">Stage III</span><span class="sm_">45–55%</span></div><div class="sb-bar"><div class="sb-fill" style="width:50%;background:var(--amber)"></div></div></div>
+  <div class="sb-row"><div class="sb-top"><span class="sIVA">Stage IVA</span><span class="sm_">30–40%</span></div><div class="sb-bar"><div class="sb-fill" style="width:35%;background:#F97316"></div></div></div>
+  <div class="sb-row"><div class="sb-top"><span class="sIVB">Stage IVB</span><span class="sl_">15–25%</span></div><div class="sb-bar"><div class="sb-fill" style="width:20%;background:var(--red)"></div></div></div>
+  <div class="sb-row"><div class="sb-top"><span class="sIVC">Stage IVC</span><span class="sl_">&lt;10%</span></div><div class="sb-bar"><div class="sb-fill" style="width:8%;background:#DC2626"></div></div></div>
+
+  <h3 class="sh">5-Year Survival by Anatomical Site</h3>
+  <div class="tw">
+    <table>
+      <tr><th>Anatomical Site</th><th>5-Year Survival</th><th>Prognosis Category</th></tr>
+      <tr><td>Lip (lower)</td><td class="sh_">~90%</td><td><span class="b bg">BEST — visible location, early detection</span></td></tr>
+      <tr><td>Anterior Tongue</td><td class="sh_">60–70%</td><td><span class="b bt">Good</span></td></tr>
+      <tr><td>Floor of Mouth</td><td class="sm_">55–65%</td><td><span class="b bt">Moderate–Good</span></td></tr>
+      <tr><td>Gingiva / Alveolus</td><td class="sm_">50–60%</td><td><span class="b ba">Moderate</span></td></tr>
+      <tr><td>Buccal Mucosa</td><td class="sm_">50–55%</td><td><span class="b ba">Moderate</span></td></tr>
+      <tr><td>Hard Palate</td><td class="sm_">40–55%</td><td><span class="b ba">Moderate</span></td></tr>
+      <tr><td>Retromolar Trigone</td><td class="sl_">30–40%</td><td><span class="b br">WORST — early bone/muscle invasion</span></td></tr>
+    </table>
+  </div>
+
+  <h3 class="sh">HPV Status and Prognosis</h3>
+  <div class="g2">
+    <div class="card">
+      <div class="card-t" style="color:var(--green)">HPV+ Oropharyngeal SCC 🟢</div>
+      <ul>
+        <li>5-year survival: <strong>~80–85%</strong></li>
+        <li>Younger patients, non-smokers</li>
+        <li>Better locoregional control</li>
+        <li>Better response to RT and chemoRT</li>
+        <li>Lower risk of second primary</li>
+        <li>Active trials: de-escalation of treatment (less chemo, less RT dose)</li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="card-t" style="color:var(--red)">HPV− Oropharyngeal SCC 🔴</div>
+      <ul>
+        <li>5-year survival: <strong>~40–50%</strong></li>
+        <li>Older patients, tobacco/alcohol users</li>
+        <li>Worse locoregional control</li>
+        <li>Higher risk of second primary (field cancerization)</li>
+        <li>Standard treatment intensity required</li>
+      </ul>
+    </div>
+  </div>
+  <div class="alert at"><div class="alert-t">💡 HPV in Oral Cavity SCC</div><p>HPV+ status in <em>oral cavity</em> SCC (as opposed to oropharyngeal SCC) has less clearly established prognostic benefit. The dramatic HPV advantage applies primarily to <strong>oropharyngeal cancers</strong> (tonsil, base of tongue). For true oral cavity SCC, tobacco/alcohol risk factors remain dominant.</p></div>
+
+  <h3 class="sh">Prognostic Factors</h3>
+  <div class="g2">
+    <div class="alert ar">
+      <div class="alert-t">🔴 Poor Prognostic Factors</div>
+      <ul>
+        <li><strong>Lymph node metastasis</strong> — single most important negative prognostic factor</li>
+        <li><strong>Extranodal extension (ENE)</strong> — dramatically worsens prognosis</li>
+        <li>Advanced T stage (T3, T4)</li>
+        <li>Positive surgical margins</li>
+        <li>Deep invasion (DOI &gt;10mm)</li>
+        <li>Poor histological grade (G3/G4)</li>
+        <li>Perineural invasion (PNI)</li>
+        <li>Lymphovascular invasion (LVI)</li>
+        <li>Multiple LN involvement</li>
+        <li>HPV negative (oropharynx)</li>
+        <li>Retromolar trigone location</li>
+        <li>Distant metastasis (M1)</li>
+        <li>Poor performance status</li>
+      </ul>
+    </div>
+    <div class="alert ag">
+      <div class="alert-t">🟢 Good Prognostic Factors</div>
+      <ul>
+        <li>Early T stage (T1, T2 with small DOI)</li>
+        <li>Node-negative neck (N0)</li>
+        <li>Clear surgical margins (&gt;5mm)</li>
+        <li>Well-differentiated histology (G1)</li>
+        <li>No perineural invasion</li>
+        <li>No lymphovascular invasion</li>
+        <li>HPV positive (oropharynx)</li>
+        <li>Lip location</li>
+        <li>Small DOI (&lt;5mm)</li>
+        <li>Good performance status</li>
+        <li>Young age</li>
+        <li>No tobacco/alcohol use</li>
+      </ul>
+    </div>
+  </div>
+
+  <h3 class="sh">Patterns of Treatment Failure</h3>
+  <div class="g3">
+    <div class="card"><div class="card-t rc">Locoregional Recurrence</div><p><strong>70% of failures</strong>. Most within 2 years of treatment. Presents as local recurrence at primary site or regional nodal recurrence. Salvage surgery possible in selected cases.</p></div>
+    <div class="card"><div class="card-t ac">Distant Metastasis</div><p><strong>15–20% of failures</strong>. Most common site: <strong>Lung (&gt;60%)</strong>, then Liver (~30%), Bone (~20%). Usually late presentation, indicates systemic disease.</p></div>
+    <div class="card"><div class="card-t tc">Second Primary Tumour</div><p><strong>3–7% per year risk</strong>. Field cancerization concept. Upper aerodigestive tract (larynx, oesophagus, lung — especially in smokers). Annual surveillance imaging essential.</p></div>
+  </div>
+
+  <h3 class="sh">Treatment-Related Complications Summary</h3>
+  <div class="tw">
+    <table>
+      <tr><th>Modality</th><th>Acute Complications</th><th>Late Complications</th></tr>
+      <tr><td><strong>Surgery</strong></td><td>Bleeding, wound infection, fistula, flap failure, hematoma</td><td>Scarring, fistula, dysphagia, speech impairment, nerve injury (marginal mandibular CN VII, CN XII)</td></tr>
+      <tr><td><strong>Radiotherapy</strong></td><td>Mucositis, xerostomia, dysgeusia, dermatitis, dysphagia, fatigue</td><td>Permanent xerostomia, ORN, trismus, radiation caries, hypothyroidism, lymphoedema, dysphagia</td></tr>
+      <tr><td><strong>Cisplatin Chemo</strong></td><td>Nausea/vomiting, myelosuppression, electrolyte disturbances</td><td>Nephrotoxicity, peripheral neuropathy, sensorineural hearing loss (ototoxicity), infertility</td></tr>
+      <tr><td><strong>Cetuximab</strong></td><td>Infusion reactions, acneiform rash, fatigue</td><td>Hypomagnesaemia, chronic skin toxicity</td></tr>
+      <tr><td><strong>Immunotherapy (PD-1 inhibitors)</strong></td><td>Fatigue, rash, diarrhea, thyroid dysfunction</td><td>Immune-related adverse events (irAEs): pneumonitis, hepatitis, colitis, endocrinopathies</td></tr>
+    </table>
+  </div>
+</div>
+
+<!-- ============================
+     PEARLS & MNEMONICS
+============================= -->
+<div class="panel" id="pearls">
+  <div class="sec-title">💡 Clinical Pearls & Mnemonics</div>
+  <div class="sec-sub">High-yield facts, associations, and memory aids for mastery</div>
+
+  <h3 class="sh">🏆 High-Yield Must-Know Facts</h3>
+  <div class="g2">
+    <div>
+      <div class="pearl"><span class="pi">💎</span><p><strong>Most common oral cancer:</strong> Squamous Cell Carcinoma (SCC) — 90% of all oral cancers</p></div>
+      <div class="pearl"><span class="pi">💎</span><p><strong>Most common site of oral SCC (developed world):</strong> Lateral border of the tongue</p></div>
+      <div class="pearl"><span class="pi">💎</span><p><strong>Most common site of oral SCC (South Asia / betel nut users):</strong> Buccal mucosa</p></div>
+      <div class="pearl"><span class="pi">💎</span><p><strong>Most common lip cancer site:</strong> Lower lip (90%) — due to UV exposure (sun-facing)</p></div>
+      <div class="pearl"><span class="pi">💎</span><p><strong>Best prognosis site:</strong> Lip (~90% 5-year survival) — easily visible, early detection</p></div>
+      <div class="pearl"><span class="pi">💎</span><p><strong>Worst prognosis site:</strong> Retromolar trigone (30–40% 5-year) — early bone and pterygoid invasion</p></div>
+      <div class="pearl"><span class="pi">💎</span><p><strong>Most common malignant salivary gland tumour overall:</strong> Mucoepidermoid Carcinoma (MEC)</p></div>
+      <div class="pearl"><span class="pi">💎</span><p><strong>Most common malignant MINOR salivary gland tumour:</strong> Adenoid Cystic Carcinoma (ACC)</p></div>
+    </div>
+    <div>
+      <div class="pearl"><span class="pi">💎</span><p><strong>PMD with HIGHEST malignant potential:</strong> Erythroplakia (40–50%); PVL is highest subtype of leukoplakia (60–70%+)</p></div>
+      <div class="pearl"><span class="pi">💎</span><p><strong>PMD with lowest transformation rate:</strong> Homogeneous leukoplakia (~1–5%); OLP reticular form (~0.5%)</p></div>
+      <div class="pearl"><span class="pi">💎</span><p><strong>HPV type most important for oral/oropharyngeal cancer:</strong> HPV-16 (HPV-18 also implicated)</p></div>
+      <div class="pearl"><span class="pi">💎</span><p><strong>Gold standard for diagnosis:</strong> Incisional biopsy with histopathological examination</p></div>
+      <div class="pearl"><span class="pi">💎</span><p><strong>Most important negative prognostic factor:</strong> Cervical lymph node metastasis (presence and number)</p></div>
+      <div class="pearl"><span class="pi">💎</span><p><strong>New in AJCC 8th edition:</strong> DOI (Depth of Invasion) in T staging; ENE (Extranodal Extension) as N3b</p></div>
+      <div class="pearl"><span class="pi">💎</span><p><strong>Indications for adjuvant concurrent chemoRT (not RT alone):</strong> Positive margins + ENE (per RTOG 9501/EORTC 22931)</p></div>
+      <div class="pearl"><span class="pi">💎</span><p><strong>Referred ear pain (otalgia) with normal ear exam:</strong> Always examine the oral cavity — classic tongue/FOM cancer presentation</p></div>
+    </div>
+  </div>
+
+  <h3 class="sh">🔗 Key Associations — Must Memorise</h3>
+  <div class="tw">
+    <table>
+      <tr><th>Feature / Finding</th><th>Association</th></tr>
+      <tr><td><strong>Perineural invasion (pathognomonic)</strong></td><td>Adenoid Cystic Carcinoma (ACC)</td></tr>
+      <tr><td><strong>Swiss cheese / cribriform histology</strong></td><td>Adenoid Cystic Carcinoma (ACC)</td></tr>
+      <tr><td><strong>10-year survival worse than 5-year</strong></td><td>Adenoid Cystic Carcinoma (late recurrences)</td></tr>
+      <tr><td><strong>Betel nut / areca nut</strong></td><td>OSMF + Buccal mucosa SCC</td></tr>
+      <tr><td><strong>Verrucous carcinoma = Ackerman's tumour</strong></td><td>Tobacco chewing + Buccal mucosa; DO NOT radiate alone</td></tr>
+      <tr><td><strong>HIV + purple palate lesion</strong></td><td>Kaposi Sarcoma (HHV-8); Hard palate is classic site</td></tr>
+      <tr><td><strong>HPV-16 + oropharynx</strong></td><td>Oropharyngeal SCC; Much better prognosis; HPV+ = p16+</td></tr>
+      <tr><td><strong>Referred otalgia (Arnold's nerve)</strong></td><td>Advanced tongue / floor of mouth SCC</td></tr>
+      <tr><td><strong>Trismus (jaw stiffness)</strong></td><td>Retromolar trigone cancer / pterygoid space invasion</td></tr>
+      <tr><td><strong>Numb chin syndrome</strong></td><td>Mandibular metastasis or advanced mandibular SCC compressing inferior alveolar nerve</td></tr>
+      <tr><td><strong>Field cancerization</strong></td><td>Multiple synchronous/metachronous primaries; 3–7% risk per year</td></tr>
+      <tr><td><strong>Wickham's striae</strong></td><td>Oral Lichen Planus (reticular form) — pathognomonic white lacy pattern</td></tr>
+      <tr><td><strong>Plummer-Vinson syndrome</strong></td><td>Iron deficiency + dysphagia + post-cricoid/tongue SCC in women</td></tr>
+      <tr><td><strong>Acneiform rash during treatment</strong></td><td>Cetuximab (anti-EGFR) — rash severity correlates with response!</td></tr>
+      <tr><td><strong>DOI &gt;10mm</strong></td><td>Automatically T3 (regardless of surface dimension)</td></tr>
+      <tr><td><strong>ENE (extranodal extension)</strong></td><td>N3b classification; adjuvant chemoRT mandatory</td></tr>
+      <tr><td><strong>Only PMD exclusive to minor SGs</strong></td><td>PLGA (Polymorphous Low-Grade Adenocarcinoma)</td></tr>
+      <tr><td><strong>Vermilionectomy ("lip shave")</strong></td><td>Treatment/prevention for actinic cheilitis</td></tr>
+      <tr><td><strong>Pseudomembranous candida</strong></td><td>White patches that CAN be wiped off (unlike leukoplakia)</td></tr>
+      <tr><td><strong>Necrotising sialometaplasia</strong></td><td>Palate ulcer that mimics SCC — self-limiting, heals in 6–10 weeks</td></tr>
+    </table>
+  </div>
+
+  <h3 class="sh">🔡 Mnemonics</h3>
+
+  <div class="mnem">
+    <div class="mw">SLAP</div>
+    <p style="font-size:12px;color:var(--muted);margin-bottom:12px">Risk Factors for Oral Cancer</p>
+    <div class="mrow"><div class="ml">S</div><div class="mc2"><strong>Smoking &amp; Tobacco</strong> — all forms (smoking, chewing, snuff, betel)</div></div>
+    <div class="mrow"><div class="ml">L</div><div class="mc2"><strong>Liquor (Alcohol)</strong> — synergistic with tobacco (15–30× combined risk)</div></div>
+    <div class="mrow"><div class="ml">A</div><div class="mc2"><strong>Actinic (UV) radiation</strong> — primarily lower lip SCC; also immunosuppression/AIDS</div></div>
+    <div class="mrow"><div class="ml">P</div><div class="mc2"><strong>Poor oral hygiene + HPV + Predisposing conditions</strong> — PMDs, immunosuppression, genetic syndromes</div></div>
+  </div>
+
+  <div class="mnem">
+    <div class="mw">MOUTH CANCER</div>
+    <p style="font-size:12px;color:var(--muted);margin-bottom:12px">Red Flags for Oral Cancer — Urgent Referral Indicators</p>
+    <div class="mrow"><div class="ml">M</div><div class="mc2"><strong>Mass or lump</strong> — unexplained, progressive, firm or fixed</div></div>
+    <div class="mrow"><div class="ml">O</div><div class="mc2"><strong>Open sore &gt;3 weeks</strong> — non-healing ulcer, most important single red flag</div></div>
+    <div class="mrow"><div class="ml">U</div><div class="mc2"><strong>Unexplained pain or numbness</strong> — paresthesia of lip/chin/tongue</div></div>
+    <div class="mrow"><div class="ml">T</div><div class="mc2"><strong>Trismus</strong> — limited mouth opening (&lt;35mm); pterygoid involvement</div></div>
+    <div class="mrow"><div class="ml">H</div><div class="mc2"><strong>Hoarseness &gt;3 weeks</strong> — laryngeal involvement or synchronous second primary</div></div>
+    <div class="mrow"><div class="ml">C</div><div class="mc2"><strong>Colour change</strong> — red (erythroplakia) or white patches persisting &gt;3 weeks</div></div>
+    <div class="mrow"><div class="ml">A</div><div class="mc2"><strong>Aching ear (otalgia)</strong> — referred otalgia with normal ear exam = oral cancer red flag</div></div>
+    <div class="mrow"><div class="ml">N</div><div class="mc2"><strong>Neck lumps</strong> — hard, non-tender, progressive cervical lymphadenopathy</div></div>
+    <div class="mrow"><div class="ml">C</div><div class="mc2"><strong>Chewing or swallowing difficulty</strong> — dysphagia, odynophagia, restricted tongue movement</div></div>
+    <div class="mrow"><div class="ml">E</div><div class="mc2"><strong>Eating difficulty / weight loss</strong> — unexplained &gt;10% loss over 6 months</div></div>
+    <div class="mrow"><div class="ml">R</div><div class="mc2"><strong>Red patch (erythroplakia)</strong> — always biopsy urgently; 40–50% already malignant</div></div>
+  </div>
+
+  <div class="mnem">
+    <div class="mw">ACID TEST</div>
+    <p style="font-size:12px;color:var(--muted);margin-bottom:12px">Clinical Features of a Malignant Oral Ulcer</p>
+    <div class="mrow"><div class="ml">A</div><div class="mc2"><strong>Age &gt;40</strong> and/or risk factors present</div></div>
+    <div class="mrow"><div class="ml">C</div><div class="mc2"><strong>Chronicity</strong> — persisting &gt;3 weeks without healing</div></div>
+    <div class="mrow"><div class="ml">I</div><div class="mc2"><strong>Induration</strong> — firm/hard base and margins on palpation (hallmark)</div></div>
+    <div class="mrow"><div class="ml">D</div><div class="mc2"><strong>Deep / Destruction</strong> — deep ulcer, bone or muscle invasion possible</div></div>
+    <div class="mrow"><div class="ml">T</div><div class="mc2"><strong>Tenderness absent early</strong> — painless ulcers are more suspicious for malignancy</div></div>
+    <div class="mrow"><div class="ml">E</div><div class="mc2"><strong>Everted margins</strong> — raised, rolled, everted border (not flat/sloped as in benign ulcers)</div></div>
+    <div class="mrow"><div class="ml">S</div><div class="mc2"><strong>Site-specific</strong> — lateral tongue, FOM (high risk sites) — especially concerning</div></div>
+    <div class="mrow"><div class="ml">T</div><div class="mc2"><strong>Take a biopsy</strong> — the only definitive diagnostic step</div></div>
+  </div>
+
+  <div class="mnem">
+    <div class="mw">PETS</div>
+    <p style="font-size:12px;color:var(--muted);margin-bottom:12px">PMDs in Descending Order of Malignant Potential</p>
+    <div class="mrow"><div class="ml">P</div><div class="mc2"><strong>PVL (Proliferative Verrucous Leukoplakia)</strong> — 60–70%+ transformation rate; most aggressive</div></div>
+    <div class="mrow"><div class="ml">E</div><div class="mc2"><strong>Erythroplakia</strong> — 40–50% transformation; highest of "classic" PMDs</div></div>
+    <div class="mrow"><div class="ml">T</div><div class="mc2"><strong>Tobacco-related (non-homogeneous leukoplakia / OSMF)</strong> — 7–20%</div></div>
+    <div class="mrow"><div class="ml">S</div><div class="mc2"><strong>Subtle (homogeneous leukoplakia, OLP reticular)</strong> — lowest risk (1–5%)</div></div>
+  </div>
+
+  <h3 class="sh">📋 Quick-Reference Comparison Table</h3>
+  <div class="tw">
+    <table>
+      <tr><th>Feature</th><th>ACC</th><th>MEC (Low)</th><th>MEC (High)</th><th>PLGA</th></tr>
+      <tr><td>Origin</td><td>Minor SG</td><td>Minor / Major SG</td><td>Minor / Major SG</td><td>Minor SG only</td></tr>
+      <tr><td>Most common site</td><td>Hard palate</td><td>Palate / Parotid</td><td>Palate / Parotid</td><td>Hard palate</td></tr>
+      <tr><td>Hallmark histology</td><td>Cribriform "Swiss cheese"</td><td>Cystic + mucous cells</td><td>Solid + epidermoid</td><td>Diverse patterns, bland cells</td></tr>
+      <tr><td>Perineural invasion</td><td><span class="b br">Classic</span></td><td><span class="b bx">Rare</span></td><td><span class="b ba">Moderate</span></td><td><span class="b bt">May occur</span></td></tr>
+      <tr><td>Mets risk</td><td><span class="b ba">Late but common</span></td><td><span class="b bg">Very low</span></td><td><span class="b br">High</span></td><td><span class="b bg">Very low</span></td></tr>
+      <tr><td>Prognosis (5-yr)</td><td>~75% (but 15-yr ~30%)</td><td>&gt;90%</td><td>~35–50%</td><td>&gt;90%</td></tr>
+      <tr><td>Treatment</td><td>Surgery + RT</td><td>Surgery alone</td><td>Surgery + RT ± chemo</td><td>Surgery alone</td></tr>
+    </table>
+  </div>
+
+  <h3 class="sh">⚡ Rapid-Fire Facts (Last-Minute Revision)</h3>
+  <div class="g2">
+    <div>
+      <div class="pearl"><span class="pi">⚡</span><p>Cancer of upper lip → upper lip BCC (skin-vermilion junction) possible; SCC less common than lower lip</p></div>
+      <div class="pearl"><span class="pi">⚡</span><p>DOI is measured from <strong>adjacent normal mucosa basement membrane</strong> — NOT from tumour surface</p></div>
+      <div class="pearl"><span class="pi">⚡</span><p>Elective ND for cN0 neck when occult mets risk &gt;20% — T2+, DOI &gt;4mm, tongue primaries</p></div>
+      <div class="pearl"><span class="pi">⚡</span><p>Fibula free flap = gold standard for mandible reconstruction (provides cortical bone + soft tissue)</p></div>
+      <div class="pearl"><span class="pi">⚡</span><p>Radial forearm free flap = thin, pliable — best for tongue, floor of mouth lining</p></div>
+      <div class="pearl"><span class="pi">⚡</span><p>Osteoradionecrosis: exposed necrotic bone &gt;3 months, no recurrence, in RT field — mandible &gt;&gt; maxilla</p></div>
+      <div class="pearl"><span class="pi">⚡</span><p>ENE = tumour outside LN capsule → automatically N3b → mandates adjuvant chemoRT not just RT</p></div>
+    </div>
+    <div>
+      <div class="pearl"><span class="pi">⚡</span><p>Pseudomembranous candidiasis = white patches that CAN be wiped off (unlike leukoplakia)</p></div>
+      <div class="pearl"><span class="pi">⚡</span><p>Necrotising sialometaplasia = greatest mimic of oral SCC clinically → biopsy to differentiate; self-limiting</p></div>
+      <div class="pearl"><span class="pi">⚡</span><p>Verrucous carcinoma = Ackerman's tumour = buccal mucosa + tobacco chewing + NO radiation alone</p></div>
+      <div class="pearl"><span class="pi">⚡</span><p>Kaposi sarcoma = hard palate + HIV + HHV-8 — purple-violaceous, vascular, non-tender lesion</p></div>
+      <div class="pearl"><span class="pi">⚡</span><p>Cetuximab acneiform rash = GOOD sign (severity correlates with treatment response)</p></div>
+      <div class="pearl"><span class="pi">⚡</span><p>Pembrolizumab = first-line R/M HNSCC (CPS ≥1) per KEYNOTE-048 trial — anti-PD-1</p></div>
+      <div class="pearl"><span class="pi">⚡</span><p>Second primary risk: 3–7%/year. Most common: larynx, oesophagus, lung. Panendoscopy at diagnosis.</p></div>
+    </div>
+  </div>
+</div>
+
+</div><!-- /content -->
+
+<script>
+function show(id, btn) {
+  document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  btn.classList.add('active');
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+</script>
+</body>
+</html>

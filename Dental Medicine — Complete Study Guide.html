@@ -1,0 +1,1818 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dental Medicine — Complete Study Guide</title>
+<style>
+  :root {
+    --bg: #ffffff;
+    --bg2: #f7f7f5;
+    --bg3: #f0efeb;
+    --border: #e2e0d8;
+    --border2: #ccc9bf;
+    --text: #1a1a18;
+    --text2: #5a5a54;
+    --text3: #8a8a82;
+    --teal: #1D9E75;
+    --teal-light: #E1F5EE;
+    --teal-dark: #085041;
+    --blue: #2563eb;
+    --blue-light: #EFF6FF;
+    --blue-dark: #1e40af;
+    --amber: #d97706;
+    --amber-light: #FFFBEB;
+    --amber-dark: #92400e;
+    --red: #dc2626;
+    --red-light: #FEF2F2;
+    --red-dark: #7f1d1d;
+    --purple: #7c3aed;
+    --purple-light: #F5F3FF;
+    --purple-dark: #4c1d95;
+    --radius: 10px;
+    --radius-sm: 6px;
+    --shadow: 0 1px 3px rgba(0,0,0,0.08), 0 1px 2px rgba(0,0,0,0.06);
+    --shadow-md: 0 4px 6px rgba(0,0,0,0.07), 0 2px 4px rgba(0,0,0,0.05);
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif; background: var(--bg3); color: var(--text); font-size: 15px; line-height: 1.6; }
+
+  /* Layout */
+  .app { display: flex; min-height: 100vh; }
+  .sidebar { width: 240px; flex-shrink: 0; background: var(--bg); border-right: 1px solid var(--border); display: flex; flex-direction: column; position: fixed; top: 0; left: 0; height: 100vh; overflow-y: auto; z-index: 100; }
+  .main { margin-left: 240px; flex: 1; padding: 28px 32px; max-width: 960px; }
+
+  /* Sidebar */
+  .sidebar-header { padding: 20px 18px 14px; border-bottom: 1px solid var(--border); }
+  .sidebar-logo { font-size: 18px; font-weight: 700; color: var(--teal); display: flex; align-items: center; gap: 8px; }
+  .sidebar-logo span { font-size: 22px; }
+  .sidebar-sub { font-size: 11px; color: var(--text3); margin-top: 3px; letter-spacing: 0.02em; }
+  .progress-wrap { padding: 14px 18px; border-bottom: 1px solid var(--border); }
+  .progress-label { font-size: 11px; color: var(--text3); margin-bottom: 6px; }
+  .progress-bar-bg { background: var(--bg3); border-radius: 99px; height: 5px; overflow: hidden; }
+  .progress-bar-fill { height: 5px; background: var(--teal); border-radius: 99px; transition: width 0.4s ease; width: 0%; }
+  .nav-section { padding: 10px 10px 4px; }
+  .nav-label { font-size: 10px; color: var(--text3); font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; padding: 0 8px; margin-bottom: 4px; }
+  .nav-item { display: flex; align-items: center; gap: 9px; padding: 8px 10px; border-radius: var(--radius-sm); cursor: pointer; font-size: 13px; color: var(--text2); transition: all 0.12s; border: none; background: none; width: 100%; text-align: left; font-family: inherit; }
+  .nav-item:hover { background: var(--bg2); color: var(--text); }
+  .nav-item.active { background: var(--teal-light); color: var(--teal-dark); font-weight: 600; }
+  .nav-item .nav-icon { font-size: 16px; flex-shrink: 0; }
+  .nav-item .nav-badge { margin-left: auto; font-size: 10px; background: var(--bg3); color: var(--text3); padding: 1px 6px; border-radius: 99px; }
+  .nav-item.active .nav-badge { background: rgba(29,158,117,0.15); color: var(--teal); }
+
+  /* Sections */
+  .section { display: none; }
+  .section.active { display: block; }
+
+  /* Page header */
+  .page-header { margin-bottom: 24px; }
+  .page-header h1 { font-size: 24px; font-weight: 700; color: var(--text); margin-bottom: 4px; }
+  .page-header p { font-size: 14px; color: var(--text2); }
+  .page-header .tag-row { display: flex; gap: 8px; margin-top: 10px; flex-wrap: wrap; }
+
+  /* Sub-nav tabs */
+  .subnav { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 20px; border-bottom: 1px solid var(--border); padding-bottom: 0; }
+  .subnav-btn { padding: 8px 14px; font-size: 13px; border: none; background: none; cursor: pointer; color: var(--text2); font-family: inherit; border-bottom: 2px solid transparent; margin-bottom: -1px; transition: all 0.12s; border-radius: 0; }
+  .subnav-btn:hover { color: var(--text); }
+  .subnav-btn.active { color: var(--teal); border-bottom-color: var(--teal); font-weight: 600; }
+
+  /* Sub-sections */
+  .subsection { display: none; }
+  .subsection.active { display: block; }
+
+  /* Cards */
+  .card { background: var(--bg); border: 1px solid var(--border); border-radius: var(--radius); padding: 20px 22px; margin-bottom: 16px; box-shadow: var(--shadow); }
+  .card h2 { font-size: 17px; font-weight: 700; margin-bottom: 14px; display: flex; align-items: center; gap: 8px; }
+  .card h3 { font-size: 14px; font-weight: 700; margin: 16px 0 8px; color: var(--text); }
+
+  /* Info grid */
+  .info-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 10px; margin: 14px 0; }
+  .info-box { background: var(--bg2); border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 12px 14px; }
+  .info-box .ib-label { font-size: 10px; color: var(--text3); font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 4px; }
+  .info-box .ib-val { font-size: 13px; line-height: 1.5; font-weight: 500; }
+
+  /* Callout boxes */
+  .callout { border-left: 3px solid; padding: 10px 14px; border-radius: 0 var(--radius-sm) var(--radius-sm) 0; margin: 12px 0; font-size: 13.5px; line-height: 1.6; }
+  .callout-teal { border-color: var(--teal); background: var(--teal-light); color: var(--teal-dark); }
+  .callout-amber { border-color: var(--amber); background: var(--amber-light); color: var(--amber-dark); }
+  .callout-red { border-color: var(--red); background: var(--red-light); color: var(--red-dark); }
+  .callout-blue { border-color: var(--blue); background: var(--blue-light); color: var(--blue-dark); }
+  .callout-purple { border-color: var(--purple); background: var(--purple-light); color: var(--purple-dark); }
+
+  /* Tags */
+  .tag { display: inline-block; font-size: 11px; font-weight: 600; padding: 3px 10px; border-radius: 99px; }
+  .tag-teal { background: var(--teal-light); color: var(--teal-dark); }
+  .tag-blue { background: var(--blue-light); color: var(--blue-dark); }
+  .tag-amber { background: var(--amber-light); color: var(--amber-dark); }
+  .tag-red { background: var(--red-light); color: var(--red-dark); }
+  .tag-purple { background: var(--purple-light); color: var(--purple-dark); }
+
+  /* Accordion */
+  .acc-item { border: 1px solid var(--border); border-radius: var(--radius-sm); margin-bottom: 8px; overflow: hidden; }
+  .acc-header { display: flex; justify-content: space-between; align-items: center; padding: 12px 14px; font-size: 13.5px; font-weight: 600; cursor: pointer; background: var(--bg); user-select: none; transition: background 0.1s; }
+  .acc-header:hover { background: var(--bg2); }
+  .acc-header .acc-icon { font-size: 18px; color: var(--text3); transition: transform 0.2s; flex-shrink: 0; margin-left: 8px; }
+  .acc-header.open .acc-icon { transform: rotate(180deg); }
+  .acc-body { display: none; padding: 14px 16px; font-size: 13.5px; line-height: 1.75; background: var(--bg2); border-top: 1px solid var(--border); }
+  .acc-body.open { display: block; }
+  .acc-body p { margin-bottom: 8px; }
+  .acc-body p:last-child { margin-bottom: 0; }
+  .acc-body strong { font-weight: 700; }
+  .acc-body ul { padding-left: 18px; margin: 6px 0; }
+  .acc-body ul li { margin-bottom: 4px; }
+
+  /* Table */
+  .table-wrap { overflow-x: auto; margin: 14px 0; border-radius: var(--radius-sm); border: 1px solid var(--border); }
+  .data-table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  .data-table th { text-align: left; padding: 10px 12px; background: var(--bg2); border-bottom: 1px solid var(--border2); font-weight: 700; color: var(--text2); font-size: 11px; text-transform: uppercase; letter-spacing: 0.05em; white-space: nowrap; }
+  .data-table td { padding: 10px 12px; border-bottom: 1px solid var(--border); vertical-align: top; line-height: 1.5; }
+  .data-table tr:last-child td { border-bottom: none; }
+  .data-table tr:hover td { background: var(--bg2); }
+
+  /* Drug cards */
+  .drug-card { background: var(--bg); border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 14px 16px; margin-bottom: 10px; }
+  .drug-name { font-size: 15px; font-weight: 700; margin-bottom: 2px; }
+  .drug-class { font-size: 12px; color: var(--text3); margin-bottom: 10px; font-style: italic; }
+  .drug-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .drug-field .df-label { font-size: 10px; color: var(--text3); font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 2px; }
+  .drug-field .df-val { font-size: 13px; line-height: 1.5; }
+
+  /* Flashcards */
+  .flashcard { background: var(--bg); border: 1.5px solid var(--border2); border-radius: var(--radius); padding: 28px 24px; min-height: 180px; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; cursor: pointer; transition: all 0.18s; }
+  .flashcard:hover { border-color: var(--teal); box-shadow: 0 0 0 3px rgba(29,158,117,0.1); }
+  .flashcard .fc-q { font-size: 16px; font-weight: 600; line-height: 1.5; margin-bottom: 8px; }
+  .flashcard .fc-a { font-size: 14px; color: var(--teal-dark); line-height: 1.65; display: none; margin-top: 12px; background: var(--teal-light); padding: 12px 16px; border-radius: var(--radius-sm); text-align: left; width: 100%; }
+  .flashcard .fc-a.show { display: block; }
+  .flashcard .fc-hint { font-size: 12px; color: var(--text3); margin-top: 12px; }
+  .fc-nav { display: flex; align-items: center; justify-content: space-between; margin-top: 12px; }
+  .fc-count { font-size: 13px; color: var(--text2); font-weight: 600; }
+
+  /* Quiz */
+  .quiz-q { font-size: 15px; font-weight: 600; line-height: 1.6; margin-bottom: 14px; padding: 14px 16px; background: var(--bg2); border-radius: var(--radius-sm); }
+  .quiz-opts { display: flex; flex-direction: column; gap: 8px; }
+  .quiz-opt { padding: 11px 15px; border-radius: var(--radius-sm); border: 1.5px solid var(--border); background: var(--bg); font-size: 14px; cursor: pointer; text-align: left; font-family: inherit; color: var(--text); transition: all 0.12s; line-height: 1.5; }
+  .quiz-opt:hover:not(.disabled) { border-color: var(--blue); background: var(--blue-light); }
+  .quiz-opt.correct { background: var(--teal-light); border-color: var(--teal); color: var(--teal-dark); font-weight: 600; }
+  .quiz-opt.wrong { background: var(--red-light); border-color: var(--red); color: var(--red-dark); }
+  .quiz-opt.disabled { cursor: not-allowed; }
+  .quiz-exp { margin-top: 14px; padding: 13px 16px; background: var(--amber-light); border: 1px solid #fcd34d; border-radius: var(--radius-sm); font-size: 13.5px; color: var(--amber-dark); line-height: 1.65; display: none; }
+  .quiz-exp.show { display: block; }
+  .quiz-nav { display: flex; justify-content: space-between; align-items: center; margin-top: 14px; }
+  .quiz-score { font-size: 13px; font-weight: 600; background: var(--teal-light); color: var(--teal-dark); padding: 5px 12px; border-radius: 99px; }
+  .quiz-counter { font-size: 12px; color: var(--text3); margin-bottom: 10px; }
+
+  /* Buttons */
+  .btn { padding: 8px 16px; border-radius: var(--radius-sm); border: 1px solid var(--border2); background: var(--bg); font-size: 13px; cursor: pointer; font-family: inherit; color: var(--text); transition: all 0.12s; font-weight: 500; }
+  .btn:hover { background: var(--bg2); }
+  .btn:disabled { opacity: 0.4; cursor: not-allowed; }
+  .btn-teal { background: var(--teal); border-color: var(--teal); color: white; }
+  .btn-teal:hover { background: #178a63; }
+
+  /* Body text helpers */
+  .body-text { font-size: 14px; line-height: 1.75; margin-bottom: 12px; }
+  .body-text strong { font-weight: 700; }
+  .body-text ul { padding-left: 20px; margin: 8px 0; }
+  .body-text ul li { margin-bottom: 5px; }
+
+  /* Mobile hamburger */
+  .mob-toggle { display: none; position: fixed; top: 12px; left: 12px; z-index: 200; width: 38px; height: 38px; background: var(--teal); border: none; border-radius: var(--radius-sm); cursor: pointer; flex-direction: column; align-items: center; justify-content: center; gap: 5px; box-shadow: var(--shadow-md); }
+  .mob-toggle span { display: block; width: 18px; height: 2px; background: white; border-radius: 2px; }
+  .sidebar-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.35); z-index: 99; }
+
+  @media (max-width: 768px) {
+    .mob-toggle { display: flex; }
+    .sidebar { transform: translateX(-100%); transition: transform 0.22s ease; }
+    .sidebar.mob-open { transform: translateX(0); }
+    .sidebar-overlay.mob-open { display: block; }
+    .main { margin-left: 0; padding: 16px 14px 24px; padding-top: 58px; }
+    .drug-grid { grid-template-columns: 1fr; }
+    .info-grid { grid-template-columns: 1fr; }
+  }
+
+  /* Utility */
+  .mt8 { margin-top: 8px; }
+  .mt12 { margin-top: 12px; }
+  .mt16 { margin-top: 16px; }
+  .pill-row { display: flex; flex-wrap: wrap; gap: 6px; margin: 8px 0; }
+  .pill { font-size: 12px; padding: 3px 10px; border-radius: 99px; background: var(--bg2); border: 1px solid var(--border); color: var(--text2); }
+  .divider { border: none; border-top: 1px solid var(--border); margin: 16px 0; }
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  @media (max-width: 600px) { .two-col { grid-template-columns: 1fr; } }
+
+  /* Anchor offset for hash links */
+  .section-anchor { scroll-margin-top: 20px; }
+</style>
+</head>
+<body>
+
+<!-- Mobile toggle -->
+<button class="mob-toggle" onclick="toggleSidebar()" aria-label="Open menu">
+  <span></span><span></span><span></span>
+</button>
+<div class="sidebar-overlay" id="overlay" onclick="toggleSidebar()"></div>
+
+<div class="app">
+
+  <!-- ===== SIDEBAR ===== -->
+  <nav class="sidebar" id="sidebar">
+    <div class="sidebar-header">
+      <div class="sidebar-logo"><span>🦷</span> DentalMed</div>
+      <div class="sidebar-sub">Complete Study Guide</div>
+    </div>
+    <div class="progress-wrap">
+      <div class="progress-label" id="prog-label">0 of 6 modules studied</div>
+      <div class="progress-bar-bg"><div class="progress-bar-fill" id="prog-fill"></div></div>
+    </div>
+    <div class="nav-section">
+      <div class="nav-label">Modules</div>
+      <button class="nav-item active" onclick="switchSection('history',this)">
+        <span class="nav-icon">📋</span> Patient History
+        <span class="nav-badge">7 cards</span>
+      </button>
+      <button class="nav-item" onclick="switchSection('clinical',this)">
+        <span class="nav-icon">🔍</span> Clinical Exam
+        <span class="nav-badge">7 cards</span>
+      </button>
+      <button class="nav-item" onclick="switchSection('lesions',this)">
+        <span class="nav-icon">🩺</span> Oral Lesions
+        <span class="nav-badge">5 MCQs</span>
+      </button>
+      <button class="nav-item" onclick="switchSection('investigation',this)">
+        <span class="nav-icon">🔬</span> Investigations
+        <span class="nav-badge">7 cards</span>
+      </button>
+      <button class="nav-item" onclick="switchSection('medications',this)">
+        <span class="nav-icon">💊</span> Medications
+        <span class="nav-badge">5 MCQs</span>
+      </button>
+      <button class="nav-item" onclick="switchSection('systemic',this)">
+        <span class="nav-icon">❤️</span> Systemic Diseases
+        <span class="nav-badge">5 MCQs</span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ===== MAIN ===== -->
+  <main class="main">
+
+    <!-- ============================================================ HISTORY ============================================================ -->
+    <div class="section active" id="sec-history">
+      <div class="page-header">
+        <h1>📋 Patient History Taking</h1>
+        <p>A thorough history is the foundation of dental diagnosis. Master the sequence: Chief Complaint → HPI → Medical History → Social History → Review of Systems.</p>
+        <div class="tag-row">
+          <span class="tag tag-blue">Foundation skill</span>
+          <span class="tag tag-teal">SOCRATES</span>
+          <span class="tag tag-amber">Allergy & drug safety</span>
+        </div>
+      </div>
+
+      <div class="subnav">
+        <button class="subnav-btn active" onclick="switchSub('history','overview',this)">Overview</button>
+        <button class="subnav-btn" onclick="switchSub('history','chief',this)">Chief Complaint</button>
+        <button class="subnav-btn" onclick="switchSub('history','medical',this)">Medical History</button>
+        <button class="subnav-btn" onclick="switchSub('history','social',this)">Social History</button>
+        <button class="subnav-btn" onclick="switchSub('history','flashcards',this)">🃏 Flashcards</button>
+      </div>
+
+      <!-- Overview -->
+      <div class="subsection active" id="sub-history-overview">
+        <div class="card">
+          <h2>Systematic History Sequence</h2>
+          <div class="body-text">Record in order: <strong>Chief Complaint → History of Present Illness → Past Dental History → Medical History → Drug History → Allergies → Family History → Social History → Review of Systems.</strong></div>
+          <div class="callout callout-teal"><strong>SOCRATES mnemonic</strong> — <strong>S</strong>ite, <strong>O</strong>nset, <strong>C</strong>haracter, <strong>R</strong>adiation, <strong>A</strong>ssociations, <strong>T</strong>ime course, <strong>E</strong>xacerbating/relieving factors, <strong>S</strong>everity (1–10). Use for ALL pain complaints.</div>
+          <div class="info-grid">
+            <div class="info-box"><div class="ib-label">History of Present Illness</div><div class="ib-val">Duration, progression, previous treatment, what makes it better or worse</div></div>
+            <div class="info-box"><div class="ib-label">Past Dental History</div><div class="ib-val">Visit frequency, previous procedures, anxiety level, previous complications</div></div>
+            <div class="info-box"><div class="ib-label">Medical History</div><div class="ib-val">Systemic conditions, medications, allergies, hospitalisations, surgeries</div></div>
+            <div class="info-box"><div class="ib-label">Family History</div><div class="ib-val">Hereditary conditions, dental anomalies, oral cancer risk</div></div>
+          </div>
+          <div class="callout callout-amber"><strong>Never skip medication and allergy history.</strong> Drug interactions and allergic reactions can be life-threatening in a dental setting. Distinguish true allergy (immune-mediated) from intolerance/side effect.</div>
+        </div>
+      </div>
+
+      <!-- Chief Complaint -->
+      <div class="subsection" id="sub-history-chief">
+        <div class="card">
+          <h2>Chief Complaint & History of Present Illness</h2>
+          <div class="body-text">Record the chief complaint in the <strong>patient's own words</strong>, in quotation marks. Then expand systematically using SOCRATES.</div>
+
+          <div class="acc-item">
+            <div class="acc-header" onclick="toggleAcc(this)">Pain assessment in detail <span class="acc-icon">▾</span></div>
+            <div class="acc-body">
+              <p><strong>Pulpal pain:</strong> Spontaneous, lancinating, poorly localised (especially upper teeth — referred pain), worse at night, initially relieved then prolonged by cold/heat.</p>
+              <p><strong>Periodontal pain:</strong> Dull, throbbing, well-localised, tender to pressure, increased by chewing. No thermal symptoms.</p>
+              <p><strong>Myofascial (TMD) pain:</strong> Dull ache, associated with jaw movement, headache, clicking sounds. Worse on waking (nocturnal bruxism).</p>
+              <p><strong>Neuropathic pain:</strong> Burning, shooting, electric shock-like. Follows nerve distribution. Consider trigeminal neuralgia (paroxysmal, trigger zones), post-herpetic neuralgia, PDAP.</p>
+              <p><strong>Always assess:</strong> Is the pain localised (periodontal) or diffuse (pulpal/referred)? Does it linger after thermal stimulus (&gt;30s = irreversible pulpitis)?</p>
+            </div>
+          </div>
+
+          <div class="acc-item">
+            <div class="acc-header" onclick="toggleAcc(this)">Swelling assessment <span class="acc-icon">▾</span></div>
+            <div class="acc-body">
+              <p><strong>Rapid, painful, hard then fluctuant swelling</strong> = acute abscess. May have fever and lymphadenopathy.</p>
+              <p><strong>Painless, slowly enlarging swelling</strong> = cyst, benign tumour, malignancy — needs investigation.</p>
+              <p><strong>Bilateral swelling</strong> = salivary gland disease (Sjögren's), lymphoma, drug reaction, mumps, sarcoidosis.</p>
+              <p>Ask: duration, rate of growth, changes in size, pain, associated teeth, previous episodes, systemic symptoms (weight loss, night sweats = lymphoma alarm).</p>
+            </div>
+          </div>
+
+          <div class="acc-item">
+            <div class="acc-header" onclick="toggleAcc(this)">Ulcer assessment — the 3-week rule <span class="acc-icon">▾</span></div>
+            <div class="acc-body">
+              <p><strong>Duration is the single most important factor:</strong></p>
+              <p><strong>&lt;3 weeks:</strong> Likely benign — traumatic ulcer, aphthous ulcer, herpetic. Manage conservatively and review.</p>
+              <p><strong>&gt;3 weeks without obvious cause:</strong> Must biopsy or urgently refer to exclude oral squamous cell carcinoma.</p>
+              <p>Also assess: number, size, site (lateral tongue and floor of mouth = highest risk), edge character (rolled/indurated = SCC), base, pain level (SCC often painless early).</p>
+            </div>
+          </div>
+
+          <div class="acc-item">
+            <div class="acc-header" onclick="toggleAcc(this)">Bleeding assessment <span class="acc-icon">▾</span></div>
+            <div class="acc-body">
+              <p><strong>Spontaneous vs provoked</strong> — spontaneous gingival bleeding suggests systemic cause.</p>
+              <p>Assess duration, extent, other bleeding sites (nosebleeds, bruising, menorrhagia).</p>
+              <p><strong>Rule out:</strong> Blood dyscrasias (leukaemia, thrombocytopenia), anticoagulant therapy, bleeding disorders (haemophilia, Von Willebrand), liver disease.</p>
+              <p>Check: family history of bleeding problems, previous surgical/dental bleeding.</p>
+            </div>
+          </div>
+
+          <div class="callout callout-red"><strong>3-week rule:</strong> Any ulcer persisting beyond 3 weeks that doesn't have an obvious benign cause MUST be biopsied or urgently referred. Do not reassure and discharge without histological diagnosis.</div>
+        </div>
+      </div>
+
+      <!-- Medical History -->
+      <div class="subsection" id="sub-history-medical">
+        <div class="card">
+          <h2>Medical History</h2>
+          <span class="tag tag-amber">Critical safety</span>
+          <div class="table-wrap" style="margin-top:14px">
+            <table class="data-table">
+              <tr><th>System</th><th>Key conditions</th><th>Dental relevance</th></tr>
+              <tr><td><strong>Cardiovascular</strong></td><td>IHD, hypertension, valve disease, arrhythmia</td><td>LA adrenaline limits, IE risk, stress management</td></tr>
+              <tr><td><strong>Haematological</strong></td><td>Anaemia, leukaemia, haemophilia, warfarin use</td><td>Bleeding risk, mucosal pallor, infection susceptibility</td></tr>
+              <tr><td><strong>Endocrine</strong></td><td>Diabetes, thyroid disorders, Addison's disease</td><td>Healing, infection risk, adrenal crisis, xerostomia</td></tr>
+              <tr><td><strong>Respiratory</strong></td><td>Asthma, COPD</td><td>Aspirin/NSAID-induced asthma, sedation risk, drug interactions</td></tr>
+              <tr><td><strong>Hepatic</strong></td><td>Hepatitis B/C, cirrhosis, alcoholic liver disease</td><td>Bleeding risk (clotting factors), cross-infection, drug metabolism</td></tr>
+              <tr><td><strong>Renal</strong></td><td>CKD, dialysis</td><td>Drug dose adjustments, NSAIDs contraindicated, bleeding tendency</td></tr>
+              <tr><td><strong>Neurological</strong></td><td>Epilepsy, Parkinson's, stroke, MS</td><td>Drug interactions, positioning, oral hygiene ability</td></tr>
+              <tr><td><strong>Immune</strong></td><td>HIV, immunosuppressants, chemotherapy</td><td>Opportunistic oral infections, impaired healing, neutropenia</td></tr>
+              <tr><td><strong>Bone</strong></td><td>Osteoporosis (bisphosphonates)</td><td>MRONJ risk with dento-alveolar surgery</td></tr>
+            </table>
+          </div>
+          <div class="callout callout-red"><strong>Allergy documentation:</strong> Always distinguish true allergy (immune-mediated — rash, urticaria, anaphylaxis) from intolerance/side effect (nausea, GI upset). True penicillin allergy = use macrolide or clindamycin. LA allergy is rare — usually reaction to preservative (sulphite) or vasopressor.</div>
+          <div class="callout callout-blue"><strong>SAMPLE mnemonic for emergencies:</strong> Symptoms, Allergies, Medications, Past medical history, Last meal, Events leading up</div>
+        </div>
+      </div>
+
+      <!-- Social History -->
+      <div class="subsection" id="sub-history-social">
+        <div class="card">
+          <h2>Social & Family History</h2>
+          <div class="info-grid">
+            <div class="info-box"><div class="ib-label">Smoking</div><div class="ib-val">Pack-years, type (cigarettes, shisha, smokeless tobacco). Major risk for periodontal disease, oral cancer, impaired healing, implant failure.</div></div>
+            <div class="info-box"><div class="ib-label">Alcohol</div><div class="ib-val">Units/week (safe: &lt;14♀, &lt;21♂). Liver disease (bleeding risk), vitamin deficiencies, xerostomia, oral cancer risk, poor compliance.</div></div>
+            <div class="info-box"><div class="ib-label">Diet & Eating</div><div class="ib-val">Sugar intake frequency. Eating disorders (bulimia → palatal erosion, parotid enlargement). GORD → palatal/occlusal erosion.</div></div>
+            <div class="info-box"><div class="ib-label">Occupation</div><div class="ib-val">Acid erosion (industrial workers), stress-related bruxism, access to care, appointment scheduling challenges.</div></div>
+            <div class="info-box"><div class="ib-label">Family History</div><div class="ib-val">Hereditary anomalies (AI, DI, cleft lip/palate), oral cancer, bleeding disorders, Paget's disease, early tooth loss.</div></div>
+            <div class="info-box"><div class="ib-label">Medications (oral effects)</div><div class="ib-val"><strong>Gingival hyperplasia:</strong> Phenytoin, Cyclosporin, CCBs. <strong>Xerostomia:</strong> Antidepressants, antihistamines. <strong>MRONJ:</strong> Bisphosphonates.</div></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Flashcards -->
+      <div class="subsection" id="sub-history-flashcards">
+        <div class="card">
+          <h2>🃏 History Flashcards</h2>
+          <p class="body-text" style="color:var(--text2);font-size:13px;margin-bottom:16px">Click each card to reveal the answer. Use arrow buttons to navigate.</p>
+          <div id="fc-history-wrap"></div>
+        </div>
+      </div>
+    </div><!-- /history -->
+
+
+    <!-- ============================================================ CLINICAL EXAMINATION ============================================================ -->
+    <div class="section" id="sec-clinical">
+      <div class="page-header">
+        <h1>🔍 Clinical Examination</h1>
+        <p>Systematic extra- and intraoral examination, anatomic normal variants, and periodontal assessment. Never examine teeth before soft tissues.</p>
+        <div class="tag-row">
+          <span class="tag tag-blue">Systematic approach</span>
+          <span class="tag tag-teal">Normal variants</span>
+          <span class="tag tag-purple">Periodontal staging</span>
+        </div>
+      </div>
+
+      <div class="subnav">
+        <button class="subnav-btn active" onclick="switchSub('clinical','extra',this)">Extraoral</button>
+        <button class="subnav-btn" onclick="switchSub('clinical','intra',this)">Intraoral</button>
+        <button class="subnav-btn" onclick="switchSub('clinical','anat',this)">Normal Variants</button>
+        <button class="subnav-btn" onclick="switchSub('clinical','perio',this)">Periodontal</button>
+        <button class="subnav-btn" onclick="switchSub('clinical','flashcards',this)">🃏 Flashcards</button>
+      </div>
+
+      <div class="subsection active" id="sub-clinical-extra">
+        <div class="card">
+          <h2>Extraoral Examination</h2>
+          <div class="body-text">Always examine extraoral first — observe the patient before they sit down. Note gait, posture, general wellbeing, facial asymmetry, skin changes.</div>
+
+          <div class="acc-item"><div class="acc-header" onclick="toggleAcc(this)">General inspection & facial analysis <span class="acc-icon">▾</span></div>
+            <div class="acc-body">
+              <p><strong>Facial thirds:</strong> Hairline → Glabella / Glabella → Subnasale / Subnasale → Menton (should be roughly equal).</p>
+              <p><strong>Facial fifths:</strong> Width of face divided into 5 equal parts, each equalling one eye width. Basis for aesthetic facial analysis.</p>
+              <p><strong>Skin:</strong> Pallor (anaemia), jaundice (liver disease), malar flush (mitral stenosis/SLE), erythema, telangectasia, pigmentation changes (Addison's).</p>
+              <p><strong>Asymmetry causes:</strong> Parotid swelling, masseteric hypertrophy (bruxism), unilateral condylar hyperplasia, bony swellings (fibro-osseous lesions, Paget's), scarring, facial palsy.</p>
+            </div>
+          </div>
+
+          <div class="acc-item"><div class="acc-header" onclick="toggleAcc(this)">Lymph node examination — full sequence <span class="acc-icon">▾</span></div>
+            <div class="acc-body">
+              <p><strong>Palpation sequence:</strong> Submental → Submandibular → Pre-auricular → Post-auricular → Superficial cervical → Deep cervical chain → Posterior triangle → Supraclavicular.</p>
+              <p><strong>Assess for each node:</strong> Size (&gt;1cm = significant), consistency (soft/firm/rubbery/hard), mobility (fixed = strongly suggests malignancy), tenderness (infection = tender), number of nodes, bilaterality.</p>
+              <p><strong>Interpretation:</strong></p>
+              <ul>
+                <li><strong>Hard, fixed, non-tender, irregular</strong> → suspect metastatic malignancy (oral SCC, thyroid, lymphoma)</li>
+                <li><strong>Rubbery, discrete, non-tender</strong> → lymphoma</li>
+                <li><strong>Soft, tender, mobile</strong> → reactive (infection, viral illness)</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="acc-item"><div class="acc-header" onclick="toggleAcc(this)">TMJ assessment <span class="acc-icon">▾</span></div>
+            <div class="acc-body">
+              <p><strong>Palpation:</strong> Place index fingers immediately anterior to tragus of ear (lateral poles of condyles). Ask patient to open and close. Feel for: condylar movement, clicking (single = disc displacement with reduction; multiple = disc adhesion), crepitus (degenerative joint disease).</p>
+              <p><strong>Maximum mouth opening:</strong> Normal 35–55mm (upper to lower incisors). &lt;35mm = restricted (causes: trismus, disc displacement without reduction, fibrosis, ankylosis).</p>
+              <p><strong>Deviation on opening:</strong> Early deviation that corrects = disc displacement with reduction. Persistent deviation = muscle imbalance or ankylosis.</p>
+              <p><strong>Lateral excursions:</strong> Normal 8–12mm each side. Pain on lateral movement = joint or muscle pathology.</p>
+            </div>
+          </div>
+
+          <div class="acc-item"><div class="acc-header" onclick="toggleAcc(this)">Salivary gland examination <span class="acc-icon">▾</span></div>
+            <div class="acc-body">
+              <p><strong>Parotid:</strong> Inspect (swelling below/in front of ear lobe = parotid territory). Bimanual palpation — finger intraorally near Stensen's duct orifice (opposite upper 6), hand externally. Massage gland to assess salivary flow — should produce clear saliva.</p>
+              <p><strong>Submandibular:</strong> Bimanual — index finger on floor of mouth, hand under chin. Wharton's duct opens near the lingual frenulum (caruncle). Normal gland feels like a firm oval lobulated mass under the mandible.</p>
+              <p><strong>Sublingual:</strong> Visible as bilateral ridges (plica sublingualis) on the floor of the mouth.</p>
+              <p><strong>Assess:</strong> Secretion quality (clear = normal, cloudy = sialadenitis, purulent = abscess, blood-stained = duct neoplasm), tenderness, calculi (bimanual along duct track).</p>
+            </div>
+          </div>
+
+          <div class="callout callout-teal">Always palpate lymph nodes bimanually and follow the systematic sequence. A missed malignant node can delay diagnosis and be a serious clinical error.</div>
+        </div>
+      </div>
+
+      <div class="subsection" id="sub-clinical-intra">
+        <div class="card">
+          <h2>Intraoral Examination</h2>
+          <div class="callout callout-blue"><strong>Examine soft tissues BEFORE teeth.</strong> Use good lighting, mouth mirror, and gauze to move tongue. Follow a systematic route so nothing is missed.</div>
+
+          <div class="acc-item"><div class="acc-header" onclick="toggleAcc(this)">Systematic soft tissue examination route <span class="acc-icon">▾</span></div>
+            <div class="acc-body">
+              <p><strong>Standard route:</strong> Lips (vermilion border + mucosal surface) → Labial mucosa (upper & lower) → Commissures → Buccal mucosa (L + R, check opposite upper 6 for parotid papilla) → Upper alveolus/gingivae → Lower alveolus/gingivae → Hard palate (incisive papilla, palatal rugae, torus) → Soft palate & uvula → Oropharynx → Tongue dorsum (papillae, fissures, geographic patches) → Lateral borders of tongue (retract with gauze — HIGHEST RISK SITE) → Ventral tongue → Floor of mouth (lift tongue — SECOND HIGHEST RISK SITE) → Salivary duct orifices → Gingival margins.</p>
+              <p><strong>Lateral border of tongue + floor of mouth = highest risk sites for oral SCC.</strong> Never skip. Bimanual palpation of floor of mouth.</p>
+            </div>
+          </div>
+
+          <div class="acc-item"><div class="acc-header" onclick="toggleAcc(this)">Lesion description — structured approach <span class="acc-icon">▾</span></div>
+            <div class="acc-body">
+              <p>Describe using: <strong>Type, Site, Size, Shape, Colour, Surface, Border, Base, Consistency, Number, Symptoms, Duration.</strong></p>
+              <p><strong>Lesion types:</strong> Macule (flat colour change), Patch (macule &gt;1cm), Papule (raised &lt;5mm), Plaque (raised &gt;5mm), Vesicle (fluid-filled &lt;5mm), Bulla (&gt;5mm), Pustule (pus-filled), Erosion (superficial epithelial loss), Ulcer (full-thickness loss), Nodule (firm raised), Fissure (linear crack).</p>
+              <p><strong>Border:</strong> Well-defined vs diffuse; raised vs flat; rolled (everted = malignancy sign) vs regular.</p>
+              <p><strong>Base:</strong> Indurated (hard = malignancy sign) vs soft.</p>
+              <p><strong>Palpation:</strong> Assess for induration, fixation to underlying tissue, fluctuance (abscess/cyst). Always palpate bimanually for floor of mouth/tongue lesions.</p>
+            </div>
+          </div>
+
+          <div class="acc-item"><div class="acc-header" onclick="toggleAcc(this)">Pulpal & periapical tests <span class="acc-icon">▾</span></div>
+            <div class="acc-body">
+              <p><strong>Cold test (Endo-Ice / CO₂ snow):</strong> Positive (pain during stimulus, stops when removed) = vital pulp. Pain lingering &gt;30 seconds = irreversible pulpitis. No response = pulp necrosis or heavily restored tooth.</p>
+              <p><strong>Electric pulp test (EPT):</strong> Tests neural viability. Positive (sensation) = vital. Not reliable in recently traumatised teeth or mature apices in children.</p>
+              <p><strong>Heat test (GP stick):</strong> Reproduces symptoms of irreversible pulpitis — pain lingers after heat removed.</p>
+              <p><strong>Percussion (vertical):</strong> Tenderness = periapical inflammation/abscess. Always compare with adjacent teeth.</p>
+              <p><strong>Percussion (horizontal):</strong> Tenderness = lateral periodontal involvement.</p>
+              <p><strong>Palpation over apex (buccal):</strong> Tenderness = periapical pathology. Buccal sinus = chronic periapical abscess.</p>
+              <p><strong>Transillumination:</strong> Identifies cracks in teeth (cracked tooth syndrome).</p>
+              <p><strong>Test cavity:</strong> Last resort when all other tests inconclusive — no LA, drill into dentine — sensation = vital.</p>
+            </div>
+          </div>
+
+          <div class="callout callout-amber">No single test is diagnostic. Always correlate pulp tests with radiographic findings, history, and clinical signs before reaching a diagnosis.</div>
+        </div>
+      </div>
+
+      <div class="subsection" id="sub-clinical-anat">
+        <div class="card">
+          <h2>Anatomic Normal Variants</h2>
+          <span class="tag tag-purple">Normal — no treatment needed</span>
+          <div class="body-text mt8">These findings are <strong>normal variants</strong> — must not be confused with pathology. Recognising them prevents unnecessary treatment and patient anxiety.</div>
+          <div class="table-wrap mt12">
+            <table class="data-table">
+              <tr><th>Finding</th><th>Location</th><th>Description</th><th>Key diagnostic feature</th></tr>
+              <tr><td><strong>Fordyce spots</strong></td><td>Buccal mucosa, lip vermilion</td><td>Ectopic sebaceous glands — multiple yellow/cream 1–2mm spots</td><td>Bilateral, multiple, cannot be wiped off. Normal variant in up to 80% adults.</td></tr>
+              <tr><td><strong>Leukoedema</strong></td><td>Buccal mucosa</td><td>Diffuse greyish-white opalescent milky appearance</td><td><strong>Disappears when mucosa is stretched</strong> — diagnostic. More prominent in darker-skinned individuals. No treatment.</td></tr>
+              <tr><td><strong>Linea alba</strong></td><td>Buccal mucosa at occlusal plane</td><td>Horizontal white line, bilateral</td><td>Bilateral, follows occlusal line, cannot be wiped off. From occlusal frictional forces.</td></tr>
+              <tr><td><strong>Torus palatinus</strong></td><td>Midline hard palate</td><td>Bony exostosis, smooth, lobulated or flat; covered by thin mucosa</td><td>Midline location, hard on palpation, covered by normal mucosa. Remove only if prosthesis needed.</td></tr>
+              <tr><td><strong>Torus mandibularis</strong></td><td>Lingual surface mandible, premolar region</td><td>Bilateral bony protuberances, hard, smooth</td><td>Bilateral is key diagnostic feature. Hard on palpation. Hereditary.</td></tr>
+              <tr><td><strong>Buccal exostoses</strong></td><td>Buccal alveolar bone</td><td>Cortical bone outgrowths, usually bilateral, multiple</td><td>Hard, smooth, bilateral. Normal variant. Distinguish from peripheral ossifying fibroma (softer).</td></tr>
+              <tr><td><strong>Fissured tongue</strong></td><td>Tongue dorsum</td><td>Multiple grooves and fissures, increases with age</td><td>Normal variant. Association with Melkersson-Rosenthal syndrome and Down syndrome.</td></tr>
+              <tr><td><strong>Geographic tongue</strong></td><td>Tongue dorsum</td><td>Erythematous patches with white/yellow borders, <em>migratory</em> (change location over time)</td><td>Benign migratory glossitis. No treatment needed. Reassure patient.</td></tr>
+              <tr><td><strong>Hairy tongue</strong></td><td>Dorsal tongue</td><td>Elongated filiform papillae; yellow/brown/black discoloration</td><td>Caused by: antibiotics, smoking, poor OH, Candida, bismuth. Reversible with cause removal.</td></tr>
+              <tr><td><strong>Circumvallate papillae</strong></td><td>Junction anterior 2/3 and posterior 1/3</td><td>8–12 large mushroom-shaped papillae forming a V</td><td>Often alarming to patients. Completely normal. Contain taste buds.</td></tr>
+              <tr><td><strong>Pterygomandibular raphe</strong></td><td>Between hamulus and retromolar pad</td><td>Fibrous band visible on wide opening, may appear white</td><td>Key landmark for IANB injection. Normal structure.</td></tr>
+              <tr><td><strong>Parotid papilla</strong></td><td>Buccal mucosa opposite upper 6</td><td>Small papilla — orifice of Stensen's duct</td><td>Can be inflamed/red in parotitis. Massage parotid to confirm saliva from duct.</td></tr>
+              <tr><td><strong>Incisive papilla</strong></td><td>Anterior hard palate</td><td>Pear-shaped mound immediately behind upper central incisors</td><td>Nasopalatine (incisive) canal lies below. Avoid when placing anterior palatal injections.</td></tr>
+              <tr><td><strong>Lingual tonsil</strong></td><td>Posterior 1/3 dorsal tongue base</td><td>Irregular lymphoid tissue</td><td>Normal lymphoid tissue. May enlarge in infection or lymphoma — compare sides.</td></tr>
+            </table>
+          </div>
+          <div class="callout callout-teal"><strong>Key features of normal variants:</strong> Bilateral and symmetric location, cannot be wiped off, no induration, no associated lymphadenopathy, asymptomatic, stable over time, consistent with known normal anatomy.</div>
+        </div>
+      </div>
+
+      <div class="subsection" id="sub-clinical-perio">
+        <div class="card">
+          <h2>Periodontal Assessment</h2>
+          <span class="tag tag-teal">BPE + 6-point pocket chart</span>
+          <div class="body-text mt8">Periodontal examination is mandatory at every new patient appointment. Use BPE for screening, full 6-point chart when BPE ≥3 in any sextant.</div>
+          <div class="info-grid">
+            <div class="info-box"><div class="ib-label">BPE scores</div><div class="ib-val">0 = healthy / 1 = bleeding only / 2 = calculus or defective margin / 3 = pockets 3.5–5.5mm / 4 = pockets ≥5.5mm / * = furcation involvement</div></div>
+            <div class="info-box"><div class="ib-label">Full chart records</div><div class="ib-val">6 sites per tooth: MB, B, DB, ML, L, DL. Record: PPD (pocket probing depth), recession, BOP (bleeding on probing), furcation class, mobility grade, suppuration</div></div>
+            <div class="info-box"><div class="ib-label">Furcation (Hamp)</div><div class="ib-val">Class I: probe enters &lt;3mm / Class II: probe enters ≥3mm but not through / Class III: through-and-through (tunnel)</div></div>
+            <div class="info-box"><div class="ib-label">Mobility (Miller)</div><div class="ib-val">Grade I: &lt;1mm horizontal / Grade II: &gt;1mm horizontal / Grade III: vertical movement as well</div></div>
+          </div>
+
+          <div class="acc-item"><div class="acc-header" onclick="toggleAcc(this)">2018 AAP/EFP Classification — Staging & Grading <span class="acc-icon">▾</span></div>
+            <div class="acc-body">
+              <p><strong>Staging (severity and complexity):</strong></p>
+              <ul>
+                <li><strong>Stage I (mild):</strong> CAL 1–2mm, bone loss coronal 1/3, no tooth loss due to periodontitis, PPD ≤4mm</li>
+                <li><strong>Stage II (moderate):</strong> CAL 3–4mm, bone loss coronal 1/3, no tooth loss due to perio, PPD ≤5mm</li>
+                <li><strong>Stage III (severe, potential tooth loss):</strong> CAL ≥5mm, bone loss extending to mid or apical 1/3, tooth loss ≤4 due to perio, PPD ≥6mm, furcation Class II/III, mobility Grade II/III</li>
+                <li><strong>Stage IV (severe, masticatory dysfunction):</strong> As Stage III + masticatory dysfunction (bite collapse, flaring, drifting, ≤20 remaining teeth)</li>
+              </ul>
+              <p><strong>Grading (rate of progression, risk factors):</strong></p>
+              <ul>
+                <li><strong>Grade A (slow):</strong> No evidence of progression, bone loss/age &lt;0.25, non-smoker, normoglycaemic</li>
+                <li><strong>Grade B (moderate):</strong> &lt;2mm bone loss over 5 years, bone loss/age 0.25–1.0, smoker &lt;10 cigs/day, HbA1c &lt;7%</li>
+                <li><strong>Grade C (rapid):</strong> ≥2mm bone loss over 5 years, bone loss/age &gt;1.0, smoker ≥10/day, HbA1c ≥7%, or risk factors: immunosuppression</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="subsection" id="sub-clinical-flashcards">
+        <div class="card">
+          <h2>🃏 Clinical Examination Flashcards</h2>
+          <p class="body-text" style="color:var(--text2);font-size:13px;margin-bottom:16px">Tap each card to reveal the answer.</p>
+          <div id="fc-clinical-wrap"></div>
+        </div>
+      </div>
+    </div><!-- /clinical -->
+
+
+    <!-- ============================================================ ORAL LESIONS ============================================================ -->
+    <div class="section" id="sec-lesions">
+      <div class="page-header">
+        <h1>🩺 Oral Lesions</h1>
+        <p>Systematic classification and clinical management of white, red, ulcerative, vesicular, and pigmented oral lesions. Duration, location, and morphology are diagnostic keys.</p>
+        <div class="tag-row">
+          <span class="tag tag-red">Malignant potential</span>
+          <span class="tag tag-amber">3-week rule</span>
+          <span class="tag tag-blue">Biopsy criteria</span>
+        </div>
+      </div>
+
+      <div class="subnav">
+        <button class="subnav-btn active" onclick="switchSub('lesions','white',this)">White</button>
+        <button class="subnav-btn" onclick="switchSub('lesions','red',this)">Red</button>
+        <button class="subnav-btn" onclick="switchSub('lesions','ulcers',this)">Ulcers</button>
+        <button class="subnav-btn" onclick="switchSub('lesions','vesicles',this)">Vesicular/Bullous</button>
+        <button class="subnav-btn" onclick="switchSub('lesions','pigment',this)">Pigmented</button>
+        <button class="subnav-btn" onclick="switchSub('lesions','quiz',this)">✏️ Quiz</button>
+      </div>
+
+      <div class="subsection active" id="sub-lesions-white">
+        <div class="card">
+          <h2>White Lesions</h2>
+          <span class="tag tag-blue">Cannot be wiped off (except pseudomembranous candida)</span>
+
+          <div class="acc-item"><div class="acc-header" onclick="toggleAcc(this)">Leukoplakia — definition & management <span class="acc-icon">▾</span></div>
+            <div class="acc-body">
+              <p><strong>Definition:</strong> White patch that cannot be wiped off and cannot be clinically or pathologically characterised as any other known disease — an <em>exclusion diagnosis</em>.</p>
+              <p><strong>Types:</strong></p>
+              <ul>
+                <li><strong>Homogeneous:</strong> Flat, uniform white colour. Smooth or wrinkled. Lower malignant transformation rate (~1–2%).</li>
+                <li><strong>Non-homogeneous:</strong> Speckled (erythroleukoplakia — red and white mixed), nodular, verrucous. Higher malignant transformation rate (up to 33% for erythroleukoplakia).</li>
+              </ul>
+              <p><strong>Overall malignant transformation:</strong> 1–5% over 10 years, but up to 33% for erythroleukoplakia.</p>
+              <p><strong>High-risk sites:</strong> Floor of mouth, ventrolateral tongue, soft palate complex.</p>
+              <p><strong>Management:</strong> (1) Risk factor elimination (smoking, alcohol, betel nut). (2) Review after 2–4 weeks. (3) Biopsy all non-homogeneous lesions and any persistent homogeneous lesions. (4) Excision if dysplasia present. (5) Long-term follow-up mandatory — annual review minimum.</p>
+            </div>
+          </div>
+
+          <div class="acc-item"><div class="acc-header" onclick="toggleAcc(this)">Oral candidosis — all types <span class="acc-icon">▾</span></div>
+            <div class="acc-body">
+              <p><strong>Pseudomembranous (thrush):</strong> White/cream plaques that <strong>WIPE OFF</strong> to reveal raw red/bleeding base. Found in newborns, immunocompromised, denture wearers, after antibiotics.</p>
+              <p><strong>Erythematous (atrophic):</strong> Red patches on palate (often mirror denture shape), dorsal tongue (median rhomboid glossitis pattern). Common with inhalers (steroid) — advise to rinse after use.</p>
+              <p><strong>Hyperplastic (candidal leukoplakia):</strong> White plaque that does NOT wipe off. Resistant to treatment. Pre-malignant potential. Biopsy required.</p>
+              <p><strong>Angular cheilitis:</strong> Fissuring of commissures. Often mixed infection: Candida + Staphylococcus aureus. Associated with vitamin deficiencies, iron deficiency, denture over-closure.</p>
+              <p><strong>Diagnosis:</strong> Clinical appearance ± smear (PAS stain shows hyphae) ± culture. Consider underlying immunosuppression if recurrent or severe (HIV, diabetes, leukaemia).</p>
+              <p><strong>Treatment:</strong> Topical: Nystatin suspension 100,000 units/mL QDS held in mouth. Systemic: Fluconazole 50–150mg OD × 7–14 days. Treat dentures (soak in dilute Milton, replace after 6 weeks). Correct predisposing factors.</p>
+            </div>
+          </div>
+
+          <div class="acc-item"><div class="acc-header" onclick="toggleAcc(this)">Lichen planus — types, pathology, management <span class="acc-icon">▾</span></div>
+            <div class="acc-body">
+              <p><strong>Types:</strong></p>
+              <ul>
+                <li><strong>Reticular (most common):</strong> Interlacing white lines (Wickham's striae). Bilateral buccal mucosa. Usually asymptomatic.</li>
+                <li><strong>Erosive/Ulcerative:</strong> Most clinically significant. Painful central erosions surrounded by white striae. May be severe — interferes with eating.</li>
+                <li><strong>Atrophic:</strong> Red patches with surrounding striae. Common on gingiva (desquamative gingivitis).</li>
+                <li><strong>Plaque type:</strong> Homogeneous white plaque on tongue dorsum. Looks like leukoplakia — biopsy to distinguish.</li>
+                <li><strong>Bullous:</strong> Rare. Large fluid-filled blisters that rupture to leave erosions.</li>
+              </ul>
+              <p><strong>Sites:</strong> Bilateral buccal mucosa most common. Also tongue, gingiva (desquamative gingivitis = patchy peeling red gingiva), lips, palate.</p>
+              <p><strong>Pathology:</strong> T-cell-mediated chronic inflammatory condition. <em>Histology:</em> Band-like lymphocytic infiltrate at epithelium–connective tissue interface, saw-tooth rete processes, hydropic degeneration of basal cell layer, colloid (Civatte) bodies.</p>
+              <p><strong>Management:</strong> Topical corticosteroids (Beclomethasone spray, Clobetasol propionate 0.05% gel — most potent). Tacrolimus ointment (calcineurin inhibitor) for corticosteroid-resistant cases. Systemic prednisolone for severe flares. Annual review — 1% malignant transformation risk.</p>
+            </div>
+          </div>
+
+          <div class="acc-item"><div class="acc-header" onclick="toggleAcc(this)">Lichenoid reactions vs lichen planus <span class="acc-icon">▾</span></div>
+            <div class="acc-body">
+              <p>Clinically and histologically identical to LP but have an identifiable causative agent.</p>
+              <p><strong>Common causes:</strong> NSAIDs, antihypertensives (beta-blockers, ACE inhibitors, methyldopa), antimalarials (hydroxychloroquine), amalgam restorations (contact reaction — lesion adjacent to restoration), gold therapy.</p>
+              <p><strong>Management:</strong> Remove causative agent → often resolves completely. If amalgam-related and lesion is adjacent, replace with composite/ceramic. If not resolving, treat as LP.</p>
+            </div>
+          </div>
+
+          <div class="acc-item"><div class="acc-header" onclick="toggleAcc(this)">White sponge naevus <span class="acc-icon">▾</span></div>
+            <div class="acc-body">
+              <p><strong>Autosomal dominant</strong> condition (mutation in Keratin 4 or Keratin 13 genes).</p>
+              <p>Diffuse, white, spongy, folded/wrinkled mucosa — bilateral and often extensive, involving buccal mucosa, floor of mouth, alveolar mucosa. Present from birth or early childhood. May also affect oesophagus, nasal and genital mucosa.</p>
+              <p><strong>Key:</strong> Family history is important. Completely benign — no malignant potential. No treatment needed. Reassure patient and family.</p>
+            </div>
+          </div>
+
+          <div class="callout callout-red"><strong>High-risk white lesions requiring biopsy:</strong> Non-homogeneous leukoplakia (especially speckled/erythroleukoplakia), any leukoplakia on floor of mouth or lateral tongue, persistent despite risk factor elimination, any induration or fixation to deep tissue, associated lymphadenopathy.</div>
+        </div>
+      </div>
+
+      <div class="subsection" id="sub-lesions-red">
+        <div class="card">
+          <h2>Red Lesions</h2>
+          <span class="tag tag-red">Erythroplakia: highest malignant potential of all oral lesions</span>
+
+          <div class="acc-item"><div class="acc-header" onclick="toggleAcc(this)">Erythroplakia — must know <span class="acc-icon">▾</span></div>
+            <div class="acc-body">
+              <p><strong>Definition:</strong> Bright red, velvety patch of oral mucosa that cannot be attributed to any other clinically or histopathologically definable condition.</p>
+              <p><strong>Malignant transformation: 40–50%</strong> — far higher than leukoplakia. This is the most dangerous oral potentially malignant disorder.</p>
+              <p><strong>Appearance:</strong> Velvety, bright red, well-demarcated, often flat or slightly depressed. May be mixed with white areas (erythroleukoplakia).</p>
+              <p><strong>Management:</strong> Biopsy immediately. Histology typically shows severe dysplasia or carcinoma in situ. Excision with clear margins. Long-term surveillance essential.</p>
+            </div>
+          </div>
+
+          <div class="acc-item"><div class="acc-header" onclick="toggleAcc(this)">Median rhomboid glossitis <span class="acc-icon">▾</span></div>
+            <div class="acc-body">
+              <p>Rhomboid or oval erythematous area on the midline dorsal tongue, anterior to the circumvallate papillae. The area is depapillated — smooth and red.</p>
+              <p>Historically considered a developmental anomaly (persistence of the tuberculum impar). Now understood to be predominantly associated with Candida (erythematous type).</p>
+              <p>Common in smokers, denture wearers. A "kissing lesion" may appear on the opposing palate (erythematous patch on hard palate corresponding to tongue contact).</p>
+              <p><strong>Management:</strong> Antifungal treatment (fluconazole 50mg OD × 7–14 days). Biopsy if non-responsive.</p>
+            </div>
+          </div>
+
+          <div class="acc-item"><div class="acc-header" onclick="toggleAcc(this)">Vascular lesions — diascopy <span class="acc-icon">▾</span></div>
+            <div class="acc-body">
+              <p><strong>Diascopy:</strong> Press a glass slide or clear instrument against the lesion. If it blanches (becomes pale) → vascular lesion (filled with blood that can be displaced). If it does NOT blanch → haemorrhage/petechiae (blood is outside vessels).</p>
+              <p><strong>Haemangioma:</strong> Congenital vascular malformation. Blanches. Often bluish-red. May be capillary or cavernous. May involute in childhood. Refer before any surgical intervention to assess type.</p>
+              <p><strong>Port wine stain (Sturge-Weber):</strong> Unilateral, follows trigeminal nerve distribution (usually V2/V3). Associated with: ipsilateral choroidal haemangioma (→ glaucoma), leptomeningeal angioma (→ epilepsy, intellectual disability). Oral: gingival hyperplasia, accelerated eruption on affected side.</p>
+              <p><strong>Petechiae and ecchymoses:</strong> Do NOT blanch. Causes: trauma, thrombocytopenia, vasculitis, anticoagulants, infectious mononucleosis (palatal petechiae).</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="subsection" id="sub-lesions-ulcers">
+        <div class="card">
+          <h2>Ulcerative Lesions</h2>
+          <span class="tag tag-amber">Duration is the critical variable</span>
+
+          <div class="acc-item"><div class="acc-header" onclick="toggleAcc(this)">Recurrent aphthous stomatitis (RAS) — full classification <span class="acc-icon">▾</span></div>
+            <div class="acc-body">
+              <p><strong>Minor RAS (80%):</strong> &lt;10mm, 1–5 ulcers, round/oval with grey pseudomembrane and erythematous halo. ONLY non-keratinised mucosa (buccal, labial, floor of mouth, soft palate). Heal in 7–14 days without scarring.</p>
+              <p><strong>Major RAS (Sutton's disease, 10%):</strong> &gt;10mm diameter, 1–3 ulcers, last weeks–months, ANY oral site including keratinised mucosa, heal with scarring. May mimic carcinoma.</p>
+              <p><strong>Herpetiform RAS (10%):</strong> 1–3mm, 10–100 small ulcers simultaneously. Coalesce to form larger irregular ulcers. ANY oral site. Heal in 2 weeks. Despite name, NOT caused by herpes virus.</p>
+              <p><strong>Triggers:</strong> Stress, trauma, SLS (sodium lauryl sulphate — switch SLS-free toothpaste), foods (tomatoes, chocolate, nuts, cheese), hormonal changes (premenstrual), cessation of smoking (paradoxically improves with smoking but worsens on stopping).</p>
+              <p><strong>Investigations to rule out:</strong> Iron deficiency (ferritin), vitamin B12, folate deficiency, coeliac disease (anti-tTG antibodies), Crohn's disease, Behçet's syndrome (if concurrent genital ulcers + eye disease + positive pathergy test).</p>
+              <p><strong>Treatment:</strong> Topical corticosteroids (triamcinolone paste, beclomethasone inhaler applied), tetracycline 250mg mouthwash (held 3 min QDS × 3 days), amlexanox paste. Severe: systemic prednisolone, colchicine, dapsone, thalidomide.</p>
+            </div>
+          </div>
+
+          <div class="acc-item"><div class="acc-header" onclick="toggleAcc(this)">Oral squamous cell carcinoma (OSCC) <span class="acc-icon">▾</span></div>
+            <div class="acc-body">
+              <p><strong>Sites:</strong> Lateral and ventral tongue (most common), floor of mouth, retromolar pad, soft palate complex. Lower lip (squamous cell carcinoma from actinic damage).</p>
+              <p><strong>Appearance:</strong> Ulcer with <strong>indurated (hard), raised, rolled (everted) edges</strong>. Red or mixed red-white base. Fixed to underlying tissue. Associated cervical lymphadenopathy. <strong>Often painless in early stages — a key feature (pain is a late feature).</strong></p>
+              <p><strong>Risk factors:</strong> Tobacco (all forms) + alcohol = synergistic (risk ×30). HPV-16 (oropharyngeal SCC — younger non-smokers). Areca nut/betel quid. Previous oral SCC. Immunosuppression. Prior radiation. Iron deficiency (Paterson-Kelly syndrome).</p>
+              <p><strong>Red flags (unexplained — must refer urgently):</strong> Non-healing ulcer &gt;3 weeks, unexplained lump in neck, unexplained persistent loose tooth, unexplained numbness of lip/chin (IAN infiltration), dysphagia, trismus (pterygoid infiltration), white/red patch.</p>
+              <p><strong>Management:</strong> Urgent 2-week wait referral to OMFS/oral medicine. Incisional biopsy. TNM staging (clinical + imaging: CT/MRI/PET-CT). MDT discussion. Treatment: surgery ± radiotherapy ± chemotherapy (depending on stage and site).</p>
+            </div>
+          </div>
+
+          <div class="acc-item"><div class="acc-header" onclick="toggleAcc(this)">Necrotising ulcerative gingivitis (NUG/ANUG) <span class="acc-icon">▾</span></div>
+            <div class="acc-body">
+              <p><strong>Classic triad:</strong> (1) Interdental papilla necrosis — "punched-out" or "cratered" papillae with grey pseudomembrane. (2) Pain — severe and spontaneous. (3) Bleeding — spontaneous or with minimal provocation.</p>
+              <p><strong>Additional features:</strong> Fetid halitosis (characteristic — fusobacteria), grey pseudomembrane, fever and malaise (systemic involvement), cervical lymphadenopathy.</p>
+              <p><strong>Microbiology:</strong> Polymicrobial fusospirochaetal infection — Treponema denticola, Prevotella intermedia, Fusobacterium nucleatum.</p>
+              <p><strong>Risk factors:</strong> Psychological stress, smoking, poor oral hygiene, immunocompromise. If severe or recurring → consider HIV testing.</p>
+              <p><strong>Treatment:</strong> Immediate: gentle debridement (supragingival only initially), chlorhexidine 0.2% mouthwash, metronidazole 400mg TDS × 5 days (excellent anaerobic spectrum), smoking cessation. Once acute phase resolved: definitive periodontal treatment to restore papillae where possible.</p>
+              <p><strong>Progression:</strong> NUG → NUP (necrotising ulcerative periodontitis — extends to bone) → Noma (cancrum oris — in severely malnourished/immunocompromised — rare in developed world).</p>
+            </div>
+          </div>
+
+          <div class="callout callout-red"><strong>The 3-week rule:</strong> Any ulcer persisting beyond 3 weeks without an obvious, confirmed benign cause requires either biopsy or urgent specialist referral. Do not repeatedly reassure and review without histological diagnosis.</div>
+        </div>
+      </div>
+
+      <div class="subsection" id="sub-lesions-vesicles">
+        <div class="card">
+          <h2>Vesicular & Bullous Lesions</h2>
+          <span class="tag tag-purple">Viral vs autoimmune — histology & DIF required</span>
+
+          <div class="acc-item"><div class="acc-header" onclick="toggleAcc(this)">Primary herpetic gingivostomatitis <span class="acc-icon">▾</span></div>
+            <div class="acc-body">
+              <p><strong>Cause:</strong> Primary infection with HSV-1. Common in children 1–5 years and young adults.</p>
+              <p><strong>Prodrome (1–2 days):</strong> Malaise, fever, headache, tender cervical lymphadenopathy.</p>
+              <p><strong>Oral features:</strong> Multiple small vesicles → rapidly burst → shallow painful ulcers with erythematous halo. Distribution: BOTH keratinised (gingiva, palate, dorsal tongue) AND non-keratinised mucosa — affects ANY oral site. Diffuse acute marginal gingivitis (distinctive feature). Highly contagious — no sharing utensils/kissing.</p>
+              <p><strong>Healing:</strong> 1–2 weeks spontaneously.</p>
+              <p><strong>Treatment:</strong> Supportive — adequate fluids (risk of dehydration in children), soft diet, analgesics (paracetamol/ibuprofen), chlorhexidine 0.12–0.2% mouthwash. Antiviral: Aciclovir 200mg 5×/day × 5 days (or 100mg 5×/day under 2 years) — only effective if started within 72 hours of onset. Reserve for severe cases/immunocompromised.</p>
+            </div>
+          </div>
+
+          <div class="acc-item"><div class="acc-header" onclick="toggleAcc(this)">Herpes labialis (recurrent herpes) <span class="acc-icon">▾</span></div>
+            <div class="acc-body">
+              <p>Reactivation of latent HSV-1 in trigeminal ganglion. Reactivated virus travels down nerve to produce lesions at vermilion border and perioral skin.</p>
+              <p><strong>Prodrome:</strong> Tingling, burning, itching at affected site (4–48h before lesion appears).</p>
+              <p><strong>Progression:</strong> Erythema → papule → vesicle cluster → ulceration/erosion → crusting → healing (7–10 days).</p>
+              <p><strong>Triggers:</strong> UV light (sunburn), stress, illness (fever — "cold sore"), menstruation, trauma, immunosuppression.</p>
+              <p><strong>Treatment:</strong> Topical aciclovir 5% cream — applied at PRODROME stage (before vesicles form) 5×/day × 5 days. Systemic valaciclovir/aciclovir for severe or immunocompromised patients. Sun protection (SPF lip balm) reduces UV-triggered recurrences.</p>
+            </div>
+          </div>
+
+          <div class="acc-item"><div class="acc-header" onclick="toggleAcc(this)">Herpes zoster — trigeminal branch <span class="acc-icon">▾</span></div>
+            <div class="acc-body">
+              <p>Reactivation of varicella zoster virus (VZV) from dormancy in cranial nerve ganglia.</p>
+              <p><strong>Features:</strong> Unilateral distribution along one trigeminal branch (V2 or V3 most common). Severe, burning pain precedes rash by several days (may mimic toothache — critical diagnostic awareness needed). Skin vesicles/crusting along dermatome — does NOT cross midline. Intraoral vesicles and ulceration on ipsilateral side.</p>
+              <p><strong>Complications:</strong> Post-herpetic neuralgia (PHN) — persistent pain for months/years after healing, especially in elderly. V1 (ophthalmic) involvement = Herpes zoster ophthalmicus → risk of blindness. Hutchinson's sign: vesicles on tip of nose (nasociliary branch V1) = eye involvement imminent.</p>
+              <p><strong>Treatment:</strong> Aciclovir 800mg 5×/day × 7 days — must start within 72h of rash onset to reduce PHN risk. Gabapentin/pregabalin for PHN. Steroids controversial.</p>
+            </div>
+          </div>
+
+          <div class="acc-item"><div class="acc-header" onclick="toggleAcc(this)">Pemphigus vulgaris vs mucous membrane pemphigoid (MMP) <span class="acc-icon">▾</span></div>
+            <div class="acc-body">
+              <p><strong>Pemphigus vulgaris (PV):</strong></p>
+              <ul>
+                <li>Autoimmune: IgG autoantibodies against desmogleins (Dsg3 → oral only; Dsg3 + Dsg1 → oral + skin)</li>
+                <li>Intraepithelial split (acantholysis) → fragile, easily ruptured blisters → extensive painful erosions</li>
+                <li><strong>Nikolsky sign POSITIVE</strong> — lateral pressure on apparently normal mucosa induces blister</li>
+                <li>Oral lesions often the FIRST manifestation (months before skin lesions)</li>
+                <li>Life-threatening without treatment (pre-steroid era 100% mortality)</li>
+                <li><strong>DIF:</strong> IgG in chicken-wire (intercellular) pattern throughout epithelium</li>
+                <li><strong>Treatment:</strong> High-dose systemic prednisolone (1mg/kg/day) + steroid-sparing agent (azathioprine, mycophenolate, rituximab)</li>
+              </ul>
+              <p><strong>Mucous membrane pemphigoid (MMP):</strong></p>
+              <ul>
+                <li>Autoimmune: IgG/IgA against basement membrane zone proteins (BP180, BP230, laminin 332)</li>
+                <li>Subepithelial split → firmer, less fragile blisters, desquamative gingivitis most common oral presentation</li>
+                <li>Nikolsky sign may be positive but less consistently</li>
+                <li><strong>Ocular involvement (30%):</strong> Progressive scarring → fornix obliteration → symblepharon → blindness. ALL patients with MMP must have urgent ophthalmology referral.</li>
+                <li><strong>DIF:</strong> Linear IgG (and/or IgA, C3) at the basement membrane zone</li>
+                <li><strong>Treatment:</strong> Topical corticosteroids for oral lesions; systemic for ocular/oesophageal. Dapsone, tetracycline + nicotinamide, cyclophosphamide for severe.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="callout callout-amber">Nikolsky sign: applying gentle lateral pressure to apparently normal mucosa produces a blister or peeling. Positive in pemphigus vulgaris. Indicates suprabasal acantholysis. Must biopsy perilesional normal tissue in Michel's medium for DIF.</div>
+        </div>
+      </div>
+
+      <div class="subsection" id="sub-lesions-pigment">
+        <div class="card">
+          <h2>Pigmented Lesions</h2>
+          <span class="tag tag-purple">Melanin, exogenous, and vascular</span>
+          <div class="table-wrap mt12">
+            <table class="data-table">
+              <tr><th>Lesion</th><th>Description</th><th>Key diagnostic feature</th><th>Management</th></tr>
+              <tr><td><strong>Racial/physiological pigmentation</strong></td><td>Diffuse, symmetric brown-black melanin in gingiva and buccal mucosa</td><td>Bilateral, stable, in individuals with darker skin pigmentation</td><td>Normal variant — reassure only</td></tr>
+              <tr><td><strong>Amalgam tattoo</strong></td><td>Blue-grey or black macule near old amalgam restoration</td><td>Radio-opaque particles visible on periapical radiograph in the lesion</td><td>Confirm with radiograph — no treatment if confirmed. Excise if uncertain.</td></tr>
+              <tr><td><strong>Oral melanotic macule</strong></td><td>Flat, brown/black, well-demarcated macule — usually lower lip or gingiva</td><td>Stable, solitary, flat (no raised component). Benign.</td><td>Excise for cosmesis or if diagnosis uncertain to exclude melanoma</td></tr>
+              <tr><td><strong>Melanocytic naevus</strong></td><td>Compound or intramucosal naevus — slightly raised, brown</td><td>Rare in oral mucosa. Raised component. Palate most common site.</td><td>Excise and submit for histology to exclude melanoma</td></tr>
+              <tr><td><strong>Oral melanoma</strong></td><td>Rapid growth, irregular borders, variegated brown-black-red colour, ulceration, bleeding, satellite lesions</td><td>Change in appearance, multiple colours, ulceration, fixation = urgent features</td><td>Urgent biopsy and referral. Very poor prognosis (&lt;20% 5-year survival)</td></tr>
+              <tr><td><strong>Addison's disease</strong></td><td>Diffuse patchy brown pigmentation of buccal mucosa, lips, gingiva — may precede skin hyperpigmentation</td><td>Occurs in non-pigmented individuals. Often first sign of primary adrenal insufficiency. Associated with hypotension, fatigue.</td><td>Urgent physician referral for cortisol/ACTH testing. Steroid replacement lifesaving.</td></tr>
+              <tr><td><strong>Peutz-Jeghers syndrome</strong></td><td>Multiple perioral and intraoral melanotic macules. Autosomal dominant.</td><td>Multiple macules, perioral skin + oral mucosa. Present since childhood. Associated with GI hamartomatous polyps and cancer risk.</td><td>GI surveillance essential. Genetic counselling.</td></tr>
+            </table>
+          </div>
+          <div class="callout callout-red"><strong>Urgent biopsy for any pigmented lesion with:</strong> Irregular borders, rapid change, multiple colours (variegation), ulceration, bleeding, raised component, or patient concern. Oral melanoma has a very poor prognosis — early diagnosis is crucial.</div>
+        </div>
+      </div>
+
+      <div class="subsection" id="sub-lesions-quiz">
+        <div class="card">
+          <h2>✏️ Oral Lesions — Clinical Quiz</h2>
+          <p class="body-text" style="color:var(--text2);font-size:13px;margin-bottom:16px">Select your answer. Detailed explanations appear after each question.</p>
+          <div id="quiz-lesions-wrap"></div>
+        </div>
+      </div>
+    </div><!-- /lesions -->
+
+
+    <!-- ============================================================ INVESTIGATIONS ============================================================ -->
+    <div class="section" id="sec-investigation">
+      <div class="page-header">
+        <h1>🔬 Investigations & Biopsy</h1>
+        <p>Radiology, blood tests, biopsy techniques (including DIF), and microbiology. Always justify, optimise, and report systematically.</p>
+        <div class="tag-row">
+          <span class="tag tag-blue">ALARA principle</span>
+          <span class="tag tag-red">Biopsy gold standard</span>
+          <span class="tag tag-amber">Michel's medium for DIF</span>
+        </div>
+      </div>
+
+      <div class="subnav">
+        <button class="subnav-btn active" onclick="switchSub('investigation','radio',this)">Radiology</button>
+        <button class="subnav-btn" onclick="switchSub('investigation','blood',this)">Blood Tests</button>
+        <button class="subnav-btn" onclick="switchSub('investigation','biopsy',this)">Biopsy</button>
+        <button class="subnav-btn" onclick="switchSub('investigation','micro',this)">Microbiology</button>
+        <button class="subnav-btn" onclick="switchSub('investigation','flashcards',this)">🃏 Flashcards</button>
+      </div>
+
+      <div class="subsection active" id="sub-investigation-radio">
+        <div class="card">
+          <h2>Radiological Investigations</h2>
+          <div class="callout callout-blue"><strong>ALARA principle:</strong> As Low As Reasonably Achievable. Justify (clinical need), Optimise (lowest dose for diagnostic quality), Limit (to only what's needed). Follow IR(ME)R regulations.</div>
+
+          <div class="acc-item"><div class="acc-header" onclick="toggleAcc(this)">Periapical radiograph <span class="acc-icon">▾</span></div>
+            <div class="acc-body">
+              <p><strong>Indications:</strong> Periapical pathology assessment, root morphology, periodontal bone levels, post-operative endo check, trauma assessment, implant planning (limited).</p>
+              <p><strong>Paralleling technique (preferred):</strong> Film/sensor parallel to tooth, long cone perpendicular to both. Less geometric distortion, reproducible, better image quality.</p>
+              <p><strong>Bisecting angle technique:</strong> More distortion, used when paralleling is impossible. Prone to elongation or foreshortening errors.</p>
+              <p><strong>Limitations:</strong> 2D image only. Facial/palatal cortical plates not visible. Early periapical changes not evident until &gt;30% bone mineral loss. Cannot show buccal/lingual extent of lesions.</p>
+            </div>
+          </div>
+
+          <div class="acc-item"><div class="acc-header" onclick="toggleAcc(this)">Bitewing radiograph — caries detection <span class="acc-icon">▾</span></div>
+            <div class="acc-body">
+              <p><strong>Gold standard for:</strong> Interproximal caries detection, secondary caries under restorations, alveolar crest bone level assessment.</p>
+              <p><strong>Recall frequency (FGDP guidelines):</strong> High caries risk: 6-monthly. Medium risk: 12-monthly. Low risk: 24-monthly (adults), 12-monthly (children).</p>
+              <p><strong>Radiographic caries classification:</strong></p>
+              <ul>
+                <li>E1: Caries in outer enamel (demineralisation) — monitor, fluoride</li>
+                <li>E2: Caries in inner enamel approaching DEJ — fissure sealant consideration</li>
+                <li>D1: Outer 1/3 dentine — generally restore</li>
+                <li>D2: Middle 1/3 dentine — restore with consideration of pulpal proximity</li>
+                <li>D3: Inner 1/3 dentine near pulp — high risk of irreversible pulpitis; consider pulp therapy</li>
+              </ul>
+              <p>Radiography underestimates caries extent — always correlate with clinical findings. ICDAS system for clinical caries recording.</p>
+            </div>
+          </div>
+
+          <div class="acc-item"><div class="acc-header" onclick="toggleAcc(this)">Dental panoramic tomogram (DPT/OPG) <span class="acc-icon">▾</span></div>
+            <div class="acc-body">
+              <p><strong>Indications:</strong> Comprehensive survey of all teeth, assessment of third molars, developing dentition, large lesions, fractures, TMJ assessment, sinus pathology, pathology screening in new patients.</p>
+              <p><strong>Key limitations:</strong> Significant geometric distortion (magnification ~25%), superimposition of structures, ghosts of opposing jaw structures, poor interproximal caries detection, patient positioning critical (chin position affects image).</p>
+              <p><strong>Report systematically:</strong> Start with teeth → alveolar bone → condyles/TMJ → rami and angles → mandibular body → maxillary sinuses (Schneiderian membrane thickening, opacification, polyps) → nasal cavity → soft tissues. Never miss an incidental finding.</p>
+            </div>
+          </div>
+
+          <div class="acc-item"><div class="acc-header" onclick="toggleAcc(this)">CBCT — indications & radiation dose <span class="acc-icon">▾</span></div>
+            <div class="acc-body">
+              <p><strong>Justified indications:</strong> Implant planning (bone volume, density, anatomy), assessment of impacted teeth (3rd molar relationship to IAN, palatally impacted canines), complex endodontics (extra canals, root resorption, perforation, failed endo assessment), orthognathic surgery planning, jaw pathology extent and cortical involvement.</p>
+              <p><strong>NOT indicated for:</strong> Routine dental caries, routine periodontal assessment — radiation dose too high for information gained.</p>
+              <p><strong>Radiation dose comparison:</strong> Small FOV CBCT ≈ 10× OPG. Large FOV CBCT ≈ 50× OPG. Medical CT ≈ 100× OPG.</p>
+              <p><strong>SEDENTEXCT guideline:</strong> CBCT only when: conventional radiography and clinical examination cannot provide sufficient diagnostic information AND the information will change patient management.</p>
+              <p><strong>Consider MRI instead:</strong> For soft tissue assessment (tumour extent, TMJ disc morphology, salivary gland pathology) — no ionising radiation.</p>
+            </div>
+          </div>
+
+          <div class="callout callout-teal">For third molar assessment: only take CBCT when the OPG shows 1 or more of the Hunter-Greer signs indicating close IAN relationship (interruption of white lines of canal, darkening of root, deflection of root, narrowing of root, narrowing/diversion of canal).</div>
+        </div>
+      </div>
+
+      <div class="subsection" id="sub-investigation-blood">
+        <div class="card">
+          <h2>Blood Tests in Dentistry</h2>
+          <span class="tag tag-amber">Pre-operative & diagnostic</span>
+          <div class="callout callout-blue" style="margin: 14px 0">Bleeding history taking is more predictive of bleeding risk than routine coagulation tests. Only request tests you can interpret and that will change management.</div>
+          <div class="table-wrap">
+            <table class="data-table">
+              <tr><th>Test</th><th>Normal range</th><th>Dental relevance</th></tr>
+              <tr><td><strong>Hb (FBC)</strong></td><td>M: 13–18 g/dL<br>F: 11.5–16 g/dL</td><td>Anaemia: mucosal pallor, glossitis, angular cheilitis, aphthous ulcers. Megaloblastic: B12/folate deficiency.</td></tr>
+              <tr><td><strong>WBC (FBC)</strong></td><td>4–11 × 10⁹/L</td><td>Leukocytosis: acute infection, leukaemia. Neutropenia (&lt;1×10⁹): severe infection risk. Leukaemia: gingival infiltration.</td></tr>
+              <tr><td><strong>Platelets</strong></td><td>150–400 × 10⁹/L</td><td>&lt;80×10⁹: surgical bleeding risk. &lt;50×10⁹: significant risk — seek haematology advice. &lt;20×10⁹: spontaneous bleeding, petechiae.</td></tr>
+              <tr><td><strong>INR (PT)</strong></td><td>Therapeutic: 2.0–3.5</td><td>Warfarin monitoring. INR &lt;4.0 = minor dental surgery safe with local haemostasis. INR &gt;4.0 = postpone, contact prescriber.</td></tr>
+              <tr><td><strong>APTT</strong></td><td>25–35 seconds</td><td>Prolonged: Haemophilia A (VIII↓), Haemophilia B (IX↓), Von Willebrand disease, heparin therapy, lupus anticoagulant.</td></tr>
+              <tr><td><strong>HbA1c / Blood glucose</strong></td><td>HbA1c &lt;48 mmol/mol<br>FBG &lt;6 mmol/L</td><td>Diabetes control (HbA1c = 3-month average). HbA1c &gt;10% = poor control → increased infection/healing risk. Check before major surgery.</td></tr>
+              <tr><td><strong>B12, Folate, Ferritin</strong></td><td>B12: 200–900 pg/mL</td><td>Deficiency: aphthous ulcers, glossitis, angular cheilitis, burning mouth. Check in recurrent aphthous patients before treating.</td></tr>
+              <tr><td><strong>LFTs</strong></td><td>ALT &lt;40 U/L</td><td>Liver disease: reduced clotting factor synthesis → bleeding risk. Impaired drug metabolism. Hepatitis B/C serology for infection control.</td></tr>
+              <tr><td><strong>U&E / eGFR</strong></td><td>eGFR &gt;60 mL/min</td><td>CKD: reduce drug doses, avoid NSAIDs, bleeding tendency (platelet dysfunction), anaemia of chronic disease.</td></tr>
+              <tr><td><strong>ESR / CRP</strong></td><td>ESR &lt;20 mm/h<br>CRP &lt;5 mg/L</td><td>Elevated: infection, inflammatory conditions (RA, SLE, GCA), malignancy. Non-specific markers. CRP more specific and faster to change.</td></tr>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <div class="subsection" id="sub-investigation-biopsy">
+        <div class="card">
+          <h2>Biopsy Techniques</h2>
+          <span class="tag tag-red">Gold standard for oral mucosal diagnosis</span>
+
+          <div class="acc-item"><div class="acc-header" onclick="toggleAcc(this)">Incisional biopsy — technique & site selection <span class="acc-icon">▾</span></div>
+            <div class="acc-body">
+              <p><strong>Indication:</strong> Large lesion where full excision is not practical, lesion appears clinically suspicious for malignancy, or when diagnosis must be confirmed before definitive treatment.</p>
+              <p><strong>Site selection (critical):</strong> Sample the most representative/abnormal area. Include red or speckled areas (higher grade lesion). Avoid necrotic/ulcerated centre (non-diagnostic — only necrotic debris). Include the junction of lesion and adjacent normal-appearing tissue to show pathological changes at the margins.</p>
+              <p><strong>Technique:</strong> LA injected AWAY from biopsy site (to avoid distortion). Elliptical incision (fusiform). Minimum dimensions: 5mm × 10mm, adequate depth into submucosa (full-thickness epithelium + connective tissue needed). Minimal use of diathermy/cautery at margins (causes artefact). Handle specimen gently — do not crush with forceps. Resorbable sutures to close. Label pot with formol saline. Accurate clinical details and description on request form.</p>
+            </div>
+          </div>
+
+          <div class="acc-item"><div class="acc-header" onclick="toggleAcc(this)">Excisional biopsy <span class="acc-icon">▾</span></div>
+            <div class="acc-body">
+              <p><strong>Indication:</strong> Small (&lt;1cm) lesion where complete removal is both diagnostic AND therapeutic. Suitable for clinically benign lesions (fibrous epulis, mucocele, small leukoplakia, melanotic macule) or small well-defined lesions unlikely to be malignant.</p>
+              <p><strong>Margins:</strong> 2–3mm of clinically normal tissue for benign lesion. 5–10mm if malignancy suspected (but incisional biopsy preferred for suspected malignancy first).</p>
+              <p><strong>Never excise a suspected major salivary gland pleomorphic adenoma.</strong> Inadequate margins → tumour spillage → recurrence. These need formal parotidectomy/submandibular gland excision with appropriate margins.</p>
+            </div>
+          </div>
+
+          <div class="acc-item"><div class="acc-header" onclick="toggleAcc(this)">Direct immunofluorescence (DIF) — vesiculobullous disease <span class="acc-icon">▾</span></div>
+            <div class="acc-body">
+              <p><strong>Essential for:</strong> Pemphigus vulgaris, mucous membrane pemphigoid, epidermolysis bullosa acquisita, linear IgA disease, dermatitis herpetiformis.</p>
+              <p><strong>CRITICAL:</strong> Biopsy <em>perilesional apparently normal mucosa</em> — NOT the bulla itself (epithelium already destroyed, no diagnostic information). Take 2–3mm from the edge of a recent lesion.</p>
+              <p><strong>Fixative: Michel's medium — NOT formalin.</strong> Formalin destroys immunoglobulins required for DIF. Michel's medium preserves immunoglobulins. Label separately from routine biopsy pot.</p>
+              <p><strong>Laboratory process:</strong> Snap-frozen sections cut. Fluorescent-labelled antibodies applied for IgG, IgA, IgM, and complement (C3).</p>
+              <p><strong>Results:</strong></p>
+              <ul>
+                <li><strong>PV:</strong> Intercellular IgG (chicken-wire pattern throughout epithelium)</li>
+                <li><strong>MMP:</strong> Linear IgG (± IgA, C3) at basement membrane zone</li>
+                <li><strong>Linear IgA disease:</strong> Linear IgA at BMZ</li>
+                <li><strong>Dermatitis herpetiformis:</strong> Granular IgA in dermal papillae</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="acc-item"><div class="acc-header" onclick="toggleAcc(this)">Histological reporting — epithelial dysplasia <span class="acc-icon">▾</span></div>
+            <div class="acc-body">
+              <p>Dysplasia features: nuclear hyperchromatism, pleomorphism, increased nuclear-cytoplasmic ratio, abnormal mitotic figures (especially suprabasal), loss of cellular polarity, individual cell dyskeratosis (premature keratinisation), loss of epithelial stratification, drop-shaped rete processes.</p>
+              <p><strong>Grading:</strong></p>
+              <ul>
+                <li><strong>Mild dysplasia:</strong> Changes confined to basal 1/3 of epithelium</li>
+                <li><strong>Moderate dysplasia:</strong> Changes in basal 2/3 of epithelium</li>
+                <li><strong>Severe dysplasia / CIS:</strong> Changes in all layers (but basement membrane intact)</li>
+                <li><strong>Carcinoma in situ:</strong> Full-thickness dysplastic changes, basement membrane intact</li>
+                <li><strong>Invasive SCC:</strong> Malignant cells have breached basement membrane</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="callout callout-red"><strong>Before aspirating any lesion:</strong> Check if it blanches on diascopy. If it blanches → vascular lesion → do NOT aspirate. Refer to specialist. Aspiration of haemangioma can be catastrophic.</div>
+
+          <div class="info-grid mt12">
+            <div class="info-box"><div class="ib-label">Routine fixative</div><div class="ib-val">10% neutral buffered formal saline (NBF/formalin) for H&E histology and immunohistochemistry</div></div>
+            <div class="info-box"><div class="ib-label">DIF fixative</div><div class="ib-val">Michel's transport medium — never formalin. Store at room temperature or 4°C.</div></div>
+            <div class="info-box"><div class="ib-label">FNAC</div><div class="ib-val">Fine needle aspiration cytology — cytological (not histological). Useful for lymph nodes, salivary glands, cystic lesions.</div></div>
+            <div class="info-box"><div class="ib-label">Frozen section</div><div class="ib-val">Intraoperative — rapid result while patient on table. Used for margin assessment in SCC resection.</div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="subsection" id="sub-investigation-micro">
+        <div class="card">
+          <h2>Microbiology & Salivary Investigations</h2>
+
+          <div class="acc-item"><div class="acc-header" onclick="toggleAcc(this)">Microbiological investigations <span class="acc-icon">▾</span></div>
+            <div class="acc-body">
+              <p><strong>Swab:</strong> Surface exudate from lesions. Culture and sensitivity — identifies organisms and antibiotic sensitivity. Useful for bacterial infections, candida (culture on Sabouraud's agar).</p>
+              <p><strong>Smear/cytology:</strong> PAS stain for Candida hyphae (pseudohyphae indicate invasive candida). Tzanck smear (HSV) shows multinucleated giant cells with intranuclear inclusions.</p>
+              <p><strong>Pus culture:</strong> Aspirated from deep abscess for culture and sensitivities — guides antibiotic choice for refractory infections.</p>
+              <p><strong>PCR:</strong> High sensitivity and specificity. HSV typing, HPV genotyping (high-risk strains 16/18 for oropharyngeal SCC), Mycobacterium tuberculosis (TB causing cervical lymphadenopathy), EBV.</p>
+              <p><strong>Serology:</strong> HIV (p24 antigen + antibody combined test), hepatitis B (HBsAg, anti-HBs, anti-HBc), hepatitis C (anti-HCV), syphilis (VDRL/RPR + TPHA/FTA-ABS).</p>
+            </div>
+          </div>
+
+          <div class="acc-item"><div class="acc-header" onclick="toggleAcc(this)">Salivary gland investigations <span class="acc-icon">▾</span></div>
+            <div class="acc-body">
+              <p><strong>Salivary flow rate:</strong> Stimulated whole saliva &lt;0.1 mL/min = hyposalivation (clinical xerostomia). Unstimulated whole saliva &lt;0.1 mL/min over 15 minutes.</p>
+              <p><strong>Ultrasound:</strong> First-line for salivary gland swelling. Identifies calculi (hyperechoic with shadowing), cysts, tumour vascularity, lymph node assessment. No radiation.</p>
+              <p><strong>Sialography:</strong> Contrast medium injected into duct orifice → fluoroscopy or plain film. Identifies: calculi (filling defects), strictures, duct dilatation, sialectasis (dewdrop appearance in Sjögren's). Now largely replaced by MRI sialography (no radiation, no contrast injection).</p>
+              <p><strong>Minor salivary gland biopsy (lip):</strong> For Sjögren's syndrome confirmation. Incise inner lower lip mucosa, harvest ≥5 gland lobules. Diagnostic: focal lymphocytic sialadenitis with ≥1 focus (cluster ≥50 lymphocytes) per 4mm² tissue area.</p>
+              <p><strong>Scintigraphy (technetium-99m pertechnetate):</strong> Functional assessment of all salivary glands simultaneously. Decreased uptake and delayed secretion in Sjögren's. Rarely used now.</p>
+            </div>
+          </div>
+
+          <div class="acc-item"><div class="acc-header" onclick="toggleAcc(this)">Sjögren's syndrome — diagnostic tests <span class="acc-icon">▾</span></div>
+            <div class="acc-body">
+              <p><strong>Anti-Ro (SS-A) and Anti-La (SS-B) antibodies:</strong> Most specific serological markers for primary Sjögren's syndrome. Anti-Ro more sensitive.</p>
+              <p><strong>ANA (antinuclear antibodies):</strong> Positive in ~70–80% of Sjögren's patients. Non-specific.</p>
+              <p><strong>RF (rheumatoid factor):</strong> Often positive (especially secondary Sjögren's with RA).</p>
+              <p><strong>Schirmer's test:</strong> Filter paper strips placed under lower eyelid for 5 minutes. &lt;5mm wetting = reduced lacrimal secretion (positive for ocular component).</p>
+              <p><strong>2016 ACR/EULAR Classification Criteria</strong> (≥4 points = primary Sjögren's):</p>
+              <ul>
+                <li>Lip biopsy with focal lymphocytic sialadenitis: 3 points</li>
+                <li>Anti-Ro/SSA positive: 3 points</li>
+                <li>Ocular staining score ≥5: 1 point</li>
+                <li>Schirmer's ≤5mm/5min: 1 point</li>
+                <li>Unstimulated salivary flow ≤0.1mL/min: 1 point</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="subsection" id="sub-investigation-flashcards">
+        <div class="card">
+          <h2>🃏 Investigation Flashcards</h2>
+          <p class="body-text" style="color:var(--text2);font-size:13px;margin-bottom:16px">Tap each card to reveal the answer.</p>
+          <div id="fc-investigation-wrap"></div>
+        </div>
+      </div>
+    </div><!-- /investigation -->
+
+
+    <!-- ============================================================ MEDICATIONS ============================================================ -->
+    <div class="section" id="sec-medications">
+      <div class="page-header">
+        <h1>💊 Common Medications in Dentistry</h1>
+        <p>Analgesics, antibiotics, antifungals, antivirals, local anaesthetics, and high-impact drug interactions. Prescribe responsibly — treat the cause first.</p>
+        <div class="tag-row">
+          <span class="tag tag-red">Antibiotic stewardship</span>
+          <span class="tag tag-amber">Drug interactions</span>
+          <span class="tag tag-teal">Max dose calculations</span>
+        </div>
+      </div>
+
+      <div class="subnav">
+        <button class="subnav-btn active" onclick="switchSub('medications','analgesics',this)">Analgesics</button>
+        <button class="subnav-btn" onclick="switchSub('medications','antibiotics',this)">Antibiotics</button>
+        <button class="subnav-btn" onclick="switchSub('medications','antifungal',this)">Antifungal/viral</button>
+        <button class="subnav-btn" onclick="switchSub('medications','la',this)">Local Anaesthetics</button>
+        <button class="subnav-btn" onclick="switchSub('medications','other',this)">Other Key Drugs</button>
+        <button class="subnav-btn" onclick="switchSub('medications','quiz',this)">✏️ Quiz</button>
+      </div>
+
+      <div class="subsection active" id="sub-medications-analgesics">
+        <div class="card">
+          <h2>Analgesics in Dentistry</h2>
+          <div class="callout callout-teal"><strong>Analgesic ladder for dental pain:</strong> Paracetamol ± Ibuprofen (alternating or combined, every 4h) → Add codeine if insufficient → Short-term opioids as last resort. NSAIDs are superior to paracetamol alone for dental pain due to their anti-inflammatory action.</div>
+
+          <div class="drug-card">
+            <div class="drug-name">Paracetamol (Acetaminophen)</div>
+            <div class="drug-class">Non-opioid analgesic / antipyretic</div>
+            <div class="drug-grid">
+              <div class="drug-field"><div class="df-label">Dose</div><div class="df-val">500–1000mg every 4–6h (max 4g/day in healthy adults). 15mg/kg in children.</div></div>
+              <div class="drug-field"><div class="df-label">Mechanism</div><div class="df-val">Inhibits central COX-3, serotonergic and endocannabinoid pathways. Minimal peripheral anti-inflammatory effect.</div></div>
+              <div class="drug-field"><div class="df-label">Advantages</div><div class="df-val">Safe in pregnancy, peptic ulcer, asthma, CKD (preferred NSAID alternative). No GI irritation. Excellent safety profile.</div></div>
+              <div class="drug-field"><div class="df-label">Cautions/CI</div><div class="df-val">Hepatic disease: reduce dose. Alcoholism: hepatotoxicity risk. Overdose → hepatotoxicity (antidote: N-acetylcysteine). No anti-inflammatory effect limits efficacy for dental pain alone.</div></div>
+            </div>
+          </div>
+
+          <div class="drug-card">
+            <div class="drug-name">Ibuprofen</div>
+            <div class="drug-class">NSAID — non-selective COX-1 and COX-2 inhibitor</div>
+            <div class="drug-grid">
+              <div class="drug-field"><div class="df-label">Dose</div><div class="df-val">400mg TDS (OTC max 1200mg/day; Rx up to 2400mg/day). Take with food.</div></div>
+              <div class="drug-field"><div class="df-label">Mechanism</div><div class="df-val">Non-selective inhibition of COX-1 and COX-2 → reduced prostaglandins → analgesia, anti-inflammatory, antipyretic.</div></div>
+              <div class="drug-field"><div class="df-label">Advantages</div><div class="df-val">Anti-inflammatory = ideal for pulpal and periodontal pain. Superior to paracetamol alone for dental pain. Good safety profile at OTC doses.</div></div>
+              <div class="drug-field"><div class="df-label">Contraindications</div><div class="df-val">Peptic ulcer, GI bleed, aspirin-sensitive asthma (ASA-triad), CKD (eGFR &lt;30), last trimester pregnancy, severe heart failure. Caution: elderly, anticoagulants, corticosteroids (PPI cover).</div></div>
+            </div>
+          </div>
+
+          <div class="drug-card">
+            <div class="drug-name">Diclofenac / Naproxen</div>
+            <div class="drug-class">NSAID — alternatives to ibuprofen</div>
+            <div class="drug-grid">
+              <div class="drug-field"><div class="df-label">Diclofenac</div><div class="df-val">50mg TDS. Relatively COX-2 selective → less GI risk but greater cardiovascular risk than ibuprofen. Available as topical gel for localised pain.</div></div>
+              <div class="drug-field"><div class="df-label">Naproxen</div><div class="df-val">250–500mg BD. Longer half-life = twice-daily dosing (better compliance). Preferred NSAID in patients with cardiovascular disease (lower CV risk profile among NSAIDs).</div></div>
+            </div>
+          </div>
+
+          <div class="drug-card">
+            <div class="drug-name">Codeine / Co-codamol</div>
+            <div class="drug-class">Weak opioid analgesic</div>
+            <div class="drug-grid">
+              <div class="drug-field"><div class="df-label">Dose</div><div class="df-val">Codeine 30–60mg QDS. Usually as co-codamol (paracetamol 500mg + codeine 8mg/15mg/30mg).</div></div>
+              <div class="drug-field"><div class="df-label">Mechanism</div><div class="df-val">Pro-drug: metabolised to morphine by CYP2D6 in liver. Ultra-rapid metabolisers: dangerously high morphine levels. Poor metabolisers: no analgesia.</div></div>
+              <div class="drug-field"><div class="df-label">Cautions</div><div class="df-val">Constipation, nausea, sedation, dizziness. Dependence potential. Avoid driving. Tramadol: serotonin syndrome risk, seizures, many interactions — use cautiously.</div></div>
+              <div class="drug-field"><div class="df-label">Dental use</div><div class="df-val">Short-term only (3–5 days max) for severe acute pain not controlled by simple analgesics combined. Not first-line. Not for chronic pain.</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="subsection" id="sub-medications-antibiotics">
+        <div class="card">
+          <h2>Antibiotics in Dentistry</h2>
+          <div class="callout callout-red"><strong>IMPORTANT:</strong> Antibiotics treat infection — they do NOT treat pain. Primary treatment of dental infection = removal of the cause (pulp extirpation, drainage, extraction). Antibiotics without drainage = poor outcome. Only prescribe when systemic features are present (fever, trismus, spreading cellulitis, lymphadenopathy) or patient is immunocompromised.</div>
+
+          <div class="drug-card">
+            <div class="drug-name">Amoxicillin</div>
+            <div class="drug-class">Aminopenicillin (β-lactam antibacterial)</div>
+            <div class="drug-grid">
+              <div class="drug-field"><div class="df-label">Dose</div><div class="df-val">250–500mg TDS × 5 days. IV 1g TDS for severe hospital infections.</div></div>
+              <div class="drug-field"><div class="df-label">Spectrum</div><div class="df-val">Broad — good coverage of oral Streptococci and many anaerobes. Not penicillinase-resistant (consider co-amoxiclav/Augmentin for resistant organisms).</div></div>
+              <div class="drug-field"><div class="df-label">Indications</div><div class="df-val">First-line for spreading dental infections with systemic features, NUG (second-line to metronidazole), pericoronitis, salivary gland infections.</div></div>
+              <div class="drug-field"><div class="df-label">CI / Cautions</div><div class="df-val">Penicillin allergy (use erythromycin/azithromycin or clindamycin). Infectious mononucleosis (EBV infection → characteristic maculopapular rash with amoxicillin — avoid in sore throat + lymphadenopathy).</div></div>
+            </div>
+          </div>
+
+          <div class="drug-card">
+            <div class="drug-name">Metronidazole</div>
+            <div class="drug-class">Nitroimidazole — specifically anti-anaerobic</div>
+            <div class="drug-grid">
+              <div class="drug-field"><div class="df-label">Dose</div><div class="df-val">200–400mg TDS × 5 days (or 500mg TDS for more severe). Can combine with amoxicillin for severe mixed infections.</div></div>
+              <div class="drug-field"><div class="df-label">Mechanism</div><div class="df-val">Reduces to toxic radical inside anaerobic bacteria → DNA strand breaks → bactericidal. Active only against anaerobes (and some protozoa).</div></div>
+              <div class="drug-field"><div class="df-label">Indications</div><div class="df-val">NUG (first-line), pericoronitis, periodontal abscess, anaerobic dental infections. Not effective alone against aerobes — combine with amoxicillin for mixed infections.</div></div>
+              <div class="drug-field"><div class="df-label">KEY interactions/CI</div><div class="df-val"><strong>ALCOHOL: Disulfiram-like reaction</strong> (severe nausea, vomiting, flushing, palpitations) — NO alcohol during and 48h after. Warfarin: potentiates anticoagulation significantly — check INR. Phenytoin levels increase. Avoid 1st trimester pregnancy.</div></div>
+            </div>
+          </div>
+
+          <div class="drug-card">
+            <div class="drug-name">Clindamycin</div>
+            <div class="drug-class">Lincosamide — bacteriostatic</div>
+            <div class="drug-grid">
+              <div class="drug-field"><div class="df-label">Dose</div><div class="df-val">150–300mg QDS × 5 days.</div></div>
+              <div class="drug-field"><div class="df-label">Use</div><div class="df-val">Penicillin allergy alternative. Excellent bone penetration — good for dentoalveolar infections, osteomyelitis, sinusitis. Inhibits protein synthesis (50S ribosomal subunit).</div></div>
+              <div class="drug-field"><div class="df-label">RISK</div><div class="df-val"><strong>Clostridioides difficile colitis</strong> — highest risk of all antibiotics in dentistry. Warn patient: if persistent diarrhoea develops → stop immediately and seek medical attention. C. diff colitis can be life-threatening.</div></div>
+              <div class="drug-field"><div class="df-label">Note</div><div class="df-val">No longer recommended for IE prophylaxis (NICE 2008 removed routine prophylaxis recommendation for dental procedures).</div></div>
+            </div>
+          </div>
+
+          <div class="drug-card">
+            <div class="drug-name">Erythromycin / Azithromycin</div>
+            <div class="drug-class">Macrolide antibiotics</div>
+            <div class="drug-grid">
+              <div class="drug-field"><div class="df-label">Dose</div><div class="df-val">Erythromycin: 250–500mg QDS. Azithromycin: 500mg OD × 3 days (better compliance, tissue concentration).</div></div>
+              <div class="drug-field"><div class="df-label">Use</div><div class="df-val">Penicillin allergy alternative. Inhibit 50S ribosomal subunit → bacteriostatic. Erythromycin: high GI side effects (nausea, diarrhoea — can be reduced with enteric-coated). Azithromycin: much better tolerated.</div></div>
+              <div class="drug-field"><div class="df-label">Interactions/CI</div><div class="df-val">QT interval prolongation (risk of torsades de pointes — avoid with other QT-prolonging drugs). CYP3A4 inhibition (erythromycin > azithromycin): increases levels of statins (myopathy risk), warfarin, terfenadine, theophylline, cyclosporin.</div></div>
+              <div class="drug-field"><div class="df-label">Resistance</div><div class="df-val">Significant macrolide resistance in oral streptococci — less reliable than penicillin-based regimens. Use azithromycin in preference to erythromycin where possible.</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="subsection" id="sub-medications-antifungal">
+        <div class="card">
+          <h2>Antifungal & Antiviral Agents</h2>
+
+          <div class="drug-card">
+            <div class="drug-name">Nystatin</div>
+            <div class="drug-class">Polyene antifungal — topical only</div>
+            <div class="drug-grid">
+              <div class="drug-field"><div class="df-label">Formulations</div><div class="df-val">Suspension 100,000 units/mL. Pastilles. Cream (for angular cheilitis). Oral rinse.</div></div>
+              <div class="drug-field"><div class="df-label">Dose</div><div class="df-val">1mL (100,000 units) QDS — hold in mouth as long as possible, then swallow. After meals.</div></div>
+              <div class="drug-field"><div class="df-label">Use</div><div class="df-val">Pseudomembranous and erythematous oral candida. Not absorbed systemically. Denture stomatitis — soak denture in nystatin suspension overnight. Angular cheilitis — nystatin cream ± antibacterial (fusidic acid or miconazole).</div></div>
+              <div class="drug-field"><div class="df-label">Cautions</div><div class="df-val">Contains sucrose — caries risk with prolonged use (advise good OH). Poor compliance due to unpleasant taste. Not effective for hyperplastic candida (systemic agent needed).</div></div>
+            </div>
+          </div>
+
+          <div class="drug-card">
+            <div class="drug-name">Fluconazole</div>
+            <div class="drug-class">Triazole antifungal — systemic</div>
+            <div class="drug-grid">
+              <div class="drug-field"><div class="df-label">Dose</div><div class="df-val">50–150mg OD × 7–14 days for oral candida. 150mg single dose for vaginal candida.</div></div>
+              <div class="drug-field"><div class="df-label">Mechanism</div><div class="df-val">Inhibits ergosterol synthesis by blocking CYP51 (lanosterol 14α-demethylase) → disrupts fungal cell membrane integrity.</div></div>
+              <div class="drug-field"><div class="df-label">Indications</div><div class="df-val">Recurrent/severe/systemic candida. Hyperplastic candida. Immunocompromised patients (HIV, chemotherapy, transplant). Failed topical therapy.</div></div>
+              <div class="drug-field"><div class="df-label">KEY interactions</div><div class="df-val">Warfarin: significantly increases INR (check INR). Statins: ↑ myopathy risk. Phenytoin toxicity. Many CYP2C9 and CYP3A4 interactions. Hepatotoxicity with prolonged use.</div></div>
+            </div>
+          </div>
+
+          <div class="drug-card">
+            <div class="drug-name">Aciclovir (Acyclovir)</div>
+            <div class="drug-class">Nucleoside analogue antiviral — HSV and VZV</div>
+            <div class="drug-grid">
+              <div class="drug-field"><div class="df-label">Dose</div><div class="df-val">HSV primary: 200mg 5×/day × 5 days. Herpes zoster: 800mg 5×/day × 7 days. Topical: 5% cream 5×/day × 5 days for herpes labialis (prodrome).</div></div>
+              <div class="drug-field"><div class="df-label">Mechanism</div><div class="df-val">Phosphorylated to aciclovir monophosphate by viral thymidine kinase (only in infected cells) → triphosphate inhibits viral DNA polymerase → chain termination. Selective for infected cells.</div></div>
+              <div class="drug-field"><div class="df-label">Use</div><div class="df-val">Primary HSV gingivostomatitis (severe/immunocompromised). Herpes zoster (facial/ophthalmic — start within 72h). Recurrent herpes labialis prophylaxis in immunocompromised.</div></div>
+              <div class="drug-field"><div class="df-label">Note</div><div class="df-val">Valaciclovir (prodrug) = better bioavailability (54% vs 15–30%), less frequent dosing (BD vs 5× daily). Famciclovir also available. Must start within 72h of zoster rash onset to be effective at preventing post-herpetic neuralgia.</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="subsection" id="sub-medications-la">
+        <div class="card">
+          <h2>Local Anaesthetics</h2>
+          <span class="tag tag-teal">Mechanism, dosing & toxicity</span>
+
+          <div class="acc-item"><div class="acc-header" onclick="toggleAcc(this)">Mechanism of action — why LA fails in infection <span class="acc-icon">▾</span></div>
+            <div class="acc-body">
+              <p>LAs are weak bases (pKa 7.7–8.9). They exist in both ionised (BH⁺) and unionised (B) forms in equilibrium. <strong>Only the unionised (lipid-soluble) form can cross the nerve membrane.</strong> Once inside the axon, the ionised form blocks the voltage-gated Na⁺ channel from the intracellular side.</p>
+              <p><strong>Why LA fails in infected tissue:</strong> Infected tissue has lower pH (acidic environment → more H⁺ ions). Henderson-Hasselbalch: at lower pH, equilibrium shifts toward ionised form (BH⁺). Less unionised drug available to cross nerve membrane → significantly reduced efficacy. This explains why achieving adequate LA in a "hot" pulp or acute abscess is clinically challenging.</p>
+              <p><strong>Solutions:</strong> Increase dose, buffered LA (sodium bicarbonate — raises pH, more unionised), give time for acute inflammation to subside, use supplemental techniques (intraosseous, intrapulpal, PDL injection).</p>
+            </div>
+          </div>
+
+          <div class="table-wrap">
+            <table class="data-table">
+              <tr><th>Drug</th><th>Concentration</th><th>Vasoconstrictor</th><th>Pulpal duration</th><th>Max dose</th></tr>
+              <tr><td><strong>Lidocaine</strong></td><td>2%</td><td>Adrenaline 1:80,000</td><td>60 min</td><td>4.4 mg/kg (300mg max)</td></tr>
+              <tr><td><strong>Articaine</strong></td><td>4%</td><td>Adrenaline 1:100,000 or 1:200,000</td><td>60–75 min</td><td>7 mg/kg (500mg max)</td></tr>
+              <tr><td><strong>Mepivacaine</strong></td><td>3%</td><td>None (or 1:200,000)</td><td>20 min (plain)</td><td>4.4 mg/kg (300mg)</td></tr>
+              <tr><td><strong>Bupivacaine</strong></td><td>0.5%</td><td>Adrenaline 1:200,000</td><td>3–8 hours</td><td>2 mg/kg (150mg)</td></tr>
+              <tr><td><strong>Prilocaine</strong></td><td>3%</td><td>Felypressin 0.03 IU/mL</td><td>45–60 min</td><td>6 mg/kg (400mg)</td></tr>
+            </table>
+          </div>
+
+          <div class="acc-item"><div class="acc-header" onclick="toggleAcc(this)">Adrenaline content & cardiovascular limits <span class="acc-icon">▾</span></div>
+            <div class="acc-body">
+              <p>1:80,000 = 12.5 μg/mL. 1:100,000 = 10 μg/mL. 1:200,000 = 5 μg/mL.</p>
+              <p><strong>Maximum adrenaline dose:</strong> 0.2mg (200μg) in healthy patients. With cardiovascular disease: limit to 0.04mg (40μg) = approximately 2 cartridges of 1:100,000 adrenaline solution.</p>
+              <p>1 dental cartridge = 2.2 mL. 2.2 mL × 10 μg/mL = 22 μg adrenaline per cartridge of 1:100,000.</p>
+              <p><strong>Adrenaline benefits in dental LA:</strong> Reduces systemic absorption → lower peak plasma levels → safer. Increases duration of anaesthesia. Reduces bleeding in surgical field. Haemostasis. The benefits of low-dose vasoconstrictor generally outweigh risks even in most cardiovascular patients.</p>
+            </div>
+          </div>
+
+          <div class="acc-item"><div class="acc-header" onclick="toggleAcc(this)">Max dose calculation example <span class="acc-icon">▾</span></div>
+            <div class="acc-body">
+              <p><strong>Example: 70kg patient, Lidocaine 2% with 1:80,000 adrenaline.</strong></p>
+              <p>Max dose = 4.4 mg/kg × 70kg = 308mg lidocaine.</p>
+              <p>Each cartridge (2.2mL) of 2% lidocaine = 2.2 × 20mg/mL = 44mg.</p>
+              <p>Number of cartridges = 308mg ÷ 44mg = 7 cartridges maximum (limited by adrenaline at 0.2mg = ~8 cartridges, so lidocaine is limiting factor).</p>
+              <p><strong>For children:</strong> Always calculate by weight. Use lower-concentration agent where possible. Never exceed adult absolute maximum regardless of weight calculation.</p>
+              <p><strong>For elderly/medically compromised:</strong> Use lower maximum doses (2–3 mg/kg) as reduced hepatic/renal metabolism.</p>
+            </div>
+          </div>
+
+          <div class="callout callout-red"><strong>LA systemic toxicity — progressive signs:</strong> Perioral tingling/numbness → Metallic taste → Tinnitus/auditory disturbance → Visual disturbance → Slurred speech → Confusion/drowsiness → Tonic-clonic convulsions → Respiratory depression → Cardiovascular collapse.<br><br><strong>Management:</strong> STOP injection. ABCDE. 100% O₂. IV benzodiazepine for convulsions (midazolam 2.5–5mg IV or buccal). Call 999. Prepare for CPR. Intralipid 20% (IV fat emulsion) for severe cardiovascular toxicity.</div>
+        </div>
+      </div>
+
+      <div class="subsection" id="sub-medications-other">
+        <div class="card">
+          <h2>Other Key Medications</h2>
+
+          <div class="acc-item"><div class="acc-header" onclick="toggleAcc(this)">Corticosteroids — topical and systemic <span class="acc-icon">▾</span></div>
+            <div class="acc-body">
+              <p><strong>Topical steroids (potency ranking):</strong></p>
+              <ul>
+                <li>Mild: Hydrocortisone 1% (Corlan pellets)</li>
+                <li>Moderate: Triamcinolone (Adcortyl in Orabase) — aphthous ulcers</li>
+                <li>Potent: Betamethasone 0.5mg dissolved in water → mouthwash; beclomethasone inhaler applied to lesion</li>
+                <li>Very potent: Clobetasol propionate 0.05% gel — most potent, for severe erosive LP or MMP</li>
+              </ul>
+              <p><strong>Systemic prednisolone indications:</strong> Pemphigus vulgaris (high dose: 1mg/kg/day). Severe erosive OLP. MMP (moderate-severe). Angioedema. Status asthmaticus.</p>
+              <p><strong>Steroid cover for surgery:</strong> Any patient on ≥5mg prednisolone/day (or equivalent) for ≥1 month: double their usual morning oral dose on the day of the procedure. For major surgery under GA: IV hydrocortisone 25–50mg at induction. Risk: adrenal crisis (hypotension, tachycardia, collapse) — if suspected in chair: call 999, 200mg IV hydrocortisone (or IM if no IV access), IV fluids.</p>
+              <p><strong>Adrenocortical suppression equivalents:</strong> Prednisolone 5mg = Hydrocortisone 20mg = Dexamethasone 0.75mg.</p>
+            </div>
+          </div>
+
+          <div class="acc-item"><div class="acc-header" onclick="toggleAcc(this)">Bisphosphonates & MRONJ <span class="acc-icon">▾</span></div>
+            <div class="acc-body">
+              <p><strong>Drugs:</strong> Oral: Alendronate (weekly), risedronate. IV: Zoledronic acid (monthly/yearly), pamidronate, ibandronate. Also: Denosumab (anti-RANK-L monoclonal antibody — similar risk).</p>
+              <p><strong>Mechanism:</strong> Inhibit osteoclast activity → reduced bone remodelling → risk of non-healing necrosis when dento-alveolar surgery creates wound that requires remodelling to heal.</p>
+              <p><strong>MRONJ risk:</strong> Oral bisphosphonates: ~0.1% (osteoporosis indication). IV bisphosphonates for cancer: 1–10%. Denosumab: similar to IV bisphosphonates.</p>
+              <p><strong>MRONJ definition (AAOMS 2014):</strong> Current or previous treatment with anti-resorptive or anti-angiogenic agent + exposed necrotic bone (or probing through fistula to bone) in the maxillofacial region + persistent for &gt;8 weeks + no history of radiation therapy to jaws.</p>
+              <p><strong>Before starting bisphosphonate therapy:</strong> Comprehensive dental exam. Extract failing teeth. Complete any necessary surgical procedures. Optimise oral hygiene. Educate patient.</p>
+              <p><strong>During bisphosphonate therapy:</strong> Avoid elective dento-alveolar surgery if possible. If extraction necessary: inform patient of risk, conservative approach (minimal bone removal, primary wound closure), avoid periosteal stripping, consider antibiotic cover, no healing by secondary intention. NEVER stop IV bisphosphonate without oncologist discussion.</p>
+              <p><strong>MRONJ management:</strong> Conservative (antimicrobial mouthwash, antibiotics, pain control, sequestrum removal when loose), surgical debridement for refractory cases, PRGF (growth factors), hyperbaric oxygen (controversial).</p>
+            </div>
+          </div>
+
+          <div class="acc-item"><div class="acc-header" onclick="toggleAcc(this)">Anticoagulants & antiplatelets — dental management <span class="acc-icon">▾</span></div>
+            <div class="acc-body">
+              <p><strong>Warfarin:</strong> Check INR on day of procedure or within 72h. INR &lt;4.0 → proceed with local haemostatic measures (oxidised cellulose/Surgicel, resorbable sutures, 4.8% tranexamic acid mouthwash × 5 days, pressure). <strong>Do NOT routinely stop warfarin</strong> — thromboembolism risk from stopping outweighs manageable dental bleeding risk. INR &gt;4.0 → postpone, contact prescribing physician.</p>
+              <p><strong>DOACs</strong> (dabigatran, rivaroxaban, apixaban, edoxaban): For minor dental surgery — generally do NOT interrupt. Perform procedure at trough level (12–24h after last dose for twice-daily agents). No reliable routine monitoring. For major surgery: discuss with physician (hold for 24–48h for dabigatran, 24h for others, longer if CKD).</p>
+              <p><strong>Aspirin/clopidogrel:</strong> Do NOT stop — risk of acute cardiovascular/cerebrovascular event far outweighs dental bleeding risk. Manage bleeding with local haemostasis. Dual antiplatelet (aspirin + clopidogrel) — higher bleeding risk: consider hospital setting for complex extractions, consult cardiologist if considering interruption.</p>
+              <p><strong>Local haemostatic measures:</strong> Oxidised cellulose (Surgicel/Surgical), absorbable gelatin sponge (Gelfoam), resorbable sutures, direct pressure (30 min minimum), tranexamic acid mouthwash (10mg/kg IV or 4.8% mouthwash QDS × 5 days), local LA with vasoconstrictor, careful surgical technique.</p>
+            </div>
+          </div>
+
+          <div class="acc-item"><div class="acc-header" onclick="toggleAcc(this)">Important drug-induced oral effects (complete list) <span class="acc-icon">▾</span></div>
+            <div class="acc-body">
+              <p><strong>Gingival hyperplasia (overgrowth):</strong> Phenytoin (epilepsy), Cyclosporin (immunosuppressant), Nifedipine and other calcium channel blockers (amlodipine, diltiazem). Mechanism: altered fibroblast function and reduced collagen degradation. Exacerbated by poor plaque control. Management: improve OH, consider drug substitution (discuss with physician), surgical gingivectomy if severe.</p>
+              <p><strong>Xerostomia (>500 drugs!):</strong> Antidepressants (TCA, SSRI, SNRI), antihistamines (H1 blockers), antipsychotics, antihypertensives (beta-blockers, diuretics, clonidine), antimuscarinics (bladder drugs — oxybutynin), opioids, antiepileptics (carbamazepine), systemic retinoids.</p>
+              <p><strong>Oral ulceration:</strong> NSAIDs (aspirin-related mucosal damage), methotrexate (folate antagonism), Nicorandil (large non-healing ulcers — classic association), captopril/ACE inhibitors, gold, alendronate (oesophageal).</p>
+              <p><strong>Oral candidiasis:</strong> Inhaled corticosteroids (advise spacer device + rinsing mouth after use), systemic corticosteroids, broad-spectrum antibiotics, immunosuppressants (cyclosporin, azathioprine), chemotherapy.</p>
+              <p><strong>Lichenoid reactions:</strong> NSAIDs, beta-blockers, ACE inhibitors, antimalarials (hydroxychloroquine — commonly used in RA/SLE), gold, penicillamine, methyldopa.</p>
+              <p><strong>Altered taste/dysgeusia:</strong> ACE inhibitors (metallic taste — captopril classic), metronidazole, penicillamine, chemotherapy, carbamazepine, amiodarone.</p>
+              <p><strong>Erythema multiforme:</strong> Sulphonamides, penicillin, phenytoin, barbiturates (also infections: HSV — most common trigger).</p>
+              <p><strong>Black hairy tongue:</strong> Broad-spectrum antibiotics (disrupts oral flora), bismuth preparations, smoking, poor OH.</p>
+              <p><strong>Sialadenosis (bilateral parotid enlargement):</strong> Antihypertensives (clonidine, methyldopa), phenylbutazone, iodine-containing drugs, thiouracil.</p>
+            </div>
+          </div>
+
+          <div class="acc-item"><div class="acc-header" onclick="toggleAcc(this)">Chlorhexidine — comprehensive guide <span class="acc-icon">▾</span></div>
+            <div class="acc-body">
+              <p><strong>Mechanism:</strong> Cationic bisbiguanide → disrupts bacterial cell membranes → bactericidal at high concentration, bacteriostatic at low. <strong>Substantivity:</strong> Binds to oral surfaces and releases slowly over up to 12 hours — unique property responsible for prolonged antimicrobial effect.</p>
+              <p><strong>Spectrum:</strong> Broad: Gram+, Gram−, fungi (Candida), some viruses (including HSV, HBV). Less effective against acid-fast bacteria, bacterial spores.</p>
+              <p><strong>Formulations:</strong> 0.2% mouthwash (UK standard, 10mL BD); 0.12% (US); 1% gel (direct application to sockets, periodontal pockets); 0.05% for long-term use; chip/varnish (sub-gingival delivery — Perio Chip).</p>
+              <p><strong>Uses:</strong> Post-surgical (implants, extractions — 48h post-op then mechanical OH can resume), NUG, aphthous ulcers adjunct, immunocompromised patients (when mechanical OH not possible), periodontal disease (adjunct to SRP).</p>
+              <p><strong>Adverse effects:</strong> Brown staining of teeth, tongue, restorations (reversible with professional polish), altered/impaired taste perception, mucosal irritation (burning, desquamation) with prolonged use, bilateral parotid swelling (rare).</p>
+              <p><strong>Incompatibilities:</strong> Anionic surfactants (SLS in toothpaste) inactivate CHX. Leave 30-minute gap between toothpaste use and CHX mouthwash. Not compatible with fluoride in same vehicle.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="subsection" id="sub-medications-quiz">
+        <div class="card">
+          <h2>✏️ Medications — Clinical Quiz</h2>
+          <p class="body-text" style="color:var(--text2);font-size:13px;margin-bottom:16px">Select your answer. Detailed explanations appear after each question.</p>
+          <div id="quiz-medications-wrap"></div>
+        </div>
+      </div>
+    </div><!-- /medications -->
+
+
+    <!-- ============================================================ SYSTEMIC DISEASES ============================================================ -->
+    <div class="section" id="sec-systemic">
+      <div class="page-header">
+        <h1>❤️ Systemic Diseases in Dentistry</h1>
+        <p>How systemic conditions affect the oral cavity and dental management. Understand the two-way relationship — oral health both affects and is affected by systemic disease.</p>
+        <div class="tag-row">
+          <span class="tag tag-red">Medical emergencies</span>
+          <span class="tag tag-amber">Treatment modifications</span>
+          <span class="tag tag-teal">Oral manifestations</span>
+        </div>
+      </div>
+
+      <div class="subnav">
+        <button class="subnav-btn active" onclick="switchSub('systemic','cardio',this)">Cardiovascular</button>
+        <button class="subnav-btn" onclick="switchSub('systemic','endo',this)">Endocrine</button>
+        <button class="subnav-btn" onclick="switchSub('systemic','haem',this)">Haematological</button>
+        <button class="subnav-btn" onclick="switchSub('systemic','immune',this)">Immune & GI</button>
+        <button class="subnav-btn" onclick="switchSub('systemic','neuro',this)">Neurological</button>
+        <button class="subnav-btn" onclick="switchSub('systemic','quiz',this)">✏️ Quiz</button>
+      </div>
+
+      <div class="subsection active" id="sub-systemic-cardio">
+        <div class="card">
+          <h2>Cardiovascular Diseases</h2>
+
+          <div class="acc-item"><div class="acc-header" onclick="toggleAcc(this)">Hypertension — classification & dental management <span class="acc-icon">▾</span></div>
+            <div class="acc-body">
+              <p><strong>Classification (2018 ACC/AHA):</strong> Normal &lt;120/80 → Elevated 120–129/&lt;80 → Stage 1: 130–139/80–89 → Stage 2: ≥140/90 → Hypertensive crisis: &gt;180/120.</p>
+              <p><strong>Dental management:</strong></p>
+              <ul>
+                <li>Check BP at new patient appointment and before any procedure if concern</li>
+                <li>BP &gt;180/110 (stage 3): defer elective dental care, refer urgently to GP. Emergency only in hospital setting.</li>
+                <li>Stress reduction: morning appointments (BP lowest), adequate anaesthesia (inadequate LA → pain → BP spike), anxiolysis (oral sedation), short appointments, good rapport</li>
+                <li>Adrenaline: safe to use with care. Limit to 2–3 cartridges of 1:100,000 in uncontrolled hypertension. Aspirate before injecting. Avoid gingival retraction cords soaked in adrenaline.</li>
+                <li>Drug interactions: NSAIDs reduce efficacy of antihypertensives and can cause sodium retention/BP increase (use cautiously). Epinephrine + non-selective beta-blocker (propranolol) → unopposed alpha stimulation → hypertensive episode + reflex bradycardia. Epinephrine + MAOIs → hypertensive crisis.</li>
+              </ul>
+              <p><strong>Oral effects of antihypertensive drugs:</strong> CCBs (nifedipine, amlodipine) → gingival hyperplasia. Diuretics → xerostomia. Beta-blockers → xerostomia, lichenoid reactions. ACE inhibitors → lichenoid reactions, angioedema (can be life-threatening — tongue/lip/throat swelling), altered taste.</p>
+            </div>
+          </div>
+
+          <div class="acc-item"><div class="acc-header" onclick="toggleAcc(this)">Infective endocarditis — NICE vs AHA guidelines <span class="acc-icon">▾</span></div>
+            <div class="acc-body">
+              <p><strong>Causative organisms from dental procedures:</strong> Viridans group streptococci (S. sanguinis, S. oralis, S. mutans) — primary cause of IE from oral bacteraemia.</p>
+              <p><strong>High-risk cardiac conditions for IE:</strong> Prosthetic heart valves (mechanical or bioprosthetic), previous episode of IE, congenital heart disease (unrepaired complex cyanotic, or repaired with residual defect), cardiac transplant with valvulopathy.</p>
+              <p><strong>NICE 2008 (UK):</strong> Antibiotic prophylaxis for dental procedures is NOT recommended, even for high-risk patients. Evidence showed it was not cost-effective, potentially harmful, and of unproven benefit. However: maintain optimal oral health (most important). Prompt treatment of dental infections. Educate patients about IE symptoms.</p>
+              <p><strong>AHA 2007 (US):</strong> Recommends amoxicillin 2g PO 30–60 min before procedure for high-risk patients. Penicillin allergy: clindamycin 600mg or azithromycin 500mg or cephalexin 2g.</p>
+              <p><strong>Note:</strong> There is ongoing controversy between guidelines. Know both. In clinical practice: follow the guideline of your country. Regardless — optimal oral hygiene is paramount and prevents far more cases of IE than any antibiotic prophylaxis regimen.</p>
+            </div>
+          </div>
+
+          <div class="acc-item"><div class="acc-header" onclick="toggleAcc(this)">Ischaemic heart disease — dental management <span class="acc-icon">▾</span></div>
+            <div class="acc-body">
+              <p><strong>Post-MI:</strong> Defer all elective dental treatment for minimum 3–6 months post-MI. Emergency only (analgesics, antibiotics, drainage), ideally in hospital setting. After 3 months: can treat in primary care with appropriate precautions.</p>
+              <p><strong>Stable angina management:</strong> Ensure patient's GTN spray is available and accessible in surgery. Morning appointments (catecholamine peaks in morning — higher MI risk). Stress reduction protocol. Adequate anaesthesia is essential. Oxygen on standby.</p>
+              <p><strong>Angina attack in chair:</strong> Stop treatment. Patient sits up (NOT supine — increases cardiac preload). GTN spray 400μg sublingually (1–2 puffs). Oxygen if available. If no relief in 5 minutes → second GTN dose → if still no relief → treat as MI → call 999 → aspirin 300mg (chewed) → oxygen → prepare AED.</p>
+              <p><strong>Drug interactions:</strong> GTN (nitrates) + sildenafil (Viagra) → severe hypotension (absolute contraindication — ask about PDE5 inhibitors). Adrenaline: use with care but do not withhold — pain from inadequate anaesthesia is more dangerous. Limit to 2 cartridges of 1:100,000 in severe IHD.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="subsection" id="sub-systemic-endo">
+        <div class="card">
+          <h2>Endocrine Diseases</h2>
+
+          <div class="acc-item"><div class="acc-header" onclick="toggleAcc(this)">Diabetes mellitus — oral manifestations & management <span class="acc-icon">▾</span></div>
+            <div class="acc-body">
+              <p><strong>Oral manifestations:</strong> Increased susceptibility to infections (bacterial, fungal, viral), impaired wound healing, xerostomia (reduced salivary flow), increased dental caries risk, parotid gland enlargement (bilateral), burning mouth sensation, dysgeusia, periodontal disease (accelerated and more severe — bidirectional relationship).</p>
+              <p><strong>Perio-diabetes bidirectional relationship:</strong> Chronic hyperglycaemia → increased susceptibility to periodontal pathogens, impaired neutrophil function, increased AGEs (advanced glycation end products) → accelerated periodontal destruction. Conversely: treating periodontitis has been shown to improve HbA1c by approximately 0.5% — this is clinically significant.</p>
+              <p><strong>Dental management:</strong></p>
+              <ul>
+                <li>Morning appointments (insulin action, food intake more predictable)</li>
+                <li>Confirm patient has eaten and taken usual medication before appointment</li>
+                <li>Have glucose/fruit juice/sugar available in surgery for hypoglycaemia</li>
+                <li>HbA1c &lt;8.5% → routine dental treatment. HbA1c &gt;10% → increased risk, discuss with physician, avoid elective major surgery if possible</li>
+                <li>Prescribe antibiotics more readily for infections (impaired immune response)</li>
+                <li>Avoid prolonged fasting (concern if patient on metformin → lactic acidosis risk with prolonged starvation)</li>
+              </ul>
+              <p><strong>Hypoglycaemia in the dental chair:</strong> Recognition — sudden pallor, sweating, trembling, confusion, unusual behaviour. Management: if conscious → oral glucose (Glucogel, Glucotabs, juice). If unconscious → IM glucagon 1mg (or IV glucose 20%/50%). Call 999. Do NOT continue dental treatment.</p>
+            </div>
+          </div>
+
+          <div class="acc-item"><div class="acc-header" onclick="toggleAcc(this)">Thyroid disorders <span class="acc-icon">▾</span></div>
+            <div class="acc-body">
+              <p><strong>Hypothyroidism:</strong> Macroglossia (enlarged tongue — may affect airways), delayed tooth eruption, slowed healing, perioral oedema, hoarse voice, dry skin and hair. Anaemia. Reduced drug metabolism → exaggerated sedative/CNS depressant effects with medications. Well-controlled: treat normally. Uncontrolled/untreated: avoid elective procedures — cardiovascular compromise risk.</p>
+              <p><strong>Hyperthyroidism:</strong> Accelerated tooth eruption, premature exfoliation of primary teeth, osteoporosis (increased caries risk due to enamel hypoplasia), increased anxiety and restlessness (make short appointments, consider sedation). Cardiovascular effects: tachycardia, hypertension, arrhythmia — avoid adrenaline in uncontrolled hyperthyroidism (risk of thyroid storm).</p>
+              <p><strong>Thyroid storm (crisis):</strong> Rare medical emergency. Fever, tachycardia, hypertension, agitation, tremor, altered consciousness. Can be precipitated by surgery, infection, stress. Emergency referral → hospital. Do not proceed with dental treatment.</p>
+            </div>
+          </div>
+
+          <div class="acc-item"><div class="acc-header" onclick="toggleAcc(this)">Adrenal insufficiency & steroid cover <span class="acc-icon">▾</span></div>
+            <div class="acc-body">
+              <p><strong>Primary adrenal insufficiency (Addison's disease):</strong> Autoimmune destruction of adrenal cortex. Reduced cortisol and aldosterone. Elevated ACTH (melanocyte-stimulating hormone cross-reaction) → skin and mucosal hyperpigmentation.</p>
+              <p><strong>Oral sign of Addison's:</strong> Patchy brown/black pigmentation of buccal mucosa, gingiva, lips, hard palate. May be the FIRST clinical sign before skin changes. Occurs in non-pigmented individuals (key — distinguish from racial pigmentation). Distribution is irregular and blotchy.</p>
+              <p><strong>Secondary adrenal insufficiency:</strong> Most common cause in clinical practice = iatrogenic (exogenous corticosteroid therapy → HPA axis suppression → reduced endogenous cortisol production). Cannot respond to physiological stress without supplementation → Addisonian crisis risk.</p>
+              <p><strong>Steroid cover protocol (SDCEP guidelines):</strong></p>
+              <ul>
+                <li>≥5mg prednisolone/day (or equivalent) for ≥1 month: At risk of adrenal suppression</li>
+                <li>Minor dental procedure (routine extractions, periodontal surgery under LA): Double usual morning oral steroid dose on day of procedure only</li>
+                <li>Major dental surgery or GA: IV hydrocortisone 25–50mg at induction, then continue doubled oral dose for 24–48h post-op</li>
+              </ul>
+              <p><strong>Addisonian crisis in chair:</strong> Collapse, severe hypotension, tachycardia, pallor, confusion. Management: Lay flat, elevate legs. Call 999. IM hydrocortisone 200mg (Solu-Cortef) immediately if available. IV saline. Monitor. Emergency hospital admission.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="subsection" id="sub-systemic-haem">
+        <div class="card">
+          <h2>Haematological Conditions</h2>
+
+          <div class="acc-item"><div class="acc-header" onclick="toggleAcc(this)">Anaemias — oral manifestations <span class="acc-icon">▾</span></div>
+            <div class="acc-body">
+              <p><strong>Common oral features across all anaemias:</strong> Pallor of oral mucosa (buccal mucosa, lips, conjunctiva), glossitis (smooth, red, burning tongue — depapillated — atrophic glossitis), angular cheilitis, recurrent aphthous ulcers, oral candidiasis (immune compromise), impaired healing.</p>
+              <p><strong>Iron deficiency anaemia (IDA):</strong> Microcytic hypochromic anaemia. Most common anaemia worldwide. <strong>Paterson-Kelly (Plummer-Vinson) syndrome:</strong> IDA + dysphagia (postcricoid oesophageal web) + glossitis + angular cheilitis + koilonychia (spoon nails). PRE-MALIGNANT for oesophageal/postcricoid SCC.</p>
+              <p><strong>B12/Folate deficiency:</strong> Megaloblastic (macrocytic) anaemia. Glossitis particularly prominent — smooth, red, painful tongue. Can cause peripheral neuropathy and subacute combined degeneration of spinal cord. <strong>Pernicious anaemia</strong> = B12 deficiency from autoimmune destruction of gastric parietal cells → absent intrinsic factor → reduced B12 absorption. Anti-parietal cell antibodies, anti-intrinsic factor antibodies. Associated with other autoimmune conditions.</p>
+              <p><strong>Sickle cell disease:</strong> Autosomal recessive HbS mutation → vaso-occlusive crises → bone infarcts (can affect jaw → severe pain mimicking dental pain), osteomyelitis risk, hyposplenism → increased infection risk, avascular necrosis. Radiographic: "stepladder" trabecular pattern (perpendicular trabeculae — hair-on-end appearance on skull lateral). Pallor, jaundice, scleral icterus intraorally. Dental management: avoid hypoxia, ensure excellent LA, avoid rubber dam in children, pre-op haematology review, penicillin V prophylaxis (hyposplenism).</p>
+            </div>
+          </div>
+
+          <div class="acc-item"><div class="acc-header" onclick="toggleAcc(this)">Leukaemia — oral manifestations <span class="acc-icon">▾</span></div>
+            <div class="acc-body">
+              <p><strong>Oral manifestations (may be presenting features):</strong></p>
+              <ul>
+                <li><strong>Gingival infiltration:</strong> Especially AML-M5 (monocytic subtype). Generalised gingival swelling — pale, firm, diffuse enlargement of entire gingiva. Leukaemic cells infiltrate gingival tissues directly.</li>
+                <li><strong>Spontaneous gingival bleeding:</strong> Thrombocytopenia → petechiae, ecchymoses, prolonged bleeding</li>
+                <li><strong>Oral ulceration:</strong> Neutropenia → reduced infection control → opportunistic ulcers</li>
+                <li><strong>Opportunistic infections:</strong> Herpes simplex (severe), candida (extensive), CMV</li>
+                <li><strong>Lymphadenopathy:</strong> Generalised, non-tender</li>
+                <li><strong>Pallor:</strong> Anaemia of chronic disease</li>
+              </ul>
+              <p><strong>Dental management during chemotherapy:</strong></p>
+              <ul>
+                <li><strong>Pre-treatment:</strong> Full dental assessment. Extract ALL hopeless or failing teeth. Complete restorative work. Optimal OH. Remove all dentures if mucositis expected.</li>
+                <li><strong>During chemotherapy:</strong> Check blood count before procedures: Neutrophils &gt;1.0×10⁹ and Platelets &gt;50×10⁹ for surgical procedures (higher threshold preferable). Prophylactic antifungals and antivirals. CHX mouthwash. Excellent OH instruction. Treat mucositis supportively.</li>
+                <li><strong>MRONJ awareness:</strong> Some chemotherapy agents and bisphosphonates may be given alongside → increased MRONJ risk if dento-alveolar surgery needed.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="acc-item"><div class="acc-header" onclick="toggleAcc(this)">Bleeding disorders — haemophilia & VWD <span class="acc-icon">▾</span></div>
+            <div class="acc-body">
+              <p><strong>Haemophilia A:</strong> X-linked recessive. Factor VIII deficiency. Incidence 1:5000 males. Prolonged APTT, normal PT and bleeding time. Severity: Mild (&gt;5% activity), Moderate (1–5%), Severe (&lt;1%).</p>
+              <p><strong>Haemophilia B (Christmas disease):</strong> X-linked recessive. Factor IX deficiency. Clinically identical to A. Less common (1:30,000).</p>
+              <p><strong>Clinical features:</strong> Deep tissue bleeds (haemarthroses — knee, elbow, ankle), muscle haematomas, intracranial bleed (rare but serious), spontaneous bleeding in severe disease. Soft tissue/mucosal bleeding after dental procedures.</p>
+              <p><strong>Dental management:</strong> MUST be managed in coordination with haemophilia centre (specialist haematologist). Investigations: factor level, inhibitor screen. Options:</p>
+              <ul>
+                <li><strong>DDAVP (desmopressin):</strong> For mild Haemophilia A only. Releases endogenous FVIII and vWF from storage. IV 0.3μg/kg or intranasal. Tachyphylaxis (loses effect with repeated doses within 48h).</li>
+                <li><strong>Factor concentrate:</strong> Recombinant FVIII (A) or FIX (B). Aim for factor level &gt;50% for dental extractions. Administer immediately before procedure.</li>
+                <li><strong>Tranexamic acid:</strong> Antifibrinolytic — inhibits plasminogen activation → stabilises clot. 10mg/kg IV pre-procedure OR 4.8% mouthwash QDS × 5–7 days post-procedure.</li>
+                <li><strong>Local haemostasis:</strong> Meticulous surgical technique, oxidised cellulose, sutures, avoid aspirin/NSAIDs absolutely.</li>
+              </ul>
+              <p><strong>Von Willebrand disease (VWD):</strong> Most common inherited bleeding disorder (1:100 prevalence). Autosomal dominant (mostly). Deficient or defective vWF → impaired primary haemostasis (platelet adhesion) + reduced FVIII (VWF carries/protects FVIII). Prolonged bleeding time, mildly prolonged APTT. Types: 1 (quantitative ↓, 70%), 2 (qualitative defect), 3 (severe, absent vWF). Management: DDAVP (effective for Type 1 and some Type 2), VWF concentrate, tranexamic acid, avoid NSAIDs.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="subsection" id="sub-systemic-immune">
+        <div class="card">
+          <h2>Immune & Gastrointestinal Conditions</h2>
+
+          <div class="acc-item"><div class="acc-header" onclick="toggleAcc(this)">HIV/AIDS — oral manifestations <span class="acc-icon">▾</span></div>
+            <div class="acc-body">
+              <p><strong>Strongly associated with HIV/AIDS (CDC indicator conditions):</strong></p>
+              <ul>
+                <li><strong>Oral hairy leukoplakia (OHL):</strong> EBV-associated white corrugated/hairy lesion on LATERAL borders of tongue, bilateral. Cannot be wiped off. Almost exclusively in HIV+ patients. Indicates significant immunosuppression. Responds to antiviral therapy.</li>
+                <li><strong>Pseudomembranous candidiasis:</strong> Most common HIV-associated oral lesion. Indicates CD4 &lt;200/μL (AIDS).</li>
+                <li><strong>Kaposi's sarcoma (KS):</strong> HHV-8-associated vascular tumour. Red/purple flat or raised lesion — palate (most common intraoral site), gingiva. May be first presentation of AIDS in MSM.</li>
+                <li><strong>Linear gingival erythema (LGE):</strong> Distinct fiery red band along free gingival margin, disproportionate to plaque levels. Candida-associated.</li>
+                <li><strong>Necrotising ulcerative periodontitis (NUP):</strong> Severe, rapid attachment and bone loss. HIV with severe immunosuppression.</li>
+              </ul>
+              <p><strong>Also seen:</strong> Non-Hodgkin's lymphoma (intraoral), HPV-associated condylomata/papillomas, extensive HSV, CMV ulcers, major aphthous ulcers (large, prolonged), xerostomia (from ARV drugs — particularly older NRTIs), bilateral parotid enlargement (lymphoepithelial cysts).</p>
+              <p><strong>Dental management:</strong> Universal precautions (no additional requirements beyond standard infection control). Check medications (ARV interactions). CD4 &lt;200/μL — consider antibiotic cover for surgical procedures, antifungal/antiviral prophylaxis. Viral load and CD4 count guide treatment decisions. Refer to HIV clinician for complex cases.</p>
+            </div>
+          </div>
+
+          <div class="acc-item"><div class="acc-header" onclick="toggleAcc(this)">Sjögren's syndrome — full clinical picture <span class="acc-icon">▾</span></div>
+            <div class="acc-body">
+              <p><strong>Primary Sjögren's (sicca syndrome):</strong> Sicca symptoms alone (dry eyes + dry mouth). F:M = 9:1. Peak onset: 4th–5th decade. B-cell lymphoma risk (44× higher than general population — primarily MALT type in parotid).</p>
+              <p><strong>Secondary Sjögren's:</strong> Sicca symptoms + another autoimmune condition (most commonly RA, SLE, primary biliary cholangitis, systemic sclerosis).</p>
+              <p><strong>Oral manifestations:</strong> Xerostomia (most prominent symptom — difficulty speaking, swallowing, wearing dentures), accelerated cervical dental caries (cervical and incisal — unusual pattern due to absent salivary buffering and protective functions), recurrent oral candidiasis, atrophic glossitis, bilateral parotid/submandibular enlargement (due to lymphocytic infiltration), dysphagia, dysphonia, difficulty wearing dentures.</p>
+              <p><strong>Dental management:</strong></p>
+              <ul>
+                <li>Salivary substitutes (Biotène gels/spray, carboxymethylcellulose-based artificial saliva)</li>
+                <li>Sialogogues: Pilocarpine 5mg TDS (muscarinic M1/M3 agonist — stimulates residual salivary function; CI: asthma, narrow-angle glaucoma, bradycardia)</li>
+                <li>High-concentration fluoride toothpaste (5000ppm or 2800ppm) + Tooth Mousse (CPP-ACP)</li>
+                <li>Frequent recall (6-monthly minimum) and early aggressive caries management</li>
+                <li>Topical antifungals if candida</li>
+                <li>Advise: sip water frequently, chew sugar-free gum to stimulate saliva, avoid alcohol/tobacco, avoid dry air</li>
+                <li>Monitor for parotid lymphoma (rapidly enlarging, hard, unilateral parotid mass = urgent referral)</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="acc-item"><div class="acc-header" onclick="toggleAcc(this)">Crohn's disease & orofacial granulomatosis (OFG) <span class="acc-icon">▾</span></div>
+            <div class="acc-body">
+              <p><strong>Orofacial granulomatosis (OFG):</strong> Non-caseating granulomatous inflammation of oro-facial tissues without identifiable systemic cause. May be a localised form of Crohn's, a reaction to dietary antigens (benzoates, cinnamon, cochineal), or idiopathic.</p>
+              <p><strong>Oral Crohn's / OFG manifestations (may precede GI diagnosis by years):</strong></p>
+              <ul>
+                <li><strong>Lip swelling:</strong> Persistent, diffuse, rubbery, non-pitting oedema — especially lower lip (orofacial oedema). Classical "cobblestone" appearance of mucosa.</li>
+                <li><strong>Tag-like mucosal hypertrophy:</strong> Hyperplastic tissue folds in buccal sulcus</li>
+                <li><strong>Mucosal tags:</strong> Polypoid projections near posterior buccal mucosa or sulcus</li>
+                <li><strong>Linear fissuring ulcers in sulci:</strong> Deep, linear, vertical ulcers in upper or lower buccal sulcus — most SPECIFIC oral sign of Crohn's</li>
+                <li><strong>Cobblestoning of buccal mucosa:</strong> Oedematous folds giving a pebbly surface</li>
+                <li><strong>Gingival swelling:</strong> Oedematous, hyperaemic, granulomatous gingival changes</li>
+              </ul>
+              <p><strong>Histology:</strong> Non-caseating epithelioid granulomata in submucosa — same as sarcoidosis and TB histologically (need clinical/serological differentiation).</p>
+              <p><strong>Management:</strong> Dietary modification (eliminate common triggers: cinnamon, chocolate, cola, benzoates). Intralesional triamcinolone injection into lip swelling. Topical steroids. Systemic: prednisolone, methotrexate, infliximab (anti-TNF). GI investigation and multidisciplinary management. Refer to gastroenterology.</p>
+            </div>
+          </div>
+
+          <div class="acc-item"><div class="acc-header" onclick="toggleAcc(this)">Coeliac disease — oral manifestations <span class="acc-icon">▾</span></div>
+            <div class="acc-body">
+              <p>Gluten-sensitive enteropathy. HLA-DQ2/DQ8 association. Autoimmune villous atrophy of small intestine → malabsorption.</p>
+              <p><strong>Oral manifestations:</strong></p>
+              <ul>
+                <li><strong>Dental enamel hypoplasia:</strong> Symmetric, bilateral, affects permanent teeth in childhood. Horizontal bands of pitting/grooving or diffuse opacity — secondary to calcium/vitamin D malabsorption during critical enamel development period. Characteristic distribution across all four quadrants (compared to localised Turner's hypoplasia). Pathognomonic for systemic cause.</li>
+                <li><strong>Recurrent aphthous ulcers:</strong> Most common trigger for investigation. May be the only presenting feature. Resolves with gluten-free diet.</li>
+                <li><strong>Atrophic glossitis:</strong> From B12, iron, folate deficiency</li>
+                <li><strong>Angular cheilitis</strong></li>
+                <li><strong>Delayed dental development:</strong> Malabsorption of nutrients required for tooth formation</li>
+              </ul>
+              <p><strong>Diagnosis:</strong> Anti-tissue transglutaminase (anti-tTG IgA) + total IgA (if IgA deficient → use IgG-based tests). Confirm with duodenal biopsy (Marsh criteria). HLA typing.</p>
+              <p><strong>Management:</strong> Lifelong strict gluten-free diet → oral lesions improve. Replace nutritional deficiencies. Monitor for associated conditions (T-cell lymphoma, osteoporosis, other autoimmune).</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="subsection" id="sub-systemic-neuro">
+        <div class="card">
+          <h2>Neurological & Other Conditions</h2>
+
+          <div class="acc-item"><div class="acc-header" onclick="toggleAcc(this)">Epilepsy — management & drug effects <span class="acc-icon">▾</span></div>
+            <div class="acc-body">
+              <p><strong>Dental management:</strong> Confirm seizure type and control status. Never treat uncontrolled epilepsy electively. Dental trauma (avulsions, crown fractures) is common — assess patients for previous trauma signs. Morning appointments. Use rubber dam (but ensure suction and airway access). Aspirator and instruments secured. Avoid prolonged procedures. Identify stressors/flicker risk (avoid bright lights or flickering overhead light).</p>
+              <p><strong>Drug effects on oral cavity:</strong></p>
+              <ul>
+                <li><strong>Phenytoin:</strong> Gingival hyperplasia in 50% of patients. Severity related to plaque control (exacerbated by poor OH) and drug plasma level. Starts at interdental papillae, extends across gingiva, may cover teeth. Management: excellent OH, possible drug substitution (discuss with neurologist — switch to carbamazepine/lamotrigine), gingivectomy if severe and well-controlled epilepsy.</li>
+                <li><strong>Carbamazepine:</strong> Agranulocytosis (rare but dangerous — watch for unexplained oral infections/ulcers), hyponatraemia, aplastic anaemia (monitor FBC), Stevens-Johnson syndrome/TEN.</li>
+                <li><strong>Sodium valproate:</strong> Thrombocytopenia (check platelets before surgery), hepatotoxicity, teratogenic (neural tube defects — check pregnancy status).</li>
+                <li><strong>Lamotrigine:</strong> Stevens-Johnson syndrome (rare), dizziness. Fewer oral side effects.</li>
+              </ul>
+              <p><strong>Seizure management in dental chair:</strong> (1) Call for help. (2) Remove instruments from mouth. (3) Lower chair to flat position. (4) Cushion head — do NOT restrain. (5) Do NOT put anything in mouth. (6) Protect from injury. (7) Time the seizure. (8) If &gt;5 minutes: call 999, administer buccal midazolam 10mg (preferred) or rectal diazepam 10mg (adults). (9) Reassure when consciousness returns. (10) Arrange transport home — do not drive.</p>
+            </div>
+          </div>
+
+          <div class="acc-item"><div class="acc-header" onclick="toggleAcc(this)">Trigeminal neuralgia — diagnosis & treatment <span class="acc-icon">▾</span></div>
+            <div class="acc-body">
+              <p><strong>Classic TN (CVN — cranial nerve compression):</strong> Unilateral paroxysmal severe electric shock/stabbing pain &lt;2 minutes in trigeminal distribution. Most commonly V2 (maxillary) and/or V3 (mandibular). Trigger zones: light touch from eating, speaking, cold wind, brushing teeth, smiling. Pain-free intervals (characteristic). No neurological deficit.</p>
+              <p><strong>Cause:</strong> Most commonly vascular compression of trigeminal nerve root entry zone at pons — usually by superior cerebellar artery. Neurovascular contact → demyelination → aberrant electrical transmission.</p>
+              <p><strong>Must exclude:</strong> Dental causes first (refer back if any dental pathology). MS (younger patients — bilateral TN or associated neurological signs). Space-occupying lesion/acoustic neuroma (neurological signs, gradual onset, persistent background pain).</p>
+              <p><strong>Treatment:</strong></p>
+              <ul>
+                <li><strong>Carbamazepine (first-line):</strong> 100mg BD → titrate to 400–800mg BD. Side effects: dizziness, ataxia, diplopia (dose-related), agranulocytosis (monitor FBC), hyponatraemia, teratogenic. 70% efficacy initially.</li>
+                <li><strong>Oxcarbazepine:</strong> Better tolerated than carbamazepine, fewer interactions. 300mg BD → 600mg BD.</li>
+                <li><strong>Second-line:</strong> Gabapentin, pregabalin, lamotrigine, baclofen (muscle relaxant, useful adjunct).</li>
+                <li><strong>Surgical:</strong> Microvascular decompression (MVD) — most effective, longest lasting, requires craniotomy. Gamma Knife radiosurgery (non-invasive), Percutaneous rhizotomy (glycerol injection, balloon compression, radiofrequency thermocoagulation).</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="acc-item"><div class="acc-header" onclick="toggleAcc(this)">Burning mouth syndrome (BMS) <span class="acc-icon">▾</span></div>
+            <div class="acc-body">
+              <p><strong>Definition:</strong> Chronic intraoral burning or dysaesthesia WITHOUT visible mucosal lesion or identifiable local disease causing it. Diagnosis of exclusion.</p>
+              <p><strong>Demographics:</strong> Post-menopausal women most commonly (50–70 years). Female:Male = 3:1 to 7:1. Significant psychological component (anxiety, depression, hypochondriasis common).</p>
+              <p><strong>Exclude treatable causes first (secondary BMS):</strong> Iron/B12/folate/zinc deficiency, erythematous candida, xerostomia (from drugs or Sjögren's), denture allergy (PMMA base or denture cleansers), lichen planus, hypersensitivity reactions, diabetes mellitus, hypothyroidism, anxiety/depression.</p>
+              <p><strong>Types:</strong> Type 1 (diurnal — no burning on waking, builds through day, peak evening — most common, suggests peripheral neuropathy). Type 2 (constant throughout day — associated psychological factors). Type 3 (intermittent — possibly allergic).</p>
+              <p><strong>Treatment:</strong> Thorough explanation and reassurance (most important — many patients fear cancer). Low-dose clonazepam 0.5–1mg (rinse and spit for 3 minutes then spit — avoids systemic effects; or systemic). Alpha-lipoic acid supplements. Cognitive-behavioural therapy (CBT). Low-dose amitriptyline 10–25mg at night. Capsaicin (controversial). Systemic CBT/psychotherapy for significant psychological overlay.</p>
+            </div>
+          </div>
+
+          <div class="acc-item"><div class="acc-header" onclick="toggleAcc(this)">Parkinson's disease & dementia — oral considerations <span class="acc-icon">▾</span></div>
+            <div class="acc-body">
+              <p><strong>Parkinson's disease oral features:</strong> Sialorrhoea/drooling (due to impaired swallowing, not excess production), dysphagia (aspiration risk), poor OH maintenance (tremor, rigidity, reduced dexterity), xerostomia (from anticholinergic medications), dysgeusia, bruxism, occlusal problems (dystonic movements).</p>
+              <p><strong>Dental management:</strong> Short appointments adapted to "on" drug phase (when medication is working well — ask patient optimal time). Physical support for head and jaw during treatment. Adapted oral hygiene aids (electric toothbrush, grip modifications). Use rubber dam with care. Avoid antipsychotics (dopamine D2 antagonists — worsen Parkinson's symptoms). Opioids → increased sedation risk. Avoid prolonged supine position (aspiration risk).</p>
+              <p><strong>Dementia:</strong> Progressive loss of cooperation and communication. Assess cognitive function and capacity. Involve carer. Minimise invasive treatment — prioritise pain management and infection control. Preventive focus early (when cooperation better). Power of attorney considerations. Document treatment discussions carefully. Simple, clear communication.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="subsection" id="sub-systemic-quiz">
+        <div class="card">
+          <h2>✏️ Systemic Diseases — Clinical Quiz</h2>
+          <p class="body-text" style="color:var(--text2);font-size:13px;margin-bottom:16px">Select your answer. Detailed explanations appear after each question.</p>
+          <div id="quiz-systemic-wrap"></div>
+        </div>
+      </div>
+    </div><!-- /systemic -->
+
+  </main>
+</div>
+
+<script>
+// ===================== NAVIGATION =====================
+const studiedSections = new Set();
+
+function switchSection(id, btn) {
+  document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+  document.querySelectorAll('.nav-item').forEach(b => b.classList.remove('active'));
+  document.getElementById('sec-' + id).classList.add('active');
+  btn.classList.add('active');
+  studiedSections.add(id);
+  updateProgress();
+  if (window.innerWidth <= 768) closeSidebar();
+  window.scrollTo(0, 0);
+}
+
+function updateProgress() {
+  const pct = Math.round((studiedSections.size / 6) * 100);
+  document.getElementById('prog-fill').style.width = pct + '%';
+  document.getElementById('prog-label').textContent = studiedSections.size + ' of 6 modules studied';
+}
+
+function switchSub(module, sub, btn) {
+  const section = document.getElementById('sec-' + module);
+  section.querySelectorAll('.subsection').forEach(s => s.classList.remove('active'));
+  section.querySelectorAll('.subnav-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById('sub-' + module + '-' + sub).classList.add('active');
+  if (btn) btn.classList.add('active');
+}
+
+function toggleAcc(header) {
+  const body = header.nextElementSibling;
+  const isOpen = body.classList.contains('open');
+  body.classList.toggle('open', !isOpen);
+  header.classList.toggle('open', !isOpen);
+}
+
+function toggleSidebar() {
+  document.getElementById('sidebar').classList.toggle('mob-open');
+  document.getElementById('overlay').classList.toggle('mob-open');
+}
+function closeSidebar() {
+  document.getElementById('sidebar').classList.remove('mob-open');
+  document.getElementById('overlay').classList.remove('mob-open');
+}
+
+// ===================== FLASHCARDS =====================
+const flashcards = {
+  history: [
+    {q:"What does SOCRATES stand for?", a:"Site · Onset · Character · Radiation · Associations · Time course · Exacerbating/relieving factors · Severity (1–10). Apply to ALL pain complaints."},
+    {q:"What is the 3-week rule for oral ulcers?", a:"Any ulcer persisting beyond 3 weeks without an obvious, confirmed benign cause MUST be biopsied or urgently referred to exclude oral squamous cell carcinoma."},
+    {q:"Name 4 medications that cause xerostomia.", a:"Antidepressants (TCAs, SSRIs), antihistamines, antipsychotics, antihypertensives (diuretics, beta-blockers), antimuscarinics (oxybutynin), opioids."},
+    {q:"Name 3 drugs causing gingival hyperplasia.", a:"Phenytoin (antiepileptic) · Cyclosporin (immunosuppressant) · Calcium channel blockers — Nifedipine, Amlodipine (antihypertensives)."},
+    {q:"What is Paterson-Kelly (Plummer-Vinson) syndrome?", a:"Iron deficiency anaemia + dysphagia (postcricoid web) + glossitis + angular cheilitis + koilonychia. Pre-malignant condition for oesophageal SCC."},
+    {q:"What is the SAMPLE emergency mnemonic?", a:"Symptoms · Allergies · Medications · Past medical history · Last meal · Events leading up to the emergency."},
+    {q:"Why does amoxicillin cause a rash in infectious mononucleosis?", a:"Amoxicillin given during active EBV infection causes a widespread maculopapular rash (95% of cases) — thought to be immune complex-mediated. Avoid in patients with fever + sore throat + lymphadenopathy."},
+  ],
+  clinical: [
+    {q:"What is the systematic soft tissue examination route?", a:"Lips → Labial mucosa → Buccal mucosa (L + R) → Upper alveolus → Lower alveolus → Hard palate → Soft palate → Oropharynx → Tongue (dorsum, lateral borders, ventral) → Floor of mouth → Salivary duct orifices → Gingival margins."},
+    {q:"How do you distinguish leukoedema from leukoplakia clinically?", a:"Leukoedema disappears when the mucosa is stretched — leukoplakia does not. Leukoedema is a normal variant more common in darker-skinned individuals."},
+    {q:"What does a cold test result of lingering pain >30 seconds indicate?", a:"Irreversible pulpitis. The pulp is inflamed beyond recovery and cannot return to health. Treatment required: pulp extirpation (RCT) or extraction."},
+    {q:"What are the features of malignant lymph nodes?", a:"Hard consistency, fixed/immobile, non-tender, >1cm diameter, irregular surface, multiple, located in drainage territory of suspicious primary site."},
+    {q:"What is furcation Class III by Hamp classification?", a:"The periodontal probe passes completely through the furcation from buccal to lingual (through-and-through). Carries the worst prognosis — often extraction indicated."},
+    {q:"What is the normal maximum mouth opening and how is it measured?", a:"Normal: 35–55mm. Measured from the incisal edge of upper central incisor to lower central incisor (interincisal distance). <35mm = restricted opening."},
+    {q:"What is the diagnostic key feature of geographic tongue?", a:"Migratory — the erythematous patches change location over time (days to weeks). Hence also called 'benign migratory glossitis'. Asymptomatic, no treatment required."},
+  ],
+  investigation: [
+    {q:"What fixative is used for routine biopsy vs direct immunofluorescence?", a:"Routine biopsy: 10% neutral buffered formal saline (formalin) for H&E histology. DIF: Michel's medium — formalin destroys immunoglobulins needed for DIF. These must NEVER be confused."},
+    {q:"What DIF patterns distinguish PV from MMP?", a:"Pemphigus vulgaris: Intercellular IgG — chicken-wire pattern throughout epithelium (keratinocyte surface). MMP: Linear IgG (± IgA, C3) at the basement membrane zone (linear pattern)."},
+    {q:"What INR level is generally safe for minor dental surgery?", a:"INR below 4.0. Use local haemostatic measures (oxidised cellulose, resorbable sutures, tranexamic acid mouthwash, pressure). Check same day or within 72h. Do NOT routinely stop warfarin."},
+    {q:"What is the Nikolsky sign and what does it indicate?", a:"Gentle lateral pressure applied to apparently normal oral mucosa produces a blister or peeling/erosion. Positive in pemphigus vulgaris — indicates intraepithelial acantholysis. Indicates fragile epithelium."},
+    {q:"When is CBCT indicated over conventional dental radiography?", a:"Implant planning, impacted tooth (IAN relationship/canine position), complex endo (extra canals, resorption, perforation), orthognathic surgery, jaw pathology extent. NOT for routine caries or perio."},
+    {q:"Which blood tests should you request for a patient with recurrent aphthous ulcers?", a:"FBC (anaemia, leukaemia), serum ferritin (iron), vitamin B12, serum folate, anti-tTG IgA (coeliac disease), total IgA, fasting glucose/HbA1c (diabetes), and HIV serology if risk factors present."},
+    {q:"What tissue and fixative are required for Sjögren's syndrome diagnosis from a lip biopsy?", a:"Minor salivary gland biopsy from the inner lower lip mucosa. Fixative: formalin for H&E. Diagnostic: focal lymphocytic sialadenitis with ≥1 lymphocytic focus (≥50 lymphocytes) per 4mm² tissue."},
+  ]
+};
+
+function buildFC(wrapperId, cards) {
+  window['fc_state_' + wrapperId] = { idx: 0, revealed: false };
+  window['fc_cards_' + wrapperId] = cards;
+  renderFC(wrapperId);
+}
+
+function renderFC(id) {
+  const state = window['fc_state_' + id];
+  const cards = window['fc_cards_' + id];
+  const c = cards[state.idx];
+  const wrap = document.getElementById(id);
+  wrap.innerHTML = `
+    <div class="flashcard" onclick="revealFC('${id}')">
+      <div class="fc-q">${c.q}</div>
+      <div class="fc-a ${state.revealed ? 'show' : ''}">${c.a}</div>
+      ${!state.revealed ? '<div class="fc-hint">👆 Click to reveal answer</div>' : ''}
+    </div>
+    <div class="fc-nav" style="margin-top:12px">
+      <button class="btn" onclick="prevFC('${id}')" ${state.idx === 0 ? 'disabled' : ''}>← Previous</button>
+      <span class="fc-count">${state.idx + 1} / ${cards.length}</span>
+      <button class="btn" onclick="nextFC('${id}')" ${state.idx === cards.length - 1 ? 'disabled' : ''}>Next →</button>
+    </div>`;
+}
+
+function revealFC(id) {
+  window['fc_state_' + id].revealed = !window['fc_state_' + id].revealed;
+  renderFC(id);
+}
+function nextFC(id) {
+  const state = window['fc_state_' + id];
+  const cards = window['fc_cards_' + id];
+  if (state.idx < cards.length - 1) { state.idx++; state.revealed = false; renderFC(id); }
+}
+function prevFC(id) {
+  const state = window['fc_state_' + id];
+  if (state.idx > 0) { state.idx--; state.revealed = false; renderFC(id); }
+}
+
+// ===================== QUIZZES =====================
+const quizzes = {
+  lesions: [
+    {q:"A 58-year-old smoker and drinker presents with a mixed red-white patch on the lateral tongue that has been present for 6 weeks and cannot be wiped off. What is the most appropriate next step?", opts:["Reassure and review in 3 months","Prescribe antifungal therapy and review in 2 weeks","Urgently refer or perform incisional biopsy","Advise smoking cessation and discharge"], ans:2, exp:"Erythroleukoplakia (mixed red-white lesion) on the lateral tongue is a high-risk oral potentially malignant disorder — malignant transformation rate up to 33%. Duration >3 weeks with no confirmed benign cause mandates urgent biopsy or referral. The 6-week duration, high-risk site, and appearance all demand histological diagnosis immediately."},
+    {q:"Which single clinical feature is MOST suggestive of oral squamous cell carcinoma rather than a benign aphthous ulcer?", opts:["Painful, 8mm diameter, on non-keratinised mucosa","Indurated, raised rolled edges with fixation to underlying tissue","Multiple ulcers that heal within 2 weeks","Bilateral white striae surrounding the ulcer margin"], ans:1, exp:"Indurated (hardened) edges with fixation to underlying tissue are hallmarks of invasive SCC — the malignant cells and desmoplastic reaction stiffen the tissue. Aphthous ulcers are painful, have soft margins, affect non-keratinised mucosa, and heal within 14 days without scarring. Bilateral white striae suggest lichen planus, not SCC."},
+    {q:"A patient presents with white plaques on the tongue that wipe off to reveal a raw, bleeding base. What is the most likely diagnosis?", opts:["Leukoplakia","Pseudomembranous candidosis (oral thrush)","Hyperplastic candidosis","Lichen planus reticular type"], ans:1, exp:"The defining feature of pseudomembranous candidosis is white/cream plaques that CAN be wiped off, leaving a raw, erythematous or bleeding base. Leukoplakia, hyperplastic candida, and white sponge naevus cannot be wiped off. The Candida pseudomembrane is made of tangled fungal hyphae, epithelial cells, and debris — it is physically removable."},
+    {q:"Wickham's striae are pathognomonic of which condition?", opts:["Pemphigus vulgaris","Leukoplakia","Oral lichen planus","Mucous membrane pemphigoid"], ans:2, exp:"Wickham's striae — the fine, interlacing white lines — are pathognomonic (disease-specific) for oral lichen planus, particularly the reticular type. Histologically they correspond to areas of acanthosis and hyperparakeratosis overlying a band-like lymphocytic infiltrate. No other oral condition produces this exact appearance."},
+    {q:"A patient on nicorandil (for angina) presents with a large (2cm), non-healing, very painful oral ulcer persisting for 10 weeks. What is the most appropriate FIRST step?", opts:["Perform immediate incisional biopsy to exclude SCC","Contact prescribing physician to discuss stopping or substituting nicorandil","Prescribe topical corticosteroids and review in 4 weeks","Prescribe antiviral therapy"], ans:1, exp:"Nicorandil (a potassium channel opener for angina) is a well-documented cause of large, painful, non-healing oral ulcers — this is a recognised and widely reported adverse effect. The correct first step is to contact the prescribing physician to discuss substitution or cessation. Ulcers typically heal within weeks of stopping the drug. Biopsy may be needed if the ulcer persists after stopping nicorandil."},
+  ],
+  medications: [
+    {q:"A warfarin patient (INR 2.5) requires extraction of two teeth. What is the correct management?", opts:["Stop warfarin 3 days before extraction and restart after bleeding stops","Proceed with extraction using local haemostatic measures without stopping warfarin","Refer to hospital for all dental extractions in anticoagulated patients","Give IV vitamin K to reverse anticoagulation before the procedure"], ans:1, exp:"For minor dental surgery (simple extractions), if the INR is below 4.0, proceed WITHOUT stopping warfarin. Use local haemostatic measures: oxidised cellulose (Surgicel), resorbable sutures, tranexamic acid 4.8% mouthwash QDS × 5 days, and pressure with damp gauze for 30 minutes. Stopping warfarin risks potentially fatal thromboembolic events (stroke, MI, DVT) which far outweigh the manageable dental bleeding risk."},
+    {q:"Why does local anaesthetic work less effectively in acutely infected, abscessed tissue?", opts:["Bacteria in the infected tissue actively inactivate the LA molecule","The acidic pH of infected tissue increases LA ionisation, reducing membrane penetration","Increased vascularity in infected tissue rapidly removes LA from the site","Oedema fluid dilutes the LA concentration below effective levels"], ans:1, exp:"Local anaesthetics are weak bases (pKa 7.7–8.9). In solution they exist as ionised (BH⁺) and unionised (B) forms. Only the unionised, lipid-soluble form crosses the nerve membrane. Infected tissue has lower pH (acidic) → Henderson-Hasselbalch equilibrium shifts toward ionised form (more BH⁺) → less unionised drug available → impaired nerve penetration → reduced/failed anaesthesia. Solutions: increase dose, use buffered LA, intrapulpal/intraosseous techniques."},
+    {q:"A patient prescribed metronidazole for pericoronitis attends a social event that evening. What is the most critical counselling point?", opts:["Take with food to avoid nausea","Complete the full course even if feeling better","Avoid ALL alcohol during treatment and for 48 hours after the final dose","Store in the refrigerator to maintain potency"], ans:2, exp:"Metronidazole causes a disulfiram-like (Antabuse) reaction when combined with alcohol: acetaldehyde accumulates (inhibited by metronidazole) → severe nausea, vomiting, flushing, headache, tachycardia, hypotension. Patients must avoid ALL alcohol — including in mouthwashes, cooking wine, cold remedies — during the course AND for 48 hours after the last dose. This interaction can be severe and distressing."},
+    {q:"Which dental antibiotic carries the greatest risk of Clostridioides difficile-associated colitis?", opts:["Amoxicillin","Metronidazole","Clindamycin","Azithromycin"], ans:2, exp:"Clindamycin has the highest risk of Clostridioides difficile (C. diff) colitis among dental antibiotics. C. diff produces toxins A and B → severe diarrhoea, pseudomembranous colitis, potentially toxic megacolon and death. All patients prescribed clindamycin must be warned: if persistent, profuse, or bloody diarrhoea develops — stop immediately and seek urgent medical attention. Reserve clindamycin for penicillin-allergic patients when no other option exists."},
+    {q:"A 65-year-old patient has been taking IV zoledronic acid (bisphosphonate) for multiple myeloma for 3 years. She needs extraction of a failing lower molar. What is the most appropriate approach?", opts:["Proceed with extraction as normal — the benefits outweigh risks","Inform the patient of MRONJ risk, liaise with oncologist, perform the extraction with meticulous technique and primary closure if agreed","Stop the zoledronic acid 3 months before extraction then proceed","Refuse to extract — refer to GP only"], ans:1, exp:"This patient has high MRONJ risk (IV bisphosphonate × 3 years for malignancy = up to 1–10% MRONJ risk per surgical site). The correct approach: discuss risk fully with the patient, liaise with the oncologist (NEVER stop IV bisphosphonate without specialist advice — it's cancer treatment), and if extraction is essential, perform with minimum trauma, primary closure (no healing by secondary intention), antimicrobial cover (CHX ± amoxicillin), and careful follow-up. MRONJ cannot be prevented with certainty but risk can be minimised."},
+  ],
+  systemic: [
+    {q:"Which oral manifestation is strongly associated with HIV infection and caused by Epstein-Barr virus (EBV)?", opts:["Pseudomembranous candidiasis","Oral hairy leukoplakia","Kaposi's sarcoma","Linear gingival erythema"], ans:1, exp:"Oral hairy leukoplakia is caused by EBV replication in oral epithelial cells, occurring almost exclusively in HIV-positive immunocompromised patients. It presents as corrugated/hairy white lesions on the LATERAL borders of the tongue, bilaterally, that cannot be wiped off. It is a strong indicator of significant immunosuppression (CD4 typically <200/μL) and was one of the first recognised AIDS-defining conditions."},
+    {q:"A 52-year-old post-menopausal woman with dry eyes and bilateral parotid enlargement presents with generalised cervical caries and difficulty eating. Which diagnostic test is MOST specific for primary Sjögren's syndrome?", opts:["Positive rheumatoid factor","Anti-Ro (SS-A) and Anti-La (SS-B) antibodies on serology","Reduced salivary flow rate on measurement","Elevated ESR and CRP"], ans:1, exp:"Anti-Ro (SS-A) antibodies are the most specific serological markers for primary Sjögren's syndrome, found in approximately 70–80% of patients. Anti-La (SS-B) is less sensitive but more specific. Both together with positive lip biopsy (focal lymphocytic sialadenitis ≥1 focus/4mm²) and ocular signs (Schirmer <5mm/5min) contribute to the 2016 ACR/EULAR diagnostic criteria. RF and ESR are non-specific."},
+    {q:"A type 2 diabetic patient (HbA1c 9.2%) has Stage III, Grade C generalised periodontitis. What is the most important management principle regarding the diabetes-periodontal relationship?", opts:["Defer periodontal treatment until glycaemic control improves to HbA1c <7%","Treat periodontal disease actively — treating periodontitis may improve HbA1c by ~0.5%","Provide antibiotics only; avoid surgical procedures","Refer back to physician before any periodontal treatment"], ans:1, exp:"There is a well-established bidirectional relationship between diabetes and periodontal disease. Chronic hyperglycaemia impairs neutrophil function and increases AGEs → accelerated periodontal destruction. Conversely, treating periodontitis reduces the systemic inflammatory burden and has been shown in meta-analyses to reduce HbA1c by approximately 0.5% — clinically significant. Periodontal treatment should not be delayed: it contributes to systemic health alongside medical management."},
+    {q:"A patient who has been taking prednisolone 10mg daily for 18 months for rheumatoid arthritis requires a surgical lower wisdom tooth extraction. What steroid cover is indicated?", opts:["No additional steroid cover required for procedures under local anaesthesia","Double the usual morning prednisolone dose (20mg) on the day of the procedure only","Give IV hydrocortisone 100mg before the procedure","Stop prednisolone 5 days before to prevent adrenal suppression"], ans:1, exp:"For minor dental surgery under local anaesthesia in a patient on long-term systemic corticosteroids (≥5mg prednisolone/day for ≥1 month), double the usual morning oral steroid dose on the day of the procedure. This patient's adrenal axis is suppressed and cannot produce the cortisol surge normally required for physiological stress. NEVER abruptly stop long-term steroids — this risks Addisonian crisis. IV hydrocortisone is reserved for major surgery under GA or significant systemic illness."},
+    {q:"A 3-year-old child presents with widespread painful oral ulcers on both keratinised and non-keratinised mucosa, generalised acute gingivitis, fever, and cervical lymphadenopathy. What is the most likely diagnosis and first-line management?", opts:["Recurrent aphthous stomatitis — prescribe topical corticosteroids","Primary herpetic gingivostomatitis — supportive care with analgesics and fluids, aciclovir if severe","Hand, foot and mouth disease — reassure and discharge","Herpangina — prescribe antifungals"], ans:1, exp:"Primary herpetic gingivostomatitis (HSV-1 primary infection) classically presents in young children with prodromal fever and cervical lymphadenopathy, followed by widespread vesicles that burst to form painful ulcers on BOTH keratinised (gingiva, palate, dorsal tongue) and non-keratinised mucosa — this involvement of keratinised mucosa is diagnostically important. Management: supportive (fluids, soft diet, paracetamol/ibuprofen, CHX mouthwash). Aciclovir 200mg 5×/day × 5 days (or 100mg 5×/day in under 2s) if severe or immunocompromised — only effective if started within 72 hours."},
+  ]
+};
+
+function buildQuiz(wrapperId, questions) {
+  window['qz_state_' + wrapperId] = { idx: 0, answered: new Array(questions.length).fill(false), selected: new Array(questions.length).fill(null) };
+  window['qz_data_' + wrapperId] = questions;
+  renderQuiz(wrapperId);
+}
+
+function renderQuiz(id) {
+  const state = window['qz_state_' + id];
+  const qs = window['qz_data_' + id];
+  const q = qs[state.idx];
+  const answered = state.answered[state.idx];
+  const sel = state.selected[state.idx];
+  const totalCorrect = state.answered.filter((_,i) => state.answered[i] && state.selected[i] === qs[i].ans).length;
+  const totalAnswered = state.answered.filter(Boolean).length;
+
+  const opts = q.opts.map((opt, i) => {
+    let cls = 'quiz-opt';
+    if (answered) { cls += ' disabled'; if (i === q.ans) cls += ' correct'; else if (i === sel) cls += ' wrong'; }
+    return `<button class="${cls}" onclick="selectQz('${id}',${i})">${['A','B','C','D'][i]}. ${opt}</button>`;
+  }).join('');
+
+  document.getElementById(id).innerHTML = `
+    <div class="quiz-counter">Question ${state.idx + 1} of ${qs.length} &nbsp;|&nbsp; Score: ${totalCorrect} / ${totalAnswered}</div>
+    <div class="quiz-q">${q.q}</div>
+    <div class="quiz-opts">${opts}</div>
+    <div class="quiz-exp ${answered ? 'show' : ''}">${q.exp}</div>
+    <div class="quiz-nav">
+      <button class="btn" onclick="prevQz('${id}')" ${state.idx === 0 ? 'disabled' : ''}>← Prev</button>
+      <span class="quiz-score">${totalCorrect}/${totalAnswered} correct</span>
+      <button class="btn" onclick="nextQz('${id}')" ${state.idx === qs.length-1 ? 'disabled' : ''}>Next →</button>
+    </div>`;
+}
+
+function selectQz(id, idx) {
+  const state = window['qz_state_' + id];
+  if (state.answered[state.idx]) return;
+  state.answered[state.idx] = true;
+  state.selected[state.idx] = idx;
+  renderQuiz(id);
+}
+function nextQz(id) {
+  const s = window['qz_state_' + id], l = window['qz_data_' + id].length;
+  if (s.idx < l - 1) { s.idx++; renderQuiz(id); }
+}
+function prevQz(id) {
+  const s = window['qz_state_' + id];
+  if (s.idx > 0) { s.idx--; renderQuiz(id); }
+}
+
+// ===================== INIT =====================
+window.addEventListener('DOMContentLoaded', function() {
+  buildFC('fc-history-wrap', flashcards.history);
+  buildFC('fc-clinical-wrap', flashcards.clinical);
+  buildFC('fc-investigation-wrap', flashcards.investigation);
+  buildQuiz('quiz-lesions-wrap', quizzes.lesions);
+  buildQuiz('quiz-medications-wrap', quizzes.medications);
+  buildQuiz('quiz-systemic-wrap', quizzes.systemic);
+  studiedSections.add('history');
+  updateProgress();
+});
+</script>
+</body>
+</html>
